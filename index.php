@@ -1,4 +1,5 @@
 <?php
+//ddd
 // 定义项目路径
 define('APP_PATH', __DIR__ . '/application/');
 // 加载框架引导文件
