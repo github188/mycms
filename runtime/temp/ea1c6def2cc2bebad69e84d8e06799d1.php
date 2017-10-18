@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:59:"E:\webproject\mycms/application/index\view\index\index.html";i:1508297414;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508229223;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508297352;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508301022;s:67:"E:\webproject\mycms/application/index\view\index\index_content.html";i:1508295341;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508297112;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:59:"E:\webproject\mycms/application/index\view\index\index.html";i:1508297414;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508229223;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508297352;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508308552;s:67:"E:\webproject\mycms/application/index\view\index\index_content.html";i:1508295341;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508297112;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -158,8 +158,8 @@
           </a>
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo url('index/user/index'); ?>"><i class="fa fa-circle-o"></i> 用户管理</a></li>
-            <li><a href="<?php echo url('index/user/role'); ?>"><i class="fa fa-circle-o"></i> 角色管理</a></li>
-            <li><a href="<?php echo url('index/user/permission'); ?>"><i class="fa fa-circle-o"></i> 权限管理</a></li>
+            <li><a href="<?php echo url('/index/user/role'); ?>"><i class="fa fa-circle-o"></i> 角色管理</a></li>
+            <li><a href="<?php echo url('/index.php/index/user/permission'); ?>"><i class="fa fa-circle-o"></i> 权限管理</a></li>
           </ul>
         </li> 
       </ul>
