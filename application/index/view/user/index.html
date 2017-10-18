@@ -1,0 +1,127 @@
+{include file="public/header" /} 
+
+
+
+<link rel="stylesheet" href="__ROOT__/public/static/user/css/user.css"> 
+<div class="container"> 
+    <div  id="indexcontent">
+        <div style="margin:10px;" id="content_allmainview">  
+            <!--home--end-->
+            <div id="content_users" temp="content"  >
+                <div>
+                    <ul class="floats">
+                        <li class="floats50">
+                        <if condition="$add eq ok">
+                            <button type="button" onclick="doact('add')" class="btn btn-primary" clickadd="true">
+                                <i class="icon-plus"></i>新增用户</button>&nbsp; 
+                        </if> 
+                        </li>
+                        <li class="floats30">
+                            <div style="width:250px" class="input-group">
+                                <input  placeholder="用户名/昵称" id="SUserKey" class="form-control">
+                                <span class="input-group-btn">
+                                    <button type="button" click="search" class="btn btn-default">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </li>
+                        <li style="text-align:right" class="floats20">
+                        <if condition="$delete eq ok">
+                            <button  type="button"  id="del_user" class="btn btn-danger"  disabled="">
+                                <i class="icon-trash"></i>删除</button>&nbsp;
+                        </if>
+                        <if condition="$edit eq ok">
+                            <button disabled type="button" click="clickwin,1" id="edit_user" class="btn btn-info" clickadd="true">
+                                <i class="icon-edit"></i>编辑</button></li>
+                        </if>
+                    </ul>
+                </div>
+                <div class="blank10"></div>
+                <div id="admin">
+                    <div id="tablebody" style="position:relative;">
+                        <table style="margin:0px" class="table table-striped table-bordered table-hover"  > 
+                            <tr>
+                                <th width="40"></th> 
+                                <th>
+                                    <div align="center">用户名&nbsp;
+                                        <i class="icon-sort cursor" lx="desc" tempsort="1"></i></div>
+                                </th>
+                                <th nowrap="">
+                                    <div align="center" >昵称&nbsp;
+                                        <i class="icon-sort cursor" lx="desc" tempsort="2"></i></div>
+                                </th> 
+                                <th nowrap="">
+                                    <div align="center" >
+                                        <i class="icon-pencil"></i>&nbsp;最近登陆时间&nbsp;
+                                        <i class="icon-sort cursor" lx="desc" tempsort="6"></i></div>
+                                </th>
+                                <th nowrap="">
+                                    <div align="center">注册时间&nbsp;
+                                        <i class="icon-sort cursor" lx="desc"></i></div>
+                                </th>
+                                <th nowrap="">
+                                    <div align="center" >登录次数&nbsp;
+                                        <i class="icon-sort cursor" lx="desc" tempsort="8"></i></div>
+                                </th>   
+                            </tr> 
+                            <tbody id="tableShowUsers">
+                            <volist name='users' id='users' key='key'>
+                                <tr>
+                                    <th width="40">
+                                        {$key}
+                                        <input type="hidden" name="userid" value="{$users.userid}">
+                                        <input type="hidden" name="username" value="{$users.username}">
+                                    </th> 
+                                    <th>
+                                        {$users.username}
+                                    </th>
+                                    <th nowrap="">
+                                        {$users.nickname}
+                                    </th> 
+                                    <th nowrap="">
+                                        {$users.last_login}
+                                    </th>
+                                    <th nowrap="">
+                                        {$users.reg_date}
+                                    </th>
+                                    <th nowrap="">
+                                        {$users.logintimes}
+                                    </th>
+                                </tr>
+                            </volist> </tbody>
+                        </table>
+                    </div> 
+                    <div id="tablefanye">
+                    <input type="hidden" name="key" value="0" selected>
+                        <div role="toolbar" class="btn-toolbar" style="margin-top:10px">
+                            <div class="btn-group">
+                                <button class="btn btn-default" title="首页" data-placement="top" data-toggle="tooltip" type="button" id="shouye" disabled="">«</button>
+                                <button class="btn btn-default" disabled="" type="button" title="上一页" data-placement="top" data-toggle="tooltip" id="shang">&lt;</button>
+                                <button {$pages.disabled} class="btn btn-default" type="button" id="pageList">第
+                                    <span id="pages">1</span>页/共
+                                    <span id="maxpage">{$pages.page}</span>页
+                                    <span class="caret"></span></button>
+                                <button {$pages.disabled}  class="btn btn-default" title="下一页" data-placement="top" data-toggle="tooltip" type="button" id="next">&gt;</button>
+                                <button  {$pages.disabled} class="btn btn-default" title="尾页" data-placement="top" data-toggle="tooltip" type="button" id="lastye">»</button></div>
+                            <div class="btn-group">
+                                <button class="btn btn-default" title="刷新" data-placement="top" data-toggle="tooltip" type="button" id="refresh" onclick="reFreshData();">
+                                    <i class="icon-refresh"></i>
+                                </button>
+                            </div>
+                            <div style="float:right; padding-top:3px" class="btn-group">
+                                <span>共记录
+                                    <span id="zjilu">{$pages.total}</span>条</span>&nbsp;每页
+                                <input type="number" style="width:40px;text-align:center;height:24px;border:1px #dddddd solid;margin:0px 2px;font-size:12px" value="{$pages.pagesize}" id="pagesize" onfocus="" onblur="cPageSize(this)" maxlength="3">条&nbsp;</div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/home/js/user.js"></script>
+
+
+
+{include file="public/footer" /}

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:59:"E:\webproject\mycms/application/index\view\index\index.html";i:1508297414;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508229223;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508297352;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508308552;s:67:"E:\webproject\mycms/application/index\view\index\index_content.html";i:1508295341;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508297112;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:59:"E:\webproject\mycms/application/index\view\index\index.html";i:1508311356;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508311212;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508309396;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508311453;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,24 +8,24 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- jQuery 3.1.1 -->
-  <script src="__PUBLIC__/plugins/jQuery/jquery.min.js"></script>
+  <script src="__ROOT__/public/plugins/jQuery/jquery.min.js"></script>
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" href="__PUBLIC__/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="__ROOT__/public/plugins/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="__PUBLIC__/plugins/font-awesome/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="__ROOT__/public/plugins/font-awesome/css/font-awesome.min.css"> 
   <!-- Theme style -->
-  <link rel="stylesheet" href="__PUBLIC__/dist/css/AdminLTE.min.css"> 
-  <link rel="stylesheet" href="__PUBLIC__/dist/css/skins/_all-skins.min.css"> 
+  <link rel="stylesheet" href="__ROOT__/public/dist/css/AdminLTE.min.css"> 
+  <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css"> 
   <!--[if lt IE 9]>
-  <script src="__PUBLIC__/plugins/html5shiv/html5shiv.min.js"></script>
-  <script src="__PUBLIC__/plugins/respond/respond.min.js"></script>
+  <script src="__ROOT__/public/plugins/html5shiv/html5shiv.min.js"></script>
+  <script src="__ROOT__/public/plugins/respond/respond.min.js"></script>
   <![endif]--> 
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
 <div class="wrapper"> 
- <header class="main-header">
+   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="__ROOT__" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>XTS</b></span>
       <!-- logo for regular state and mobile devices -->
@@ -138,7 +138,7 @@
       </div>
     </nav>
   </header>
- <aside class="main-sidebar">
+   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
@@ -159,14 +159,15 @@
           <ul class="treeview-menu">
             <li class="active"><a href="<?php echo url('index/user/index'); ?>"><i class="fa fa-circle-o"></i> 用户管理</a></li>
             <li><a href="<?php echo url('/index/user/role'); ?>"><i class="fa fa-circle-o"></i> 角色管理</a></li>
-            <li><a href="<?php echo url('/index.php/index/user/permission'); ?>"><i class="fa fa-circle-o"></i> 权限管理</a></li>
+            <li><a href="<?php echo url('index/user/permission'); ?>"><i class="fa fa-circle-o"></i> 权限管理</a></li>
           </ul>
         </li> 
       </ul>
     </section>
     <!-- /.sidebar -->
   </aside> 
-  <div class="content-wrapper"> 
+  <div class="content-wrapper">  
+
 
 
     <section class="content-header">
@@ -320,33 +321,26 @@
       </div>
     </section>
     <!-- /.content -->
-    <div class="clearfix"></div> 
+    <div class="clearfix"></div>
 
 
 
-  </div> 
-<!--   <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 1.0
-    </div>
-    <strong>Copyright &copy; 2017 <a href="#">XTS</a>.</strong> All rights
-    reserved.
-  </footer>   -->
+  </div>  
   <div class="control-sidebar-bg"></div>
 </div> 
 <!-- Bootstrap 3.3.7 -->
-<script src="__PUBLIC__/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="__ROOT__/public/plugins/bootstrap/js/bootstrap.min.js"></script>
 <!-- FastClick -->
-<!-- <script src="__PUBLIC__/plugins/fastclick/fastclick.js"></script> -->
+<!-- <script src="__ROOT__/public/plugins/fastclick/fastclick.js"></script> -->
 <!-- AdminLTE App -->
-<script src="__PUBLIC__/dist/js/adminlte.js"></script>
+<script src="__ROOT__/public/dist/js/adminlte.js"></script>
 <!-- Sparkline -->
-<!-- <script src="__PUBLIC__/plugins/sparkline/jquery.sparkline.min.js"></script>
+<!-- <script src="__ROOT__/public/plugins/sparkline/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
-<!-- <script src="__PUBLIC__/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="__PUBLIC__/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
+<!-- <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
 <!-- SlimScroll 1.3.0 -->
-<!-- <script src="__PUBLIC__/plugins/slimScroll/jquery.slimscroll.min.js"></script>  -->
+<!-- <script src="__ROOT__/public/plugins/slimScroll/jquery.slimscroll.min.js"></script>  -->
 </body>
 </html>
 
