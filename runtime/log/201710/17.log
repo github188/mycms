@@ -877,3 +877,34 @@
 [ info ] [ VIEW ] E:\webproject\mycms/application/index\view\index\index.html [ array (
 ) ]
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-17T17:17:08+08:00 ] ::1 ::1 GET /mycms/
+[ info ] localhost/mycms/ [运行时间：0.085270s][吞吐率：11.73req/s] [内存消耗：1,396.96kb] [文件加载：40]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; ht2hed=eo3p70kl96f9annt5n8niv6f75',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\webproject\mycms\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\index\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
