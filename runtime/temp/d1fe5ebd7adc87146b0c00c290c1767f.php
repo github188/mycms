@@ -1,10 +1,10 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1508313712;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508311212;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508309396;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508311453;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1508316796;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508315796;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508317073;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508311453;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2  </title>
+  <title><?php echo $title; ?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- jQuery 3.1.1 -->
@@ -142,9 +142,9 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
-      <div class="user-panel" style="height:35px"> 
-        <div class="pull-left  info">
-          <p>菜单</p> 
+      <div class="user-panel" style="height:35px;"> 
+        <div class="pull-left  info" >
+          <p style="margin: 0;">菜单</p> 
         </div>
       </div> 
       <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -157,9 +157,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo url('index/user/index'); ?>"><i class="fa fa-circle-o"></i> 用户管理</a></li>
-            <li><a href="<?php echo url('/index/user/role'); ?>"><i class="fa fa-circle-o"></i> 角色管理</a></li>
-            <li><a href="<?php echo url('index/user/permission'); ?>"><i class="fa fa-circle-o"></i> 权限管理</a></li>
+            <li class="<?php echo $user_index; ?>"><a href="<?php echo url('index/user/index'); ?>"><i class="fa fa-circle-o"></i> 用户管理</a></li>
+            <li class="<?php echo $user_role; ?>"><a href="<?php echo url('/index/user/role'); ?>"><i class="fa fa-circle-o"></i> 角色管理</a></li>
+            <li class="<?php echo $user_permission; ?>"><a href="<?php echo url('index/user/permission'); ?>"><i class="fa fa-circle-o"></i> 权限管理</a></li>
           </ul>
         </li> 
       </ul>
@@ -171,6 +171,18 @@
 
 
 <link rel="stylesheet" href="__ROOT__/public/static/user/css/user.css"> 
+<section class="content-header" style="border-bottom: 1px #d2d6de solid;padding-bottom: 10px; ">
+      <h1>
+        用户管理
+        <small>用户列表</small>
+      </h1>
+<!--       <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="#">用户管理</a></li>
+        <li class="active">用户列表</li>
+      </ol> -->
+    </section>
+
 <div class="container"> 
     <div  id="indexcontent">
         <div style="margin:10px;" id="content_allmainview">  

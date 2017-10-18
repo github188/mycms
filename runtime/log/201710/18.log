@@ -8917,3 +8917,1902 @@
   'home' => 'js',
 )
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:38:23+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.097102s][吞吐率：10.30req/s] [内存消耗：2,982.64kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:240]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:241]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:242]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:245]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:248]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:251]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:271]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:273]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:274]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:282]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+---------------------------------------------------------------
+[ 2017-10-18T16:38:23+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.148518s][吞吐率：6.73req/s] [内存消耗：2,557.02kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:44:12+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.095347s][吞吐率：10.49req/s] [内存消耗：2,983.33kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:44:12+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.117737s][吞吐率：8.49req/s] [内存消耗：2,557.00kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:44:50+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.083736s][吞吐率：11.94req/s] [内存消耗：2,983.22kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:44:50+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.095044s][吞吐率：10.52req/s] [内存消耗：2,557.00kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:44:51+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.088653s][吞吐率：11.28req/s] [内存消耗：2,712.63kb] [文件加载：44]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:44:51+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.095490s][吞吐率：10.47req/s] [内存消耗：2,557.00kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:45:45+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.086525s][吞吐率：11.56req/s] [内存消耗：2,712.57kb] [文件加载：44]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:45:45+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.109180s][吞吐率：9.16req/s] [内存消耗：2,557.00kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:45:59+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.083685s][吞吐率：11.95req/s] [内存消耗：2,983.32kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:45:59+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.107854s][吞吐率：9.27req/s] [内存消耗：2,557.00kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:46:14+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.096504s][吞吐率：10.36req/s] [内存消耗：2,983.28kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:46:14+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.096912s][吞吐率：10.32req/s] [内存消耗：2,557.00kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:46:34+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.093786s][吞吐率：10.66req/s] [内存消耗：2,983.36kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:46:34+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.099920s][吞吐率：10.01req/s] [内存消耗：2,557.00kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:46:56+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.084246s][吞吐率：11.87req/s] [内存消耗：2,983.20kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:46:56+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.128410s][吞吐率：7.79req/s] [内存消耗：2,557.02kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:47:13+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.091985s][吞吐率：10.87req/s] [内存消耗：2,983.33kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:47:13+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.095591s][吞吐率：10.46req/s] [内存消耗：2,557.00kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:47:14+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.072741s][吞吐率：13.75req/s] [内存消耗：2,712.59kb] [文件加载：44]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:47:14+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.099105s][吞吐率：10.09req/s] [内存消耗：2,557.00kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:47:26+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.089897s][吞吐率：11.12req/s] [内存消耗：2,983.33kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:47:26+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.094158s][吞吐率：10.62req/s] [内存消耗：2,557.00kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:48:16+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.088910s][吞吐率：11.25req/s] [内存消耗：2,983.46kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:48:16+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.110385s][吞吐率：9.06req/s] [内存消耗：2,557.00kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:49:47+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.074870s][吞吐率：13.36req/s] [内存消耗：2,712.48kb] [文件加载：44]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:49:48+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.155993s][吞吐率：6.41req/s] [内存消耗：2,557.02kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:50:53+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.084452s][吞吐率：11.84req/s] [内存消耗：2,983.41kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:50:53+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.109179s][吞吐率：9.16req/s] [内存消耗：2,557.00kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:53:19+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.085542s][吞吐率：11.69req/s] [内存消耗：2,983.43kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:53:19+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.098695s][吞吐率：10.13req/s] [内存消耗：2,557.00kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:56:53+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.098926s][吞吐率：10.11req/s] [内存消耗：2,988.78kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+  1 => 'user-index',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]Use of undefined constant index - assumed 'index'[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:160]
+[ error ] [8]未定义变量: user[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:160]
+[ error ] [8]Use of undefined constant role - assumed 'role'[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:161]
+[ error ] [8]未定义变量: user[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:161]
+[ error ] [8]Use of undefined constant permission - assumed 'permission'[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:162]
+[ error ] [8]未定义变量: user[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:162]
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:56:53+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.094126s][吞吐率：10.62req/s] [内存消耗：2,558.80kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:56:54+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.078117s][吞吐率：12.80req/s] [内存消耗：2,717.94kb] [文件加载：44]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+  1 => 'user-index',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]Use of undefined constant index - assumed 'index'[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:160]
+[ error ] [8]未定义变量: user[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:160]
+[ error ] [8]Use of undefined constant role - assumed 'role'[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:161]
+[ error ] [8]未定义变量: user[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:161]
+[ error ] [8]Use of undefined constant permission - assumed 'permission'[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:162]
+[ error ] [8]未定义变量: user[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:162]
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:56:54+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.107717s][吞吐率：9.28req/s] [内存消耗：2,558.80kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:57:40+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.083229s][吞吐率：12.02req/s] [内存消耗：2,987.69kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+  1 => 'user_index',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]Use of undefined constant role - assumed 'role'[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:161]
+[ error ] [8]未定义变量: user[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:161]
+[ error ] [8]Use of undefined constant permission - assumed 'permission'[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:162]
+[ error ] [8]未定义变量: user[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:162]
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:57:40+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.113755s][吞吐率：8.79req/s] [内存消耗：2,558.80kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:58:14+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.103058s][吞吐率：9.70req/s] [内存消耗：2,986.68kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+  1 => 'user_index',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: user_role[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:161]
+[ error ] [8]未定义变量: user_permission[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:162]
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T16:58:14+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.103448s][吞吐率：9.67req/s] [内存消耗：2,558.80kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:58:16+08:00 ] ::1 ::1 GET /mycms/index/user/role.html
+[ info ] localhost/mycms/index/user/role.html [运行时间：0.071653s][吞吐率：13.96req/s] [内存消耗：2,489.85kb] [文件加载：39]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'role',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->role[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:59:25+08:00 ] ::1 ::1 GET /mycms/index/user/role.html
+[ info ] localhost/mycms/index/user/role.html [运行时间：0.061204s][吞吐率：16.34req/s] [内存消耗：2,490.05kb] [文件加载：39]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'role',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->role[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:59:27+08:00 ] ::1 ::1 GET /mycms/index/user/role.html
+[ info ] localhost/mycms/index/user/role.html [运行时间：0.068193s][吞吐率：14.66req/s] [内存消耗：2,490.05kb] [文件加载：39]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'role',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->role[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:59:27+08:00 ] ::1 ::1 GET /mycms/index/user/role.html
+[ info ] localhost/mycms/index/user/role.html [运行时间：0.060385s][吞吐率：16.56req/s] [内存消耗：2,490.05kb] [文件加载：39]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'role',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->role[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T16:59:29+08:00 ] ::1 ::1 GET /mycms/index/user/role.html
+[ info ] localhost/mycms/index/user/role.html [运行时间：0.054400s][吞吐率：18.38req/s] [内存消耗：2,490.35kb] [文件加载：39]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'role',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->role[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T17:00:04+08:00 ] ::1 ::1 GET /mycms/index/user/role.html
+[ info ] localhost/mycms/index/user/role.html [运行时间：0.094642s][吞吐率：10.57req/s] [内存消耗：2,955.59kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'role',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->role[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\role.html [ array (
+  0 => 'user_role',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: title[E:\webproject\mycms\runtime\temp\445f0a6ab92d81327556d22aad0daa99.php:7]
+[ error ] [8]未定义变量: user_index[E:\webproject\mycms\runtime\temp\445f0a6ab92d81327556d22aad0daa99.php:160]
+[ error ] [8]未定义变量: user_permission[E:\webproject\mycms\runtime\temp\445f0a6ab92d81327556d22aad0daa99.php:162]
+---------------------------------------------------------------
+[ 2017-10-18T17:00:07+08:00 ] ::1 ::1 GET /mycms/index/user/permission.html
+[ info ] localhost/mycms/index/user/permission.html [运行时间：0.077373s][吞吐率：12.92req/s] [内存消耗：2,559.48kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'permission',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/role.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->permission[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+[ error ] [0]模板文件不存在:E:\webproject\mycms/application/index\view\user\perssion.html[E:\webproject\mycms\thinkphp\library\think\view\driver\Think.php:80]
+---------------------------------------------------------------
+[ 2017-10-18T17:00:19+08:00 ] ::1 ::1 GET /mycms/index/user/permission.html
+[ info ] localhost/mycms/index/user/permission.html [运行时间：0.072290s][吞吐率：13.83req/s] [内存消耗：2,739.10kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'permission',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/role.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->permission[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\permission.html [ array (
+  0 => 'user_permission',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T17:00:21+08:00 ] ::1 ::1 GET /mycms/index/user/permission.html
+[ info ] localhost/mycms/index/user/permission.html [运行时间：0.074497s][吞吐率：13.42req/s] [内存消耗：2,493.70kb] [文件加载：40]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'permission',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/role.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->permission[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\permission.html [ array (
+  0 => 'user_permission',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-18T17:00:52+08:00 ] ::1 ::1 GET /mycms/index/user/permission.html
+[ info ] localhost/mycms/index/user/permission.html [运行时间：0.074442s][吞吐率：13.43req/s] [内存消耗：2,955.55kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'permission',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/role.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->permission[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\permission.html [ array (
+  0 => 'user_permission',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: title[E:\webproject\mycms\runtime\temp\5bc776c58e23e9c1af0b7fbaf419c918.php:7]
+[ error ] [8]未定义变量: user_index[E:\webproject\mycms\runtime\temp\5bc776c58e23e9c1af0b7fbaf419c918.php:160]
+[ error ] [8]未定义变量: user_role[E:\webproject\mycms\runtime\temp\5bc776c58e23e9c1af0b7fbaf419c918.php:161]
+---------------------------------------------------------------
+[ 2017-10-18T17:01:01+08:00 ] ::1 ::1 GET /mycms/index/user/role.html
+[ info ] localhost/mycms/index/user/role.html [运行时间：0.068792s][吞吐率：14.54req/s] [内存消耗：2,702.07kb] [文件加载：44]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'role',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/permission.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->role[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\role.html [ array (
+  0 => 'user_role',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: title[E:\webproject\mycms\runtime\temp\445f0a6ab92d81327556d22aad0daa99.php:7]
+[ error ] [8]未定义变量: user_index[E:\webproject\mycms\runtime\temp\445f0a6ab92d81327556d22aad0daa99.php:160]
+[ error ] [8]未定义变量: user_permission[E:\webproject\mycms\runtime\temp\445f0a6ab92d81327556d22aad0daa99.php:162]
+---------------------------------------------------------------
+[ 2017-10-18T17:01:03+08:00 ] ::1 ::1 GET /mycms/index/user/index.html
+[ info ] localhost/mycms/index/user/index.html [运行时间：0.066453s][吞吐率：15.05req/s] [内存消耗：2,716.38kb] [文件加载：44]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/role.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+  1 => 'user_index',
+) ]
+[ info ] [ LOG ] INIT File
+[ error ] [8]未定义变量: user_role[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:161]
+[ error ] [8]未定义变量: user_permission[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:162]
+[ error ] [8]未定义变量: key[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:252]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:253]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:254]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:257]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:260]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:263]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:266]
+[ error ] [8]未定义变量: users[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:269]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:281]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:283]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:285]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:286]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:294]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:295]
+---------------------------------------------------------------
+[ 2017-10-18T17:01:03+08:00 ] ::1 ::1 GET /mycms/index/user/public/home/js/user.js
+[ info ] localhost/mycms/index/user/public/home/js/user.js [运行时间：0.099597s][吞吐率：10.04req/s] [内存消耗：2,559.64kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'public',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36',
+  'accept' => '*/*',
+  'referer' => 'http://localhost/mycms/index/user/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|2; ht2hed=anfejkhtquue16meagar4d2f20; PHPSESSID=ufesegqt2317hclig838g0rom1; w6nce4=625m6nj3o2lvmk4dokeg2onu87; je3pyq=kmaktun39es50tc8u6gnhitjp4',
+)
+[ info ] [ PARAM ] array (
+  'home' => 'js',
+)
+[ info ] [ LOG ] INIT File
