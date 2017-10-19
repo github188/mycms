@@ -16,4 +16,7 @@ class User extends Controller {
 		$this->assign('user_permission', "active");
 		return $this->fetch('user/permission');
 	}
+	public function addUserPage(){
+		return $this->fetch('user/add');
+	}
 }

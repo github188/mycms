@@ -1,7 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1508402193;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508402234;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508401497;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508317073;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508401248;}*/ ?>
-
-<link rel="stylesheet" href="__ROOT__/public/static/user/css/user.css"> 
- 
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1508402740;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508402278;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508401497;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508317073;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508402930;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -171,6 +168,8 @@
   </aside> 
   <div class="content-wrapper">   
 
+<link rel="stylesheet" href="__ROOT__/public/static/user/css/user.css"> 
+ 
   
 <section class="content-header" style="border-bottom: 1px #d2d6de solid;padding-bottom: 10px; ">
       <h1>
@@ -193,7 +192,7 @@
                     <ul class="floats">
                         <li class="floats50">
                         <if condition="$add eq ok">
-                            <button type="button" onclick="doact('add')" class="btn btn-primary" clickadd="true">
+                            <button type="button" id="user_add_button" class="btn btn-primary">
                                 <i class="icon-plus"></i>新增用户</button>&nbsp; 
                         </if> 
                         </li>
@@ -301,7 +300,7 @@
         </div>
     </div>
 </div>
-<script src="__PUBLIC__/home/js/user.js"></script> 
+<script src="__ROOT__/public/static/js/user.js"></script> 
  
   </div>  
   <div class="control-sidebar-bg"></div>
@@ -310,9 +309,8 @@
 <!-- FastClick -->
 <!-- <script src="__ROOT__/public/plugins/fastclick/fastclick.js"></script> -->
 <!-- AdminLTE App -->
-<script src="__ROOT__/public/dist/js/adminlte.js"></script>
-<!-- Sparkline -->
-<!-- <script src="__ROOT__/public/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="__ROOT__/public/dist/js/adminlte.js"></script> 
+<script src="__ROOT__/public/plugins/layer/layer.js"></script>
 <!-- jvectormap -->
 <!-- <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
