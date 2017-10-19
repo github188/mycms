@@ -1,10 +1,10 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:59:"E:\webproject\mycms/application/index\view\index\index.html";i:1508311356;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508311212;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508309396;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508311453;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:59:"E:\webproject\mycms/application/index\view\index\index.html";i:1508401849;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508401490;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508401497;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508317073;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508401248;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2  </title>
+  <title><?php echo $title; ?></title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- jQuery 3.1.1 -->
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="__ROOT__/public/plugins/font-awesome/css/font-awesome.min.css"> 
   <!-- Theme style -->
   <link rel="stylesheet" href="__ROOT__/public/dist/css/AdminLTE.min.css"> 
-  <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css"> 
+  <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css">  
   <!--[if lt IE 9]>
   <script src="__ROOT__/public/plugins/html5shiv/html5shiv.min.js"></script>
   <script src="__ROOT__/public/plugins/respond/respond.min.js"></script>
@@ -142,9 +142,9 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
-      <div class="user-panel" style="height:35px"> 
-        <div class="pull-left  info">
-          <p>菜单</p> 
+      <div class="user-panel" style="height:35px;"> 
+        <div class="pull-left  info" >
+          <p style="margin: 0;">菜单</p> 
         </div>
       </div> 
       <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -157,28 +157,22 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="<?php echo url('index/user/index'); ?>"><i class="fa fa-circle-o"></i> 用户管理</a></li>
-            <li><a href="<?php echo url('/index/user/role'); ?>"><i class="fa fa-circle-o"></i> 角色管理</a></li>
-            <li><a href="<?php echo url('index/user/permission'); ?>"><i class="fa fa-circle-o"></i> 权限管理</a></li>
+            <li class="<?php echo $user_index; ?>"><a href="<?php echo url('index/user/index'); ?>"><i class="fa fa-circle-o"></i> 用户管理</a></li>
+            <li class="<?php echo $user_role; ?>"><a href="<?php echo url('/index/user/role'); ?>"><i class="fa fa-circle-o"></i> 角色管理</a></li>
+            <li class="<?php echo $user_permission; ?>"><a href="<?php echo url('index/user/permission'); ?>"><i class="fa fa-circle-o"></i> 权限管理</a></li>
           </ul>
         </li> 
       </ul>
     </section>
     <!-- /.sidebar -->
   </aside> 
-  <div class="content-wrapper">  
-
-
+  <div class="content-wrapper">   
+  
 
     <section class="content-header">
       <h1>
         系统室 
-      </h1>
-<!--       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Invoice</li>
-      </ol> -->
+      </h1>     
     </section>
 
     <div class="pad margin no-print">
@@ -322,13 +316,10 @@
     </section>
     <!-- /.content -->
     <div class="clearfix"></div>
-
-
-
+ 
   </div>  
   <div class="control-sidebar-bg"></div>
-</div> 
-<!-- Bootstrap 3.3.7 -->
+</div>  
 <script src="__ROOT__/public/plugins/bootstrap/js/bootstrap.min.js"></script>
 <!-- FastClick -->
 <!-- <script src="__ROOT__/public/plugins/fastclick/fastclick.js"></script> -->
@@ -343,4 +334,5 @@
 <!-- <script src="__ROOT__/public/plugins/slimScroll/jquery.slimscroll.min.js"></script>  -->
 </body>
 </html>
+  
 

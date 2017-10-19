@@ -1,4 +1,7 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1508316796;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508315796;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508317073;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508311453;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1508402193;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508402234;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508401497;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508317073;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508401248;}*/ ?>
+
+<link rel="stylesheet" href="__ROOT__/public/static/user/css/user.css"> 
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +18,7 @@
   <link rel="stylesheet" href="__ROOT__/public/plugins/font-awesome/css/font-awesome.min.css"> 
   <!-- Theme style -->
   <link rel="stylesheet" href="__ROOT__/public/dist/css/AdminLTE.min.css"> 
-  <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css"> 
+  <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css">  
   <!--[if lt IE 9]>
   <script src="__ROOT__/public/plugins/html5shiv/html5shiv.min.js"></script>
   <script src="__ROOT__/public/plugins/respond/respond.min.js"></script>
@@ -166,11 +169,9 @@
     </section>
     <!-- /.sidebar -->
   </aside> 
-  <div class="content-wrapper">  
+  <div class="content-wrapper">   
 
-
-
-<link rel="stylesheet" href="__ROOT__/public/static/user/css/user.css"> 
+  
 <section class="content-header" style="border-bottom: 1px #d2d6de solid;padding-bottom: 10px; ">
       <h1>
         用户管理
@@ -300,14 +301,11 @@
         </div>
     </div>
 </div>
-<script src="__PUBLIC__/home/js/user.js"></script>
-
-
-
+<script src="__PUBLIC__/home/js/user.js"></script> 
+ 
   </div>  
   <div class="control-sidebar-bg"></div>
-</div> 
-<!-- Bootstrap 3.3.7 -->
+</div>  
 <script src="__ROOT__/public/plugins/bootstrap/js/bootstrap.min.js"></script>
 <!-- FastClick -->
 <!-- <script src="__ROOT__/public/plugins/fastclick/fastclick.js"></script> -->
@@ -322,3 +320,5 @@
 <!-- <script src="__ROOT__/public/plugins/slimScroll/jquery.slimscroll.min.js"></script>  -->
 </body>
 </html>
+  
+

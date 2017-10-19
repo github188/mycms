@@ -1,8 +1,8 @@
-{include file="public/header" /} 
-
-
-
+{extend name="public/base"}  
+{block name="style"}
 <link rel="stylesheet" href="__ROOT__/public/static/user/css/user.css"> 
+{/block}
+{block name="body"}  
 <section class="content-header" style="border-bottom: 1px #d2d6de solid;padding-bottom: 10px; ">
       <h1>
         用户管理
@@ -132,8 +132,5 @@
         </div>
     </div>
 </div>
-<script src="__PUBLIC__/home/js/user.js"></script>
-
-
-
-{include file="public/footer" /}
+<script src="__PUBLIC__/home/js/user.js"></script> 
+{/block}
