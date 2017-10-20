@@ -10,3 +10,9 @@
 // +----------------------------------------------------------------------
 
 // 应用公共文件
+
+//参数错误返回json
+function parameterErr(){
+	echo json_encode(array("statu"=>0,"msg"=>"parameter err"));
+	exit;
+}

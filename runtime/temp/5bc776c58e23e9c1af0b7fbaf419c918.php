@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:63:"E:\webproject\mycms/application/index\view\user\permission.html";i:1508317250;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508315796;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508317073;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508311453;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:5:{s:63:"E:\webproject\mycms/application/index\view\user\permission.html";i:1508317250;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508401497;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508317073;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508402930;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="__ROOT__/public/plugins/font-awesome/css/font-awesome.min.css"> 
   <!-- Theme style -->
   <link rel="stylesheet" href="__ROOT__/public/dist/css/AdminLTE.min.css"> 
-  <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css"> 
+  <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css">  
   <!--[if lt IE 9]>
   <script src="__ROOT__/public/plugins/html5shiv/html5shiv.min.js"></script>
   <script src="__ROOT__/public/plugins/respond/respond.min.js"></script>
@@ -170,15 +170,13 @@
 d2
   </div>  
   <div class="control-sidebar-bg"></div>
-</div> 
-<!-- Bootstrap 3.3.7 -->
+</div>  
 <script src="__ROOT__/public/plugins/bootstrap/js/bootstrap.min.js"></script>
 <!-- FastClick -->
 <!-- <script src="__ROOT__/public/plugins/fastclick/fastclick.js"></script> -->
 <!-- AdminLTE App -->
-<script src="__ROOT__/public/dist/js/adminlte.js"></script>
-<!-- Sparkline -->
-<!-- <script src="__ROOT__/public/plugins/sparkline/jquery.sparkline.min.js"></script>
+<script src="__ROOT__/public/dist/js/adminlte.js"></script> 
+<script src="__ROOT__/public/plugins/layer/layer.js"></script>
 <!-- jvectormap -->
 <!-- <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
