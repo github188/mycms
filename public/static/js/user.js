@@ -73,6 +73,7 @@ $("[type=password]").each(function() {
 	 	var username=$("#user_add_form [name=username]").val();
 	 	var password=$("#user_add_form [name=password]").val();
 	 	var repassword=$("#user_add_form [name=repassword]").val();
+	 	var email=$("#user_add_form [name=email]").val();
 	 	if (!username) {
 	 		$("#user_add_form [name=username]").focus();
 	 		$(".username_block").css("color","red");
@@ -89,6 +90,14 @@ $("[type=password]").each(function() {
 	 	if(password!==repassword){
 	 		layer.msg('两次密码输入不一致', {icon: 2});
 	 		return false;
+	 	}
+	 	if(email){
+	 		var emreg=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,8})+$/;
+	 		if(!emreg.test(email)){
+	 			$(".repassword_block").parent().find('i').remove();
+	 			$(".repassword_block").parent().append('<i class="fa fa-check text-green"></i>');
+	 			return false;
+	 		};
 	 	}
  		console.log("addUserPage");
  		return false;
