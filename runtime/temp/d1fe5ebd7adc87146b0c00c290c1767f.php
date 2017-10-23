@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1508733288;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1508748862;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -169,6 +169,14 @@
   <div class="content-wrapper">   
 
 <link rel="stylesheet" href="__ROOT__/public/static/css/user.css"> 
+<style>
+    #tableShowUsers  td{
+        text-align:center;
+    }
+    .overlay{
+        display: none;
+    }
+</style>
  
   
 <section class="content-header" style="border-bottom: 1px #d2d6de solid;padding-bottom: 10px; ">
@@ -227,47 +235,69 @@
                                     <div align="center">用户名&nbsp;
                                         <i class="icon-sort cursor" lx="desc" tempsort="1"></i></div>
                                 </th>
-                                <th nowrap="">
+                                <th>
                                     <div align="center" >昵称&nbsp;
                                         <i class="icon-sort cursor" lx="desc" tempsort="2"></i></div>
                                 </th> 
-                                <th nowrap="">
+                                <th>
                                     <div align="center" >
                                         <i class="icon-pencil"></i>&nbsp;最近登陆时间&nbsp;
                                         <i class="icon-sort cursor" lx="desc" tempsort="6"></i></div>
-                                </th>
-                                <th nowrap="">
-                                    <div align="center">注册时间&nbsp;
-                                        <i class="icon-sort cursor" lx="desc"></i></div>
-                                </th>
-                                <th nowrap="">
+                                </th> 
+                                <th>
                                     <div align="center" >登录次数&nbsp;
+                                        <i class="icon-sort cursor" lx="desc" tempsort="8"></i></div>
+                                </th> 
+                                <th>
+                                    <div align="center" >状态&nbsp;
+                                        <i class="icon-sort cursor" lx="desc" tempsort="8"></i></div>
+                                </th> 
+                                <th>
+                                    <div align="center" >操作&nbsp;
                                         <i class="icon-sort cursor" lx="desc" tempsort="8"></i></div>
                                 </th>   
                             </tr> 
                             <tbody id="tableShowUsers">
                             <?php if(is_array($users) || $users instanceof \think\Collection || $users instanceof \think\Paginator): $key = 0; $__LIST__ = $users;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$users): $mod = ($key % 2 );++$key;?>
                                 <tr>
-                                    <th width="40">
+                                    <td width="40">
                                         <?php echo $key; ?>
                                         <input type="hidden" name="userid" value="<?php echo $users['id']; ?>">
                                         <input type="hidden" name="username" value="<?php echo $users['user_name']; ?>">
-                                    </th> 
-                                    <th>
+                                    </td> 
+                                    <td>
                                         <?php echo $users['user_name']; ?>
-                                    </th>
-                                    <th nowrap="">
+                                    </td>
+                                    <td>
                                         <?php echo $users['user_nickname']; ?>
-                                    </th> 
-                                    <th nowrap="">
+                                    </td> 
+                                    <td>
                                         <?php echo $users['last_login_time']; ?>
-                                    </th>
-                                    <th nowrap="">
-                                        <?php echo $users['create_time']; ?>
-                                    </th>
-                                    <th nowrap="">
+                                    </td> 
+                                    <td>
                                         <?php echo $users['user_logintimes']; ?>
-                                    </th>
+                                    </td>
+                                    <td>
+                                        <?php if($users['user_status']): ?>
+                                        <span data-userid="<?php echo $users['id']; ?>" class="label label-primary  user_status">启用</span>
+                                        <?php else: ?>
+                                        <span data-userid="<?php echo $users['id']; ?>" class="label label-danger user_status">禁用</span>
+                                        <?php endif; ?>
+                                        <div class="overlay">
+                                          <i class="fa fa-refresh fa-spin"></i>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <a href="/sentcms/admin/user/edit/id/1.html" class="table-link" title="">
+                                            编辑
+                                        </a>
+                                        <a href="/sentcms/admin/user/auth/id/1.html" class="table-link">
+                                            授权
+                                        </a>
+                                        <a href="/sentcms/admin/user/del/id/1.html" class="table-link confirm ajax-get">
+                                            删除
+                                        </a>
+                                    </td>
                                 </tr>
                             <?php endforeach; endif; else: echo "" ;endif; ?> </tbody>
                         </table>

@@ -13,6 +13,6 @@
 
 //参数错误返回json
 function parameterErr(){
-	echo json_encode(array("statu"=>0,"msg"=>"parameter err"));
+	echo json_encode(array("statu"=>'err',"msg"=>"parameter err"));
 	exit;
 }

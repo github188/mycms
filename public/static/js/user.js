@@ -24,7 +24,7 @@ $(function($){
 	 		type: 'POST',
 	 		success:function(json){
 	 			var json=eval("("+json+")");
-	 			if(json.statu){
+	 			if(json.statu=='ok'){
 	 				if(json.msg){
 	 					$(".username_block").parent().find('i,.text-red').remove();
 	 					$(".username_block").parent().append('<span class="text-red">该用户名已经被使用</span><i class="fa fa-close text-red"></i>');
@@ -80,42 +80,41 @@ $("[type=password]").each(function() {
 	添加用户提交操作
 	 */
 	 $(".user_add_submit").on("click",function(){  
-	 	// var username=$("#user_add_form [name=username]").val();
-	 	// var password=$("#user_add_form [name=password]").val();
-	 	// var repassword=$("#user_add_form [name=repassword]").val();
-	 	// var email=$("#user_add_form [name=email]").val();
-	 	// if (!username) {
-	 	// 	$("#user_add_form [name=username]").focus();
-	 	// 	$(".username_block").css("color","red");
-	 	// 	return false;
-	 	// }
-	 	// check_user(); 
-	 	// if (!password) {
-	 	// 	$("#user_add_form [name=password]").focus();
-	 	// 	return false;
-	 	// }
-	 	// if (!repassword) {
-	 	// 	$("#user_add_form [name=repassword]").focus();
-	 	// 	return false;
-	 	// }
-	 	// if(password!==repassword){
-	 	// 	layer.msg('两次密码输入不一致', {icon: 2});
-	 	// 	return false;
-	 	// }
-	 	// if(email){
-	 	// 	var emreg=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,8})+$/;
-	 	// 	if(!emreg.test(email)){
-	 	// 		$(".email_block").parent().find('i').remove();
-	 	// 		$(".email_block").parent().append('<span class="text-red">邮箱格式不正确</span> <i class="fa fa-close text-red"></i>');
-	 	// 		return false;
-	 	// 	};
-	 	// 	$(".email_block").parent().find('i,.text-red').remove();
-	 	// 	$(".email_block").parent().append('<i class="fa fa-check text-green"></i>');
-	 	// }
+	 	var username=$("#user_add_form [name=username]").val();
+	 	var password=$("#user_add_form [name=password]").val();
+	 	var repassword=$("#user_add_form [name=repassword]").val();
+	 	var email=$("#user_add_form [name=email]").val();
+	 	if (!username) {
+	 		$("#user_add_form [name=username]").focus();
+	 		$(".username_block").css("color","red");
+	 		return false;
+	 	}
+	 	check_user(); 
+	 	if (!password) {
+	 		$("#user_add_form [name=password]").focus();
+	 		return false;
+	 	}
+	 	if (!repassword) {
+	 		$("#user_add_form [name=repassword]").focus();
+	 		return false;
+	 	}
+	 	if(password!==repassword){
+	 		layer.msg('两次密码输入不一致', {icon: 2});
+	 		return false;
+	 	}
+	 	if(email){
+	 		var emreg=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,8})+$/;
+	 		if(!emreg.test(email)){
+	 			$(".email_block").parent().find('i').remove();
+	 			$(".email_block").parent().append('<span class="text-red">邮箱格式不正确</span> <i class="fa fa-close text-red"></i>');
+	 			return false;
+	 		};
+	 		$(".email_block").parent().find('i,.text-red').remove();
+	 		$(".email_block").parent().append('<i class="fa fa-check text-green"></i>');
+	 	}
 	 	var loading = layer.load(1, {
-		  shade: [0.5,'#fff'] //0.1透明度的白色背景
-		});
-		return false;
+		  shade: [0.5,'#000'] //0.1透明度的白色背景
+		});  
  		$.ajax({
  			url: 'doAddUser',
  			type: 'post', 
@@ -135,5 +134,35 @@ $("[type=password]").each(function() {
  		$(".user_add_submit").addClass('disabled');
  		return false;
 	});
-	
+	/*
+	列表页切换用户状态	
+	 */
+	$(".user_status").on("click",function(){
+		var status=1; 
+		var userid = $(this).attr("data-userid");
+		$(this).css("display","none");
+		$(this).siblings(".overlay").css("display","block");
+		if($(this).html()=="启用"){
+			status=0;
+		}
+		if(!userid){
+			layer.msg("用户ID错误",['icon',2]);
+			return false;
+		}
+		$.ajax({
+			url: 'changeUserStatus?status='+status+'&userid='+userid,
+			type: 'POST', 
+		})
+		.done(function(json) {
+			var json = eval("("+json+")");
+			if(json.status=='err'){
+				layer.msg(json.msg);
+				return false;
+			}
+			$(this).html(json.msg);
+			$(this).css("display","block");
+			$(this).siblings(".overlay").css("display","none");
+		});
+		
+	});
 });

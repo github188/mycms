@@ -6,7 +6,7 @@ use think\Db\Query;
 class User extends Controller {
 	public function index() { 
 		$this->assign('title', "用户管理");
-		$sql = "select user_name,user_nickname,last_login_time,from_unixtime(create_time) as create_time,user_logintimes from mc_user";
+		$sql = "select id,user_name,user_nickname,last_login_time,user_status,user_logintimes from mc_user";
 		$db_user = new Query();
 		$res = $db_user->query($sql);
 		$this->assign("users",$res);
@@ -29,7 +29,7 @@ class User extends Controller {
 		if($_GET['username']){
 			$username = $_GET['username'];
 			$res=db("mc_user")->where("user_name='$username'")->count();
-			echo json_encode(array("statu"=>1,"msg"=>$res));
+			echo json_encode(array("statu"=>'ok',"msg"=>$res));
 			exit;
 		}else{
 			 parameterErr();
@@ -47,17 +47,42 @@ class User extends Controller {
 			$repassword = $_POST['repassword'];
 			$is_exit=$db->where("user_name='$username'")->count();
 			if($password!==$repassword){
-				echo json_encode(array("statu"=>0,"msg"=>"密码不一致！"));
+				echo json_encode(array("statu"=>'err',"msg"=>"密码不一致！"));
 				exit;
 			} 
 			$res = $db->insert($data); 
 			if($res){
 				echo json_encode(array("statu"=>"ok","msg"=>"添加成功！"));
 			}else{
-				echo json_encode(array("statu"=>0,"msg"=>"数据库繁忙！"));
+				echo json_encode(array("statu"=>'err',"msg"=>"数据库繁忙！"));
 			}
 		}else{  
 			 parameterErr();
+		}
+	}
+	/*
+	changeUserStatus 修改用户状态
+	 */
+	public function changeUserStatus(){
+		if($_GET['status']&&$_GET['userid']){
+			$status = $_GET['status'];
+			$userid = $_GET['userid'];
+			if(!($userid&&db("mc_user")->find($userid))){
+				echo json_encode(array("statu"=>'err',"msg"=>"用户ID错误"));
+				exit;
+			}
+			if(db("mc_user")->where("id='$userid'")->update(array("user_status"=>$status))){
+				if($status=='1'){
+					echo json_encode(array("statu"=>'ok',"msg"=>"禁用"));
+				}else{
+					echo json_encode(array("statu"=>'ok',"msg"=>"启用"));
+				}
+			}else{
+				echo json_encode(array("statu"=>'err',"msg"=>"请重试！"));
+			}
+			
+		}else{
+			parameterErr();
 		}
 	}
 	public function test(){
