@@ -160,8 +160,8 @@ $("[type=password]").each(function() {
 				return false;
 			}
 			$(this).html(json.msg);
-			$(this).css("display","block");
 			$(this).siblings(".overlay").css("display","none");
+			$(this).css("display","block");
 		});
 		
 	});
