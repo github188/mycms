@@ -64,7 +64,7 @@ class User extends Controller {
 	changeUserStatus 修改用户状态
 	 */
 	public function changeUserStatus(){
-		if($_GET['status']&&$_GET['userid']){
+		if(request()->isGet()){
 			$status = $_GET['status'];
 			$userid = $_GET['userid'];
 			if(!($userid&&db("mc_user")->find($userid))){
@@ -72,7 +72,7 @@ class User extends Controller {
 				exit;
 			}
 			if(db("mc_user")->where("id='$userid'")->update(array("user_status"=>$status))){
-				if($status=='1'){
+				if($status=='0'){
 					echo json_encode(array("statu"=>'ok',"msg"=>"禁用"));
 				}else{
 					echo json_encode(array("statu"=>'ok',"msg"=>"启用"));

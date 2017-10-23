@@ -151,7 +151,7 @@ $("[type=password]").each(function() {
 		}
 		$.ajax({
 			url: 'changeUserStatus?status='+status+'&userid='+userid,
-			type: 'POST', 
+			type: 'get', 
 		})
 		.done(function(json) {
 			var json = eval("("+json+")");

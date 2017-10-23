@@ -16690,3 +16690,758 @@
 )
 [ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-23T17:04:54+08:00 ] ::1 ::1 GET /mycms/index/user/index
+[ info ] localhost/mycms/index/user/index [运行时间：0.086088s][吞吐率：11.62req/s] [内存消耗：4,007.66kb] [文件加载：49]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/addUserPage',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+  1 => 'users',
+  2 => 'user_index',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004243s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] select id,user_name,user_nickname,last_login_time,user_status,user_logintimes from mc_user [ RunTime:0.001212s ]
+[ error ] [8]未定义变量: user_role[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:161]
+[ error ] [8]未定义变量: user_permission[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:162]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:311]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:313]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:315]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:316]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:324]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:325]
+---------------------------------------------------------------
+[ 2017-10-23T17:04:55+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=27 [运行时间：0.037476s][吞吐率：26.68req/s] [内存消耗：2,183.86kb] [文件加载：32]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'referer' => 'http://localhost/mycms/index/user/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-23T17:05:27+08:00 ] ::1 ::1 GET /mycms/index/user/index
+[ info ] localhost/mycms/index/user/index [运行时间：0.087663s][吞吐率：11.41req/s] [内存消耗：4,007.80kb] [文件加载：49]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'pragma' => 'no-cache',
+  'cache-control' => 'no-cache',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/addUserPage',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+  1 => 'users',
+  2 => 'user_index',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.008341s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] select id,user_name,user_nickname,last_login_time,user_status,user_logintimes from mc_user [ RunTime:0.001538s ]
+[ error ] [8]未定义变量: user_role[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:161]
+[ error ] [8]未定义变量: user_permission[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:162]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:311]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:313]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:315]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:316]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:324]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:325]
+---------------------------------------------------------------
+[ 2017-10-23T17:05:30+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=1&userid=1
+[ info ] localhost/mycms/index/user/changeUserStatus?status=1&userid=1 [运行时间：0.157290s][吞吐率：6.36req/s] [内存消耗：3,725.26kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'referer' => 'http://localhost/mycms/index/user/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '1',
+  'userid' => '1',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005514s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.005022s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` LIMIT 1 [ RunTime:0.001077s ]
+[ sql ] [ SQL ] UPDATE `mc_user`  SET `user_status`=1  WHERE  (  id='1' ) [ RunTime:0.076938s ]
+---------------------------------------------------------------
+[ 2017-10-23T17:05:44+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=27 [运行时间：0.051367s][吞吐率：19.47req/s] [内存消耗：2,183.86kb] [文件加载：32]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'referer' => 'http://localhost/mycms/index/user/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-23T17:05:49+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=27 [运行时间：0.038628s][吞吐率：25.89req/s] [内存消耗：2,183.54kb] [文件加载：32]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-23T17:05:53+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=27 [运行时间：0.032221s][吞吐率：31.04req/s] [内存消耗：2,183.91kb] [文件加载：32]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-23T17:05:54+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=27 [运行时间：0.024673s][吞吐率：40.53req/s] [内存消耗：2,183.91kb] [文件加载：32]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-23T17:05:54+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=27 [运行时间：0.029523s][吞吐率：33.87req/s] [内存消耗：2,183.91kb] [文件加载：32]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-23T17:05:54+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=27 [运行时间：0.035785s][吞吐率：27.94req/s] [内存消耗：2,183.91kb] [文件加载：32]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-23T17:05:55+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=27 [运行时间：0.029041s][吞吐率：34.43req/s] [内存消耗：2,183.91kb] [文件加载：32]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-23T17:05:55+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=27 [运行时间：0.030067s][吞吐率：33.26req/s] [内存消耗：2,183.91kb] [文件加载：32]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-23T17:05:55+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=27 [运行时间：0.027489s][吞吐率：36.38req/s] [内存消耗：2,183.91kb] [文件加载：32]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-23T17:05:55+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=27 [运行时间：0.031302s][吞吐率：31.95req/s] [内存消耗：2,183.91kb] [文件加载：32]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-23T17:06:33+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=27 [运行时间：0.123703s][吞吐率：8.08req/s] [内存消耗：3,788.37kb] [文件加载：44]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.012363s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.002348s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` LIMIT 1 [ RunTime:0.000856s ]
+[ sql ] [ SQL ] UPDATE `mc_user`  SET `user_status`=0  WHERE  (  id='27' ) [ RunTime:0.045831s ]
+---------------------------------------------------------------
+[ 2017-10-23T17:06:38+08:00 ] ::1 ::1 GET /mycms/index/user/index
+[ info ] localhost/mycms/index/user/index [运行时间：0.077084s][吞吐率：12.97req/s] [内存消耗：4,007.91kb] [文件加载：49]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/addUserPage',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+  1 => 'users',
+  2 => 'user_index',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004152s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] select id,user_name,user_nickname,last_login_time,user_status,user_logintimes from mc_user [ RunTime:0.001238s ]
+[ error ] [8]未定义变量: user_role[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:161]
+[ error ] [8]未定义变量: user_permission[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:162]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:311]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:313]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:315]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:316]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:324]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:325]
+---------------------------------------------------------------
+[ 2017-10-23T17:06:42+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=1&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=1&userid=27 [运行时间：0.103931s][吞吐率：9.62req/s] [内存消耗：3,725.62kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'referer' => 'http://localhost/mycms/index/user/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '1',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003660s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.002463s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` LIMIT 1 [ RunTime:0.001080s ]
+[ sql ] [ SQL ] UPDATE `mc_user`  SET `user_status`=1  WHERE  (  id='27' ) [ RunTime:0.033998s ]
+---------------------------------------------------------------
+[ 2017-10-23T17:06:49+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=1&userid=29
+[ info ] localhost/mycms/index/user/changeUserStatus?status=1&userid=29 [运行时间：0.110692s][吞吐率：9.03req/s] [内存消耗：3,725.62kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'referer' => 'http://localhost/mycms/index/user/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '1',
+  'userid' => '29',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004157s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.002496s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` LIMIT 1 [ RunTime:0.001546s ]
+[ sql ] [ SQL ] UPDATE `mc_user`  SET `user_status`=1  WHERE  (  id='29' ) [ RunTime:0.034883s ]
+---------------------------------------------------------------
+[ 2017-10-23T17:06:53+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=30
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=30 [运行时间：0.096453s][吞吐率：10.37req/s] [内存消耗：3,725.62kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'referer' => 'http://localhost/mycms/index/user/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '30',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005213s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.003664s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` LIMIT 1 [ RunTime:0.000859s ]
+[ sql ] [ SQL ] UPDATE `mc_user`  SET `user_status`=0  WHERE  (  id='30' ) [ RunTime:0.030248s ]
+---------------------------------------------------------------
+[ 2017-10-23T17:07:39+08:00 ] ::1 ::1 GET /mycms/index/user/index
+[ info ] localhost/mycms/index/user/index [运行时间：0.083659s][吞吐率：11.95req/s] [内存消耗：4,007.91kb] [文件加载：49]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/user/addUserPage',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\User->index[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\index.html [ array (
+  0 => 'title',
+  1 => 'users',
+  2 => 'user_index',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.005364s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] select id,user_name,user_nickname,last_login_time,user_status,user_logintimes from mc_user [ RunTime:0.000813s ]
+[ error ] [8]未定义变量: user_role[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:161]
+[ error ] [8]未定义变量: user_permission[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:162]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:311]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:313]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:315]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:316]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:324]
+[ error ] [8]未定义变量: pages[E:\webproject\mycms\runtime\temp\d1fe5ebd7adc87146b0c00c290c1767f.php:325]
+---------------------------------------------------------------
+[ 2017-10-23T17:07:42+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=1
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=1 [运行时间：0.103370s][吞吐率：9.67req/s] [内存消耗：3,725.59kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'referer' => 'http://localhost/mycms/index/user/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '1',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003755s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.002081s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` LIMIT 1 [ RunTime:0.001251s ]
+[ sql ] [ SQL ] UPDATE `mc_user`  SET `user_status`=0  WHERE  (  id='1' ) [ RunTime:0.036691s ]
+---------------------------------------------------------------
+[ 2017-10-23T17:08:18+08:00 ] ::1 ::1 GET /mycms/index/user/changeUserStatus?status=0&userid=27
+[ info ] localhost/mycms/index/user/changeUserStatus?status=0&userid=27 [运行时间：0.161526s][吞吐率：6.19req/s] [内存消耗：3,725.62kb] [文件加载：42]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'user',
+    2 => 'changeUserStatus',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'accept' => '*/*',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36',
+  'referer' => 'http://localhost/mycms/index/user/index',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0; admin_username=admin; PHPSESSID=7tn1t73i1h210k9f4k5o9one87',
+)
+[ info ] [ PARAM ] array (
+  'status' => '0',
+  'userid' => '27',
+)
+[ info ] [ RUN ] app\index\controller\User->changeUserStatus[ E:\webproject\mycms\application\index\controller\User.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009091s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.002259s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` LIMIT 1 [ RunTime:0.001253s ]
+[ sql ] [ SQL ] UPDATE `mc_user`  SET `user_status`=0  WHERE  (  id='27' ) [ RunTime:0.042188s ]
