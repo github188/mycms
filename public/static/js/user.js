@@ -139,6 +139,7 @@ $("[type=password]").each(function() {
 	 */
 	$(".user_status").on("click",function(){
 		var status=1; 
+		var thisattr=$(this);
 		var userid = $(this).attr("data-userid");
 		$(this).css("display","none");
 		$(this).siblings(".overlay").css("display","block");
@@ -159,9 +160,9 @@ $("[type=password]").each(function() {
 				layer.msg(json.msg);
 				return false;
 			}
-			$(this).html(json.msg);
-			$(this).siblings(".overlay").css("display","none");
-			$(this).css("display","block");
+			thisattr.html(json.msg);
+			thisattr.siblings(".overlay").css("display","none");
+			thisattr.css("display","block");
 		});
 		
 	});
