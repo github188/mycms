@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:56:"E:\webproject\mycms/application/index\view\user\add.html";i:1508733288;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:59:"E:\webproject\mycms/application/index\view\index\index.html";i:1508733288;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -167,84 +167,155 @@
     <!-- /.sidebar -->
   </aside> 
   <div class="content-wrapper">   
-
-<link rel="stylesheet" href="__ROOT__/public/static/css/user.css"> 
-<style>
-.content-header{
-    border-bottom: 1px #d2d6de solid;padding-bottom: 10px;
-} 
-.main-box{margin:20px;background-color:#fff;box-shadow: 0px 0px 1px #73080a; border-radius: 5px;}
-.from-box{margin-left:-10px;margin-right: 20px;margin-top:20px;}
-</style> 
- 
   
-<section class="content-header"> 
-   <h1>用户管理 <small>新增用户</small></h1> 
-  </section> 
-  <div class="container"> 
-   <div id="indexcontent"> 
-    <div class="main-box clearfix "> 
-     <div class="col-lg-12"> 
-      <form method="post" id="user_add_form" class="form form-horizontal"> 
-       <div class="row from-box"> 
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">用户名</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="username" id="username" placeholder="用户名"/> 
-          <div class="help-block">
-            字母/数字/字母数字组合,登陆时使用（<span class="username_block">必填</span>）
-          </div> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">昵称/备注</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="user_nick_name" id="user_nick_name"  value="" /> 
-          <div class="help-block">
-            昵称(非必填)
-          </div> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">密码</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <input type="password" class="form-control" name="password" id="password"  value="" /> 
-          <div class="help-block">
-           （<span class="password_block">必填</span>）
-          </div> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">确认密码</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <input type="password" class="form-control" name="repassword" id="repassword"  value="" /> 
-          <div class="repassword-block">
-            （<span class="repassword_block">必填</span>）
-          </div> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">邮箱</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="email" id="email"  value="" /> 
-          <div class="email-block">
-            （<span class="email_block">非必填</span>）
-          </div> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <div class="col-lg-offset-2 col-lg-10">  
-          <button class="btn btn-success user_add_submit" type="button">确 定</button> 
-          <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button> 
-         </div> 
-        </div> 
-       </div> 
-      </form> 
-     </div> 
-    </div> 
-   </div> 
-  </div>
-<script src="__ROOT__/public/static/js/user.js"></script> 
+
+    <section class="content-header">
+      <h1>
+        系统室 
+      </h1>     
+    </section>
+
+    <div class="pad margin no-print">
+      <div class="callout callout-info" style="margin-bottom: 0!important;">
+        <h4><i class="fa fa-info text-red"></i> 最新信息:</h4>
+        系统最新信息.
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <section class="invoice">
+      <!-- title row -->
+      <div class="row">
+        <div class="col-xs-12">
+          <h2 class="page-header">
+            <i class="fa fa-globe"></i> 公告
+            <small class="pull-right">列表</small>
+          </h2>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- info row -->
+ 
+
+      <!-- Table row -->
+      <div class="row">
+        <div class="col-xs-12 table-responsive">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>级别</th>
+              <th>主题</th>
+              <th>附件</th>
+              <th>日期</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td class="text-red">重要</td>
+              <td>文件</td>
+              <td>文件221.pdf</td>
+              <td>20170806 12:11:13</td>
+              <td>查看详情|下载附件</td>
+            </tr>
+            <tr>
+              <td class="text-red">重要</td>
+              <td>文件</td>
+              <td>文件221.pdf</td>
+              <td>20170806 12:11:13</td>
+              <td>查看详情|下载附件</td>
+            </tr>
+            <tr>
+              <td class="text-red">重要</td>
+              <td>文件</td>
+              <td>文件221.pdf</td>
+              <td>20170806 12:11:13</td>
+              <td>查看详情|下载附件</td>
+            </tr>
+            <tr>
+              <td class="text-red">重要</td>
+              <td>文件</td>
+              <td>文件221.pdf</td>
+              <td>20170806 12:11:13</td>
+              <td>查看详情|下载附件</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+      
+        <div class="row">
+        <div class="col-xs-12">
+          <h2 class="page-header">
+            <i class="fa fa-globe"></i> 报警信息
+            <small class="pull-right"><button class='btn btn-link'>点击查看更多</button></small>
+          </h2>
+        </div>
+        <!-- /.col -->
+      </div>
+      <div class="row">
+        <div class="col-xs-12 table-responsive">
+          <table class="table table-striped">
+            <thead>
+            <tr>
+              <th>级别</th>
+              <th>系统名称</th>
+              <th>报警内容</th>
+              <th>报警日期</th>
+              <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td class="text-red">重要</td>
+              <td>外汇卡</td>
+              <td>磁盘空间满，<span class="text-red">100%</span></td>
+              <td>20170806 12:11:13</td>
+              <td><button type="button" class="btn">查看详情</button></td>
+            </tr>
+            <tr>
+              <td class="text-red">重要</td>
+              <td>外汇卡</td>
+              <td>磁盘空间满，<span class="text-red">100%</span></td>
+              <td>20170806 12:11:13</td>
+              <td><button type="button" class="btn">查看详情</button></td>
+            </tr>
+            <tr>
+              <td class="text-red">重要</td>
+              <td>外汇卡</td>
+              <td>磁盘空间满，<span class="text-red">100%</span></td>
+              <td>20170806 12:11:13</td>
+              <td><button type="button" class="btn">查看详情</button></td>
+            </tr>
+            <tr>
+              <td class="text-red">重要</td>
+              <td>外汇卡</td>
+              <td>磁盘空间满，<span class="text-red">100%</span></td>
+              <td>20170806 12:11:13</td>
+              <td><button type="button" class="btn">查看详情</button></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+
+      <!-- this row will not appear when printing -->
+      <div class="row no-print">
+        <div class="col-xs-12"> 
+          <button type="button" class="btn btn-success pull-right"><i class="fa fa-windows"></i> Windows巡检 
+          </button>
+          <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
+            <i class="fa fa-linux"></i> Linux巡检 
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- /.content -->
+    <div class="clearfix"></div>
  
   </div>  
   <div class="control-sidebar-bg"></div>

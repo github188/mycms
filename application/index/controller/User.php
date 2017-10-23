@@ -35,8 +35,7 @@ class User extends Controller {
 			 parameterErr();
 		}
 	}
-	public function doAddUser(){ 
-
+	public function doAddUser(){  
 		if(request()->isPost()){
 			$db=db('mc_user');
 			$data['user_name'] = $_POST['username'];
@@ -62,7 +61,6 @@ class User extends Controller {
 		}
 	}
 	public function test(){
-		echo strtotime(date("Y-m-d H:i:s",time()));
-
+		echo strtotime(date("Y-m-d H:i:s",time())); 
 	}
 }
