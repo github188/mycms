@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1508463097;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508402278;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508401497;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508317073;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508402930;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1508731833;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508402278;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508401497;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508317073;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508402930;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -220,9 +220,9 @@
                 <div class="blank10"></div>
                 <div id="admin">
                     <div id="tablebody" style="position:relative;">
-                        <table style="margin:0px" class="table table-striped table-bordered table-hover"  > 
+                        <table style="margin:0px;background-color: #fff;" class="table  table-bordered table-hover dataTable"  > 
                             <tr>
-                                <th width="40"></th> 
+                                <th width="40">#</th> 
                                 <th>
                                     <div align="center">用户名&nbsp;
                                         <i class="icon-sort cursor" lx="desc" tempsort="1"></i></div>
@@ -246,30 +246,30 @@
                                 </th>   
                             </tr> 
                             <tbody id="tableShowUsers">
-                            <volist name='users' id='users' key='key'>
+                            <?php if(is_array($users) || $users instanceof \think\Collection || $users instanceof \think\Paginator): $key = 0; $__LIST__ = $users;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$users): $mod = ($key % 2 );++$key;?>
                                 <tr>
                                     <th width="40">
                                         <?php echo $key; ?>
-                                        <input type="hidden" name="userid" value="<?php echo $users['userid']; ?>">
-                                        <input type="hidden" name="username" value="<?php echo $users['username']; ?>">
+                                        <input type="hidden" name="userid" value="<?php echo $users['id']; ?>">
+                                        <input type="hidden" name="username" value="<?php echo $users['user_name']; ?>">
                                     </th> 
                                     <th>
-                                        <?php echo $users['username']; ?>
+                                        <?php echo $users['user_name']; ?>
                                     </th>
                                     <th nowrap="">
-                                        <?php echo $users['nickname']; ?>
+                                        <?php echo $users['user_nickname']; ?>
                                     </th> 
                                     <th nowrap="">
-                                        <?php echo $users['last_login']; ?>
+                                        <?php echo $users['last_login_time']; ?>
                                     </th>
                                     <th nowrap="">
-                                        <?php echo $users['reg_date']; ?>
+                                        <?php echo $users['create_time']; ?>
                                     </th>
                                     <th nowrap="">
-                                        <?php echo $users['logintimes']; ?>
+                                        <?php echo $users['user_logintimes']; ?>
                                     </th>
                                 </tr>
-                            </volist> </tbody>
+                            <?php endforeach; endif; else: echo "" ;endif; ?> </tbody>
                         </table>
                     </div> 
                     <div id="tablefanye">

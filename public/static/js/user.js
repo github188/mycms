@@ -5,8 +5,8 @@ $(function($){
 	 /*
 	 验证用户名是否存在
 	  */
-	$("#user_add_form [name=username]").on("blur",function(){
-		var username = $(this).val();
+	function check_user(){
+		var username = $("#user_add_form [name=username]").val();
 		if (!username) {
 	 		$("#user_add_form [name=username]").focus();
 	 		$(".username_block").css("color","red");
@@ -26,18 +26,28 @@ $(function($){
 	 			var json=eval("("+json+")");
 	 			if(json.statu){
 	 				if(json.msg){
-	 					layer.msg('参数错误！', {icon: 2});
+	 					$(".username_block").parent().find('i,.text-red').remove();
+	 					$(".username_block").parent().append('<span class="text-red">该用户名已经被使用</span><i class="fa fa-close text-red"></i>');
+	 					$("#user_add_form [name=username]").focus();
+	 					return false;
 	 				}else{
-	 					$(".username_block").parent().find('i').remove();
+	 					$(".username_block").parent().find('i,.text-red').remove();
 	 					$(".username_block").parent().append('<i class="fa fa-check text-green"></i>');
+	 					return true;
 	 				}
 	 			}else{
 	 				layer.msg('参数错误！', {icon: 2});
+	 				return false;
 	 			}
 	 		}
 	 	}) 
-	 	 
+	}
+	$("#user_add_form [name=username]").on("blur",function(){
+		check_user(); 
 	});
+	/*
+	判断密码是否一致
+	 */
 $("[type=password]").each(function() {
 	$(this).on("blur",function() {
 		var which = 'password';
@@ -79,6 +89,7 @@ $("[type=password]").each(function() {
 	 		$(".username_block").css("color","red");
 	 		return false;
 	 	}
+	 	check_user(); 
 	 	if (!password) {
 	 		$("#user_add_form [name=password]").focus();
 	 		return false;
@@ -94,12 +105,28 @@ $("[type=password]").each(function() {
 	 	if(email){
 	 		var emreg=/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,8})+$/;
 	 		if(!emreg.test(email)){
-	 			$(".repassword_block").parent().find('i').remove();
-	 			$(".repassword_block").parent().append('<i class="fa fa-check text-green"></i>');
+	 			$(".email_block").parent().find('i').remove();
+	 			$(".email_block").parent().append('<span class="text-red">邮箱格式不正确</span> <i class="fa fa-close text-red"></i>');
 	 			return false;
 	 		};
+	 		$(".email_block").parent().find('i,.text-red').remove();
+	 		$(".email_block").parent().append('<i class="fa fa-check text-green"></i>');
 	 	}
- 		console.log("addUserPage");
+ 		$.ajax({
+ 			url: 'doAddUser',
+ 			type: 'post', 
+ 			data: $("#user_add_form").serialize(),
+ 			success:function(json){
+ 				var json=eval("("+json+")");
+ 				layer.msg(json.msg,function(){
+ 					 location.href="index";
+ 				});
+ 			}
+ 		}) 
+ 		.fail(function() {
+ 			layer.msg("error"); 
+ 		});
+ 		
  		return false;
 	});
 	

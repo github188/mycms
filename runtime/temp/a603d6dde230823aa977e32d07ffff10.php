@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:56:"E:\webproject\mycms/application/index\view\user\add.html";i:1508484970;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508402278;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508401497;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508317073;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508402930;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:56:"E:\webproject\mycms/application/index\view\user\add.html";i:1508725401;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508402278;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508401497;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508311287;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508317073;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508402930;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -199,16 +199,16 @@
         <div class="form-group"> 
          <label class="col-lg-2 control-label">昵称/备注</label> 
          <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="user_nick_name" id="user_nick_name" autocomplete="false" value="" /> 
+          <input type="text" class="form-control" name="user_nick_name" id="user_nick_name"  value="" /> 
           <div class="help-block">
-            昵称
+            昵称(非必填)
           </div> 
          </div> 
         </div> 
         <div class="form-group"> 
          <label class="col-lg-2 control-label">密码</label> 
          <div class="col-lg-10 col-sm-10"> 
-          <input type="password" class="form-control" name="password" id="password" autocomplete="false" value="" /> 
+          <input type="password" class="form-control" name="password" id="password"  value="" /> 
           <div class="help-block">
            （<span class="password_block">必填</span>）
           </div> 
@@ -217,8 +217,8 @@
         <div class="form-group"> 
          <label class="col-lg-2 control-label">确认密码</label> 
          <div class="col-lg-10 col-sm-10"> 
-          <input type="password" class="form-control" name="repassword" id="repassword" autocomplete="false" value="" /> 
-          <div class="help-block">
+          <input type="password" class="form-control" name="repassword" id="repassword"  value="" /> 
+          <div class="repassword-block">
             （<span class="repassword_block">必填</span>）
           </div> 
          </div> 
@@ -226,15 +226,14 @@
         <div class="form-group"> 
          <label class="col-lg-2 control-label">邮箱</label> 
          <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="email" id="email" autocomplete="false" value="" /> 
-          <div class="help-block">
-            
+          <input type="text" class="form-control" name="email" id="email"  value="" /> 
+          <div class="email-block">
+            （<span class="email_block">非必填</span>）
           </div> 
          </div> 
         </div> 
         <div class="form-group"> 
-         <div class="col-lg-offset-2 col-lg-10"> 
-          <input type="hidden" name="id" value="" /> 
+         <div class="col-lg-offset-2 col-lg-10">  
           <button class="btn btn-success user_add_submit" type="button">确 定</button> 
           <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button> 
          </div> 
