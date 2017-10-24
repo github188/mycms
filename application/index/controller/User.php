@@ -85,6 +85,46 @@ class User extends Controller {
 			parameterErr();
 		}
 	}
+	/*
+	del 删除用户
+	 */
+	public function del($id=0){
+		//获取用户信息
+		$find = $this->getUserinfo($id);  
+		if($userinfo['user_name']==='admin'){
+			return $this->error($errormsg ? $errormsg : '超级用户不能删除！');
+		}else if($find["user_name"]===session("username")){
+			return $this->error($errormsg ? $errormsg : '不能删除自己！');
+		}else{
+			db('mc_user')->where(array('id' => $id))->delete();
+			return $this->success('删除用户成功！');
+		}; 
+	}
+	/**
+	 * 获取用户信息
+	 * @author 钟朝辉 <zzhhuii@qq.com>
+	 * @date   2017-10-24T10:35:19+0800
+	 * @param  $uid 用户ID
+	 * @return array 用户信息
+	 */
+	public function getUserinfo($uid=0){
+		$uid  = $uid ? $uid : input('id'); 
+		$uid  = $uid ? $uid : 0;
+		$map=array( 
+			'id'=>$uid
+		);
+		$list = db('mc_user')->where($map)->find(); 
+		if(!$list){
+			return $this->error($errormsg ? $errormsg : '不存在此用户！');
+		}
+		return $list;
+	}
+	/**
+	 * [test description]
+	 * @author 钟朝辉 <zzhhuii@qq.com>
+	 * @date   2017-10-24T10:34:55+0800
+	 * @return [type]                   [description]
+	 */
 	public function test(){
 		echo strtotime(date("Y-m-d H:i:s",time())); 
 	}

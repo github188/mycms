@@ -140,9 +140,13 @@ $("[type=password]").each(function() {
 	$(".user_status").on("click",function(){
 		var status=1; 
 		var thisattr=$(this);
+		var username = thisattr.attr("data-username");
+		if(username=='admin'){ 
+			return false;
+		}
 		var userid = $(this).attr("data-userid");
 		$(this).css("display","none");
-		$(this).siblings(".overlay").css("display","block");
+		$(this).siblings(".overlay").css("display","");
 		if($(this).html()=="启用"){
 			status=0;
 		}
@@ -161,9 +165,31 @@ $("[type=password]").each(function() {
 				return false;
 			}
 			thisattr.html(json.msg);
+			if(json.msg=="禁用"){
+				thisattr.removeClass('label-primary');
+				thisattr.addClass('label-danger');
+			}else{
+				thisattr.removeClass('label-danger');
+				thisattr.addClass('label-primary');
+			}
 			thisattr.siblings(".overlay").css("display","none");
-			thisattr.css("display","block");
-		});
-		
+			thisattr.css("display","");
+		});		
+	});
+	/*
+	ajax-get 
+	 */
+	$(".ajax-get").on("click",function(e){
+		 e.preventDefault;
+		 var url = $(this).attr("href");
+		 $.ajax({
+		 	url: url,
+		 })
+		 .done(function(json) {
+		 	layer.msg(json.msg,function(){
+		 		location.reload();
+		 	}); 
+		 }); 
+		return false;
 	});
 });

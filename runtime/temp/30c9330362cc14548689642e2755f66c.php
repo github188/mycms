@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1508827118;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508829892;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\menu\index.html";i:1508831851;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508829892;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -194,8 +194,8 @@
   
 <section class="content-header" style="border-bottom: 1px #d2d6de solid;padding-bottom: 10px; ">
       <h1>
-        用户管理
-        <small>用户列表</small>
+        菜单管理
+        <small>菜单列表</small>
       </h1>
 <!--       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -208,25 +208,25 @@
     <div  id="indexcontent">
         <div style="margin:10px;" id="content_allmainview">  
             <!--home--end-->
-            <div id="content_users" temp="content"  >
+            <div id="content_menus" temp="content"  >
                 <div>
                     <ul class="floats">
                         <li class="floats50">
                         <if condition="$add eq ok">
-                            <button type="button" id="user_add_button" class="btn btn-primary">
-                                <i class="icon-plus"></i>新增用户</button>&nbsp; 
+                            <button type="button" id="add_menu_button" class="btn btn-primary">
+                                <i class="icon-plus"></i>新增菜单</button>&nbsp; 
                         </if> 
                         </li>
                         <li class="floats30">
                             <div style="width:250px" class="input-group">
-                                <input  placeholder="用户名/昵称" id="SUserKey" class="form-control">
+                             <!--    <input  placeholder="用户名/昵称" id="SUserKey" class="form-control">
                                 <span class="input-group-btn">
                                     <button type="button" click="search" class="btn btn-default">
                                         <i class="fa fa-search"></i>
                                     </button>
-                                </span>
+                                </span> -->
                             </div>
-                        </li> 
+                        </li>  
                     </ul>
                 </div>
                 <div class="blank10"></div>
@@ -335,7 +335,7 @@
         </div>
     </div>
 </div> 
-<script src="__ROOT__/public/static/js/user.js"></script> 
+<script src="__ROOT__/public/static/js/menu.js"></script> 
  
   </div>  
   <div class="control-sidebar-bg"></div>

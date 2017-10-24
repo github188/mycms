@@ -1,0 +1,106 @@
+{extend name="public/base"}  
+{block name="style"}
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css"> 
+<style>
+.content-header{
+    border-bottom: 1px #d2d6de solid;padding-bottom: 10px;
+} 
+.main-box{margin:20px;background-color:#fff;box-shadow: 0px 0px 1px #73080a; border-radius: 5px;}
+.from-box{margin-left:-10px;margin-right: 20px;margin-top:20px;}
+</style> 
+{/block}
+{block name="body"}  
+<section class="content-header"> 
+   <h1>菜单管理 <small>新增菜单</small></h1> 
+  </section> 
+  <div class="container"> 
+   <div id="indexcontent"> 
+    <div class="main-box clearfix "> 
+     <div class="col-lg-12"> 
+      <form method="post" id="menu_edit_form" class="form form-horizontal"> 
+       <div class="row from-box"> 
+        <div class="form-group"> 
+         <label class="col-lg-2 control-label">标题</label> 
+         <div class="col-lg-10 col-sm-10"> 
+          <input type="text" class="form-control" name="title" value="{$info.title|default=''}">
+          <div class="help-block">
+            用于导航显示（<span class="title_block text-red">必填</span>）
+          </div> 
+         </div> 
+        </div> 
+        <div class="form-group"> 
+         <label class="col-lg-2 control-label">小图标</label> 
+         <div class="col-lg-10 col-sm-10"> 
+          <input type="text" class="form-control" name="icon" value="{$info.icon|default=''}" /> 
+          <div class="help-block">
+            （用于显示在菜单左侧，不填则不显示）
+          </div> 
+         </div> 
+        </div> 
+        <div class="form-group"> 
+         <label class="col-lg-2 control-label">排序</label> 
+         <div class="col-lg-10 col-sm-10"> 
+          <input type="text" class="form-control" name="sort" value="{$info.sort|default=0}" /> 
+          <div class="help-block">
+           （<span class="password_block">用于分组显示的顺序</span>）
+          </div> 
+         </div> 
+        </div>  
+        <div class="form-group"> 
+         <label class="col-lg-2 control-label">链接</label> 
+         <div class="col-lg-10 col-sm-10"> 
+          <input type="text" class="form-control" name="url" value="{$info.url|default=''}" /> 
+          <div class="help-block">
+           （<span class="password_block text-red">必填</span>）
+          </div> 
+         </div> 
+        </div>
+        <div class="form-group"> 
+         <label class="col-lg-2 control-label">上级菜单</label> 
+         <div class="col-lg-10 col-sm-10"> 
+          <select name="pid" class="form-control" style="width: 50%">
+                        <option value="0" selected="">顶级菜单</option>
+                        {volist name="Menus" id="menu"}
+                        <option value="{$menu['id']}" {if $info['pid'] == $menu['id']}selected{/if}>{$menu.title_show}</option>
+                        {/volist}
+                      </select>
+          <div class="repassword-block"> 
+          </div> 
+         </div> 
+        </div>
+        <div class="form-group"> 
+         <label class="col-lg-2 control-label">是否显示</label> 
+         <div class="col-lg-10 col-sm-10"> 
+          <select name="hide" class="form-control">
+            <option value="0">否</option>
+            <option selected value="1">是
+            </option>
+          </select> 
+          <div class="email-block">
+             
+          </div> 
+         </div> 
+        </div> 
+        <div class="form-group"> 
+         <label class="col-lg-2 control-label">说明</label> 
+         <div class="col-lg-10 col-sm-10"> 
+           <input type="password" class="form-control"name="tip" value="{$info.tip|default=''}" />  
+          <div class="email-block">
+            （<span class="email_block">菜单详细说明</span>）
+          </div> 
+         </div> 
+        </div> 
+        <div class="form-group"> 
+         <div class="col-lg-offset-2 col-lg-10">  
+          <button class="btn btn-success add_menu_submit" type="button">确 定</button> 
+          <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button> 
+         </div> 
+        </div> 
+       </div> 
+      </form> 
+     </div> 
+    </div> 
+   </div> 
+  </div>
+<script src="__ROOT__/public/static/js/menu.js"></script> 
+{/block}
