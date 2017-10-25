@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\menu\edit.html";i:1508895086;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508829892;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\menu\edit.html";i:1508919684;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508829892;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -191,7 +191,7 @@
  
   
 <section class="content-header"> 
-   <h1>菜单管理 <small>新增菜单</small></h1> 
+   <h1><a class="title" id="add_menu_button" href="<?php echo url('index'); ?>">菜单管理</a> <small><?php echo isset($info['id'])?'编辑':'新增'; ?>菜单</small></h1> 
   </section> 
   <div class="container"> 
    <div id="indexcontent"> 
@@ -231,15 +231,14 @@
          <div class="col-lg-10 col-sm-10"> 
           <input type="text" class="form-control" name="url" value="<?php echo (isset($info['url']) && ($info['url'] !== '')?$info['url']:''); ?>" /> 
           <div class="help-block">
-           （<span class="password_block text-red">必填</span>）
+           （<span class="password_block text-red">二级菜单必填</span>）
           </div> 
          </div> 
         </div>
         <div class="form-group"> 
          <label class="col-lg-2 control-label">上级菜单</label> 
          <div class="col-lg-10 col-sm-10"> 
-          <select name="pid" class="form-control" style="width: 50%">
-                        <option value="0" selected="">顶级菜单</option>
+          <select name="pid" class="form-control" style="width: 50%"> 
                         <?php if(is_array($Menus) || $Menus instanceof \think\Collection || $Menus instanceof \think\Paginator): $i = 0; $__LIST__ = $Menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?>
                         <option value="<?php echo $menu['id']; ?>" <?php if($info['pid'] == $menu['id']): ?>selected<?php endif; ?>><?php echo $menu['title_show']; ?></option>
                         <?php endforeach; endif; else: echo "" ;endif; ?>
@@ -272,6 +271,7 @@
         </div> 
         <div class="form-group"> 
          <div class="col-lg-offset-2 col-lg-10">  
+          <input type="hidden" name="id" value="<?php echo (isset($info['id']) && ($info['id'] !== '')?$info['id']:''); ?>">
           <button class="btn btn-success add_menu_submit" type="button">确 定</button> 
           <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button> 
          </div> 

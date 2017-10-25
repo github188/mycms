@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:59:"E:\webproject\mycms/application/index\view\index\index.html";i:1508733288;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508921327;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\role\index.html";i:1508922804;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508921327;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -179,155 +179,59 @@
     <!-- /.sidebar -->
   </aside> 
   <div class="content-wrapper">   
-  
 
-    <section class="content-header">
-      <h1>
-        系统室 
-      </h1>     
-    </section>
-
-    <div class="pad margin no-print">
-      <div class="callout callout-info" style="margin-bottom: 0!important;">
-        <h4><i class="fa fa-info text-red"></i> 最新信息:</h4>
-        系统最新信息.
-      </div>
-    </div>
-
-    <!-- Main content -->
-    <section class="invoice">
-      <!-- title row -->
-      <div class="row">
-        <div class="col-xs-12">
-          <h2 class="page-header">
-            <i class="fa fa-globe"></i> 公告
-            <small class="pull-right">列表</small>
-          </h2>
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- info row -->
+ <style>
+ 	.content-header{
+ 		border-bottom: 1px #d2d6de solid;padding-bottom: 10px; 
+ 	}
+ 	.action-btn{
+		float: right;
+        background: transparent;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 12px;
+        padding: 7px 5px;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        border-radius: 2px;
+ 	}
+ </style>
  
-
-      <!-- Table row -->
-      <div class="row">
-        <div class="col-xs-12 table-responsive">
-          <table class="table table-striped">
-            <thead>
-            <tr>
-              <th>级别</th>
-              <th>主题</th>
-              <th>附件</th>
-              <th>日期</th>
-              <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>文件</td>
-              <td>文件221.pdf</td>
-              <td>20170806 12:11:13</td>
-              <td>查看详情|下载附件</td>
-            </tr>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>文件</td>
-              <td>文件221.pdf</td>
-              <td>20170806 12:11:13</td>
-              <td>查看详情|下载附件</td>
-            </tr>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>文件</td>
-              <td>文件221.pdf</td>
-              <td>20170806 12:11:13</td>
-              <td>查看详情|下载附件</td>
-            </tr>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>文件</td>
-              <td>文件221.pdf</td>
-              <td>20170806 12:11:13</td>
-              <td>查看详情|下载附件</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-      
-        <div class="row">
-        <div class="col-xs-12">
-          <h2 class="page-header">
-            <i class="fa fa-globe"></i> 报警信息
-            <small class="pull-right"><button class='btn btn-link'>点击查看更多</button></small>
-          </h2>
-        </div>
-        <!-- /.col -->
-      </div>
-      <div class="row">
-        <div class="col-xs-12 table-responsive">
-          <table class="table table-striped">
-            <thead>
-            <tr>
-              <th>级别</th>
-              <th>系统名称</th>
-              <th>报警内容</th>
-              <th>报警日期</th>
-              <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>外汇卡</td>
-              <td>磁盘空间满，<span class="text-red">100%</span></td>
-              <td>20170806 12:11:13</td>
-              <td><button type="button" class="btn">查看详情</button></td>
-            </tr>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>外汇卡</td>
-              <td>磁盘空间满，<span class="text-red">100%</span></td>
-              <td>20170806 12:11:13</td>
-              <td><button type="button" class="btn">查看详情</button></td>
-            </tr>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>外汇卡</td>
-              <td>磁盘空间满，<span class="text-red">100%</span></td>
-              <td>20170806 12:11:13</td>
-              <td><button type="button" class="btn">查看详情</button></td>
-            </tr>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>外汇卡</td>
-              <td>磁盘空间满，<span class="text-red">100%</span></td>
-              <td>20170806 12:11:13</td>
-              <td><button type="button" class="btn">查看详情</button></td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-
-      <!-- this row will not appear when printing -->
-      <div class="row no-print">
-        <div class="col-xs-12"> 
-          <button type="button" class="btn btn-success pull-right"><i class="fa fa-windows"></i> Windows巡检 
-          </button>
-          <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
-            <i class="fa fa-linux"></i> Linux巡检 
-          </button>
-        </div>
-      </div>
-    </section>
-    <!-- /.content -->
-    <div class="clearfix"></div>
+  
+<section class="content-header"> 
+   <h1> 用户管理 <small>用户列表</small> </h1>  
+   <div class="pull-right  action-btn clearfix"> 
+    <a class="btn btn-primary" href="<?php echo url('add'); ?>">新增角色</a> 
+   </div> 
+   <div class="clearfix"></div>
+  </section> 
+  <div class="main-box-body"> 
+   <table class="table  table-bordered table-hover table-striped"> 
+    <thead> 
+     <tr> 
+      <th width="30"><input class="checkbox check-all" type="checkbox" /></th> 
+      <th width="60">ID</th> 
+      <th>组名</th> 
+      <th>描述</th> 
+      <th>状态</th> 
+      <th>操作</th> 
+     </tr> 
+    </thead> 
+    <tbody>
+    <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?> 
+     <tr> 
+      <td><input class="ids row-selected" type="checkbox" name="ids[]" value="<?php echo $item['id']; ?>" /></td> 
+      <td><?php echo $item['id']; ?></td> 
+      <td><a href="#" class="editable editable-click" data-id="<?php echo $item['id']; ?>" data-name="title" data-type="text" data-pk="<?php echo $item['id']; ?>" data-url="<?php echo url('editable'); ?>"><?php echo $item['title']; ?></a></td> 
+      <td><?php echo $item['description']; ?></td> 
+      <td> <?php if($item['status'] == '0'): ?> <span class="label label-danger">禁用</span> <?php elseif($item['status'] == '1'): ?> <span class="label label-primary">启用</span> <?php endif; ?> </td> 
+      <td> <a href="<?php echo url('Group/edit',array('id'=>$item['id'])); ?>">编辑</a> <a href="<?php echo url('Group/auth',array('id'=>$item['id'])); ?>">授权</a> <a href="<?php echo url('Group/del',array('id'=>$item['id'])); ?>" class="confirm ajax-get">删除</a> </td> 
+     </tr>
+    <?php endforeach; endif; else: echo "" ;endif; ?> 
+    </tbody> 
+   </table>  
+  </div>
  
   </div>  
   <div class="control-sidebar-bg"></div>

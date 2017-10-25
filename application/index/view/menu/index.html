@@ -16,115 +16,74 @@
       <h1>
         菜单管理
         <small>菜单列表</small>
-      </h1>
-<!--       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">用户管理</a></li>
-        <li class="active">用户列表</li>
-      </ol> -->
+      </h1> 
     </section>
 
 <div class="container"> 
     <div  id="indexcontent">
-        <div style="margin:10px;" id="content_allmainview">  
-            <!--home--end-->
-            <div id="content_menus" temp="content"  >
-                <div>
-                    <ul class="floats">
-                        <li class="floats50">
-                        <if condition="$add eq ok">
-                            <button type="button" id="add_menu_button" class="btn btn-primary">
-                                <i class="icon-plus"></i>新增菜单</button>&nbsp; 
-                        </if> 
-                        </li>
-                        <li class="floats30">
-                            <div style="width:250px" class="input-group">
-                             <!--    <input  placeholder="用户名/昵称" id="SUserKey" class="form-control">
-                                <span class="input-group-btn">
-                                    <button type="button" click="search" class="btn btn-default">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span> -->
-                            </div>
-                        </li>  
-                    </ul>
+        <div style="margin:10px;background-color: #fff;" id="content_allmainview">   
+            <div id="content_menus" temp="content"  >  
+                <div class="pull-right"> 
+                    <a class="btn btn-primary" id="add_menu_button" href="{:url('add',array('pid'=>input('get.pid',0)))}">新 增</a>
+                    <button class="btn btn-danger ajax-post confirm" url="{:url('del')}" target-form="ids">删 除</button> 
                 </div>
                 <div class="blank10"></div>
                 <div id="admin">
-                    <div id="tablebody" style="position:relative;">
-                        <table style="margin:0px;background-color: #fff;" class="table  table-bordered table-hover table-striped dataTable"  > 
+                    <div id="tablebody" >
+                        <table style="margin:0px;background-color: #fff;" class="table  table-bordered table-hover table-striped"  > 
+                             <tr>
+                            <th class="row-selected">
+                                <input class="checkbox check-all" type="checkbox">
+                            </th>
+                            <th>ID</th>
+                            <th>名称</th>
+                            <th>上级菜单</th>
+                            <th>分组</th>
+                            <th>URL</th>
+                            <th>排序</th>
+                            <th>仅开发者模式显示</th>
+                            <th>隐藏</th>
+                            <th>操作</th>
+                        </tr>
+                            <tbody>
+                       {notempty name="list"}
+                        {volist name="list" id="menu"}
                             <tr>
-                                <th width="40">#</th> 
-                                <th>
-                                    <div align="center">用户名&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="1"></i></div>
-                                </th>
-                                <th>
-                                    <div align="center" >昵称&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="2"></i></div>
-                                </th> 
-                                <th>
-                                    <div align="center" >
-                                        <i class="icon-pencil"></i>&nbsp;最近登陆时间&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="6"></i></div>
-                                </th> 
-                                <th>
-                                    <div align="center" >登录次数&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="8"></i></div>
-                                </th> 
-                                <th>
-                                    <div align="center" >状态&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="8"></i></div>
-                                </th> 
-                                <th>
-                                    <div align="center" >操作&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="8"></i></div>
-                                </th>   
-                            </tr> 
-                            <tbody id="tableShowUsers">
-                            {volist name='users' id='users' key='key'}
-                                <tr>
-                                    <td width="40">
-                                        {$key}
-                                        <input type="hidden" name="userid" value="{$users.id}">
-                                        <input type="hidden" name="username" value="{$users.user_name}">
-                                    </td> 
-                                    <td>
-                                        {$users.user_name}
-                                    </td>
-                                    <td>
-                                        {$users.user_nickname}
-                                    </td> 
-                                    <td>
-                                        {$users.last_login_time}
-                                    </td> 
-                                    <td>
-                                        {$users.user_logintimes}
-                                    </td>
-                                    <td>
-                                        {if condition="$users.user_status"}
-                                        <span data-userid="{$users.id}" class="label label-primary  user_status" {if condition='$users.user_name eq admin'} data-username='admin' {/if}>启用</span>
-                                        {else/}
-                                        <span data-userid="{$users.id}" class="label label-danger user_status">禁用</span>
-                                        {/if}
-                                        <div class="overlay">
-                                          <i class="fa fa-refresh fa-spin"></i>
-                                        </div>
-                                    </td>
-                                    <td>{if condition="$users.user_name neq 'admin'"}
-                                        <a href="{:url('user/edit',array('id'=>$users['id']))}" class="table-link" >
-                                            编辑
-                                        </a>
-                                        <a href="{:url('user/auth',array('id'=>$users['id']))}" class="table-link">
-                                            授权
-                                        </a>
-                                        <a href="{:url('user/del',array('id'=>$users['id']))}" class="table-link confirm ajax-get">
-                                            删除
-                                        </a>
-                                        {/if}
-                                    </td>
-                                </tr>
-                            {/volist} </tbody>
+                                <td><input class="ids row-selected" type="checkbox" name="id[]" value="{$menu.id}"></td>
+                                <td>{$menu.id}</td>
+                                <td>
+                                    {$menu['level_show']}
+                                    <a href="#" class="editable editable-click" data-id="{$menu['id']}" data-name="title" data-type="text" data-pk="{$menu['id']}" data-url="{:url('editable')}">{$menu['title']}</a>
+                                    <a class="add-sub-cate" title="添加子分类" href="{:url('add?pid='.$menu['id'])}">
+                                        <i class="fa fa-plus-square"></i>
+                                    </a>
+                                </td>
+                                <td>{$menu.up_title|default='无'}</td>
+                                <td>{$menu.group}</td>
+                                <td>{$menu.url}</td>
+                                <td><a href="#" class="editable editable-click" data-id="{$menu['id']}" data-name="sort" data-type="text" data-pk="{$menu['id']}" data-url="{:url('editable')}">{$menu['sort']}</a></td>
+                                <td>
+                                    <a href="{:url('toogleDev',array('id'=>$menu['id'],'value'=>abs($menu['is_dev']-1)))}"
+                                       class="ajax-get">
+                                        {$menu.is_dev_text}
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="{:url('toogleHide',array('id'=>$menu['id'],'value'=>abs($menu['hide']-1)))}"
+                                       class="ajax-get">
+                                        {$menu.hide_text}
+                                    </a>
+                                </td>
+                                <td>
+                                    <a title="编辑" href="{:url('edit?id='.$menu['id'])}">编辑</a>
+                                    <a class="confirm ajax-get" title="删除" href="{:url('del?id='.$menu['id'])}">删除</a>
+                                </td>
+                            </tr>
+                        {/volist}
+                    {else/}
+                        <td colspan="10" class="text-center"> aOh! 暂时还没有内容!</td>
+                    {/notempty}
+                            </tbody>
                         </table>
                     </div> 
                     <div id="tablefanye">

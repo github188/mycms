@@ -24,12 +24,11 @@ $(function($){
  			url: 'add',
  			type: 'post', 
  			data: $("#menu_edit_form").serialize(),
- 			success:function(json){
- 				// var json=eval("("+json+")");
+ 			success:function(json){ 
  				layer.close(loading);
  				layer.msg(json.msg,function(){
  					if(json.code==1){
- 					 //location.href=json.url;
+ 					 location.href=json.url;
  					}
  				});
  			}
@@ -41,4 +40,5 @@ $(function($){
  		$(".add_menu_submit").addClass('disabled');
 		return false;
 	});
+	
 });

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\menu\index.html";i:1508831851;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508829892;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\menu\index.html";i:1508919629;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508921327;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -159,7 +159,7 @@
           <ul class="treeview-menu">
             <li class="<?php echo $user_menu; ?>"><a href="<?php echo url('index/menu/index'); ?>"><i class="fa fa-circle-o"></i> 菜单管理</a></li>
             <li class="<?php echo $user_index; ?>"><a href="<?php echo url('index/user/index'); ?>"><i class="fa fa-circle-o"></i> 用户管理</a></li>
-            <li class="<?php echo $user_role; ?>"><a href="<?php echo url('/index/user/role'); ?>"><i class="fa fa-circle-o"></i> 角色管理</a></li>
+            <li class="<?php echo $user_role; ?>"><a href="<?php echo url('/index/role/index'); ?>"><i class="fa fa-circle-o"></i> 角色管理</a></li>
             <li class="<?php echo $user_permission; ?>"><a href="<?php echo url('index/user/permission'); ?>"><i class="fa fa-circle-o"></i> 权限管理</a></li>
           </ul>
         </li> 
@@ -196,115 +196,72 @@
       <h1>
         菜单管理
         <small>菜单列表</small>
-      </h1>
-<!--       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">用户管理</a></li>
-        <li class="active">用户列表</li>
-      </ol> -->
+      </h1> 
     </section>
 
 <div class="container"> 
     <div  id="indexcontent">
-        <div style="margin:10px;" id="content_allmainview">  
-            <!--home--end-->
-            <div id="content_menus" temp="content"  >
-                <div>
-                    <ul class="floats">
-                        <li class="floats50">
-                        <if condition="$add eq ok">
-                            <button type="button" id="add_menu_button" class="btn btn-primary">
-                                <i class="icon-plus"></i>新增菜单</button>&nbsp; 
-                        </if> 
-                        </li>
-                        <li class="floats30">
-                            <div style="width:250px" class="input-group">
-                             <!--    <input  placeholder="用户名/昵称" id="SUserKey" class="form-control">
-                                <span class="input-group-btn">
-                                    <button type="button" click="search" class="btn btn-default">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span> -->
-                            </div>
-                        </li>  
-                    </ul>
+        <div style="margin:10px;background-color: #fff;" id="content_allmainview">   
+            <div id="content_menus" temp="content"  >  
+                <div class="pull-right"> 
+                    <a class="btn btn-primary" id="add_menu_button" href="<?php echo url('add',array('pid'=>input('get.pid',0))); ?>">新 增</a>
+                    <button class="btn btn-danger ajax-post confirm" url="<?php echo url('del'); ?>" target-form="ids">删 除</button> 
                 </div>
                 <div class="blank10"></div>
                 <div id="admin">
-                    <div id="tablebody" style="position:relative;">
-                        <table style="margin:0px;background-color: #fff;" class="table  table-bordered table-hover table-striped dataTable"  > 
+                    <div id="tablebody" >
+                        <table style="margin:0px;background-color: #fff;" class="table  table-bordered table-hover table-striped"  > 
+                             <tr>
+                            <th class="row-selected">
+                                <input class="checkbox check-all" type="checkbox">
+                            </th>
+                            <th>ID</th>
+                            <th>名称</th>
+                            <th>上级菜单</th>
+                            <th>分组</th>
+                            <th>URL</th>
+                            <th>排序</th>
+                            <th>仅开发者模式显示</th>
+                            <th>隐藏</th>
+                            <th>操作</th>
+                        </tr>
+                            <tbody>
+                       <?php if(!(empty($list) || (($list instanceof \think\Collection || $list instanceof \think\Paginator ) && $list->isEmpty()))): if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?>
                             <tr>
-                                <th width="40">#</th> 
-                                <th>
-                                    <div align="center">用户名&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="1"></i></div>
-                                </th>
-                                <th>
-                                    <div align="center" >昵称&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="2"></i></div>
-                                </th> 
-                                <th>
-                                    <div align="center" >
-                                        <i class="icon-pencil"></i>&nbsp;最近登陆时间&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="6"></i></div>
-                                </th> 
-                                <th>
-                                    <div align="center" >登录次数&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="8"></i></div>
-                                </th> 
-                                <th>
-                                    <div align="center" >状态&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="8"></i></div>
-                                </th> 
-                                <th>
-                                    <div align="center" >操作&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="8"></i></div>
-                                </th>   
-                            </tr> 
-                            <tbody id="tableShowUsers">
-                            <?php if(is_array($users) || $users instanceof \think\Collection || $users instanceof \think\Paginator): $key = 0; $__LIST__ = $users;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$users): $mod = ($key % 2 );++$key;?>
-                                <tr>
-                                    <td width="40">
-                                        <?php echo $key; ?>
-                                        <input type="hidden" name="userid" value="<?php echo $users['id']; ?>">
-                                        <input type="hidden" name="username" value="<?php echo $users['user_name']; ?>">
-                                    </td> 
-                                    <td>
-                                        <?php echo $users['user_name']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $users['user_nickname']; ?>
-                                    </td> 
-                                    <td>
-                                        <?php echo $users['last_login_time']; ?>
-                                    </td> 
-                                    <td>
-                                        <?php echo $users['user_logintimes']; ?>
-                                    </td>
-                                    <td>
-                                        <?php if($users['user_status']): ?>
-                                        <span data-userid="<?php echo $users['id']; ?>" class="label label-primary  user_status" <?php if($users['user_name'] == admin): ?> data-username='admin' <?php endif; ?>>启用</span>
-                                        <?php else: ?>
-                                        <span data-userid="<?php echo $users['id']; ?>" class="label label-danger user_status">禁用</span>
-                                        <?php endif; ?>
-                                        <div class="overlay">
-                                          <i class="fa fa-refresh fa-spin"></i>
-                                        </div>
-                                    </td>
-                                    <td><?php if($users['user_name'] != 'admin'): ?>
-                                        <a href="<?php echo url('user/edit',array('id'=>$users['id'])); ?>" class="table-link" >
-                                            编辑
-                                        </a>
-                                        <a href="<?php echo url('user/auth',array('id'=>$users['id'])); ?>" class="table-link">
-                                            授权
-                                        </a>
-                                        <a href="<?php echo url('user/del',array('id'=>$users['id'])); ?>" class="table-link confirm ajax-get">
-                                            删除
-                                        </a>
-                                        <?php endif; ?>
-                                    </td>
-                                </tr>
-                            <?php endforeach; endif; else: echo "" ;endif; ?> </tbody>
+                                <td><input class="ids row-selected" type="checkbox" name="id[]" value="<?php echo $menu['id']; ?>"></td>
+                                <td><?php echo $menu['id']; ?></td>
+                                <td>
+                                    <?php echo $menu['level_show']; ?>
+                                    <a href="#" class="editable editable-click" data-id="<?php echo $menu['id']; ?>" data-name="title" data-type="text" data-pk="<?php echo $menu['id']; ?>" data-url="<?php echo url('editable'); ?>"><?php echo $menu['title']; ?></a>
+                                    <a class="add-sub-cate" title="添加子分类" href="<?php echo url('add?pid='.$menu['id']); ?>">
+                                        <i class="fa fa-plus-square"></i>
+                                    </a>
+                                </td>
+                                <td><?php echo (isset($menu['up_title']) && ($menu['up_title'] !== '')?$menu['up_title']:'无'); ?></td>
+                                <td><?php echo $menu['group']; ?></td>
+                                <td><?php echo $menu['url']; ?></td>
+                                <td><a href="#" class="editable editable-click" data-id="<?php echo $menu['id']; ?>" data-name="sort" data-type="text" data-pk="<?php echo $menu['id']; ?>" data-url="<?php echo url('editable'); ?>"><?php echo $menu['sort']; ?></a></td>
+                                <td>
+                                    <a href="<?php echo url('toogleDev',array('id'=>$menu['id'],'value'=>abs($menu['is_dev']-1))); ?>"
+                                       class="ajax-get">
+                                        <?php echo $menu['is_dev_text']; ?>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="<?php echo url('toogleHide',array('id'=>$menu['id'],'value'=>abs($menu['hide']-1))); ?>"
+                                       class="ajax-get">
+                                        <?php echo $menu['hide_text']; ?>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a title="编辑" href="<?php echo url('edit?id='.$menu['id']); ?>">编辑</a>
+                                    <a class="confirm ajax-get" title="删除" href="<?php echo url('del?id='.$menu['id']); ?>">删除</a>
+                                </td>
+                            </tr>
+                        <?php endforeach; endif; else: echo "" ;endif; else: ?>
+                        <td colspan="10" class="text-center"> aOh! 暂时还没有内容!</td>
+                    <?php endif; ?>
+                            </tbody>
                         </table>
                     </div> 
                     <div id="tablefanye">

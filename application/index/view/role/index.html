@@ -1,0 +1,55 @@
+{extend name="public/base"}  
+{block name="style"}
+ <style>
+ 	.content-header{
+ 		border-bottom: 1px #d2d6de solid;padding-bottom: 10px; 
+ 	}
+ 	.action-btn{
+		float: right;
+        background: transparent;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 12px;
+        padding: 7px 5px;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        border-radius: 2px;
+ 	}
+ </style>
+{/block}
+{block name="body"}  
+<section class="content-header"> 
+   <h1> 用户管理 <small>用户列表</small> </h1>  
+   <div class="pull-right  action-btn clearfix"> 
+    <a class="btn btn-primary" href="{:url('add')}">新增角色</a> 
+   </div> 
+   <div class="clearfix"></div>
+  </section> 
+  <div class="main-box-body"> 
+   <table class="table  table-bordered table-hover table-striped"> 
+    <thead> 
+     <tr> 
+      <th width="30"><input class="checkbox check-all" type="checkbox" /></th> 
+      <th width="60">ID</th> 
+      <th>组名</th> 
+      <th>描述</th> 
+      <th>状态</th> 
+      <th>操作</th> 
+     </tr> 
+    </thead> 
+    <tbody>
+    {volist name="list" id="item"} 
+     <tr> 
+      <td><input class="ids row-selected" type="checkbox" name="ids[]" value="{$item['id']}" /></td> 
+      <td>{$item['id']}</td> 
+      <td><a href="#" class="editable editable-click" data-id="{$item['id']}" data-name="title" data-type="text" data-pk="{$item['id']}" data-url="{:url('editable')}">{$item['title']}</a></td> 
+      <td>{$item['description']}</td> 
+      <td> {if condition="$item['status'] eq '0'"} <span class="label label-danger">禁用</span> {elseif condition="$item['status'] eq '1'"/} <span class="label label-primary">启用</span> {/if} </td> 
+      <td> <a href="{:url('Group/edit',array('id'=>$item['id']))}">编辑</a> <a href="{:url('Group/auth',array('id'=>$item['id']))}">授权</a> <a href="{:url('Group/del',array('id'=>$item['id']))}" class="confirm ajax-get">删除</a> </td> 
+     </tr>
+    {/volist} 
+    </tbody> 
+   </table>  
+  </div>
+{/block}
