@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\menu\edit.html";i:1508835206;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508829892;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\menu\edit.html";i:1508895086;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508829892;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -249,11 +249,11 @@
          </div> 
         </div>
         <div class="form-group"> 
-         <label class="col-lg-2 control-label">是否显示</label> 
+         <label class="col-lg-2 control-label">是否隐藏</label> 
          <div class="col-lg-10 col-sm-10"> 
           <select name="hide" class="form-control">
             <option value="0">否</option>
-            <option selected value="1">是
+            <option value="1" <?php if(isset($info['is_dev']) && $info['is_dev']==1): ?>selected<?php endif; ?>>是 
             </option>
           </select> 
           <div class="email-block">
@@ -264,7 +264,7 @@
         <div class="form-group"> 
          <label class="col-lg-2 control-label">说明</label> 
          <div class="col-lg-10 col-sm-10"> 
-           <input type="password" class="form-control"name="tip" value="<?php echo (isset($info['tip']) && ($info['tip'] !== '')?$info['tip']:''); ?>" />  
+           <input type="text" class="form-control"name="tip" value="<?php echo (isset($info['tip']) && ($info['tip'] !== '')?$info['tip']:''); ?>" />  
           <div class="email-block">
             （<span class="email_block">菜单详细说明</span>）
           </div> 

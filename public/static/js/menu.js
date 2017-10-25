@@ -2,7 +2,10 @@ $(function($){
 	$("#add_menu_button").on("click",function(){
 		location.href='add/id/0.html';
 	}); 
-	$(".add_menu_submit").on("click",function(){
+	$(".add_menu_submit").on("click",function(){ 
+		if($(this).attr("class").indexOf("disabled")>=0){
+			return false;
+		}
 		var title=$("#menu_edit_form [name=title]").val();
 	 	var url=$("#menu_edit_form [name=url]").val(); 
 	 	if (!title) {
@@ -22,10 +25,12 @@ $(function($){
  			type: 'post', 
  			data: $("#menu_edit_form").serialize(),
  			success:function(json){
- 				var json=eval("("+json+")");
+ 				// var json=eval("("+json+")");
  				layer.close(loading);
  				layer.msg(json.msg,function(){
- 					 //location.href="index";
+ 					if(json.code==1){
+ 					 //location.href=json.url;
+ 					}
  				});
  			}
  		}) 
