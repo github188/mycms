@@ -1,0 +1,134 @@
+{extend name="public/base"}  
+{block name="style"}
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css"> 
+<style>
+.content-header{
+    border-bottom: 1px #d2d6de solid;padding-bottom: 10px;
+} 
+.main-box{margin:20px;background-color:#fff;box-shadow: 0px 0px 1px #73080a; border-radius: 5px;}
+.from-box{margin-left:-10px;margin-right: 20px;margin-top:20px;}
+</style> 
+{/block}
+{block name="body"}  
+<section class="content-header"> 
+   <h1>角色管理 <small>{:isset($info['id'])?'编辑':'新增'}角色</small></h1> 
+  </section> 
+  <div class="container"> 
+   <div id="indexcontent"> 
+    <div class="main-box clearfix "> 
+     <div class="col-lg-12"> 
+      <form method="post" id="role_add_form" class="form form-horizontal"> 
+       <div class="row from-box"> 
+        <div class="form-group"> 
+         <label class="col-lg-2 control-label">角色名</label> 
+         <div class="col-lg-10 col-sm-10"> 
+          <input type="text" class="form-control" name="role_name" id="role_name" placeholder="角色名"/> 
+          <div class="help-block">（必填） 
+          </div> 
+         </div> 
+        </div> 
+        <div class="form-group"> 
+         <label class="col-lg-2 control-label">说明</label> 
+         <div class="col-lg-10 col-sm-10"> 
+          <input type="text" class="form-control" name="description" id="description"  value="" /> 
+          <div class="help-block"> 
+          </div> 
+         </div> 
+        </div>  
+        <div class="form-group"> 
+         <label class="col-lg-2 control-label">启用</label> 
+         <div class="col-lg-10 col-sm-10"> 
+          <select name="status" id="status" class="form-control">
+              <option value="1">是</option> 
+              <option value="0" {if isset($info)&& $info.status ==0}selected{/if}>否</option> 
+            {if condition="$info.status"}
+          </select>
+          <div class="email-block">
+             
+          </div> 
+         </div> 
+        </div> 
+        <div class="form-group"> 
+         <div class="col-lg-offset-2 col-lg-10">  
+            <input type="hidden" name="id" value="{$info.id|default=''}">
+          <button class="btn btn-success role_add_submit" type="button">确 定</button> 
+          <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button> 
+         </div> 
+        </div> 
+       </div> 
+      </form> 
+     </div> 
+    </div> 
+   </div> 
+  </div>
+<script>
+        /**
+         * 检测角色是否存在
+         * @author 钟朝辉 <zzhhuii@qq.com>
+         * @date   2017-10-26T14:55:22+0800 
+         */
+        function check_role(){
+        var role_name = $("[name=role_name]").val();
+        var input = $("[name=role_name]");
+        var help = input.siblings(".help-block"); 
+        if (!role_name) {
+            $("[name=role_name]").focus();
+            help.css("color","red");
+            return false;
+        }  
+        $.ajax({
+            url: 'checkName?role_name='+role_name,
+            type: 'POST',
+            success:function(json){ 
+                if(json.code==1){
+                    if(json.msg=='ok'){
+                        help.find('i,.text-red').remove();
+                        help.append('<i class="fa fa-check text-green"></i>'); 
+                    }
+                }else{
+                    help.find('i,.text-red').remove();
+                    help.append('<span class="text-red">'+json.msg+'</span><i class="fa fa-close text-red"></i>');
+                    $("[name=role_name]").focus();
+                    return false;
+                }
+            }
+        }) 
+    }
+    $("[name=role_name]").on("blur",function(){
+        check_role(); 
+    });
+    $(".role_add_submit").on("click",function(){
+        var role_name = $("input[name=role_name]").val();
+        if(!role_name){
+            $("input[name=role_name]").focus();
+            return false;
+        } 
+        $.ajax({
+            url: 'add',
+            type: 'post', 
+            data: $("#role_add_form").serialize(),
+        })
+        .done(function(json) {
+            if(json.msg.xdebug_message){
+                //layer.alert(json.msg.xdebug_message);
+                layer.open({
+                  type: 1,
+                  //skin: 'layui-layer-rim', //加上边框
+                  area: ['60%', 'auto'], //宽高
+                  content: json.msg.xdebug_message
+                });
+                return false;
+            } 
+            layer.msg(json.msg); 
+            if(json.code==1){
+
+            }else{
+
+            }
+            console.log(json);
+        });
+        
+        return false;
+    });
+</script>
+{/block}

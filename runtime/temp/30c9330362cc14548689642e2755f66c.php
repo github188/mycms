@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\menu\index.html";i:1508919629;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508921327;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\menu\index.html";i:1508981189;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508921327;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -182,13 +182,18 @@
 
 <link rel="stylesheet" href="__ROOT__/public/static/css/user.css"> 
 <style>
-    #tableShowUsers  td{
-        text-align:center;
+ .action-btn{
+        float: right;
+        background: transparent;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 12px;
+        padding: 7px 5px;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        border-radius: 2px;
     }
-    .overlay{
-        display: none;
-    }
-    .user_status{cursor:pointer;}
 </style>
  
   
@@ -197,16 +202,16 @@
         菜单管理
         <small>菜单列表</small>
       </h1> 
+      <div class="pull-right action-btn"> 
+                    <a class="btn btn-primary" id="add_menu_button" href="<?php echo url('add',array('pid'=>input('get.pid',0))); ?>">新 增</a>
+                    <button class="btn btn-danger ajax-post confirm" url="<?php echo url('del'); ?>" target-form="ids">删 除</button> 
+                </div>
     </section>
 
 <div class="container"> 
     <div  id="indexcontent">
         <div style="margin:10px;background-color: #fff;" id="content_allmainview">   
             <div id="content_menus" temp="content"  >  
-                <div class="pull-right"> 
-                    <a class="btn btn-primary" id="add_menu_button" href="<?php echo url('add',array('pid'=>input('get.pid',0))); ?>">新 增</a>
-                    <button class="btn btn-danger ajax-post confirm" url="<?php echo url('del'); ?>" target-form="ids">删 除</button> 
-                </div>
                 <div class="blank10"></div>
                 <div id="admin">
                     <div id="tablebody" >

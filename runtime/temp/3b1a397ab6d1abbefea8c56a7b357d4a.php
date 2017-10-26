@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:59:"E:\webproject\mycms/application/index\view\index\index.html";i:1508733288;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508989256;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508921327;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\role\edit.html";i:1509008524;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508989256;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508921327;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -170,155 +170,138 @@
     <!-- /.sidebar -->
   </aside> 
   <div class="content-wrapper">   
-  
 
-    <section class="content-header">
-      <h1>
-        系统室 
-      </h1>     
-    </section>
-
-    <div class="pad margin no-print">
-      <div class="callout callout-info" style="margin-bottom: 0!important;">
-        <h4><i class="fa fa-info text-red"></i> 最新信息:</h4>
-        系统最新信息.
-      </div>
-    </div>
-
-    <!-- Main content -->
-    <section class="invoice">
-      <!-- title row -->
-      <div class="row">
-        <div class="col-xs-12">
-          <h2 class="page-header">
-            <i class="fa fa-globe"></i> 公告
-            <small class="pull-right">列表</small>
-          </h2>
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- info row -->
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css"> 
+<style>
+.content-header{
+    border-bottom: 1px #d2d6de solid;padding-bottom: 10px;
+} 
+.main-box{margin:20px;background-color:#fff;box-shadow: 0px 0px 1px #73080a; border-radius: 5px;}
+.from-box{margin-left:-10px;margin-right: 20px;margin-top:20px;}
+</style> 
  
+  
+<section class="content-header"> 
+   <h1>角色管理 <small><?php echo isset($info['id'])?'编辑':'新增'; ?>角色</small></h1> 
+  </section> 
+  <div class="container"> 
+   <div id="indexcontent"> 
+    <div class="main-box clearfix "> 
+     <div class="col-lg-12"> 
+      <form method="post" id="role_add_form" class="form form-horizontal"> 
+       <div class="row from-box"> 
+        <div class="form-group"> 
+         <label class="col-lg-2 control-label">角色名</label> 
+         <div class="col-lg-10 col-sm-10"> 
+          <input type="text" class="form-control" name="role_name" id="role_name" placeholder="角色名"/> 
+          <div class="help-block">（必填） 
+          </div> 
+         </div> 
+        </div> 
+        <div class="form-group"> 
+         <label class="col-lg-2 control-label">说明</label> 
+         <div class="col-lg-10 col-sm-10"> 
+          <input type="text" class="form-control" name="description" id="description"  value="" /> 
+          <div class="help-block"> 
+          </div> 
+         </div> 
+        </div>  
+        <div class="form-group"> 
+         <label class="col-lg-2 control-label">启用</label> 
+         <div class="col-lg-10 col-sm-10"> 
+          <select name="status" id="status" class="form-control">
+              <option value="1">是</option> 
+              <option value="0" <?php if(isset($info)&& $info['status'] ==0): ?>selected<?php endif; ?>>否</option> 
+            {if condition="$info.status"}
+          </select>
+          <div class="email-block">
+             
+          </div> 
+         </div> 
+        </div> 
+        <div class="form-group"> 
+         <div class="col-lg-offset-2 col-lg-10">  
+            <input type="hidden" name="id" value="<?php echo (isset($info['id']) && ($info['id'] !== '')?$info['id']:''); ?>">
+          <button class="btn btn-success role_add_submit" type="button">确 定</button> 
+          <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button> 
+         </div> 
+        </div> 
+       </div> 
+      </form> 
+     </div> 
+    </div> 
+   </div> 
+  </div>
+<script>
+        /**
+         * 检测角色是否存在
+         * @author 钟朝辉 <zzhhuii@qq.com>
+         * @date   2017-10-26T14:55:22+0800 
+         */
+        function check_role(){
+        var role_name = $("[name=role_name]").val();
+        var input = $("[name=role_name]");
+        var help = input.siblings(".help-block"); 
+        if (!role_name) {
+            $("[name=role_name]").focus();
+            help.css("color","red");
+            return false;
+        }  
+        $.ajax({
+            url: 'checkName?role_name='+role_name,
+            type: 'POST',
+            success:function(json){ 
+                if(json.code==1){
+                    if(json.msg=='ok'){
+                        help.find('i,.text-red').remove();
+                        help.append('<i class="fa fa-check text-green"></i>'); 
+                    }
+                }else{
+                    help.find('i,.text-red').remove();
+                    help.append('<span class="text-red">'+json.msg+'</span><i class="fa fa-close text-red"></i>');
+                    $("[name=role_name]").focus();
+                    return false;
+                }
+            }
+        }) 
+    }
+    $("[name=role_name]").on("blur",function(){
+        check_role(); 
+    });
+    $(".role_add_submit").on("click",function(){
+        var role_name = $("input[name=role_name]").val();
+        if(!role_name){
+            $("input[name=role_name]").focus();
+            return false;
+        } 
+        $.ajax({
+            url: 'add',
+            type: 'post', 
+            data: $("#role_add_form").serialize(),
+        })
+        .done(function(json) {
+            if(json.msg.xdebug_message){
+                //layer.alert(json.msg.xdebug_message);
+                layer.open({
+                  type: 1,
+                  //skin: 'layui-layer-rim', //加上边框
+                  area: ['60%', 'auto'], //宽高
+                  content: json.msg.xdebug_message
+                });
+                return false;
+            } 
+            layer.msg(json.msg); 
+            if(json.code==1){
 
-      <!-- Table row -->
-      <div class="row">
-        <div class="col-xs-12 table-responsive">
-          <table class="table table-striped">
-            <thead>
-            <tr>
-              <th>级别</th>
-              <th>主题</th>
-              <th>附件</th>
-              <th>日期</th>
-              <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>文件</td>
-              <td>文件221.pdf</td>
-              <td>20170806 12:11:13</td>
-              <td>查看详情|下载附件</td>
-            </tr>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>文件</td>
-              <td>文件221.pdf</td>
-              <td>20170806 12:11:13</td>
-              <td>查看详情|下载附件</td>
-            </tr>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>文件</td>
-              <td>文件221.pdf</td>
-              <td>20170806 12:11:13</td>
-              <td>查看详情|下载附件</td>
-            </tr>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>文件</td>
-              <td>文件221.pdf</td>
-              <td>20170806 12:11:13</td>
-              <td>查看详情|下载附件</td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-      
-        <div class="row">
-        <div class="col-xs-12">
-          <h2 class="page-header">
-            <i class="fa fa-globe"></i> 报警信息
-            <small class="pull-right"><button class='btn btn-link'>点击查看更多</button></small>
-          </h2>
-        </div>
-        <!-- /.col -->
-      </div>
-      <div class="row">
-        <div class="col-xs-12 table-responsive">
-          <table class="table table-striped">
-            <thead>
-            <tr>
-              <th>级别</th>
-              <th>系统名称</th>
-              <th>报警内容</th>
-              <th>报警日期</th>
-              <th>操作</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>外汇卡</td>
-              <td>磁盘空间满，<span class="text-red">100%</span></td>
-              <td>20170806 12:11:13</td>
-              <td><button type="button" class="btn">查看详情</button></td>
-            </tr>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>外汇卡</td>
-              <td>磁盘空间满，<span class="text-red">100%</span></td>
-              <td>20170806 12:11:13</td>
-              <td><button type="button" class="btn">查看详情</button></td>
-            </tr>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>外汇卡</td>
-              <td>磁盘空间满，<span class="text-red">100%</span></td>
-              <td>20170806 12:11:13</td>
-              <td><button type="button" class="btn">查看详情</button></td>
-            </tr>
-            <tr>
-              <td class="text-red">重要</td>
-              <td>外汇卡</td>
-              <td>磁盘空间满，<span class="text-red">100%</span></td>
-              <td>20170806 12:11:13</td>
-              <td><button type="button" class="btn">查看详情</button></td>
-            </tr>
-            </tbody>
-          </table>
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
+            }else{
 
-      <!-- this row will not appear when printing -->
-      <div class="row no-print">
-        <div class="col-xs-12"> 
-          <button type="button" class="btn btn-success pull-right"><i class="fa fa-windows"></i> Windows巡检 
-          </button>
-          <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
-            <i class="fa fa-linux"></i> Linux巡检 
-          </button>
-        </div>
-      </div>
-    </section>
-    <!-- /.content -->
-    <div class="clearfix"></div>
+            }
+            console.log(json);
+        });
+        
+        return false;
+    });
+</script>
  
   </div>  
   <div class="control-sidebar-bg"></div>
