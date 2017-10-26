@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2017-10-25 17:16:06
+Date: 2017-10-26 17:12:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -52,19 +52,28 @@ INSERT INTO `mc_menu` VALUES ('3', '菜单管理', 'admin', '', '1', '0', 'index
 -- ----------------------------
 DROP TABLE IF EXISTS `mc_role`;
 CREATE TABLE `mc_role` (
-  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT '用户组id,自增主键',
-  `module` varchar(20) NOT NULL DEFAULT '' COMMENT '用户组所属模块',
-  `type` varchar(10) NOT NULL DEFAULT '' COMMENT '组类型',
-  `title` char(20) NOT NULL DEFAULT '' COMMENT '用户组中文名称',
-  `description` varchar(80) NOT NULL DEFAULT '' COMMENT '描述信息',
-  `status` tinyint(1) NOT NULL DEFAULT '1' COMMENT '用户组状态：为1正常，为0禁用,-1为删除',
-  `rules` varchar(500) NOT NULL DEFAULT '' COMMENT '用户组拥有的规则id，多个规则 , 隔开',
-  PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pid` int(10) unsigned DEFAULT '0' COMMENT '父角色ID',
+  `status` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT '状态;0:禁用;1:正常',
+  `create_time` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '创建时间',
+  `update_time` int(10) unsigned DEFAULT '0' COMMENT '更新时间',
+  `list_order` float DEFAULT '0' COMMENT '排序',
+  `role_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '角色名称',
+  `description` varchar(255) DEFAULT '' COMMENT '备注',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `role_name` (`role_name`),
+  UNIQUE KEY `role_name_2` (`role_name`),
+  KEY `parentId` (`pid`),
+  KEY `status` (`status`)
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb4 COMMENT='角色表';
 
 -- ----------------------------
 -- Records of mc_role
 -- ----------------------------
+INSERT INTO `mc_role` VALUES ('1', '0', '1', '1509004631', '0', '0', '6', '');
+INSERT INTO `mc_role` VALUES ('4', '0', '1', '1509004921', '0', '0', '6r', '');
+INSERT INTO `mc_role` VALUES ('42', '0', '1', '1509008514', '0', '0', '65', '');
+INSERT INTO `mc_role` VALUES ('43', '0', '1', '1509008532', '0', '0', '55', '');
 
 -- ----------------------------
 -- Table structure for mc_role_user
