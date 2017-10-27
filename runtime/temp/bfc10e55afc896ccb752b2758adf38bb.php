@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\role\index.html";i:1508922804;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508989256;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508921327;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\role\index.html";i:1509089409;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508989256;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509068271;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -151,7 +151,7 @@
             <li class="<?php echo $user_menu; ?>"><a href="<?php echo url('index/menu/index'); ?>"><i class="fa fa-circle-o"></i> 菜单管理</a></li>
             <li class="<?php echo $user_index; ?>"><a href="<?php echo url('index/user/index'); ?>"><i class="fa fa-circle-o"></i> 用户管理</a></li>
             <li class="<?php echo $user_role; ?>"><a href="<?php echo url('/index/role/index'); ?>"><i class="fa fa-circle-o"></i> 角色管理</a></li>
-            <li class="<?php echo $user_permission; ?>"><a href="<?php echo url('index/user/permission'); ?>"><i class="fa fa-circle-o"></i> 权限管理</a></li>
+            <li class="<?php echo $user_permission; ?>"><a href="<?php echo url('index/auth/index'); ?>"><i class="fa fa-circle-o"></i> 权限管理</a></li>
           </ul>
         </li> 
         <li class="treeview">
@@ -203,7 +203,7 @@
      <tr> 
       <th width="30"><input class="checkbox check-all" type="checkbox" /></th> 
       <th width="60">ID</th> 
-      <th>组名</th> 
+      <th>角色</th> 
       <th>描述</th> 
       <th>状态</th> 
       <th>操作</th> 
@@ -214,10 +214,10 @@
      <tr> 
       <td><input class="ids row-selected" type="checkbox" name="ids[]" value="<?php echo $item['id']; ?>" /></td> 
       <td><?php echo $item['id']; ?></td> 
-      <td><a href="#" class="editable editable-click" data-id="<?php echo $item['id']; ?>" data-name="title" data-type="text" data-pk="<?php echo $item['id']; ?>" data-url="<?php echo url('editable'); ?>"><?php echo $item['title']; ?></a></td> 
+      <td><a href="#" class="editable editable-click" data-id="<?php echo $item['id']; ?>" data-name="role_name" data-pk="<?php echo $item['id']; ?>" data-url="<?php echo url('edit'); ?>"><?php echo $item['role_name']; ?></a></td> 
       <td><?php echo $item['description']; ?></td> 
       <td> <?php if($item['status'] == '0'): ?> <span class="label label-danger">禁用</span> <?php elseif($item['status'] == '1'): ?> <span class="label label-primary">启用</span> <?php endif; ?> </td> 
-      <td> <a href="<?php echo url('Group/edit',array('id'=>$item['id'])); ?>">编辑</a> <a href="<?php echo url('Group/auth',array('id'=>$item['id'])); ?>">授权</a> <a href="<?php echo url('Group/del',array('id'=>$item['id'])); ?>" class="confirm ajax-get">删除</a> </td> 
+      <td> <a href="<?php echo url('role/edit',array('id'=>$item['id'])); ?>">编辑</a> <a href="<?php echo url('role/auth',array('id'=>$item['id'])); ?>">授权</a> <a href="<?php echo url('role/del',array('id'=>$item['id'])); ?>" class="confirm ajax-get">删除</a> </td> 
      </tr>
     <?php endforeach; endif; else: echo "" ;endif; ?> 
     </tbody> 

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\role\edit.html";i:1509008524;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508989256;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508921327;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\role\edit.html";i:1509067295;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508989256;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508921327;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -182,8 +182,8 @@
  
   
 <section class="content-header"> 
-   <h1>角色管理 <small><?php echo isset($info['id'])?'编辑':'新增'; ?>角色</small></h1> 
-  </section> 
+   <h1><a href="<?php echo url('role/index'); ?>" class="link">角色管理</a> <small><?php echo isset($info['id'])?'编辑':'新增'; ?>角色</small></h1> 
+</section> 
   <div class="container"> 
    <div id="indexcontent"> 
     <div class="main-box clearfix "> 
@@ -193,7 +193,7 @@
         <div class="form-group"> 
          <label class="col-lg-2 control-label">角色名</label> 
          <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="role_name" id="role_name" placeholder="角色名"/> 
+          <input type="text" class="form-control" name="role_name" id="role_name" placeholder="角色名" value="<?php echo $info['role_name']; ?>" /> 
           <div class="help-block">（必填） 
           </div> 
          </div> 
@@ -289,16 +289,15 @@
                   content: json.msg.xdebug_message
                 });
                 return false;
-            } 
-            layer.msg(json.msg); 
+            }  
             if(json.code==1){
-
+                layer.msg("操作成功",function(){
+                    location.href=json.url;
+                })
             }else{
-
-            }
-            console.log(json);
-        });
-        
+                layer.msg(json.msg)
+            } 
+        }); 
         return false;
     });
 </script>

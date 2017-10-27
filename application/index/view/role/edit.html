@@ -11,8 +11,8 @@
 {/block}
 {block name="body"}  
 <section class="content-header"> 
-   <h1>角色管理 <small>{:isset($info['id'])?'编辑':'新增'}角色</small></h1> 
-  </section> 
+   <h1><a href="{:url('role/index')}" class="link">角色管理</a> <small>{:isset($info['id'])?'编辑':'新增'}角色</small></h1> 
+</section> 
   <div class="container"> 
    <div id="indexcontent"> 
     <div class="main-box clearfix "> 
@@ -22,7 +22,7 @@
         <div class="form-group"> 
          <label class="col-lg-2 control-label">角色名</label> 
          <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="role_name" id="role_name" placeholder="角色名"/> 
+          <input type="text" class="form-control" name="role_name" id="role_name" placeholder="角色名" value="{$info.role_name}" /> 
           <div class="help-block">（必填） 
           </div> 
          </div> 
@@ -118,16 +118,15 @@
                   content: json.msg.xdebug_message
                 });
                 return false;
-            } 
-            layer.msg(json.msg); 
+            }  
             if(json.code==1){
-
+                layer.msg("操作成功",function(){
+                    location.href=json.url;
+                })
             }else{
-
-            }
-            console.log(json);
-        });
-        
+                layer.msg(json.msg)
+            } 
+        }); 
         return false;
     });
 </script>

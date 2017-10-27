@@ -32,7 +32,7 @@
      <tr> 
       <th width="30"><input class="checkbox check-all" type="checkbox" /></th> 
       <th width="60">ID</th> 
-      <th>组名</th> 
+      <th>角色</th> 
       <th>描述</th> 
       <th>状态</th> 
       <th>操作</th> 
@@ -43,10 +43,10 @@
      <tr> 
       <td><input class="ids row-selected" type="checkbox" name="ids[]" value="{$item['id']}" /></td> 
       <td>{$item['id']}</td> 
-      <td><a href="#" class="editable editable-click" data-id="{$item['id']}" data-name="title" data-type="text" data-pk="{$item['id']}" data-url="{:url('editable')}">{$item['title']}</a></td> 
+      <td><a href="#" class="editable editable-click" data-id="{$item['id']}" data-name="role_name" data-pk="{$item['id']}" data-url="{:url('edit')}">{$item['role_name']}</a></td> 
       <td>{$item['description']}</td> 
       <td> {if condition="$item['status'] eq '0'"} <span class="label label-danger">禁用</span> {elseif condition="$item['status'] eq '1'"/} <span class="label label-primary">启用</span> {/if} </td> 
-      <td> <a href="{:url('Group/edit',array('id'=>$item['id']))}">编辑</a> <a href="{:url('Group/auth',array('id'=>$item['id']))}">授权</a> <a href="{:url('Group/del',array('id'=>$item['id']))}" class="confirm ajax-get">删除</a> </td> 
+      <td> <a href="{:url('role/edit',array('id'=>$item['id']))}">编辑</a> <a href="{:url('role/auth',array('id'=>$item['id']))}">授权</a> <a href="{:url('role/del',array('id'=>$item['id']))}" class="confirm ajax-get">删除</a> </td> 
      </tr>
     {/volist} 
     </tbody> 
