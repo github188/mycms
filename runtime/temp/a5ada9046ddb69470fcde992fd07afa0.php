@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\role\auth.html";i:1509089573;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508989256;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509068271;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\role\auth.html";i:1509170310;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509152620;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509109349;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509153573;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="__ROOT__/public/plugins/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="__ROOT__/public/plugins/font-awesome/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="__ROOT__/public/plugins/treeTable/treeTable.css"> 
   <!-- Theme style -->
   <link rel="stylesheet" href="__ROOT__/public/dist/css/AdminLTE.min.css"> 
   <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css">  
@@ -171,108 +172,82 @@
   </aside> 
   <div class="content-wrapper">   
 
-<link rel="stylesheet" href="__ROOT__/public/static/css/user.css"> 
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css">
 <style>
-.content-header{
-    border-bottom: 1px #d2d6de solid;padding-bottom: 10px;
-} 
-.main-box{margin:20px;background-color:#fff;box-shadow: 0px 0px 1px #73080a; border-radius: 5px;}
-.from-box{margin-left:-10px;margin-right: 20px;margin-top:20px;}
-</style> 
+.content-header {
+    border-bottom: 1px #d2d6de solid;
+    padding-bottom: 10px;
+}
+
+.main-box {
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 1px #73080a;
+    border-radius: 5px;
+}
+
+.from-box { 
+    margin-top: 20px;
+}
+.form-actions{
+  margin: 20px;
+}
+</style>
  
-  
-<section class="content-header"> 
-   <h1><a class="title" id="add_auth_button" href="<?php echo url('index'); ?>">权限管理</a> <small><?php echo isset($info['id'])?'编辑':'新增'; ?>菜单</small></h1> 
-  </section> 
-  <div class="container"> 
-   <div id="indexcontent"> 
-    <div class="main-box clearfix "> 
-     <div class="col-lg-12"> 
-      <form method="post" id="menu_edit_form" class="form form-horizontal"> 
-       <div class="row from-box"> 
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">标题</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="title" value="<?php echo (isset($info['title']) && ($info['title'] !== '')?$info['title']:''); ?>">
-          <div class="help-block">
-            用于导航显示（<span class="title_block text-red">必填</span>）
-          </div> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">小图标</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="icon" value="<?php echo (isset($info['icon']) && ($info['icon'] !== '')?$info['icon']:''); ?>" /> 
-          <div class="help-block">
-            （用于显示在菜单左侧，不填则不显示）
-          </div> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">排序</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="sort" value="<?php echo (isset($info['sort']) && ($info['sort'] !== '')?$info['sort']:0); ?>" /> 
-          <div class="help-block">
-           （<span class="password_block">用于分组显示的顺序</span>）
-          </div> 
-         </div> 
-        </div>  
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">链接</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="url" value="<?php echo (isset($info['url']) && ($info['url'] !== '')?$info['url']:''); ?>" /> 
-          <div class="help-block">
-           （<span class="password_block text-red">二级菜单必填</span>）
-          </div> 
-         </div> 
+
+<section class="content-header">
+    <h1><a class="title" id="add_auth_button" href="<?php echo url('index'); ?>">权限管理</a> <small><?php echo isset($info['id'])?'编辑':'新增'; ?>授权</small></h1>
+</section>
+<div class="main-box clearfix ">
+    <form class="auth-ajax-form from-box" action="<?php echo url('Role/authPost'); ?>" method="post">
+        <div class="table_full">
+            <table class="table table-bordered" id="authrule-tree">
+                <tbody>
+                    <?php echo $category; ?>
+                </tbody>
+            </table>
         </div>
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">上级菜单</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <select name="pid" class="form-control" style="width: 50%"> 
-                        <?php if(is_array($Menus) || $Menus instanceof \think\Collection || $Menus instanceof \think\Paginator): $i = 0; $__LIST__ = $Menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?>
-                        <option value="<?php echo $menu['id']; ?>" <?php if($info['pid'] == $menu['id']): ?>selected<?php endif; ?>><?php echo $menu['title_show']; ?></option>
-                        <?php endforeach; endif; else: echo "" ;endif; ?>
-                      </select>
-          <div class="repassword-block"> 
-          </div> 
-         </div> 
+        <div class="form-actions">
+            <input type="hidden" name="roleId" value="<?php echo $roleId; ?>" />
+            <button class="btn btn-primary auth-ajax-submit" type="button">提交</button>
+            <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
         </div>
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">是否隐藏</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <select name="hide" class="form-control">
-            <option value="0">否</option>
-            <option value="1" <?php if(isset($info['is_dev']) && $info['is_dev']==1): ?>selected<?php endif; ?>>是 
-            </option>
-          </select> 
-          <div class="email-block">
-             
-          </div> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">说明</label> 
-         <div class="col-lg-10 col-sm-10"> 
-           <input type="text" class="form-control"name="tip" value="<?php echo (isset($info['tip']) && ($info['tip'] !== '')?$info['tip']:''); ?>" />  
-          <div class="email-block">
-            （<span class="email_block">菜单详细说明</span>）
-          </div> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <div class="col-lg-offset-2 col-lg-10">  
-          <input type="hidden" name="id" value="<?php echo (isset($info['id']) && ($info['id'] !== '')?$info['id']:''); ?>">
-          <button class="btn btn-success add_menu_submit" type="button">确 定</button> 
-          <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button> 
-         </div> 
-        </div> 
-       </div> 
-      </form> 
-     </div> 
-    </div> 
-   </div> 
-  </div> 
+    </form>
+</div>
+<script>
+function checknode(obj) {
+    var chk = $("input[type='checkbox']");
+    var count = chk.length;
+
+    var num = chk.index(obj);
+    var level_top = level_bottom = chk.eq(num).attr('level');
+    for (var i = num; i >= 0; i--) {
+        var le = chk.eq(i).attr('level');
+        if (le < level_top) {
+            chk.eq(i).prop("checked", true);
+            var level_top = level_top - 1;
+        }
+    }
+    for (var j = num + 1; j < count; j++) {
+        var le = chk.eq(j).attr('level');
+        if (chk.eq(num).prop("checked")) {
+
+            if (le > level_bottom) {
+                chk.eq(j).prop("checked", true);
+            } else if (le == level_bottom) {
+                break;
+            }
+        } else {
+            if (le > level_bottom) {
+                chk.eq(j).prop("checked", false);
+            } else if (le == level_bottom) {
+                break;
+            }
+        }
+    }
+}
+</script> 
+<script src="__ROOT__/public/static/js/auth.js"></script>
  
   </div>  
   <div class="control-sidebar-bg"></div>
@@ -283,6 +258,7 @@
 <!-- AdminLTE App -->
 <script src="__ROOT__/public/dist/js/adminlte.js"></script> 
 <script src="__ROOT__/public/plugins/layer/layer.js"></script>
+<script src="__ROOT__/public/plugins/treeTable/treeTable.js"></script>
 <!-- jvectormap -->
 <!-- <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->

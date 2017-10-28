@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1508827118;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508989256;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509068271;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1509176908;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509152620;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509109349;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509153573;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="__ROOT__/public/plugins/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="__ROOT__/public/plugins/font-awesome/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="__ROOT__/public/plugins/treeTable/treeTable.css"> 
   <!-- Theme style -->
   <link rel="stylesheet" href="__ROOT__/public/dist/css/AdminLTE.min.css"> 
   <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css">  
@@ -171,162 +172,125 @@
   </aside> 
   <div class="content-wrapper">   
 
-<link rel="stylesheet" href="__ROOT__/public/static/css/user.css"> 
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css">
 <style>
-    #tableShowUsers  td{
-        text-align:center;
-    }
-    .overlay{
-        display: none;
-    }
-    .user_status{cursor:pointer;}
+#tableShowUsers td {
+    text-align: center;
+}
+
+.overlay {
+    display: none;
+}
+
+.user_status {
+    cursor: pointer;
+}
 </style>
  
-  
+
 <section class="content-header" style="border-bottom: 1px #d2d6de solid;padding-bottom: 10px; ">
-      <h1>
+    <h1>
         用户管理
         <small>用户列表</small>
       </h1>
-<!--       <ol class="breadcrumb">
+    <!--       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li><a href="#">用户管理</a></li>
         <li class="active">用户列表</li>
       </ol> -->
-    </section>
-
-<div class="container"> 
-    <div  id="indexcontent">
-        <div style="margin:10px;" id="content_allmainview">  
-            <!--home--end-->
-            <div id="content_users" temp="content"  >
-                <div>
-                    <ul class="floats">
-                        <li class="floats50">
-                        <if condition="$add eq ok">
-                            <button type="button" id="user_add_button" class="btn btn-primary">
-                                <i class="icon-plus"></i>新增用户</button>&nbsp; 
-                        </if> 
-                        </li>
-                        <li class="floats30">
+</section>
+<div id="content_users" temp="content">
+    <ul class="floats">
+        <li class="floats50">
+            <if condition="$add eq ok">
+                <button type="button" id="user_add_button" class="btn btn-primary">
+                    <i class="fa fa-plus"></i>新增用户</button>&nbsp;
+            </if>
+        </li>
+        <!-- <li class="floats30">
                             <div style="width:250px" class="input-group">
-                                <input  placeholder="用户名/昵称" id="SUserKey" class="form-control">
+                                <input placeholder="用户名/昵称" id="SUserKey" class="form-control">
                                 <span class="input-group-btn">
                                     <button type="button" click="search" class="btn btn-default">
                                         <i class="fa fa-search"></i>
                                     </button>
                                 </span>
                             </div>
-                        </li> 
-                    </ul>
-                </div>
-                <div class="blank10"></div>
-                <div id="admin">
-                    <div id="tablebody" style="position:relative;">
-                        <table style="margin:0px;background-color: #fff;" class="table  table-bordered table-hover table-striped dataTable"  > 
-                            <tr>
-                                <th width="40">#</th> 
-                                <th>
-                                    <div align="center">用户名&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="1"></i></div>
-                                </th>
-                                <th>
-                                    <div align="center" >昵称&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="2"></i></div>
-                                </th> 
-                                <th>
-                                    <div align="center" >
-                                        <i class="icon-pencil"></i>&nbsp;最近登陆时间&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="6"></i></div>
-                                </th> 
-                                <th>
-                                    <div align="center" >登录次数&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="8"></i></div>
-                                </th> 
-                                <th>
-                                    <div align="center" >状态&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="8"></i></div>
-                                </th> 
-                                <th>
-                                    <div align="center" >操作&nbsp;
-                                        <i class="icon-sort cursor" lx="desc" tempsort="8"></i></div>
-                                </th>   
-                            </tr> 
-                            <tbody id="tableShowUsers">
-                            <?php if(is_array($users) || $users instanceof \think\Collection || $users instanceof \think\Paginator): $key = 0; $__LIST__ = $users;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$users): $mod = ($key % 2 );++$key;?>
-                                <tr>
-                                    <td width="40">
-                                        <?php echo $key; ?>
-                                        <input type="hidden" name="userid" value="<?php echo $users['id']; ?>">
-                                        <input type="hidden" name="username" value="<?php echo $users['user_name']; ?>">
-                                    </td> 
-                                    <td>
-                                        <?php echo $users['user_name']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $users['user_nickname']; ?>
-                                    </td> 
-                                    <td>
-                                        <?php echo $users['last_login_time']; ?>
-                                    </td> 
-                                    <td>
-                                        <?php echo $users['user_logintimes']; ?>
-                                    </td>
-                                    <td>
-                                        <?php if($users['user_status']): ?>
-                                        <span data-userid="<?php echo $users['id']; ?>" class="label label-primary  user_status" <?php if($users['user_name'] == admin): ?> data-username='admin' <?php endif; ?>>启用</span>
-                                        <?php else: ?>
-                                        <span data-userid="<?php echo $users['id']; ?>" class="label label-danger user_status">禁用</span>
-                                        <?php endif; ?>
-                                        <div class="overlay">
-                                          <i class="fa fa-refresh fa-spin"></i>
-                                        </div>
-                                    </td>
-                                    <td><?php if($users['user_name'] != 'admin'): ?>
-                                        <a href="<?php echo url('user/edit',array('id'=>$users['id'])); ?>" class="table-link" >
+                        </li> -->
+    </ul>
+    <div class="blank10"></div>
+    <div id="admin">
+        <div id="tablebody" style="position:relative;">
+            <table style="margin:0px;background-color: #fff;" class="table  table-bordered table-hover table-striped dataTable">
+                <tr>
+                    <th width="40">#</th>
+                    <th>
+                        <div align="center">用户名&nbsp;</div>
+                    </th>
+                    <th>
+                        <div align="center">昵称&nbsp;</div>
+                    </th>
+                    <th>
+                        <div align="center">最近登陆时间&nbsp;</div>
+                    </th>
+                    <th>
+                        <div align="center">登录次数&nbsp;</div>
+                    </th>
+                    <th>
+                        <div align="center">状态&nbsp;</div>
+                    </th>
+                    <th>
+                        <div align="center">操作&nbsp;</div>
+                    </th>
+                </tr>
+                <tbody id="tableShowUsers">
+                    <?php if(is_array($users) || $users instanceof \think\Collection || $users instanceof \think\Paginator): $key = 0; $__LIST__ = $users;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$users): $mod = ($key % 2 );++$key;?>
+                    <tr>
+                        <td width="40">
+                            <?php echo $key; ?>
+                            <input type="hidden" name="userid" value="<?php echo $users['id']; ?>">
+                            <input type="hidden" name="username" value="<?php echo $users['user_name']; ?>">
+                        </td>
+                        <td>
+                            <?php echo $users['user_name']; ?>
+                        </td>
+                        <td>
+                            <?php echo $users['user_nickname']; ?>
+                        </td>
+                        <td>
+                            <?php if($vo['last_login_time'] == 0): ?> 该用户还没登陆过 <?php else: ?> <?php echo date('Y-m-d H:i:s',$vo['last_login_time']); endif; ?>
+                        </td>
+                        <td>
+                            <?php echo $users['user_logintimes']; ?>
+                        </td>
+                        <td>
+                            <?php if($users['user_name'] != admin): if($users['user_status'] == 1): ?>
+                            <span data-userid="<?php echo $users['id']; ?>" class="label label-primary  user_status">启用</span> <?php else: ?>
+                            <span data-userid="<?php echo $users['id']; ?>" class="label label-danger user_status">禁用</span> <?php endif; else: ?>启用 <?php endif; ?>
+                            <div class="overlay">
+                                <i class="fa fa-refresh fa-spin"></i>
+                            </div>
+                        </td>
+                        <td><?php if($users['user_name'] != 'admin'): ?>
+                            <a href="<?php echo url('user/edit',array('id'=>$users['id'])); ?>" class="table-link">
                                             编辑
                                         </a>
-                                        <a href="<?php echo url('user/auth',array('id'=>$users['id'])); ?>" class="table-link">
+                            <a href="<?php echo url('user/auth',array('id'=>$users['id'])); ?>" class="table-link">
                                             授权
                                         </a>
-                                        <a href="<?php echo url('user/del',array('id'=>$users['id'])); ?>" class="table-link confirm ajax-get">
+                            <a href="<?php echo url('user/del',array('id'=>$users['id'])); ?>" class="table-link confirm ajax-get">
                                             删除
-                                        </a>
-                                        <?php endif; ?>
-                                    </td>
-                                </tr>
-                            <?php endforeach; endif; else: echo "" ;endif; ?> </tbody>
-                        </table>
-                    </div> 
-                    <div id="tablefanye">
-                    <input type="hidden" name="key" value="0" selected>
-                        <div role="toolbar" class="btn-toolbar" style="margin-top:10px">
-                            <div class="btn-group">
-                                <button class="btn btn-default" title="首页" data-placement="top" data-toggle="tooltip" type="button" id="shouye" disabled="">«</button>
-                                <button class="btn btn-default" disabled="" type="button" title="上一页" data-placement="top" data-toggle="tooltip" id="shang">&lt;</button>
-                                <button <?php echo $pages['disabled']; ?> class="btn btn-default" type="button" id="pageList">第
-                                    <span id="pages">1</span>页/共
-                                    <span id="maxpage"><?php echo $pages['page']; ?></span>页
-                                    <span class="caret"></span></button>
-                                <button <?php echo $pages['disabled']; ?>  class="btn btn-default" title="下一页" data-placement="top" data-toggle="tooltip" type="button" id="next">&gt;</button>
-                                <button  <?php echo $pages['disabled']; ?> class="btn btn-default" title="尾页" data-placement="top" data-toggle="tooltip" type="button" id="lastye">»</button></div>
-                            <div class="btn-group">
-                                <button class="btn btn-default" title="刷新" data-placement="top" data-toggle="tooltip" type="button" id="refresh" onclick="reFreshData();">
-                                    <i class="icon-refresh"></i>
-                                </button>
-                            </div>
-                            <div style="float:right; padding-top:3px" class="btn-group">
-                                <span>共记录
-                                    <span id="zjilu"><?php echo $pages['total']; ?></span>条</span>&nbsp;每页
-                                <input type="number" style="width:40px;text-align:center;height:24px;border:1px #dddddd solid;margin:0px 2px;font-size:12px" value="<?php echo $pages['pagesize']; ?>" id="pagesize" onfocus="" onblur="cPageSize(this)" maxlength="3">条&nbsp;</div></div>
-                    </div>
-                </div>
-            </div>
-
+                                        </a> <?php endif; ?>
+                        </td>
+                    </tr>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </tbody>
+            </table>
+            <div class="pagination"><?php echo $page; ?></div>
         </div>
     </div>
-</div> 
-<script src="__ROOT__/public/static/js/user.js"></script> 
+</div>
+<script src="__ROOT__/public/static/js/user.js"></script>
  
   </div>  
   <div class="control-sidebar-bg"></div>
@@ -337,6 +301,7 @@
 <!-- AdminLTE App -->
 <script src="__ROOT__/public/dist/js/adminlte.js"></script> 
 <script src="__ROOT__/public/plugins/layer/layer.js"></script>
+<script src="__ROOT__/public/plugins/treeTable/treeTable.js"></script>
 <!-- jvectormap -->
 <!-- <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->

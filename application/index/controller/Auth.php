@@ -13,7 +13,7 @@ class Auth extends Controller {
 			unset($data['id']);
 			$data['create_time'] = time();
 			try {
-				$res = db("mc_role")->insert($data);
+				$res = db("role")->insert($data);
 			} catch (\Exception $e) {
 				return $this->error($e, 'system_error', $data);
 				exit;

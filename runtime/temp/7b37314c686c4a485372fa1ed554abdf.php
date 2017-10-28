@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\menu\edit.html";i:1508919684;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508733288;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1508921327;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\menu\edit.html";i:1509158593;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509152620;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509109349;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509153573;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="__ROOT__/public/plugins/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="__ROOT__/public/plugins/font-awesome/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="__ROOT__/public/plugins/treeTable/treeTable.css"> 
   <!-- Theme style -->
   <link rel="stylesheet" href="__ROOT__/public/dist/css/AdminLTE.min.css"> 
   <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css">  
@@ -124,16 +125,7 @@
                 </div>
               </li>
             </ul>
-          </li>
-          <!-- Control Sidebar Toggle Button -->
-          <li>
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <i class="fa fa-gears"></i>
-            </a> 
-              <ul class="dropdown-menu">
-                <li>版本信息 1.0</li> 
-              </ul>
-          </li>
+          </li> 
         </ul>
       </div>
     </nav>
@@ -160,7 +152,7 @@
             <li class="<?php echo $user_menu; ?>"><a href="<?php echo url('index/menu/index'); ?>"><i class="fa fa-circle-o"></i> 菜单管理</a></li>
             <li class="<?php echo $user_index; ?>"><a href="<?php echo url('index/user/index'); ?>"><i class="fa fa-circle-o"></i> 用户管理</a></li>
             <li class="<?php echo $user_role; ?>"><a href="<?php echo url('/index/role/index'); ?>"><i class="fa fa-circle-o"></i> 角色管理</a></li>
-            <li class="<?php echo $user_permission; ?>"><a href="<?php echo url('index/user/permission'); ?>"><i class="fa fa-circle-o"></i> 权限管理</a></li>
+            <li class="<?php echo $user_permission; ?>"><a href="<?php echo url('index/auth/index'); ?>"><i class="fa fa-circle-o"></i> 权限管理</a></li>
           </ul>
         </li> 
         <li class="treeview">
@@ -180,109 +172,149 @@
   </aside> 
   <div class="content-wrapper">   
 
-<link rel="stylesheet" href="__ROOT__/public/static/css/user.css"> 
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css">
 <style>
-.content-header{
-    border-bottom: 1px #d2d6de solid;padding-bottom: 10px;
-} 
-.main-box{margin:20px;background-color:#fff;box-shadow: 0px 0px 1px #73080a; border-radius: 5px;}
-.from-box{margin-left:-10px;margin-right: 20px;margin-top:20px;}
-</style> 
+.content-header {
+    border-bottom: 1px #d2d6de solid;
+    padding-bottom: 10px;
+}
+
+.main-box {
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 1px #73080a;
+    border-radius: 5px;
+}
+
+.from-box {
+    margin-left: -10px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+</style>
  
-  
-<section class="content-header"> 
-   <h1><a class="title" id="add_menu_button" href="<?php echo url('index'); ?>">菜单管理</a> <small><?php echo isset($info['id'])?'编辑':'新增'; ?>菜单</small></h1> 
-  </section> 
-  <div class="container"> 
-   <div id="indexcontent"> 
-    <div class="main-box clearfix "> 
-     <div class="col-lg-12"> 
-      <form method="post" id="menu_edit_form" class="form form-horizontal"> 
-       <div class="row from-box"> 
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">标题</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="title" value="<?php echo (isset($info['title']) && ($info['title'] !== '')?$info['title']:''); ?>">
-          <div class="help-block">
-            用于导航显示（<span class="title_block text-red">必填</span>）
-          </div> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">小图标</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="icon" value="<?php echo (isset($info['icon']) && ($info['icon'] !== '')?$info['icon']:''); ?>" /> 
-          <div class="help-block">
-            （用于显示在菜单左侧，不填则不显示）
-          </div> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">排序</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="sort" value="<?php echo (isset($info['sort']) && ($info['sort'] !== '')?$info['sort']:0); ?>" /> 
-          <div class="help-block">
-           （<span class="password_block">用于分组显示的顺序</span>）
-          </div> 
-         </div> 
-        </div>  
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">链接</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="url" value="<?php echo (isset($info['url']) && ($info['url'] !== '')?$info['url']:''); ?>" /> 
-          <div class="help-block">
-           （<span class="password_block text-red">二级菜单必填</span>）
-          </div> 
-         </div> 
+
+<section class="content-header">
+    <h1><a class="title" id="add_menu_button" href="<?php echo url('index'); ?>">菜单管理</a> <small><?php echo isset($info['id'])?'编辑':'新增'; ?>菜单</small></h1>
+</section>
+<div class="main-box clearfix ">
+    <form method="post" id="menu_edit_form" class="form form-horizontal">
+        <div class="row from-box">
+            <div class="form-group">
+                <label class="col-lg-2 control-label">名称</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="name" value="<?php echo (isset($info['name']) && ($info['name'] !== '')?$info['name']:''); ?>">
+                    <div class="help-block">
+                        用于导航显示（<span class="title_block text-red">必填</span>）
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">上级菜单</label>
+                <div class="col-md-6 col-sm-10">
+                    <select name="pid" class="form-control">
+                        <option value="0">作为一级菜单</option><?php echo $select_category; ?>
+                    </select>
+                    <div class="help-block">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">应用</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="app" value="<?php echo (isset($info['app']) && ($info['app'] !== '')?$info['app']:''); ?>">
+                    <div class="help-block">
+                        （<span class="text-red">必填</span>）
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">控制器</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="controller" value="<?php echo (isset($info['controller']) && ($info['controller'] !== '')?$info['controller']:''); ?>">
+                    <div class="help-block">
+                        （<span class="text-red">必填</span>）
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">方法</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="action" value="<?php echo (isset($info['action']) && ($info['action'] !== '')?$info['action']:''); ?>">
+                    <div class="help-block">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">参数</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="param" value="<?php echo (isset($info['param']) && ($info['param'] !== '')?$info['param']:''); ?>" />
+                    <div class="help-block"> 例:id=3&p=3
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">小图标</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="icon" value="<?php echo (isset($info['icon']) && ($info['icon'] !== '')?$info['icon']:''); ?>" />
+                    <div class="help-block">
+                        （用于显示在菜单左侧，不填则不显示）
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">排序</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="list_order" value="<?php echo (isset($info['list_order']) && ($info['list_order'] !== '')?$info['list_order']:0); ?>" />
+                    <div class="help-block">
+                        （用于分组显示的顺序）
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">状态</label>
+                <div class="col-md-6 col-sm-10">
+                    <select class="form-control valid" name="status" aria-invalid="false">
+                        <option value="1">显示</option>
+                        <option value="0" <?php if(isset($info['status']) && $info['status']==0): ?>selected<?php endif; ?>>隐藏</option>
+                    </select>
+                    <div class="help-block">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">类型</label>
+                <div class="col-md-6 col-sm-10">
+                    <select class="form-control valid" name="type" id="input-type" aria-invalid="false">
+                        <option value="1">有界面可访问菜单</option>
+                        <option value="2" <?php if(isset($info['type']) && $info['type']==2): ?>selected<?php endif; ?>>无界面可访问菜单</option>
+                        <option value="0" <?php if(isset($info['type']) && $info['type']==0): ?>selected<?php endif; ?>>只作为菜单</option>
+                    </select>
+                    <div class="help-block">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">备注</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="remark" value="<?php echo (isset($info['remark']) && ($info['remark'] !== '')?$info['remark']:''); ?>" />
+                    <div class="help-block">
+                        （菜单详细说明）
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <input type="hidden" name="id" value="<?php echo (isset($info['id']) && ($info['id'] !== '')?$info['id']:''); ?>">
+                    <input type="hidden" name="posturl" value="<?php echo (isset($info['posturl']) && ($info['posturl'] !== '')?$info['posturl']:''); ?>">
+                    <button class="btn btn-success add_menu_submit" type="button">确 定</button>
+                    <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+                </div>
+            </div>
         </div>
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">上级菜单</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <select name="pid" class="form-control" style="width: 50%"> 
-                        <?php if(is_array($Menus) || $Menus instanceof \think\Collection || $Menus instanceof \think\Paginator): $i = 0; $__LIST__ = $Menus;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$menu): $mod = ($i % 2 );++$i;?>
-                        <option value="<?php echo $menu['id']; ?>" <?php if($info['pid'] == $menu['id']): ?>selected<?php endif; ?>><?php echo $menu['title_show']; ?></option>
-                        <?php endforeach; endif; else: echo "" ;endif; ?>
-                      </select>
-          <div class="repassword-block"> 
-          </div> 
-         </div> 
-        </div>
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">是否隐藏</label> 
-         <div class="col-lg-10 col-sm-10"> 
-          <select name="hide" class="form-control">
-            <option value="0">否</option>
-            <option value="1" <?php if(isset($info['is_dev']) && $info['is_dev']==1): ?>selected<?php endif; ?>>是 
-            </option>
-          </select> 
-          <div class="email-block">
-             
-          </div> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <label class="col-lg-2 control-label">说明</label> 
-         <div class="col-lg-10 col-sm-10"> 
-           <input type="text" class="form-control"name="tip" value="<?php echo (isset($info['tip']) && ($info['tip'] !== '')?$info['tip']:''); ?>" />  
-          <div class="email-block">
-            （<span class="email_block">菜单详细说明</span>）
-          </div> 
-         </div> 
-        </div> 
-        <div class="form-group"> 
-         <div class="col-lg-offset-2 col-lg-10">  
-          <input type="hidden" name="id" value="<?php echo (isset($info['id']) && ($info['id'] !== '')?$info['id']:''); ?>">
-          <button class="btn btn-success add_menu_submit" type="button">确 定</button> 
-          <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button> 
-         </div> 
-        </div> 
-       </div> 
-      </form> 
-     </div> 
-    </div> 
-   </div> 
-  </div>
-<script src="__ROOT__/public/static/js/menu.js"></script> 
+    </form>
+</div>
+<script src="__ROOT__/public/static/js/menu.js"></script>
  
   </div>  
   <div class="control-sidebar-bg"></div>
@@ -293,6 +325,7 @@
 <!-- AdminLTE App -->
 <script src="__ROOT__/public/dist/js/adminlte.js"></script> 
 <script src="__ROOT__/public/plugins/layer/layer.js"></script>
+<script src="__ROOT__/public/plugins/treeTable/treeTable.js"></script>
 <!-- jvectormap -->
 <!-- <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->

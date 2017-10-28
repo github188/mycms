@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\role\index.html";i:1509089409;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1508733288;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1508989256;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509068271;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1508733288;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\role\index.html";i:1509175718;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509152620;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509109349;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509153573;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="__ROOT__/public/plugins/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="__ROOT__/public/plugins/font-awesome/css/font-awesome.min.css"> 
+  <link rel="stylesheet" href="__ROOT__/public/plugins/treeTable/treeTable.css"> 
   <!-- Theme style -->
   <link rel="stylesheet" href="__ROOT__/public/dist/css/AdminLTE.min.css"> 
   <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css">  
@@ -191,7 +192,7 @@
  
   
 <section class="content-header"> 
-   <h1> 用户管理 <small>用户列表</small> </h1>  
+   <h1> 角色管理 <small>角色列表</small> </h1>  
    <div class="pull-right  action-btn clearfix"> 
     <a class="btn btn-primary" href="<?php echo url('add'); ?>">新增角色</a> 
    </div> 
@@ -233,6 +234,7 @@
 <!-- AdminLTE App -->
 <script src="__ROOT__/public/dist/js/adminlte.js"></script> 
 <script src="__ROOT__/public/plugins/layer/layer.js"></script>
+<script src="__ROOT__/public/plugins/treeTable/treeTable.js"></script>
 <!-- jvectormap -->
 <!-- <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> -->
