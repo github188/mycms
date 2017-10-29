@@ -1,10 +1,10 @@
 <?php
 namespace app\index\controller;
+use com\Baseinit;
 use com\Tree;
-use think\Controller;
 use think\Db;
 
-class Menu extends Controller {
+class Menu extends Baseinit {
 	public function index() {
 		session('admin_menu_index', 'Menu/index');
 		$result = Db::name('menu')->order(["list_order" => "ASC"])->select();

@@ -7,6 +7,7 @@ $(function($) {
      */
     function check_user() {
         var user_name = $("#user_add_form [name=user_name]").val();
+        var id = $("#user_add_form [name=id]").val();
         if (!user_name) {
             $("#user_add_form [name=user_name]").focus();
             $(".user_name_block").css("color", "red");
@@ -14,7 +15,7 @@ $(function($) {
         }
         var checkurl = $("#user_add_form").attr("checkurl");
         $.ajax({
-            url: checkurl+'?username=' + user_name,
+            url: checkurl+'?username=' + user_name+'&id='+id,
             type: 'POST',
             success: function(json) {
                 var json = eval("(" + json + ")");

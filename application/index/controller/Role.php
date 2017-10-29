@@ -1,11 +1,11 @@
 <?php
 namespace app\index\controller;
 use app\index\model\Menu;
+use com\Baseinit;
 use com\Tree;
-use think\Controller;
 use think\Db;
 
-class Role extends Controller {
+class Role extends Baseinit {
 	public function index() {
 		$this->assign('title', '角色管理');
 		$list = db('role')->select();

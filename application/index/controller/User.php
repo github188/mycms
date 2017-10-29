@@ -1,12 +1,17 @@
 <?php
 namespace app\index\controller;
+use app\index\model\Menu;
+use com\Baseinit;
 use think\Controller;
 use think\Db;
 use think\Db\Query;
 
-class User extends Controller {
+class User extends Baseinit {
 	public function index() {
 		$this->assign('title', "用户管理");
+		$menuModel = new Menu();
+		$menus = $menuModel->menuTree();
+		$this->assign("menus", $menus);
 		$sql = "select id,user_name,user_nickname,last_login_time,user_status,user_logintimes from mc_user";
 		$db_user = new Query();
 		$res = $db_user->query($sql);
@@ -23,7 +28,11 @@ class User extends Controller {
 	public function checkUserName() {
 		if ($_GET['username']) {
 			$username = $_GET['username'];
-			$res = db("user")->where("user_name='$username'")->count();
+			$where = "user_name='$username'";
+			if ($_GET['id']) {
+				$where .= " and id !='" . $_GET['id'] . "' ";
+			}
+			$res = db("user")->where($where)->count();
 			echo json_encode(array("statu" => 'ok', "msg" => $res));
 			exit;
 		} else {
@@ -40,6 +49,7 @@ class User extends Controller {
 			}
 			$role_id = $_POST['role_id'];
 			unset($_POST['role_id']);
+			unset($_POST['id']);
 			unset($_POST['repassword']);
 			$db = db('user');
 			$data = $_POST;
@@ -92,9 +102,13 @@ class User extends Controller {
 		} else if ($find["user_name"] === session("username")) {
 			return $this->error($errormsg ? $errormsg : '不能删除自己！');
 		} else {
-			db('user')->where(array('id' => $id))->delete();
-			return $this->success('删除用户成功！');
-		};
+			if (db('user')->where(array('id' => $id))->delete()) {
+				Db::name("RoleUser")->where(["user_id" => $id])->delete();
+				return $this->success('删除用户成功！');
+			} else {
+				$this->error("删除失败！");
+			}
+		}
 	}
 	/**
 	 * 获取用户信息
@@ -137,5 +151,52 @@ class User extends Controller {
 		$user = DB::name('user')->where(["id" => $id])->find();
 		$this->assign("info", $user);
 		return $this->fetch("user/add");
+	}
+	/**
+	 * 管理员编辑提交
+	 * @adminMenu(
+	 *     'name'   => '管理员编辑提交',
+	 *     'parent' => 'index',
+	 *     'display'=> false,
+	 *     'hasView'=> false,
+	 *     'order'  => 10000,
+	 *     'icon'   => '',
+	 *     'remark' => '管理员编辑提交',
+	 *     'param'  => ''
+	 * )
+	 */
+	public function editPost() {
+		if (input("post.")) {
+			if (!empty($_POST['role_id']) && $_POST['role_id']) {
+				if (empty($_POST['user_password'])) {
+					unset($_POST['user_password']);
+				} else {
+					$_POST['user_password'] = md5_password($_POST['user_password']);
+				}
+				$role_id = $_POST['role_id'];
+				unset($_POST['role_id']);
+				unset($_POST['repassword']);
+				$uid = $_POST['id'];
+				$result = DB::name('user')->where("id='$uid'")->update($_POST);
+				if ($result !== false) {
+					$uid = $this->request->param('id', 0, 'intval');
+					DB::name("RoleUser")->where(["user_id" => $uid])->delete();
+					DB::name("RoleUser")->insert(["role_id" => $role_id, "user_id" => $uid]);
+					$this->success("保存成功！");
+				} else {
+					$this->error("保存失败！");
+				}
+			} else {
+				$this->error("请为此用户指定角色！");
+			}
+
+		}
+	}
+	public function auth($id) {
+		$roles = Db::name("role")->where(['status' => 1])->field("id,role_name,description")->select();
+		$rule = Db::name("RoleUser")->where("user_id='$id'")->find();
+		$this->assign("rule", $rule);
+		$this->assign("roles", $roles);
+		return $this->fetch();
 	}
 }

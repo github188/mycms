@@ -1,0 +1,55 @@
+{extend name="public/base"} {block name="style"}
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css">
+<style>
+.content-header {
+    border-bottom: 1px #d2d6de solid;
+    padding-bottom: 10px;
+}
+
+.main-box {
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 1px #73080a;
+    border-radius: 5px;
+}
+
+.from-box {
+    margin-left: -10px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+</style>
+{/block} {block name="body"}
+<section class="content-header">
+    <h1>用户管理 <small>新增用户</small></h1>
+</section>
+<div class="main-box clearfix ">
+    <form method="post" id="user_add_form" checkurl="{:url('User/checkusername','','')}" action="{:isset($info.id)?url('User/editPost'):url('User/addPost')}" class="form form-horizontal">
+        <div class="row from-box">
+            <div class="form-group">
+                <label class="col-lg-2 control-label">请选择角色</label>
+                {volist name="roles" id="roles" key="key"}
+                <label class="radio-inline {if condition='$rule["role_id"] eq 53'} active {/if}" >
+                    <input type="radio" name="role_id" id="role_id{$roles.id}" value="{$roles.id}"> {$roles.role_name}
+                </label>
+                {/volist}  
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <input type="hidden" class="form-control" name="id" id="id" value="{$info.id}" />
+                    <button class="btn btn-success user_add_submit" type="button">确 定</button>
+                    <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<script>
+    $(".user_add_submit").on("click",function(){
+        var id = $("[name=role_id]").val();
+        console.log(id);
+        return false;
+    });
+</script>
+<script src="__ROOT__/public/static/js/user.js"></script>
+{/block}

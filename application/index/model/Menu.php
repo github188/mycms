@@ -7,11 +7,11 @@ use think\Model;
 class Menu extends Model {
 	//验证菜单是否超出三级
 	public function checkParentId($parentId) {
-		$find = $this->where(["id" => $parentId])->getField("parent_id");
+		$find = $this->where(["id" => $parentId])->getField("pid");
 		if ($find) {
-			$find2 = $this->where(["id" => $find])->getField("parent_id");
+			$find2 = $this->where(["id" => $find])->getField("pid");
 			if ($find2) {
-				$find3 = $this->where(["id" => $find2])->getField("parent_id");
+				$find3 = $this->where(["id" => $find2])->getField("pid");
 				if ($find3) {
 					return false;
 				}
@@ -51,15 +51,14 @@ class Menu extends Model {
 	public function adminMenu($parentId, $withSelf = false) {
 		//父节点ID
 		$parentId = (int) $parentId;
-		$result = $this->where(['parent_id' => $parentId, 'status' => 1])->order("list_order", "ASC")->select();
-
+		$result = $this->where(['pid' => $parentId, 'status' => 1])->order("list_order", "ASC")->select();
 		if ($withSelf) {
 			$result2[] = $this->where(['id' => $parentId])->find();
 			$result = array_merge($result2, $result);
 		}
 
 		//权限检查
-		if (cmf_get_current_admin_id() == 1) {
+		if (get_current_admin_id() == 1) {
 			//如果是超级管理员 直接通过
 			return $result;
 		}
@@ -83,7 +82,7 @@ class Menu extends Model {
 
 				$rule_name = strtolower($v['app'] . "/" . $v['controller'] . "/" . $action);
 //                print_r($rule_name);
-				if (cmf_auth_check(cmf_get_current_admin_id(), $rule_name)) {
+				if (auth_check(get_current_admin_id(), $rule_name)) {
 					$array[] = $v;
 				}
 
@@ -112,7 +111,43 @@ class Menu extends Model {
 	 */
 	public function menuTree() {
 		$data = $this->getTree(0);
-		return $data;
+		$list = '<ul class="sidebar-menu" data-widget="tree">';
+		$list .= $this->menuUl($data);
+		//dump($data);exit;
+		$list .= '</ul>';
+		return $list;
+	}
+	/**
+	 * 生成ul列表
+	 */
+	public function menuUl($menus, $i = 0) {
+		$list = $class = '';
+		foreach ($menus as $key => $value) {
+			$drop_ul = '';
+			if ($i == 0) {
+				$active = "active";
+			} else {
+				$active = "";
+			}
+			if ($value['parent'] == 0) {
+				$class = " class='treeview $active'";
+			}
+			if ($value['items']) {
+				$drop_ul .= '<span class="pull-right-container">';
+				$drop_ul .= '<i class="fa fa-angle-left pull-right"></i>';
+				$drop_ul .= '</span>';
+				$drop_ul .= '<ul class="treeview-menu">';
+				$drop_ul .= $this->menuUl($value["items"], $i++);
+				$drop_ul .= '</ul>';
+			}
+			$list .= '<li' . $class . '>';
+			$list .= '<a href="' . $value['url'] . '">';
+			$list .= '<i class="fa fa-' . $value['name'] . '"></i> <span>' . $value['name'] . '</span>';
+			$list .= $drop_ul;
+			$list .= '</a>';
+			$list .= '</li>';
+		}
+		return $list;
 	}
 
 	/**
@@ -193,7 +228,7 @@ class Menu extends Model {
 	public function menu($parentId, $with_self = false) {
 		//父节点ID
 		$parentId = (int) $parentId;
-		$result = $this->where(['parent_id' => $parentId])->select();
+		$result = $this->where(['pid' => $parentId])->select();
 		if ($with_self) {
 			$result2[] = $this->where(['id' => $parentId])->find();
 			$result = array_merge($result2, $result);
@@ -206,7 +241,7 @@ class Menu extends Model {
 	 * @param number $parentId
 	 */
 	public function get_menu_tree($parentId = 0) {
-		$menus = $this->where(["parent_id" => $parentId])->order(["list_order" => "ASC"])->select();
+		$menus = $this->where(["pid" => $parentId])->order(["list_order" => "ASC"])->select();
 
 		if ($menus) {
 			foreach ($menus as $key => $menu) {
@@ -215,7 +250,7 @@ class Menu extends Model {
 					$menus[$key]['children'] = $children;
 				}
 				unset($menus[$key]['id']);
-				unset($menus[$key]['parent_id']);
+				unset($menus[$key]['pid']);
 			}
 			return $menus;
 		} else {

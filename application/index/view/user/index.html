@@ -84,7 +84,7 @@
                             {$users.user_nickname}
                         </td>
                         <td>
-                            {if condition="$vo['last_login_time'] eq 0"} 该用户还没登陆过 {else /} {:date('Y-m-d H:i:s',$vo['last_login_time'])} {/if}
+                            {if condition="$users['last_login_time'] eq 0"} 该用户还没登陆过 {else /} {:date('Y-m-d H:i:s',$users['last_login_time'])} {/if}
                         </td>
                         <td>
                             {$users.user_logintimes}

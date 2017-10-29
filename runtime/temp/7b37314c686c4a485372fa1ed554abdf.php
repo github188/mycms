@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\menu\edit.html";i:1509158593;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509152620;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509109349;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509153573;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\menu\edit.html";i:1509158593;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509152620;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509285965;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509291168;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509153573;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,112 +24,95 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini fixed">
 <div class="wrapper"> 
-   <header class="main-header">
+  <header class="main-header">
     <!-- Logo -->
     <a href="__ROOT__" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>XTS</b></span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>系统室管理</b></span>
+        <!-- mini logo for sidebar mini 50x50 pixels -->
+        <span class="logo-mini"><b>XTS</b></span>
+        <!-- logo for regular state and mobile devices -->
+        <span class="logo-lg"><b>系统室管理</b></span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
-      <!-- Sidebar toggle button-->
-      <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+        <!-- Sidebar toggle button-->
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
         <span class="sr-only">导航</span>
       </a>
-
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
-          <!-- Messages: style can be found in dropdown.less-->
-          <li class="dropdown messages-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- Messages: style can be found in dropdown.less-->
+                <li class="dropdown messages-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
               <span class="label label-success">4</span>
             </a>
-            <ul class="dropdown-menu">
-              <li class="header">你有4条新信息</li>
-              <li>
-                <!-- inner menu: contains the actual data -->
-                <ul class="menu">
-                  <li><!-- start message -->
-                    <a href="#"> 
-                      <h4 style="margin:0;">
+                    <ul class="dropdown-menu">
+                        <li class="header">你有4条新信息</li>
+                        <li>
+                            <!-- inner menu: contains the actual data -->
+                            <ul class="menu">
+                                <li>
+                                    <!-- start message -->
+                                    <a href="#">
+                                        <h4 style="margin:0;">
                         From:总行魏中伟
                         <small><i class="fa fa-clock-o"></i> 5分钟前</small>
                       </h4>
-                      <p style="margin:0;">主题，，，，?</p>
-                    </a>
-                  </li>
-                  <!-- end message --> 
-                  <li><!-- start message -->
-                    <a href="#"> 
-                      <h4 style="margin:0;">
+                                        <p style="margin:0;">主题，，，，?</p>
+                                    </a>
+                                </li>
+                                <!-- end message -->
+                                <li>
+                                    <!-- start message -->
+                                    <a href="#">
+                                        <h4 style="margin:0;">
                         From:总行魏中伟
                         <small><i class="fa fa-clock-o"></i> 5分钟前</small>
                       </h4>
-                      <p style="margin:0;">主题，，，，?</p>
-                    </a>
-                  </li>
-
-<li><!-- start message -->
-                    <a href="#"> 
-                      <h4 style="margin:0;">
+                                        <p style="margin:0;">主题，，，，?</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- start message -->
+                                    <a href="#">
+                                        <h4 style="margin:0;">
                         From:总行魏中伟
                         <small><i class="fa fa-clock-o"></i> 5分钟前</small>
                       </h4>
-                      <p style="margin:0;">主题，，，，?</p>
-                    </a>
-                  </li>
-
-<li><!-- start message -->
-                    <a href="#"> 
-                      <h4 style="margin:0;">
+                                        <p style="margin:0;">主题，，，，?</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <!-- start message -->
+                                    <a href="#">
+                                        <h4 style="margin:0;">
                         From:总行魏中伟
                         <small><i class="fa fa-clock-o"></i> 5分钟前</small>
                       </h4>
-                      <p style="margin:0;">主题，，，，?</p>
-                    </a>
-                  </li>
-
-                </ul>
-              </li>
-              <li class="footer"><a href="#">查看全部信息</a></li>
-            </ul>
-          </li>
-           
-          <li class="dropdown user user-menu">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
-              <span class="hidden-xs">admin</span>
+                                        <p style="margin:0;">主题，，，，?</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="footer"><a href="#">查看全部信息</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
+              <span class="hidden-xs"><?php echo $userinfo['user_name']; ?> </span><i class="fa fa-caret-down"></i>
             </a>
-            <ul class="dropdown-menu"> 
-              <!-- Menu Body -->
-              <li class="user-body">
-                <div class="row">
-                  <div class="col-xs-4 text-center">
-                    <a href="#">用户管理</a>
-                  </div>
-                  <div class="col-xs-4 text-center">
-                    <a href="#">权限管理</a>
-                  </div> 
-                </div>
-                <!-- /.row -->
-              </li>
-              <!-- Menu Footer-->
-              <li class="user-footer">
-                <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">修改密码</a>
-                </div>
-                <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">注销</a>
-                </div>
-              </li>
+                    <ul class="dropdown-menu" style="width: 30px;overflow: hidden;"> 
+                        <li>
+                            <a href="<?php echo url('Setting/info'); ?>"><i class="fa fa-user"></i> 修改信息</a></li>
+                        <li>
+                            <a href="<?php echo url('Setting/password'); ?>"><i class="fa fa-lock"></i> 修改密码</a></li>
+                        <li><a href="<?php echo url('Publics/logout'); ?>"><i class="fa fa-sign-out"></i> 退出</a></li>
+                    </ul>
+                </li>
             </ul>
-          </li> 
-        </ul>
-      </div>
+        </div>
     </nav>
-  </header>
+</header>
    <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
@@ -138,11 +121,10 @@
         <div class="pull-left  info" >
           <p style="margin: 0;">菜单</p> 
         </div>
-      </div> 
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree"> 
+      </div>  
+<!--       <ul class="sidebar-menu" data-widget="tree"> 
         <li class="active treeview">
-          <a href="#">
+          <a href="<?php echo url('index/menu/index'); ?>">
             <i class="fa fa-dashboard"></i> <span>用户权限</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -166,7 +148,8 @@
             <li class="<?php echo $user_index; ?>"><a href="<?php echo url('index/user/index'); ?>"><i class="fa fa-circle-o"></i> 数据备份</a></li> 
           </ul>
         </li> 
-      </ul>
+      </ul> -->
+      <?php echo $menus; ?>
     </section>
     <!-- /.sidebar -->
   </aside> 

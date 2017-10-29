@@ -1,8 +1,8 @@
 <?php
 namespace app\index\Controller;
-use think\Controller;
+use com\Baseinit;
 
-class Auth extends Controller {
+class Auth extends Baseinit {
 	public function index() {
 		return $this->fetch();
 	}
