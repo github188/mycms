@@ -27008,3 +27008,131 @@
   0 => 'img',
 ) ]
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-30T17:16:21+08:00 ] ::1 ::1 GET /mycms/index/publics/login.html
+[ info ] localhost/mycms/index/publics/login.html [运行时间：0.043970s][吞吐率：22.74req/s] [内存消耗：2,505.09kb] [文件加载：37]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'publics',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/report/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'BJYADMIN=5ef8eb439562c8ha7fhlvk5bu1; admin_username=admin; PHPSESSID=pqbmlcoq8fmktde0kler69fe73',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Publics->login[ E:\webproject\mycms\application\index\controller\Publics.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\login_index.html [ array (
+  0 => 'img',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-30T17:16:22+08:00 ] ::1 ::1 GET /mycms/index/publics/login.html
+[ info ] localhost/mycms/index/publics/login.html [运行时间：0.053431s][吞吐率：18.72req/s] [内存消耗：2,505.09kb] [文件加载：37]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'publics',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/report/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'BJYADMIN=5ef8eb439562c8ha7fhlvk5bu1; admin_username=admin; PHPSESSID=pqbmlcoq8fmktde0kler69fe73',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Publics->login[ E:\webproject\mycms\application\index\controller\Publics.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\login_index.html [ array (
+  0 => 'img',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-30T17:16:22+08:00 ] ::1 ::1 GET /mycms/index/publics/login.html
+[ info ] localhost/mycms/index/publics/login.html [运行时间：0.036944s][吞吐率：27.07req/s] [内存消耗：2,505.09kb] [文件加载：37]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'publics',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/report/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'BJYADMIN=5ef8eb439562c8ha7fhlvk5bu1; admin_username=admin; PHPSESSID=pqbmlcoq8fmktde0kler69fe73',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Publics->login[ E:\webproject\mycms\application\index\controller\Publics.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\login_index.html [ array (
+  0 => 'img',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-10-30T17:16:23+08:00 ] ::1 ::1 GET /mycms/index/publics/login.html
+[ info ] localhost/mycms/index/publics/login.html [运行时间：0.028564s][吞吐率：35.01req/s] [内存消耗：2,505.09kb] [文件加载：37]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'publics',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/report/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'BJYADMIN=5ef8eb439562c8ha7fhlvk5bu1; admin_username=admin; PHPSESSID=pqbmlcoq8fmktde0kler69fe73',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Publics->login[ E:\webproject\mycms\application\index\controller\Publics.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\login_index.html [ array (
+  0 => 'img',
+) ]
+[ info ] [ LOG ] INIT File
