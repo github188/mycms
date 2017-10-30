@@ -2,15 +2,15 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50553
+Source Server Version : 50714
 Source Host           : localhost:3306
 Source Database       : mycms
 
 Target Server Type    : MYSQL
-Target Server Version : 50553
+Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2017-10-30 02:02:33
+Date: 2017-10-30 14:02:04
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -27,17 +27,23 @@ CREATE TABLE `mc_auth_access` (
   PRIMARY KEY (`id`),
   KEY `role_id` (`role_id`),
   KEY `rule_name` (`rule_name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=utf8 COMMENT='权限授权表';
+) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT CHARSET=utf8 COMMENT='权限授权表';
 
 -- ----------------------------
 -- Records of mc_auth_access
 -- ----------------------------
-INSERT INTO `mc_auth_access` VALUES ('31', '4', 'index/setting/default', 'admin_url');
-INSERT INTO `mc_auth_access` VALUES ('32', '4', 'index/index/index', 'admin_url');
-INSERT INTO `mc_auth_access` VALUES ('33', '4', 'index/menu/add', 'admin_url');
-INSERT INTO `mc_auth_access` VALUES ('34', '4', 'index/user/index', 'admin_url');
-INSERT INTO `mc_auth_access` VALUES ('35', '4', 'index/role/index', 'admin_url');
-INSERT INTO `mc_auth_access` VALUES ('36', '4', 'index/auth/index', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('37', '53', 'index/setting/default', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('38', '53', 'index/menu/index', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('39', '53', 'index/menu/add', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('40', '53', 'index/user/index', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('41', '53', 'index/role/index', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('42', '53', 'index/auth/index', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('43', '2', 'index/setting/default', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('44', '2', 'index/menu/index', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('45', '2', 'index/menu/add', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('46', '2', 'index/user/index', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('47', '2', 'index/role/index', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('48', '2', 'index/auth/index', 'admin_url');
 
 -- ----------------------------
 -- Table structure for mc_auth_rule
@@ -55,19 +61,28 @@ CREATE TABLE `mc_auth_rule` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`) USING BTREE,
   KEY `module` (`app`,`status`,`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
 
 -- ----------------------------
 -- Records of mc_auth_rule
 -- ----------------------------
 INSERT INTO `mc_auth_rule` VALUES ('2', '1', 'index', 'admin_url', 'index/Setting/default', '', '系统设置', '');
-INSERT INTO `mc_auth_rule` VALUES ('3', '1', 'index', 'admin_url', 'index/Data/default', '', '数据库设置', '');
+INSERT INTO `mc_auth_rule` VALUES ('3', '1', 'index', 'admin_url', 'index/Report/index', '', '系统巡检', '');
 INSERT INTO `mc_auth_rule` VALUES ('4', '1', 'index', 'admin_url', 'index/Menu/index', '', '菜单管理', '');
 INSERT INTO `mc_auth_rule` VALUES ('5', '1', 'index', 'admin_url', 'index/User/index', '', '用户管理', '');
 INSERT INTO `mc_auth_rule` VALUES ('6', '1', 'index', 'admin_url', 'index/Role/index', '', '角色管理', '');
 INSERT INTO `mc_auth_rule` VALUES ('7', '1', 'index', 'admin_url', 'index/Auth/index', '', '权限管理', '');
 INSERT INTO `mc_auth_rule` VALUES ('8', '1', 'index', 'admin_url', 'index/Menu/add', '', '新增菜单', '');
-INSERT INTO `mc_auth_rule` VALUES ('9', '1', 'index', 'admin_url', 'index/data/backup', '', '数据备份', '');
+INSERT INTO `mc_auth_rule` VALUES ('9', '1', 'index', 'admin_url', 'index/Report/linux', '', 'Linu巡检', '');
+INSERT INTO `mc_auth_rule` VALUES ('10', '1', 'index', 'admin_url', 'index/Report/windows', '', 'Windows巡检', '');
+INSERT INTO `mc_auth_rule` VALUES ('11', '1', 'index', 'admin_url', 'index/Report/mq', '', 'MQ巡检', '');
+INSERT INTO `mc_auth_rule` VALUES ('12', '1', 'index', 'admin_url', 'index/Report/was', '', 'was巡检', '');
+INSERT INTO `mc_auth_rule` VALUES ('13', '1', 'index', 'admin_url', 'index/Report/oracle', '', 'Oracle巡检', '');
+INSERT INTO `mc_auth_rule` VALUES ('14', '1', 'index', 'admin_url', 'index/iframe/host', '', '新上线主机添加', '');
+INSERT INTO `mc_auth_rule` VALUES ('15', '1', 'index', 'admin_url', 'index/iframe/sms', '', '报警短信黑名单', '');
+INSERT INTO `mc_auth_rule` VALUES ('16', '1', 'index', 'admin_url', 'index/Iframe/gtp', '', 'GTP传输失败文件查询', '');
+INSERT INTO `mc_auth_rule` VALUES ('17', '1', 'index', 'admin_url', 'index/Iframe/file', '', '查询文件是否存在            ', '');
+INSERT INTO `mc_auth_rule` VALUES ('18', '1', 'index', 'admin_url', 'index/Iframe/chart', '', '设备故障信息统计', '');
 
 -- ----------------------------
 -- Table structure for mc_menu
@@ -90,19 +105,28 @@ CREATE TABLE `mc_menu` (
   KEY `status` (`status`),
   KEY `parentid` (`pid`),
   KEY `model` (`controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
 
 -- ----------------------------
 -- Records of mc_menu
 -- ----------------------------
 INSERT INTO `mc_menu` VALUES ('4', '0', '1', '1', '0', 'index', 'Setting', 'default', '', '系统设置', 'cog', '系统');
-INSERT INTO `mc_menu` VALUES ('5', '0', '1', '1', '0', 'index', 'Data', 'default', '', '数据库设置', 'cog', '系统');
-INSERT INTO `mc_menu` VALUES ('6', '4', '1', '1', '0', 'index', 'Menu', 'index', '', '菜单管理', '', '');
-INSERT INTO `mc_menu` VALUES ('7', '4', '1', '1', '0', 'index', 'User', 'index', '', '用户管理', '', '');
-INSERT INTO `mc_menu` VALUES ('8', '4', '1', '1', '0', 'index', 'Role', 'index', '', '角色管理', '', '');
-INSERT INTO `mc_menu` VALUES ('9', '4', '1', '1', '0', 'index', 'Auth', 'index', '', '权限管理', '', '');
-INSERT INTO `mc_menu` VALUES ('10', '6', '1', '0', '0', 'index', 'Menu', 'add', '', '新增菜单', '', '');
-INSERT INTO `mc_menu` VALUES ('11', '5', '1', '1', '0', 'index', 'data', 'backup', '', '数据备份', '', '');
+INSERT INTO `mc_menu` VALUES ('5', '0', '1', '1', '0', 'index', 'Report', 'index', '', '系统巡检', 'dashboard', '');
+INSERT INTO `mc_menu` VALUES ('6', '4', '1', '1', '0', 'index', 'Menu', 'index', '', '菜单管理', 'circle-o text-red', '');
+INSERT INTO `mc_menu` VALUES ('7', '4', '1', '1', '0', 'index', 'User', 'index', '', '用户管理', 'circle-o text-red', '');
+INSERT INTO `mc_menu` VALUES ('8', '4', '1', '1', '0', 'index', 'Role', 'index', '', '角色管理', 'circle-o text-red', '');
+INSERT INTO `mc_menu` VALUES ('9', '4', '1', '1', '0', 'index', 'Auth', 'index', '', '权限管理', 'circle-o text-red', '');
+INSERT INTO `mc_menu` VALUES ('10', '6', '1', '0', '0', 'index', 'Menu', 'add', '', '新增菜单', 'circle-o text-red', '');
+INSERT INTO `mc_menu` VALUES ('11', '5', '1', '1', '0', 'index', 'Report', 'linux', '', 'Linu巡检', 'linux', '');
+INSERT INTO `mc_menu` VALUES ('12', '5', '1', '1', '0', 'index', 'Report', 'windows', '', 'Windows巡检', 'windows', '');
+INSERT INTO `mc_menu` VALUES ('13', '5', '1', '1', '0', 'index', 'Report', 'mq', '', 'MQ巡检', '', '');
+INSERT INTO `mc_menu` VALUES ('14', '5', '1', '1', '0', 'index', 'Report', 'was', '', 'was巡检', '', '');
+INSERT INTO `mc_menu` VALUES ('15', '5', '1', '1', '0', 'index', 'Report', 'oracle', '', 'Oracle巡检', '', '');
+INSERT INTO `mc_menu` VALUES ('16', '0', '1', '1', '0', 'index', 'iframe', 'host', '', '新上线主机添加', 'laptop', '');
+INSERT INTO `mc_menu` VALUES ('17', '0', '1', '1', '0', 'index', 'iframe', 'sms', '', '报警短信黑名单', 'edit', '');
+INSERT INTO `mc_menu` VALUES ('18', '0', '1', '1', '0', 'index', 'Iframe', 'gtp', '', 'GTP传输失败文件查询', 'search', '');
+INSERT INTO `mc_menu` VALUES ('19', '0', '1', '1', '0', 'index', 'Iframe', 'file', '', '查询文件是否存在                     ', 'files-o', '');
+INSERT INTO `mc_menu` VALUES ('20', '0', '1', '1', '0', 'index', 'Iframe', 'chart', '', '设备故障信息统计', 'pie-chart', '');
 
 -- ----------------------------
 -- Table structure for mc_role
@@ -127,8 +151,8 @@ CREATE TABLE `mc_role` (
 -- ----------------------------
 -- Records of mc_role
 -- ----------------------------
-INSERT INTO `mc_role` VALUES ('52', '0', '1', '1509174069', '0', '0', '超级管理员', '拥有网站最高管理员权限！');
-INSERT INTO `mc_role` VALUES ('53', '0', '1', '1509174108', '0', '0', '普通管理员', '');
+INSERT INTO `mc_role` VALUES ('1', '0', '1', '1509174069', '0', '0', '超级管理员', '拥有网站最高管理员权限！');
+INSERT INTO `mc_role` VALUES ('2', '0', '1', '1509174108', '0', '0', '普通管理员', '');
 
 -- ----------------------------
 -- Table structure for mc_role_user
@@ -146,8 +170,8 @@ CREATE TABLE `mc_role_user` (
 -- ----------------------------
 -- Records of mc_role_user
 -- ----------------------------
-INSERT INTO `mc_role_user` VALUES ('2', '53', '1');
-INSERT INTO `mc_role_user` VALUES ('7', '53', '35');
+INSERT INTO `mc_role_user` VALUES ('1', '1', '1');
+INSERT INTO `mc_role_user` VALUES ('2', '2', '2');
 
 -- ----------------------------
 -- Table structure for mc_user
@@ -184,9 +208,9 @@ CREATE TABLE `mc_user` (
 -- ----------------------------
 -- Records of mc_user
 -- ----------------------------
-INSERT INTO `mc_user` VALUES ('1', '1', '0', '0', '1509297162', '5', '0', '1508811133', '1', 'admin', '99c348ce96784563b08f4e36c11ec5ab', '超级管理员', '', '', '', '', '0.0.0.0', '', '', null);
-INSERT INTO `mc_user` VALUES ('35', '1', '0', '0', '1509275868', '1', '0', '1509088849', '1', 'zzh', 'aa64395bec97fc114b420dd4e11f4f64', 'zzh', '', '', '', '', '0.0.0.0', '', '', null);
-INSERT INTO `mc_user` VALUES ('36', '1', '0', '0', '0', '0', '0', '1509177269', '1', 'ww', 'ad57484016654da87125db86f4227ea3', 'ww', '', '', '', '', '', '', '', null);
+INSERT INTO `mc_user` VALUES ('1', '1', '0', '0', '1509327542', '6', '0', '1508811133', '1', 'admin', '99c348ce96784563b08f4e36c11ec5ab', '超级管理员', '', '', '', '', '0.0.0.0', '', '', null);
+INSERT INTO `mc_user` VALUES ('2', '1', '0', '0', '1509328158', '2', '0', '1509088849', '1', 'zzh', 'aa64395bec97fc114b420dd4e11f4f64', 'zzh', '', '', '', '', '0.0.0.0', '', '', null);
+INSERT INTO `mc_user` VALUES ('3', '1', '0', '0', '0', '0', '0', '1509177269', '1', 'ww', 'ad57484016654da87125db86f4227ea3', 'ww', '', '', '', '', '', '', '', null);
 
 -- ----------------------------
 -- Table structure for mc_user_token
@@ -200,11 +224,10 @@ CREATE TABLE `mc_user_token` (
   `token` varchar(64) NOT NULL DEFAULT '' COMMENT 'token',
   `device_type` varchar(10) NOT NULL DEFAULT '' COMMENT '设备类型;mobile,android,iphone,ipad,web,pc,mac,wxapp',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='用户客户端登录 token 表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COMMENT='用户客户端登录 token 表';
 
 -- ----------------------------
 -- Records of mc_user_token
 -- ----------------------------
-INSERT INTO `mc_user_token` VALUES ('1', '34', '1524827687', '1509275687', '102876f8bbffb2c87b7c985a211cdb15b1c9e5a16b87fdedcbe6889c4f498ac3', 'web');
-INSERT INTO `mc_user_token` VALUES ('2', '35', '1524827868', '1509275868', 'af1e674ac6b6bc983380651b8317366046995da061b0fc0dbffa3a1d1d8fef88', 'web');
-INSERT INTO `mc_user_token` VALUES ('3', '1', '1524849162', '1509297162', '87a6adbfee84c14a37024c2879a4e4326661d77d7787f08bacc2d544fdaaec40', 'web');
+INSERT INTO `mc_user_token` VALUES ('1', '1', '1524879542', '1509327542', 'f1ee015816ed13f15a45f590a6a6bec9fce56114614d7a7d54ec02c9552f8147', 'web');
+INSERT INTO `mc_user_token` VALUES ('4', '2', '1524880158', '1509328158', 'd28bc01d8f3388463446eccf1ecd96aa775140cf4e1d2fe5fa8a52b3c5994238', 'web');

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\role\index.html";i:1509175718;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509152620;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509285965;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509291168;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509153573;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\role\index.html";i:1509326122;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509324338;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509324338;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509324338;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509324338;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -201,7 +201,10 @@
       <td><a href="#" class="editable editable-click" data-id="<?php echo $item['id']; ?>" data-name="role_name" data-pk="<?php echo $item['id']; ?>" data-url="<?php echo url('edit'); ?>"><?php echo $item['role_name']; ?></a></td> 
       <td><?php echo $item['description']; ?></td> 
       <td> <?php if($item['status'] == '0'): ?> <span class="label label-danger">禁用</span> <?php elseif($item['status'] == '1'): ?> <span class="label label-primary">启用</span> <?php endif; ?> </td> 
-      <td> <a href="<?php echo url('role/edit',array('id'=>$item['id'])); ?>">编辑</a> <a href="<?php echo url('role/auth',array('id'=>$item['id'])); ?>">授权</a> <a href="<?php echo url('role/del',array('id'=>$item['id'])); ?>" class="confirm ajax-get">删除</a> </td> 
+      <td> <?php if($item['id'] != 1): ?>
+        <a href="<?php echo url('role/edit',array('id'=>$item['id'])); ?>">编辑</a> <a href="<?php echo url('role/auth',array('id'=>$item['id'])); ?>">授权</a> <a href="<?php echo url('role/del',array('id'=>$item['id'])); ?>" class="confirm ajax-get">删除</a> 
+      <?php endif; ?>
+      </td> 
      </tr>
     <?php endforeach; endif; else: echo "" ;endif; ?> 
     </tbody> 

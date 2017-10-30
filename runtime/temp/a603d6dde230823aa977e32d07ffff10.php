@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:56:"E:\webproject\mycms/application/index\view\user\add.html";i:1509197181;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509152620;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509205370;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509153573;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:56:"E:\webproject\mycms/application/index\view\user\add.html";i:1509324338;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509324338;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509324338;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509324338;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509324338;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,14 +99,14 @@
                 </li>
                 <li class="dropdown user user-menu">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"> 
-              <span class="hidden-xs">admin </span><i class="fa fa-caret-down"></i>
+              <span class="hidden-xs"><?php echo $userinfo['user_name']; ?> </span><i class="fa fa-caret-down"></i>
             </a>
                     <ul class="dropdown-menu" style="width: 30px;overflow: hidden;"> 
                         <li>
                             <a href="<?php echo url('Setting/info'); ?>"><i class="fa fa-user"></i> 修改信息</a></li>
                         <li>
                             <a href="<?php echo url('Setting/password'); ?>"><i class="fa fa-lock"></i> 修改密码</a></li>
-                        <li><a href="<?php echo url('Public/logout'); ?>"><i class="fa fa-sign-out"></i> 退出</a></li>
+                        <li><a href="<?php echo url('Publics/logout'); ?>"><i class="fa fa-sign-out"></i> 退出</a></li>
                     </ul>
                 </li>
             </ul>
@@ -121,11 +121,10 @@
         <div class="pull-left  info" >
           <p style="margin: 0;">菜单</p> 
         </div>
-      </div> 
-      <!-- sidebar menu: : style can be found in sidebar.less -->
-      <ul class="sidebar-menu" data-widget="tree"> 
+      </div>  
+<!--       <ul class="sidebar-menu" data-widget="tree"> 
         <li class="active treeview">
-          <a href="#">
+          <a href="<?php echo url('index/menu/index'); ?>">
             <i class="fa fa-dashboard"></i> <span>用户权限</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -149,7 +148,8 @@
             <li class="<?php echo $user_index; ?>"><a href="<?php echo url('index/user/index'); ?>"><i class="fa fa-circle-o"></i> 数据备份</a></li> 
           </ul>
         </li> 
-      </ul>
+      </ul> -->
+      <?php echo $menus; ?>
     </section>
     <!-- /.sidebar -->
   </aside> 

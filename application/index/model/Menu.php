@@ -127,7 +127,7 @@ class Menu extends Model {
 			if ($i == 0) {
 				$active = "active";
 			} else {
-				$active = "";
+				$active = "active";
 			}
 			if ($value['parent'] == 0) {
 				$class = " class='treeview $active'";
@@ -140,9 +140,10 @@ class Menu extends Model {
 				$drop_ul .= $this->menuUl($value["items"], $i++);
 				$drop_ul .= '</ul>';
 			}
+
 			$list .= '<li' . $class . '>';
 			$list .= '<a href="' . $value['url'] . '">';
-			$list .= '<i class="fa fa-' . $value['name'] . '"></i> <span>' . $value['name'] . '</span>';
+			$list .= '<i class="fa fa-' . ($value['icon'] ? $value['icon'] : "circle-o text-red") . '"></i> <span>' . $value['name'] . '</span>';
 			$list .= $drop_ul;
 			$list .= '</a>';
 			$list .= '</li>';

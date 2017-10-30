@@ -9,8 +9,7 @@ class Publics extends Baseinit {
 	public function _initialize() {
 	}
 	public function index() {
-		echo APP_PATH;
-		echo ROOT_PATH;
+		return $this->fetch();
 	}
 	/**
 	 * 后台登陆界面
@@ -18,7 +17,7 @@ class Publics extends Baseinit {
 	public function login() {
 		$img = rand(1, 12);
 		$this->assign("img", $img);
-		return $this->fetch("user/login");
+		return $this->fetch("user/login_index");
 	}
 
 	/**

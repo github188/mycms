@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:64:"E:\webproject\mycms/application/index\view\setting\password.html";i:1509324338;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509324338;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509324338;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509324338;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509324338;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:63:"E:\webproject\mycms/application/index\view\public\develing.html";i:1509334300;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509324338;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509324338;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509324338;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509324338;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -157,66 +157,22 @@
 
 <link rel="stylesheet" href="__ROOT__/public/static/css/user.css">
 <style>
-.content-header {
-    border-bottom: 1px #d2d6de solid;
-    padding-bottom: 10px;
-}
-
-.main-box {
-    margin: 20px;
-    background-color: #fff;
-    box-shadow: 0px 0px 1px #73080a;
-    border-radius: 5px;
-}
-
-.from-box {
-    margin-left: -10px;
-    margin-right: 20px;
-    margin-top: 20px;
+.action-btn {
+    float: right;
+    background: transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    padding: 7px 5px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    border-radius: 2px;
 }
 </style>
  
 
-<section class="content-header">
-    <h1><a href="<?php echo url('role/index'); ?>" class="link">修改密码</a></h1>
-</section>
-<div class="main-box clearfix ">
-    <form method="post" id="setting_info_form" class="form form-horizontal">
-        <div class="row from-box">
-            <div class="form-group">
-                <label class="col-lg-2 control-label">原始密码</label>
-                <div class="col-lg-10 col-sm-10">
-                    <input type="text" class="form-control" name="user_nickname" id="user_nickname"   value="" />
-                    <div class="help-block"> 
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-2 control-label">新密码</label>
-                <div class="col-lg-10 col-sm-10">
-                    <input type="text" class="form-control" name="mobile" id="mobile" value="" />
-                    <div class="help-block">
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-2 control-label">重复新密码</label>
-                <div class="col-lg-10 col-sm-10">
-                    <input type="text" class="form-control" name="user_email" id="user_email" value="" />
-                    <div class="help-block">
-                    </div>
-                </div>
-            </div> 
-            <div class="form-group">
-                <div class="col-lg-offset-2 col-lg-10">
-                    <input type="hidden" name="id" value="<?php echo (isset($info['id']) && ($info['id'] !== '')?$info['id']:''); ?>">
-                    <button class="btn btn-success pass_change_submit" type="button">确 定</button>
-                    <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
+ <h1>开发中....</h1>
  
   </div>  
   <div class="control-sidebar-bg"></div>

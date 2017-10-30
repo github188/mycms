@@ -1,0 +1,32 @@
+{extend name="public/base"} {block name="style"}
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css">
+<style>
+.action-btn {
+    float: right;
+    background: transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    padding: 7px 5px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    border-radius: 2px;
+}
+</style>
+{/block} {block name="body"}
+<!-- <section class="content-header" style="border-bottom: 1px #d2d6de solid;padding-bottom: 10px; ">
+    <h1>
+        系统巡检 
+      </h1> 
+</section> -->
+<div id="content_menus">
+     <iframe src="__ROOT__/application/index/view/report/index.html" frameborder="0" width="100%" height="100%"></iframe>
+</div> 
+<script>
+$(document).ready(function() {
+    $("iframe").width($("#content_menus").width());
+    $("iframe").height($(window).height()-$(".main-header").height()-10);
+});
+</script>
+{/block}

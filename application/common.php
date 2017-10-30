@@ -2,14 +2,14 @@
 use think\Db;
 use think\Request;
 
-function first_init_menus() {
-	$menuModel = new Baseinit();
-	$menus = $menuModel->initMenu();
-}
-function reset_init_menus() {
-	$menuModel = new Baseinit();
-	$menus = $menuModel->initMenu();
-}
+// function first_init_menus() {
+// 	$menuModel = new Baseinit();
+// 	$menus = $menuModel->initMenu();
+// }
+// function reset_init_menus() {
+// 	$menuModel = new Baseinit();
+// 	$menus = $menuModel->initMenu();
+// }
 //参数错误返回json
 function parameterErr() {
 	echo json_encode(array("statu" => 'err', "msg" => "parameter err"));

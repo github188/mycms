@@ -46,7 +46,10 @@
       <td><a href="#" class="editable editable-click" data-id="{$item['id']}" data-name="role_name" data-pk="{$item['id']}" data-url="{:url('edit')}">{$item['role_name']}</a></td> 
       <td>{$item['description']}</td> 
       <td> {if condition="$item['status'] eq '0'"} <span class="label label-danger">禁用</span> {elseif condition="$item['status'] eq '1'"/} <span class="label label-primary">启用</span> {/if} </td> 
-      <td> <a href="{:url('role/edit',array('id'=>$item['id']))}">编辑</a> <a href="{:url('role/auth',array('id'=>$item['id']))}">授权</a> <a href="{:url('role/del',array('id'=>$item['id']))}" class="confirm ajax-get">删除</a> </td> 
+      <td> {if condition="$item.id neq 1"}
+        <a href="{:url('role/edit',array('id'=>$item['id']))}">编辑</a> <a href="{:url('role/auth',array('id'=>$item['id']))}">授权</a> <a href="{:url('role/del',array('id'=>$item['id']))}" class="confirm ajax-get">删除</a> 
+      {/if}
+      </td> 
      </tr>
     {/volist} 
     </tbody> 

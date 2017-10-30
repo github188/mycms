@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:58:"E:\webproject\mycms/application/index\view\user\login.html";i:1509275806;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:58:"E:\webproject\mycms/application/index\view\user\login.html";i:1509324338;}*/ ?>
 <!DOCTYPE html>
 <html>
 

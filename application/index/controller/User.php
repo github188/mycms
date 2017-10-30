@@ -192,11 +192,24 @@ class User extends Baseinit {
 
 		}
 	}
+	/**
+	 * 修改角色授权页面
+	 * @author 钟朝辉 <zzhhuii@qq.com>
+	 * @date   2017-10-30T10:05:47+0800
+	 */
 	public function auth($id) {
 		$roles = Db::name("role")->where(['status' => 1])->field("id,role_name,description")->select();
 		$rule = Db::name("RoleUser")->where("user_id='$id'")->find();
 		$this->assign("rule", $rule);
 		$this->assign("roles", $roles);
 		return $this->fetch();
+	}
+	/**
+	 * 执行修改角色授权
+	 * @author 钟朝辉 <zzhhuii@qq.com>
+	 * @date   2017-10-30T10:04:50+0800
+	 */
+	public function authPost($id) {
+		return $this->success("保存成功！");
 	}
 }

@@ -59,4 +59,13 @@ class Baseinit extends Controller {
 			return true;
 		}
 	}
+	/**
+	 * 开发中
+	 * @author 钟朝辉 <zzhhuii@qq.com>
+	 * @date   2017-10-30T11:29:21+0800
+	 * @return [type]                   [description]
+	 */
+	public function developing() {
+		return $this->fetch("public/develing");
+	}
 }

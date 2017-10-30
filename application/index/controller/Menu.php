@@ -5,6 +5,10 @@ use com\Tree;
 use think\Db;
 
 class Menu extends Baseinit {
+	public function _initialize() {
+		parent::_initialize();
+		$this->assign("title", "菜单管理");
+	}
 	public function index() {
 		session('admin_menu_index', 'Menu/index');
 		$result = Db::name('menu')->order(["list_order" => "ASC"])->select();

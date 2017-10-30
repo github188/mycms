@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\menu\index.html";i:1509155440;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509152620;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509285965;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509291168;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509153573;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:58:"E:\webproject\mycms/application/index\view\menu\index.html";i:1509324338;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509324338;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509324338;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509324338;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509324338;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>

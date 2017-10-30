@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\user\auth.html";i:1509299953;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509109349;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509152620;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509285965;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509291168;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509153573;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:6:{s:57:"E:\webproject\mycms/application/index\view\user\auth.html";i:1509331418;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1508733288;s:61:"E:\webproject\mycms/application/index\view\public\header.html";i:1509324338;s:69:"E:\webproject\mycms/application/index\view\public\content_header.html";i:1509324338;s:67:"E:\webproject\mycms/application/index\view\public\left_sidebar.html";i:1509324338;s:61:"E:\webproject\mycms/application/index\view\public\footer.html";i:1509324338;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -183,11 +183,11 @@
 <div class="main-box clearfix ">
     <form method="post" id="user_add_form" checkurl="<?php echo url('User/checkusername','',''); ?>" action="<?php echo isset($info['id'])?url('User/editPost'):url('User/addPost'); ?>" class="form form-horizontal">
         <div class="row from-box">
-            <div class="form-group">
+            <div class="form-group" id="check_role">
                 <label class="col-lg-2 control-label">请选择角色</label>
                 <?php if(is_array($roles) || $roles instanceof \think\Collection || $roles instanceof \think\Paginator): $key = 0; $__LIST__ = $roles;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$roles): $mod = ($key % 2 );++$key;?>
-                <label class="radio-inline <?php if($rule["role_id"] == 53): ?> active <?php endif; ?>" >
-                    <input type="radio" name="role_id" id="role_id<?php echo $roles['id']; ?>" value="<?php echo $roles['id']; ?>"> <?php echo $roles['role_name']; ?>
+                <label class="radio-inline" >
+                    <input type="radio" name="role_id" id="role_id<?php echo $roles['id']; ?><?php echo $rule['role_id']; ?>" value="<?php echo $roles['id']; ?>"> <?php echo $roles['role_name']; ?>
                 </label>
                 <?php endforeach; endif; else: echo "" ;endif; ?>  
             </div>
@@ -202,13 +202,49 @@
     </form>
 </div>
 <script>
+    $(document).ready(function(){
+        $("#check_role input:radio").each(function(index, el) {
+            if(<?php echo $rule['role_id']; ?> ==$(this).val()){
+                $(this).click();
+            } 
+        });
+    });
     $(".user_add_submit").on("click",function(){
-        var id = $("[name=role_id]").val();
+        var id = $("#check_role input:radio:checked").val();
+        if(!id){
+            layer.msg("请选择角色");
+            return false;
+        }
+        var loading = layer.load(1, {
+            shade: [0.1, '#000'] //0.1透明度的白色背景
+        });
+        $.ajax({
+            url: '<?php echo url("index/User/authPost",array("id"=>'+id+')); ?>',
+            type: 'POST',
+        })
+        .done(function(json) {
+            layer.close(loading);
+                if (json.code == 1) {
+                    layer.msg(json.msg, function() {
+                        location.reload();
+                    });
+                } else {
+                    layer.msg(json.msg);
+                }
+        })
+        .fail(function(json) {
+            layer.close(loading);
+            layer.open({
+                    title: '系统错误',
+                    area: ['50%', '80%'],
+                    content: json.responseText
+                });
+        });
+        
         console.log(id);
         return false;
     });
-</script>
-<script src="__ROOT__/public/static/js/user.js"></script>
+</script> 
  
   </div>  
   <div class="control-sidebar-bg"></div>
