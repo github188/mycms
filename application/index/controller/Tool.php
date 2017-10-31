@@ -2,7 +2,7 @@
 namespace app\index\controller;
 use com\Baseinit;
 
-class Report extends Baseinit {
+class Tool extends Baseinit {
 	public function _empty($name) {
 		return $this->developing();
 	}
