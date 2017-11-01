@@ -1,0 +1,54 @@
+body{ 
+    background: rgba(0, 0, 0, 0) url("./images/13.jpg") repeat scroll 0 0;  
+    background-size: 100%;
+}
+#header{/* 
+    height: 40px;
+    overflow: hidden; */
+} 
+.navbar{
+    min-height: 0px;
+}
+.dropdown-menu{
+    clear: both;
+    max-width: 100px;
+    margin-right: -50px;
+    z-index: 100;
+}
+#footerbar {
+    background: rgba(0, 0, 0, 0) url("./images/taskbarbg.png") repeat scroll 0 0;
+    bottom: 0;
+    height: 32px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+}
+.showbox{
+    position: absolute;
+    top:100px;
+    left: 100px;
+}
+#bar{line-height:24px; 
+    background:#beceeb; border-bottom:1px solid #a0b3d6; padding-left:5px; cursor:move;}
+
+ 
+.frame-main {
+    bottom: 32px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 90px;
+}
+
+.frame-main .frame-left {
+    background: #f3f3f3 none repeat fixed 0 0;
+    border-right: 1px solid #ddd;
+    bottom: 90px;
+    left: 0;
+    overflow: auto;
+    position: relative;
+    top: 50;
+    width: 199px;
+}

@@ -1,0 +1,103 @@
+.content-wrapper{
+    margin-top:50px;
+}
+.cloud-control{
+    float: left;
+    width: 150px;
+    margin-right: 1px;
+}
+.cloud-lg-control{
+    float: left;
+    width: 290px;
+    margin-right: 1px;
+}
+.cloudhandle-lg-control{
+    width: 210px;
+    float: left;
+}
+.show-box{width:702px;}
+.box-primary .pull-right #clouse_setInterval{
+    margin-right: 10px;
+}
+.cloud-label{
+    float: left;
+    font-size: 16px;
+    margin: 6px auto auto 5px;
+}
+.show-box .layui-layer-content{overflow-y:scroll;height:340px;padding: 0px 15px;}
+.navlist{
+width:211px;
+max-height:221px;
+overflow:auto; 
+position:absolute;
+z-index: 10;
+margin: 33px 0 0 69px; 
+font-family: #000;
+}
+.recvlist{
+width:211px;
+max-height:221px;
+overflow:auto; 
+position:absolute;
+z-index: 10;
+margin: 33px 0 0 501px; 
+font-family: #000;
+}
+.troublelist{
+width:152px;
+max-height:221px;
+overflow:auto; 
+position:absolute;
+z-index: 10;
+margin: 33px 0 0 916px; 
+font-family: #000;
+}
+.navlist a.list-group-item {
+    /* width: 232px; */
+    background-color: #bbb;
+}
+.navlist a.list-group-item:hover {
+    /* width: 232px; */
+    background-color: #eee;
+}
+.navlist .list-group-item{
+     background: #d0d0d0 repeat fixed top;
+}
+.recvlist a.list-group-item {
+    color: ;
+}
+.recvlist .list-group-item{
+     background-color: #d0d0d0;
+}
+.troublelist .list-group-item{
+     background-color: #d0d0d0;
+}
+.sendFileList{
+    width:219px;
+    max-height:221px;
+overflow:auto; 
+position:absolute;
+z-index: 10;
+margin: 33px 0 0 277px; 
+font-family: #000;
+}
+.dirlist{
+    margin:0;
+    background-color: #333;
+}
+.dirlist input{
+    width: 100%;
+    background-color: #bbb;
+}
+.dirlist input:hover{
+    background-color: #eee;
+}
+.recvFileList{
+        width:202px;
+max-height:221px;
+overflow:auto; 
+position:absolute;
+z-index: 10;
+margin: 33px 0 0 708px; 
+font-family: #000;
+}

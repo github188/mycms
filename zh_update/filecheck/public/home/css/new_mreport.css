@@ -1,0 +1,145 @@
+.s-index {
+    height: 38.2%;
+    margin: 0 auto;
+    min-height: 293px;
+    position: relative;
+    width: 1000px; 
+} 
+.s_form { 
+    margin: 0 auto;
+    min-height: 53px;
+    text-align: center;
+    width: 399px; 
+}
+.fm{ 
+    text-align: center;
+}
+ #kw {
+    background-image: none;
+    border: 0 none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    height: 35px;
+    line-height: 20px;
+    padding-bottom: 10px;
+    padding-left: 7px;
+    padding-right: 50px !important;
+    padding-top: 10px;
+    width: 333px !important;
+}
+.s_top{ 
+    height: 61.8%;
+    min-height: 181px;
+    position: relative;
+    text-align: center;
+    z-index: 0;
+    padding-top: 72px; 
+} 
+
+.s_title{
+    color:#FFF;
+    margin-bottom: 1px;
+ }
+ .s_title span{
+    font-size: 46px;
+ }
+ .btn_wr{
+    height: 36px;  
+ }
+ .input-group-addon{
+   /*  width: 30px !important; */
+    font-size: 18px;
+    font-weight: 700;
+ }
+ .s_nav{
+    float: left;
+    width: 202px;
+    height: 110px;
+    background-color: #eee;
+    margin: 0 10px 20px 0; 
+    padding: 0;
+ }
+ .nav-title{ 
+    display: block;
+    font-size: 28px;
+    margin-top:0px;
+    cursor: pointer;
+ }
+ .s_tool{
+    width: 641px;
+    margin: 80px auto; 
+ }
+ .tj{
+    font-size: 14px;
+    font-weight: 700;
+    padding: 5px 0;
+ }
+ .tj .badge{
+    background-color:#3399FF;
+ }
+  .new_info{ 
+    padding-top: 5px;
+    cursor: pointer;
+ }
+.new_info:hover{ 
+    text-decoration:underline;
+ }
+.updown .list-group-item{
+    width: 202px;
+    font-size: 16px;
+    font-weight: 700; 
+}
+.updown .list-group-item:hover{ 
+     background-color: #2e6da4;
+    background-image: linear-gradient(to bottom, #337ab7 0px, #2e6da4 100%);
+    background-repeat: repeat-x;
+    color:#FFF !important;
+} 
+.tongGTP,.TongEASY,.mq{
+
+} 
+.navlist{
+    position: absolute; 
+    width: 641px;
+    z-index: 10;
+}
+#prompt{
+   width: 410px;
+}
+#prompt a{
+     width: 399px; 
+     text-align: left;
+    padding: 5px 10  !important;
+} 
+.export-tool{
+    position: relative;
+}
+/* 搜索样式 */
+#sr_nav .navbar-left{
+    width: 400px;
+}
+#sr_nav .s_form {
+    margin: -44px 0 0 100px;
+}
+#sr_nav .navbar-header .navbar-brand{
+font-size: 36px;font-weight: 600;
+}
+.container{
+    width: 100% !important; 
+    margin:0;  
+}
+#resshow{
+overflow-y: scroll;
+} 
+#resshow .table {
+    margin:0px !important;
+}
+.focus  {
+    background-color: #4f244e !important;
+    border-color: #255625;
+    color: #fff;
+}
+.hover {
+    background-color: #449d44;
+    border-color: #398439;
+    color: #fff;
+}

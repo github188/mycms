@@ -1,0 +1,166 @@
+<div class="modal-dialog modal-lg">
+                <!-- 内容声明 -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal"><span>×</span>
+                        </button>
+                        <h5 class="modal-tittle"><span style="font-size:23px;">编辑节点信息</span></h5>
+                    </div>
+                    <div class="modal-body"><link rel="stylesheet" href="/Public/home/css/tongeasy.css">  
+<div class="container"> 
+    <div class="col-sm-12"> 
+        <div class="middle-body" style="margin-top: 0px !important;">  
+            <div class="tab-title">
+                <span><h4></h4></span>
+            </div>  
+            <div id="resshow" style="width:100%;margin:auto;">
+                <form id="tongeasy_form" method="post" accept-charset="utf-8">
+                    <div id="sys_name" class="col-lg-6"><div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                                    <span id="sys_name" style="color:red">*&nbsp;</span>                                    系统名：</span>
+                                <input name="sys_name" class="form-control" value=" 2K历史查询B机" aria-describedby="basicaddon1" type="text"> 
+                            </div>
+                        </div><div id="app_name" class="col-lg-6"><div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                                    <span id="app_name" style="color:red">*&nbsp;</span>                                    应用名称：</span>
+                                <input name="app_name" class="form-control" value=" 2K历史查询" aria-describedby="basicaddon1" type="text"> 
+                            </div>
+                        </div><div id="sys_ver" class="col-lg-6"><div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                                                                        系统版本号：</span>
+                                <input name="sys_ver" class="form-control" value=" AIX_6100-07-05-1228" aria-describedby="basicaddon1" type="text"> 
+                            </div>
+                        </div><div id="node_ver" class="col-lg-6"><div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                                                                        TongEASY版本号：</span>
+                                <input name="node_ver" class="form-control" value=" TE4602" aria-describedby="basicaddon1" type="text"> 
+                            </div>
+                        </div><div id="user_name" class="col-lg-6"><div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                                                                        用户名：</span>
+                                <input name="user_name" class="form-control" value=" 2kywhis" aria-describedby="basicaddon1" type="text"> 
+                            </div>
+                        </div><div id="node_name" class="col-lg-6"><div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                                    <span id="node_name" style="color:red">*&nbsp;</span>                                    节点名：</span>
+                                <input name="node_name" class="form-control" value=" 2kywhis" aria-describedby="basicaddon1" type="text"> 
+                            </div>
+                        </div><div id="sys_ip" class="col-lg-6"><div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                                                                        服务/管理IP：</span>
+                                <input name="sys_ip" class="form-control" value=" 192.80.204.10:102.200.128.75:102.80.4.8:102.80.204.10" aria-describedby="basicaddon1" type="text"> 
+                            </div>
+                        </div><div id="manager" class="col-lg-6"><div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                                                                        联系人：</span>
+                                <input name="manager" class="form-control" value=" 李大伟" aria-describedby="basicaddon1" type="text"> 
+                            </div>
+                        </div><div id="phone" class="col-lg-6"><div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                                                                        电话：</span>
+                                <input name="phone" class="form-control" value=" 13426170308" aria-describedby="basicaddon1" type="text"> 
+                            </div>
+                        </div> 
+                    <div style="clear:both;width:100%;text-align: center;margin-top:10px; border-top: 1px solid #ddd;">
+                        <br>
+                        <input name="editnode_id" value=" 43" type="hidden"> 
+                        <button class="btn btn-primary" id="submit"><i class="icon-cloud-upload"></i> 提交</button>&nbsp;&nbsp;
+                        <button class="btn btn-primary" type="reset"><i class="icon-mail-reply-all"></i> 重置</button>
+                    </div>
+                </form>
+            </div>
+            <!-- prompt 英 [prɒm(p)t]  美 [prɑmpt]
+adj. 敏捷的，迅速的；立刻的
+vt. 提示；促进；激起；（给演员）提白
+n. 提示；付款期限；DOS命令：改变DOS系统提示符的风格
+adv. 准时地 -->
+            <div class="prompt" style="margin-top:20px;text-align: center;">
+                <div class="prompt-body">
+                    <span>带<span style="color:red;font-weight: 800;">*</span>的为必填项，多个IP用“<span style="color:#FFBF00;font-weight: 800;"> : </span>”分割开</span>
+                </div>
+            </div>
+        </div> 
+    </div> 
+
+</div>
+<script src="/Public/home/js/clearForm.js"></script>
+<script>
+    $(document).ready(function ($) {
+        $('#submit').click(function (event) {
+            var sys_name = $('[name=sys_name]').val();
+            if (!sys_name) {
+                $('[name=sys_name]').focus();
+                $('[name=sys_name]').css("border-color", "red");
+                return false;
+            } else {
+                $('[name=sys_name]').css("border-color", '#66afe9');
+            }  
+            var app_name = $('[name=app_name]').val();
+            if (!app_name) {
+                $('[name=app_name]').focus();
+                $('[name=app_name]').css("border-color", "red");
+                return false;
+            } else {
+                $('[name=app_name]').css("border-color", '#66afe9');
+            }
+            var node_name = $('[name=node_name]').val();
+            if (!node_name) {
+                $('[name=node_name]').focus();
+                $('[name=node_name]').css("border-color", "red");
+                return false;
+            } else {
+                $('[name=node_name]').css("border-color", '#66afe9');
+            }
+            var node_id = $("[name=editnode_id]").val();
+            $.ajax({
+                url: '/index.php/Home/TongEasy/doEdit?node_id=' + node_id,
+                type: 'post',
+                data: $('#tongeasy_form').serialize(),
+                success: function (json) {
+                    json = eval("(" + json + ")");
+                    var icon= '';
+                    if (json.code == "10000") {
+                        $('#logmodal').modal("hide");
+                        $('#commonmodal .modal-tittle').attr('data-medit', 'ok');
+                        var icon = "&lt;i style='color:green;' class='icon icon-ok'&gt;&lt;/i&gt;";
+                    }
+                    $('#commonmodal .modal-tittle').html('信息提示');
+                    $('#commonmodal .modal-body').html("&lt;span style='font-size:28px;font-weight:800;'&gt;" + json.message +icon+ "&lt;/span&gt;");
+                    $('#commonmodal').modal("show");
+                }
+            })
+            return false;
+        });
+        //更新数据
+        function reFreshData() {
+            var size = $("#tablefanye #pagesize").val();
+            var key = $("#sKey").attr('selected');
+            var keys = '';
+            if (key) {
+                keys += '&amp;key=';
+                keys += $(".navtool-right").find('#sKey').val();
+                keys += '&amp;keyword=';
+                keys += $(".navtool-right").find('#sKeyword').val();
+            }
+            $.ajax({
+                url: '/index.php/Home/TongEasy/Refresh?pagesize=' + size + keys,
+                success: function (json) {
+                    json = eval("(" + json + ")");
+                    showSearchResult(json);
+                }
+            })
+        }
+//编辑后更新
+        $('#commonmodal').on('hidden.bs.modal', function (e) {
+            var isok = $('#commonmodal .modal-tittle').attr('data-medit');
+            if (isok == 'ok') {
+                reFreshData();
+            }
+        })
+    });
+</script></div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" data-dismiss="modal">关闭</button>
+                    </div>
+                </div> 
+            </div>

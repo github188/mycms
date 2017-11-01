@@ -1,0 +1,89 @@
+/* gtp样式表 */
+.container{
+    /* background: rgba(0, 0, 0, 0) linear-gradient(#22466f, #452525) repeat scroll 0 0; */
+    left: 0;
+    position: absolute;
+    right: 0; 
+    height: calc(100% - 50px);
+    
+}
+#gtptree{
+    color: #fff !important;
+    height: calc(100% - 50px);
+    overflow: scroll;
+    font-size: 20px !important;
+    background-color: #eee;
+}
+.gtp-left{
+    float: left;
+}
+.gtp-right{
+    float: left;
+    margin-left: 295px;
+    position: fixed;
+    width: 100%;
+    padding-top:15px;
+}
+.right-content-body{
+    overflow: auto;
+}
+.gtp-content .col-sm-9,.col-sm-3{
+    margin: 0;
+    padding: 0;
+}
+.table .table{  
+    padding: 0;
+    margin: 0;
+}
+.gtp-tab{
+
+}
+.gtp-search{
+    float: right;
+    margin-right: 23%;
+    margin-top: -26px;
+    padding-bottom: 10px;
+}
+.gtp-search i{
+    font-size: 19px;
+    color:blue;
+}
+.cursor{
+    cursor: pointer; 
+    color: #41282D;
+}
+.cursor:hover{
+    font-weight: 900; 
+
+}
+.s-index {
+    height: 38.2%;
+    margin: 0 auto;
+    min-height: 293px;
+    position: relative;
+    width: 1000px; 
+} 
+.s_form { 
+    margin: 0 auto;
+    min-height: 53px;
+    text-align: center;
+    width: 399px; 
+}
+.fm{ 
+    text-align: center;
+}
+ #kw {
+    background-image: none;
+    border: 0 none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    height: 35px;
+    line-height: 20px;
+    padding-bottom: 10px;
+    padding-left: 7px;
+    padding-right: 50px !important;
+    padding-top: 10px;
+    width: 333px !important;
+}
+ .btn_wr{
+    height: 36px;  
+ }

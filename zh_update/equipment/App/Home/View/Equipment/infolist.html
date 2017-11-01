@@ -1,0 +1,199 @@
+<link rel="stylesheet" href="__PUBLIC__/home/css/user.css"> 
+<div class="container">
+<!--     <div id="tabs_title" class="tabsindex"> 
+        <div class="active" id="tabs_users" onclick="changetabs('users')" temp="tabs"><i class="icon-user"></i>  用户管理</div>
+    </div> -->
+    <div style="overflow: auto; position: relative; width: 100%;" id="indexcontent">
+        <div style="margin:10px;" id="content_allmainview">  
+            <div id="content_users" style="display: block;">
+                <div>
+                    <ul class="floats">
+                        <li class="floats50"> 
+                        <button type="button" onclick="location.href = '__ROOT__/index.php/Home/Index/inputInfo';" class="btn btn-success" >
+                            添加故障信息</button></li>
+                        <li class="floats30">
+                            <div style="width:370px;" class="input-group">
+                                <select class="form-control" name="monthx" style="float:left;width:111px;">
+                                    <option value="ip">IP地址</option> 
+                                    <option value="yewu">业务名称</option>
+                                    <option value="codeid">序列号</option>
+                                    <option value="chuli">处理人员</option>
+                                </select>
+                                <input  placeholder="" id="SUserKey" style="float:left;width:220px;" class="form-control">
+                                <span class="input-group-btn">
+                                    <button type="button" click="search" class="btn btn-default">
+                                        <i class="icon-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </li>
+                        <li style="text-align:right" class="floats20">
+                        <if condition="$power_level eq 3">
+                            <button  type="button"  id="del_user" class="btn btn-danger"  disabled="">
+                                <i class="icon-trash"></i>删除</button>
+                        </if>
+                        <if condition="$power_level gt 1">
+                            <button disabled type="button" click="clickwin,1" id="edit_info" class="btn btn-info" clickadd="true">
+                                <i class="icon-edit"></i>编辑</button>
+                        </if>
+                        </li>
+                    </ul>
+                </div>
+                <div class="blank10"></div>
+                <div id="admin">
+                    <div id="tablebody" style="position:relative;">
+                        <table style="margin:0px" class="table table-striped table-bordered table-hover"  > 
+                            <tr>
+                                <th width="40"></th> 
+                                <th>
+                                    <div align="center">发生时间</div>
+                                </th>
+                                <th nowrap="">
+                                    <div align="center" >所在机房</div>
+                                </th> 
+                                <th nowrap="">
+                                    <div align="center" > 环境
+                                        </div>
+                                </th>
+                                <th nowrap="">
+                                    <div align="center">业务名称 </div>
+                                </th>
+                                <th nowrap="">
+                                    <div align="center" >设备类型
+                                        </div>
+                                </th>  
+                                <th nowrap="">
+                                    <div align="center" >设备品牌
+                                        </div>
+                                </th> 
+                                <th nowrap="">
+                                    <div align="center" >设备型号
+                                        </div>
+                                </th> 
+                                <th nowrap="">
+                                    <div align="center" >序列号
+                                        </div>
+                                </th> 
+                                <th nowrap="">
+                                    <div align="center" >IP地址
+                                        </div>
+                                </th> 
+                                <th nowrap="">
+                                    <div align="center" >预警情况
+                                        </div>
+                                </th>  
+                                <th nowrap="">
+                                    <div align="center" >故障部位
+                                        </div>
+                                </th>  
+                                <th nowrap="">
+                                    <div align="center" >是否需要停机
+                                        </div>
+                                </th>  
+                                <th nowrap="">
+                                    <div align="center" >使用年限
+                                        </div>
+                                </th>   
+                                <th nowrap="">
+                                    <div align="center" >处理人员
+                                        </div>
+                                </th>  
+                                <th nowrap="">
+                                    <div align="center" width="100px">处理结果
+                                        </div>
+                                </th>  
+                                <th nowrap="">
+                                    <div align="center" >恢复日期
+                                        </div>
+                                </th>  
+
+                            </tr> 
+                            <tbody id="tableShowUsers">
+                            <volist name='infolist' id='infolist' key='key'>
+                                <tr>
+                                    <td width="40">
+                                        {$key}
+                                        <input type="hidden" name="e_id" value="{$infolist.id}"> 
+                                    </td> 
+                                    <td>
+                                        {$infolist.hapend_date}
+                                    </td>
+                                    <td>
+                                        {$infolist.jifang}
+                                    </td> 
+                                    <td>
+                                        {$infolist.huanjing}
+                                    </td>
+                                    <td>
+                                        {$infolist.yewu}
+                                    </td>
+                                    <td>
+                                        {$infolist.e_type}
+                                    </td>
+                                    <td>
+                                        {$infolist.e_pinpai}
+                                    </td>
+                                    <td>
+                                        {$infolist.e_xinghao}
+                                    </td>
+                                    <td>
+                                        {$infolist.codeid}
+                                    </td>
+                                    <td>
+                                        {$infolist.ip}
+                                    </td>
+                                    <td>
+                                        {$infolist.yujing}
+                                    </td>
+                                    <td>
+                                        {$infolist.buwei}
+                                    </td>
+                                    <td>
+                                        {$infolist.istingji}
+                                    </td>
+                                    <td>
+                                        {$infolist.syears}
+                                    </td>
+                                    <td>
+                                        {$infolist.chuli}
+                                    </td>
+                                    <td style="width:100px;word-break:break-all;"> 
+                                        {$infolist.result} 
+                                    </td>
+                                    <td>
+                                        {$infolist.huifu_date}
+                                    </td>
+                                    
+                                </tr>
+                            </volist> </tbody>
+                        </table>
+                    </div> 
+                    <div id="tablefanye">
+                    <input type="hidden" name="key" value="0" selected>
+                        <div role="toolbar" class="btn-toolbar" style="margin-top:10px">
+                            <div class="btn-group">
+                                <button class="btn btn-default" title="首页" data-placement="top" data-toggle="tooltip" type="button" id="shouye" disabled="">«</button>
+                                <button class="btn btn-default" disabled="" type="button" title="上一页" data-placement="top" data-toggle="tooltip" id="shang">&lt;</button>
+                                <button {$pages.disabled} class="btn btn-default" type="button" id="pageList">第
+                                    <span id="pages">1</span>页/共
+                                    <span id="maxpage">{$pages.page}</span>页
+                                    <span class="caret"></span></button>
+                                <button {$pages.disabled}  class="btn btn-default" title="下一页" data-placement="top" data-toggle="tooltip" type="button" id="next">&gt;</button>
+                                <button  {$pages.disabled} class="btn btn-default" title="尾页" data-placement="top" data-toggle="tooltip" type="button" id="lastye">»</button></div>
+                            <div class="btn-group">
+                                <button class="btn btn-default" title="刷新" data-placement="top" data-toggle="tooltip" type="button" id="refresh" onclick="reFreshData();">
+                                    <i class="icon-refresh"></i>
+                                </button>
+                            </div>
+                            <div style="float:right; padding-top:3px" class="btn-group">
+                                <span>共记录
+                                    <span id="zjilu">{$pages.total}</span>条</span>每页
+                                <input type="number" style="width:40px;text-align:center;height:24px;border:1px #dddddd solid;margin:0px 2px;font-size:12px" value="{$pages.pagesize}" id="pagesize" onfocus="" onblur="cPageSize(this)" maxlength="3">条</div></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="__PUBLIC__/home/js/user.js"></script>

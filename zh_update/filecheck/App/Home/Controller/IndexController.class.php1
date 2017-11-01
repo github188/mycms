@@ -1,0 +1,72 @@
+<?php
+
+namespace Home\Controller;
+
+use QL\QueryList;
+use Think\Controller;
+
+class IndexController extends Controller {
+
+    public function _after_index() {
+        $this->display('footer');
+    }
+//session('username')
+    Public function index() {
+         $this->display('login');
+           
+    }
+
+    Public function login() {
+        if ($_POST) {
+            $username = iconv("utf-8", "gbk", $_POST['username']);
+            $password = md5(md5($_POST['password']) . "xtszhgl");
+            $db = M("User");
+            $res = $db->where("username ='$username' and password = '$password'")->find();
+            if ($res) {
+                session('username', $username);
+                session('userid', $res['userid']);
+                session('level', $res['level']);
+                $data['last_login'] = date('Y-m-d H:i:s');
+                $data['logintimes'] = $res['logintimes'] + 1;
+                $db->where("username ='$username' and password = '$password'")->save($data);
+                echo '10000';
+            } else {
+                echo '用户名或密码错误';
+            }
+        }else{
+            echo "参数错误！";
+        }
+    }
+
+    public function header() {
+        $this->display();
+    }
+
+    public function loginout() {
+        session('[destroy]');
+        header('location:./');
+    }
+    
+    public function s404() {
+        $this->display('404');
+    }
+
+    public function checkpower() {
+        if ($_GET) {
+            global $power;
+            $a = $_GET['act'];
+            $p = $_GET['p'];
+            $userid = session('userid');
+            $res = M()->table("class a,user_power b")->where(" a.action='$a' and a.classid=b.classid and b.userid='$userid'")->find();
+            $power_level = $res['power_level'];
+            if (($power_level & $power[$p]) == $power[$p]) {
+                echo 1;
+            } else {
+                echo 0;
+            }
+        } else {
+            echo 0;
+        }
+    } 
+
+}

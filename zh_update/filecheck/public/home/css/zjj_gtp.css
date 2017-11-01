@@ -1,0 +1,31 @@
+.zjj_main .gtp_nodenum{
+float: right;
+font-weight: 800;
+margin-top: -22px ;  
+width: 350px;
+}
+.zjj_main .gtp_nodes{
+float: right;
+font-weight: 800;  
+font-size: 16px;
+width: 154px;
+}
+.gtp_nums{
+    float: left;
+    height: 75px;
+    margin: -5px 32px;
+    width: 239px;
+    color: #fff;
+    font-size: 17px; 
+    margin-top: 16px;
+} 
+.gtp_nums p{  
+    font-size: 29px; 
+    margin-top:10px;
+} 
+#infologs ul{
+    padding: 10px 0;
+}
+#infologs ul li{
+    font-size: 21px;
+}

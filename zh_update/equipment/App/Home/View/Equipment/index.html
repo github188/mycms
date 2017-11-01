@@ -1,0 +1,230 @@
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/equipment.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/AdminLTE.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/plugins/daterangepicker/daterangepicker.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/plugins/datepicker/datepicker3.css">
+<style>
+    .box-header{
+        border-bottom: 1px #eee solid;
+    }
+</style>
+<div class="body">
+    <div class="mod-shop">
+        <div class="shop-head-title">
+            <div class="shop-head-mod clearfix">
+                <h2><p href="javascript:;" class="shop-tit-back"> 
+                        设备故障统计分析 </p> 
+                </h2>
+                <div class="pull-right" style="margin-top:11px;">
+                    <button id="add_trouble_info" onclick="location.href = '__ROOT__/index.php/Home/Index/inputInfo';" class="btn btn-info">添加故障信息</button>
+                    <button id="input_trouble_info" class="btn btn-info">导入故障信息</button>
+                    <button id="add_trouble_info" onclick="location.href = '__ROOT__/index.php/Home/Index/infoList';" class="btn btn-info">修改故障信息</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="shop-body">
+            <div class="shop-container">
+                <div class="box">
+                    <div class="box-header width-border">
+                        <h3 class="box-title"><font>本月故障占比图</font></h3> 
+                        <div class="pull-right">
+                            <select name="monthcharts" class="form-control">
+                                <option value="lastweek">最近一周</option>
+                                <option value="lastbmonth">最近半月</option>
+                                <option value="lastmonth" selected>本月</option> 
+                            </select>
+                        </div> 
+                    </div> 
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6"> 
+                                <div id="equipment_chart" style="height:300px;"> 
+                                </div> 
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <div id="equipment_locale_chart" style="height:300px;">  
+                                </div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <div id="equipment_type_chart"  style="height:300px;"></div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <div id="equipment_brand_chart" style="height:300px;"></div>
+                            </div>
+                            <div class="col-sm-12 col-lg-6">
+                                <div id="equipment_part_chart" style="height:300px;">  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- 按月统计故障总数  -->
+                <div class="box">
+                    <div class="box-header width-border">
+                        <h3 class="box-title"><font>按月/季度统计故障总数</font></h3> 
+                        <div class="pull-right">
+                            <div class="input-group">
+
+                            </div>
+                            <div class="input-group">
+                                <select class="form-control" name="monthx" style="float:left;width:111px;">
+                                    <option value="huanjing">环境类型</option> 
+                                    <option value="jifang">所在机房</option>
+                                    <option value="buwei">故障部位</option>
+                                </select>
+                                <select class="form-control" name="monthyear" style="float:left;width:85px;">
+                                    <option>2017</option>
+                                    <option>2016</option> 
+                                </select> 
+                                <select class="form-control" name="monthselect" style="float:left;width:110px;">
+                                    <option value="month">按月查询</option> 
+                                    <option value="quarter">按季度查询</option>
+                                </select> 
+                                <button class="btn btn-success" id="monthbutton" type="button">查询</button> 
+                            </div>
+                        </div> 
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <div id="line_part_chart" style="height:300px;">  
+                                </div>
+                            </div>
+                        </div> 
+                    </div> 
+                </div>
+                <!-- /按月统计故障总数  -->
+                <!-- 年度统计故障总数  -->
+                <div class="box">
+                    <div class="box-header width-border">
+                        <div style="float: left;"> 
+                            <h3 class="box-title"><font>按年统计故障总数</font></h3> 
+                        </div>
+                        <div class="pull-right"> 
+                            <!-- Date range -->
+
+                            <div class="form-group" style="float: left;margin-left:5px;"> 
+                                <!--                                                         <select class="form-control" style="float: left;margin-left:5px;">
+                                                                    <option>快捷查询</option>
+                                                                    <option>2</option>
+                                                                    <option>3</option>
+                                                                    <option>4</option>
+                                                                    <option>5</option>
+                                                                </select> -->
+                                <div class="input-group" style="float: left;">
+                                    <input type="text" style="width:108px;" class="form-control" id="yearstartdate" placeholder="开始时间"/> 
+
+                                    <input type="text" placeholder="结束时间" style="width:108px;" class="form-control" id="yearenddate"/> 
+                                    <button class="btn btn-success" id="yearbutton" type="button">查询</button> 
+                                </div>
+
+                                <!-- /.input group -->
+                            </div> 
+
+                        </div> 
+                    </div>
+                    <div class="box-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-lg-6">
+                                <div id="year_part_chart" style="height:300px;">  
+                                </div>
+                            </div>
+                        </div> 
+                    </div> 
+                </div>
+                <!-- /年度统计故障总数  -->
+            </div>
+        </div>
+    </div>
+
+    <script src="__PUBLIC__/home/js/echarts.common.min.js" type="text/javascript"></script> 
+    <script src="__PUBLIC__/home/js/shine.js" type="text/javascript"></script>  
+    <script src="__PUBLIC__/home/js/equipment_new.js" type="text/javascript"></script>
+    <script src="__PUBLIC__/home/js/equipment_chart.js" type="text/javascript"></script>
+    <script src="__PUBLIC__/plugins/daterangepicker/moment.min.js" type="text/javascript"></script>
+    <script src="__PUBLIC__/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
+    <script src="__PUBLIC__/plugins/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+
+    <script src="__PUBLIC__/plugins/datepicker/locales/bootstrap-datepicker.zh-CN.js" type="text/javascript"></script>
+    <script type="text/javascript">
+                        $(function () {
+                            //批量导入
+                            $("#input_trouble_info").click(function () {
+                                layer.open({
+                                    type: 2,
+                                    title: '导入故障信息',
+                                    skin: 'layui-layer-rim', //加上边框
+                                    area: ['420px', '200px'], //宽高
+                                    content: '__ROOT__/index.php/Home/index/uploadpage'
+                                });
+                            })
+                            $("#monthbutton").click(function () {
+                                var monthdata = {
+                                    'monthx': $("[name=monthx]").val(),
+                                    'monthyear': $("[name=monthyear]").val(),
+                                    'monthselect': $("[name=monthselect]").val()
+                                };
+                                $.ajax({
+                                    url: "__ROOT__/index.php/Home/monthStatistics",
+                                    type: 'post',
+                                    data: monthdata,
+                                    success: function (json) {
+                                        json = eval("(" + json + ")");
+                                        if (json.errMsg == '0') {
+
+                                        } else {
+                                            layer.msg(json.msg);
+                                        }
+                                    }
+                                });
+                            });
+                            $.fn.datepicker.defaults.format = 'yyyy-mm-dd';
+                            $('#yearstartdate').datepicker({
+                                autoclose: true,
+                                language: 'zh-CN',
+                                todayHighlight: true
+                            });
+                            $('#yearenddate').datepicker({
+                                onClose: function (ints, datatext) {
+                                    console.log(ints + "-" + datatext);
+                                },
+                                autoclose: true,
+                                language: 'zh-CN',
+                                todayHighlight: true
+                            });
+                            $("#yearstartdate,#yearenddate").on('change', function (e, index) {
+                                if (!$("#yearstartdate").val() || !$("#yearenddate").val()) {
+                                    return false;
+                                }
+                                var yearstartdate = Date.parse(new Date($("#yearstartdate").val()));
+                                var yearenddate = Date.parse(new Date($("#yearenddate").val()));
+                                if (yearstartdate > yearenddate) {
+                                    layer.msg("开始时间不能大于结束时间！");
+                                    $(this).val('');
+                                    return false;
+                                }
+                            });
+                            $("#yearbutton").click(function () {
+                                if (!$("#yearstartdate").val() || !$("#yearenddate").val()) {
+                                    layer.msg("开始/结束时间不能为空！");
+                                    return false;
+                                }
+                                var data = {'yearstartdate': Date.parse(new Date($("#yearstartdate").val())) / 1000, 'yearenddate': Date.parse(new Date($("#yearenddate").val())) / 1000};
+                                $.ajax({
+                                    url: '__ROOT__/index.php/Home/yearStatistics',
+                                    type: 'post',
+                                    data: data,
+                                    success: function (json) {
+                                        json = eval("(" + json + ")");
+                                        if (json.errMsg == 0) {
+                                            layer.msg(json.msg);
+                                            console.log(json.msg);
+                                        }
+
+                                    }
+                                })
+                            });
+                        });
+                        
+                        </script>

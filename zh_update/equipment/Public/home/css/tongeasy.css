@@ -1,0 +1,80 @@
+/* 新增页面的css */
+#tongeasy_form .input-group :first-child {
+    margin:0;
+    padding: 0;
+    text-align: right;
+    width: 110px;
+}
+#tongeasy_form .input-group{ 
+    width: 100%;
+    margin: 6px auto;
+}
+#tongeasy_form .prompt-body{
+    text-align: center;
+    color: #72a2a2;
+}
+#tongeasy_form .nav-num{
+    float: left;
+    margin: 12px 10px;
+    font-size: 15px; 
+}
+#tongeasy_form .nav-num :first-child{
+    font-weight: 600;
+}
+/* 查询首页css */
+.container{
+    width: 100%;
+    margin: -21px 0 0 0; 
+    padding: 0;
+    font-family:楷体,Verdana, Geneva, sans-serif;
+}
+.tabsindex{height:44px;overflow:hidden;background:#f1f1f1;}
+.tabsindex div{height:44px;overflow:hidden;line-height:44px;padding:0px 20px;float:left;color:#888888;cursor:pointer;position:relative;}
+.tabsindex div.active{background-color:#ffffff;color:#000000}
+.tabsindex div:hover{color:#000000}
+.tabsindex div span{font-size:12px;color:#888888;position:absolute;top:3px;right:5px}
+.floats{display:inline-block;width:100%}
+.floats li{float:left}
+.floats30{float:left;width:30%}
+.floats20{float:left;width:20%}
+.floats80{float:left;width:80%}
+.floats60{float:left;width:60%}
+.floats40{float:left;width:40%}
+.floats50{float:left;width:50%}
+.floats70{float:left;width:70%}
+.floatr20{float:right;width:20%} 
+ul,li,a{ list-style-type:none;}
+ul,li{padding:0px;margin:0px}
+.navtool-left {
+    width: 20%; 
+}
+.navbar-header a{
+    font-size: 23px;
+}
+.navtool-right{ 
+    float: right;
+    width: 73%;
+    margin-right: 30px; 
+    margin-top: 7px;
+} 
+.caret,#shwxms{
+    cursor: pointer;
+}
+#tablebody{
+    height: 410px;
+    overflow-y: auto;
+} 
+/* 弹出分页样式 */
+#pageListMenu{
+    max-height: 110px;
+    overflow-y:scroll;
+}
+.rockmenu{ position:absolute;display:none; z-index:99}
+.rockmenuli{border:1px #eeeeee solid; background-color:#ffffff; left:0px; top:0px; background:rgba(255,255,255,0.9);box-shadow:0px 0px 5px rgba(0,0,0,0.3);}
+.rockmenulijt{ padding:0px; text-align:center}
+.rockmenu ul{padding:0px;margin:0px;font-family: "楷体";}
+.rockmenu li{ list-style-type:none;padding: 2px 22px;cursor:pointer; text-align:left; border-bottom:1px #eeeeee dotted;}
+.rockmenu li.li01{ background-color:#eeeeee;}
+.rockmenu li span{ font-size:10px; }
+.rockmenu li.li01 span{}
+.rockmenuli li img.iconsa{ vertical-align:middle; width:16px; height:16px; margin-right:8px}

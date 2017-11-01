@@ -1,0 +1,18 @@
+.content-wrapper{
+    margin-top:50px;
+}
+.cloud-control{
+    float: left;
+    width: 150px;
+    margin-right: 1px;
+}
+.cloud-lg-control{
+    float: left;
+    width: 290px;
+    margin-right: 1px;
+}
+.show-box{width:702px;}
+.box-primary .pull-right #clouse_setInterval{
+    margin-right: 10px;
+}
+.show-box .layui-layer-content{overflow-y:scroll;height:340px;padding: 0px 15px;}

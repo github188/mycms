@@ -1,0 +1,14 @@
+.navbar{
+    height: 40px;
+}
+.navbar-brand{
+    font-size: 30px;
+}
+.nav-num{
+    float: left;
+    margin: 12px 10px;
+    font-size: 15px; 
+}
+.nav-num :first-child{
+    font-weight: 600;
+}

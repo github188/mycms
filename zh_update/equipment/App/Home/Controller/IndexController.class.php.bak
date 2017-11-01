@@ -1,0 +1,642 @@
+<?php
+
+namespace Home\Controller;
+
+use QL\QueryList;
+use Think\Controller;
+
+class IndexController extends Controller {
+
+    public function _after_index() {
+        $this->display('footer');
+    }
+
+    Public function index() {
+        if (session('username')) {
+            $db = M("User_power");
+            global $power;
+            $userid = session('userid');
+            $classAll = M()->table("class a,user_power b ")->where(" a.classid=b.classid and b.userid='$userid'")->select();
+            $coldiv = "";
+            $zjjnum = 0;
+            //dump($classAll);
+            $zjj = '<ul id="zjj" class="nav nav-pills nav-stacked">';
+            foreach ($classAll as $key => $value) {
+                $power_level = $value['power_level'];
+                foreach ($power as $kp => $vp) {
+                    if (($power_level & $vp) == $vp && $kp == 'view') {
+                        if (in_array($value['action'], array('tonggtp','tongweb', 'tongeasy','was', 'mq','count'))) {
+                            $zjj .='<li><a href="' . $value['url'] . '"><i class="fa ' . $value['icon'] . '"></i> ' . $value['classname'] . '</a></li>';
+                            $zjjnum++; 
+                        } else {
+                            $coldiv .= ' <div class="col-sm-3 col-lg-2">';
+                            $coldiv .= '    <a  href="' . $value['url'] . '">';
+                            $coldiv .= '        <div class="align"> <i class="fa  ' . $value['icon'] . '"></i> </div>';
+                            $coldiv .= '        <h2>' . $value['classname'] . '</h2> ';
+                            $coldiv .= '    </a>';
+                            $coldiv .= '</div> ';
+                        }
+                    }
+                }
+            }
+            $zjj .='</ul>';
+            $navAll['zjj'] = $zjj;
+            $navAll['coldiv'] = $coldiv;
+            $navAll['zjjnum'] = $zjjnum;
+            $this->assign('navall', $navAll);
+            $this->assign('username', session('username')); 
+            $this->display();
+        } else {
+            $this->display('login');
+            exit;
+        }
+    } 
+    Public function login() {
+        if ($_POST) {
+            $username = iconv("utf-8", "gbk", $_POST['username']);
+            $password = md5(md5($_POST['password']) . "xtszhgl");
+            $db = M("User");
+            $res = $db->where("username ='$username' and password = '$password'")->find();
+            if ($res) {
+                session('username', $username);
+                session('userid', $res['userid']);
+                session('level', $res['level']);
+                $data['last_login'] = date('Y-m-d H:i:s');
+                $data['logintimes'] = $res['logintimes'] + 1;
+                $db->where("username ='$username' and password = '$password'")->save($data);
+                echo '10000';
+            } else {
+                echo '用户名或密码错误';
+            }
+        }else{
+            echo "参数错误！";
+        }
+    }
+
+    public function header() {
+        $this->display();
+    }
+
+    public function loginout() {
+        session('[destroy]');
+        header('location:http://' . $_SERVER['HTTP_HOST'] . '/index.php/Home/Index');
+    }
+    
+    public function s404() {
+        $this->display('404');
+    }
+
+    public function checkpower() {
+        if ($_GET) {
+            global $power;
+            $a = $_GET['act'];
+            $p = $_GET['p'];
+            $userid = session('userid');
+            $res = M()->table("class a,user_power b")->where(" a.action='$a' and a.classid=b.classid and b.userid='$userid'")->find();
+            $power_level = $res['power_level'];
+            if (($power_level & $power[$p]) == $power[$p]) {
+                echo 1;
+            } else {
+                echo 0;
+            }
+        } else {
+            echo 0;
+        }
+    }
+
+//TongEASY应用统计
+    public function tongEASYAppCount() {
+        $db = M("tongeasy_nodeinfo");
+        $res = $db->field('node_id,sys_name')->order("sys_name asc")->select();
+        if ($res) {
+            foreach ($res as $key => $value) {
+                $app1 = utf8_strcut($value['sys_name'], -1, 1);
+                $app2 = utf8_strcut($value['sys_name'], -2, 1);
+                $app3 = utf8_strcut($value['sys_name'], -3, 1);
+                $app4 = utf8_strcut($value['sys_name'], -4, 1);
+                $appcount = mb_strlen($value['sys_name'], 'UTF8') . '--';
+                if ($app1 == "机" && (is_numeric($app2) || preg_match('/^[a-zA-Z]+$/', $app2))) {
+                    $app = utf8_strcut($value['sys_name'], -2, 2);
+                    $pl = 0;
+                    if(is_numeric($app3)&&is_numeric($app4)){
+                        $yapp = utf8_strcut($value['sys_name'], 0, mb_strlen($value['sys_name'], 'UTF8') - 4);
+                    } elseif(is_numeric($app3)){
+                        $yapp = utf8_strcut($value['sys_name'], 0, mb_strlen($value['sys_name'], 'UTF8') - 3);
+                    }else{
+                        $yapp = utf8_strcut($value['sys_name'], 0, mb_strlen($value['sys_name'], 'UTF8') - 2);
+                    }
+                    
+                } elseif (is_numeric($app1) || preg_match('/^[a-zA-Z]+$/', $app1)) {
+                    $app = $app1;
+                    if(is_numeric($app4)){
+                        $yapp = utf8_strcut($value['sys_name'], 0, mb_strlen($value['sys_name'], 'UTF8') - 4);
+                    }elseif(is_numeric($app3)){
+                        $yapp = utf8_strcut($value['sys_name'], 0, mb_strlen($value['sys_name'], 'UTF8') - 3);
+                    } elseif(is_numeric($app2)){
+                        $yapp = utf8_strcut($value['sys_name'], 0, mb_strlen($value['sys_name'], 'UTF8') - 2);
+                    }else{
+                        $yapp = utf8_strcut($value['sys_name'], 0, mb_strlen($value['sys_name'], 'UTF8') - 1);
+                    } 
+                } else {
+                    $yapp = $value['sys_name'];
+                }
+                $appclass[$key] = $yapp;
+                // echo ($key + 1) . ',';
+                // echo $yapp . '--';
+                // echo $app;
+                // echo "<br>";
+            }
+        }
+        $createAppClass = 'CREATE TABLE IF NOT EXISTS tongeasy_appclass ( app_class_id int(11) NOT NULL AUTO_INCREMENT, app_name varchar(200) NOT NULL,  PRIMARY KEY (app_class_id), UNIQUE KEY app_class_id (app_class_id),  UNIQUE KEY app_name (app_name) ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1';
+        M()->execute($createAppClass);
+        $appdb = M('tongeasy_appclass');
+        $appclass = array_unique($appclass);
+        $oldapp = $appdb->field('app_name')->select();
+        foreach ($oldapp as $key => $value) {
+            $oldarr[$key] = $value['app_name'];
+        }
+        $truncate = 'truncate table tongeasy_appclass';
+        M()->execute($truncate);
+        // dump($oldarr);
+        // dump($appclass);
+        foreach ($appclass as $key => $value) {
+            $data['app_name'] = $value;
+            $wname = $data['app_name'];
+            $app_cl = $appdb->where($data)->find();
+            if ($app_cl) {
+                $app_class_id['app_class_id'] = $app_cl['app_class_id'];
+                //echo $value . '--已存在<br>';
+            } else {
+                $app_class_id['app_class_id'] = $addapp = $appdb->add($data);
+            }
+            echo $app_class_id['app_class_id'] . '--<br>';
+            $db->where(" sys_name like '$wname%'")->save($app_class_id);
+        }
+        echo '查出应用个数：' . $appdb->count() . '|插入数据量条数：' . count($appclass) . '<br><br><br>';
+    }
+
+    public function commonim() {
+        import("Org.Util.PHPExcel");
+        $filename = './Public/upload/temp/gtplog.xls';
+        $PHPExcel = new \PHPExcel();
+        import("Org.Util.PHPExcel.Reader.Excel5");
+        // import("Org.Util.PHPExcel.Reader.Excel2007");
+        // $PHPReader=new \PHPExcel_Reader_Excel2007();
+        $reader = \PHPExcel_IOFactory::createReader('Excel5'); // 设置以Excel5格式(Excel97-2003工作簿)
+        $PHPExcel = $reader->load($filename); // 载入excel文件
+        $sheet = $PHPExcel->getSheet(0); // 读取第一個工作表
+        $highestRow = $sheet->getHighestRow(); // 取得总行数
+        $highestColumm = $sheet->getHighestColumn(); // 取得总列数
+        $highestColumm = \PHPExcel_Cell::columnIndexFromString($highestColumm); // 字母列转换为数字列 如:AA变为27
+
+        /**
+         * 循环读取每个单元格的数据
+         */
+        // $address = array(
+        //     'department',
+        //     'keshi',
+        //     'job',
+        //     'username',
+        //     'telephone',
+        //     'mobile_phone',
+        //     'beizhu' 
+        // ); 
+        // $address = array( 
+        //     'username',
+        //     'telephone',
+        //     'mobile_phone' 
+        // );
+        $address = array(
+            'gl_code',
+            'gl_explain',
+            'gl_eclass'
+        );
+        for ($row = 2; $row <= $highestRow; $row ++) { // 行数是以第1行开始
+            $p = $val = "";
+            $data = array();
+            $where = array();
+            for ($j = 0; $j < (int) $highestColumm; $j ++) {
+                $columnName = \PHPExcel_Cell::stringFromColumnIndex($j);
+                // echo $columnName.$row.":".$sheet->getCellByColumnAndRow($j, $row)->getValue()."<br />";
+                $excel = $sheet->getCellByColumnAndRow($j, $row)->getValue();
+                $excel = str_replace("=", "", $excel);
+                $excel = str_replace('"', '', $excel);
+                $data[$address[$j]] = $excel;
+                // $val .= $p . "'$excel'";
+                // $p = $date = ",";
+                // $excelData[$row][] = str_replace(" ", "", $excel);
+                // if ($j == ((int) $highestColumm - 1)) {
+                //     $date = date('Y-m-d H:i:s');
+                //     $val = $val . ',' . "'$date'";
+                //     $val = $val . ',' . "'$date'";
+                // }
+            }
+            $db = M('gtplog');
+            $where = $data;
+            $is_exists = $db->where($where)->select();
+            if ($is_exists) {
+                //dump($data);
+                $res = $db->where($where)->save($data);
+                $opt = "更新";
+            } else {
+                $res = $db->add($data);
+                $opt = "添加";
+            }
+            if ($res) {
+                $succ_info = $opt . "第" . ($row - 1) . "条数据</br>";
+                echo $succ_info;
+                $isok = true;
+            } else {
+                $isok = false;
+                echo $res . "第" . $row;
+                echo "<br>";
+            }
+        }
+    }
+
+    public function email($array, $from_name, $subject, $body) {
+        $array = array('15736744455@139.com', '281574471@qq.com');
+        foreach ($array as $key => $value) {
+            $to = $value;
+            echo think_send_mail($to, $from_name, $subject, $body);
+        }
+    }
+
+    public function getShopStatus() {
+        $echo = '';
+        $postdq = array('pidType' => '10', 'productId' => '000000003D655A34435B3DB7E053AA1410AC8503'); //大气磅礴卡  
+        $chdq = curl_init();
+        curl_setopt($chdq, CURLOPT_URL, "http://www.189.cn/dqmh/tianyiMall/shoppingCart.do?method=isExitDb");
+        curl_setopt($chdq, CURLOPT_HEADER, false);
+        curl_setopt($chdq, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($chdq, CURLOPT_POSTFIELDS, $postdq);
+        $datadq = curl_exec($chdq);
+        curl_close($chdq);
+        $datadq = str_replace(array('{', '}'), '', $datadq);
+        $datadq = explode(':', $datadq);
+        if ($datadq[1] == 1) {
+            $echo .='磅礴卡:有货';
+        } else {
+            $echo .='磅礴卡:无货';
+        }
+        $echo .='/';
+        $post360 = array('pidType' => '6', 'productId' => '0000000035C56FFD2D443AA8E053AC1410AC76C9'); //360无限家宽
+
+        $ch360 = curl_init();
+        curl_setopt($ch360, CURLOPT_URL, "http://www.189.cn/dqmh/tianyiMall/shoppingCart.do?method=isExitDb");
+        curl_setopt($ch360, CURLOPT_HEADER, false);
+        curl_setopt($ch360, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch360, CURLOPT_POSTFIELDS, $post360);
+        $data360 = curl_exec($ch360);
+        curl_close($ch360);
+        $data360 = str_replace(array('{', '}'), '', $data360);
+        $data360 = explode(':', $data360);
+        if ($data360[1] == 1) {
+            $kd .='360无线家宽:有货';
+        } else {
+            $kd .='360无线家宽:无货';
+        }
+        $echo .=$kd;
+        if ($data360[1] == 1) {
+            $array = array('15736744455@139.com', '18811357166@139.com', '281574471@qq.com');
+            foreach ($array as $key => $value) {
+                $to = $value;
+                echo think_send_mail($to, '', $kd, $echo);
+            }
+        } else {
+            echo date('Y-m-d H:i:s') . '|not_send|' . $echo;
+        }
+    }
+
+//龙王传说 小说更新监控
+    public function lwcs() {
+        set_time_limit(0);
+        $db = D("lwcs");
+        $baseUrl = 'http://www.aiquxs.com/read/41/41742/';
+        $list = 'http://www.aiquxs.com/read/41/41742/index.html';
+        $reg = array(
+            "original_url" => array('#list dd a', 'href'),
+            "chapter" => array('#list dd a', 'text')
+        );
+        $hj = QueryList::Query($list, $reg);
+        $data = $hj->getData(function($item) use($baseUrl) {
+            $item['chapter'] = iconv("GBK", "utf-8", $item['chapter']);
+            $item['original_url'] = $baseUrl . $item['original_url'];
+            return $item;
+        }); 
+        $email_arr = array();
+        $cid = '';
+        foreach ($data as $key => $value) {
+            $is_exists = $db->where($value)->find();
+            if (!$is_exists) {
+                $value['date'] = date("Y-m-d H:i:s");
+                $cid = $db->add($value);
+                $email_arr[$key]['url'] = $value['original_url'];
+                $email_arr[$key]['chapter'] = $value['chapter'];
+                $email_arr[$key]['id'] = $cid;
+            } else {
+                $cid = $is_exists['id'];
+                if (!$is_exists['send_email']) {
+                    $email_arr[$key]['url'] = $value['original_url'];
+                    $email_arr[$key]['chapter'] = $value['chapter'];
+                    $email_arr[$key]['id'] = $cid;
+                }
+            }
+        } 
+        if(!$email_arr){
+            echo date("Y-m-d H:i:s");
+            exit;
+        }
+        foreach ($email_arr as $key => $value) {
+            $array = array('15736744455@139.com', '281574471@qq.com');
+            $idd = $value['id'];
+            $bodyreg = array(
+                'body' => array('#booktext', 'html')
+            );
+            $cons = QueryList::Query($value['url'], $bodyreg);
+            $body = $cons->getData(function($item) {
+                $item['body'] = iconv("GBK", "utf-8", $item['body']);
+                $item['body'] = str_replace('天才壹秒記住', '', $item['body']);
+                $item['body'] = str_replace('『愛♂去÷小?說→網wWw.AiQuxS.Com』，', '', $item['body']);
+                $item['body'] = str_replace('為您提供精彩小說閱讀。', '', $item['body']);
+                $item['body'] = str_replace(array('ads_wz_3X3_1();', 'ads_wz_3X3_2();', 'ads_wz_3X3_3();'), '', $item['body']);
+                $item['body'] = str_replace(array('<div class="ad_1"><script></script></div>', '<div class="ad_2"><script></script></div>', '<div class="ad_3"><script></script></div>', '<div class="con_ad">', '</div>'), '', $item['body']);
+                $item['body'] = trim($item['body']);
+                $item['body'] = trim($item['body'], '&amp;#160;');
+                return $item;
+            });
+            $uparr['content'] = $body[0]['body'];
+            $uparr['date'] = date("Y-m-d H:i:s");
+            $upd = $db->where(" id = '$idd'")->save($uparr);
+            foreach ($array as $k => $v) {
+                $to = $v;
+                $send_body = $value['chapter'];
+                $send_body .= '：<a href="' . $value['url'] . '">链接</a>';
+                echo $seres = think_send_mail($to, '龙王传说', $value['chapter'], $send_body);
+                $sera = explode('|', $seres);
+                if ($sera[1] == 'ok') {
+                    $chmail['send_email'] = 1;
+                    $db->where(" id = '$idd'")->save($chmail);
+                }
+            }
+        }
+    }
+    //圣墟传说 小说更新监控
+    public function sx() {
+        set_time_limit(0);
+        $db = D("sx");
+        $baseUrl = 'http://www.aiquxs.com/read/65/65825/';
+        $list = 'http://www.aiquxs.com/read/65/65825/index.html';
+        $reg = array(
+            "original_url" => array('#list dd a', 'href'),
+            "chapter" => array('#list dd a', 'text')
+        );
+        $hj = QueryList::Query($list, $reg);
+        $data = $hj->getData(function($item) use($baseUrl) {
+            $item['chapter'] = iconv("GBK", "utf-8", $item['chapter']);
+            $item['original_url'] = $baseUrl . $item['original_url'];
+            return $item;
+        }); 
+        $email_arr = array();
+        $cid = '';
+        foreach ($data as $key => $value) {
+            $is_exists = $db->where($value)->find();
+            if (!$is_exists) {
+                $value['date'] = date("Y-m-d H:i:s");
+                $cid = $db->add($value);
+                $email_arr[$key]['url'] = $value['original_url'];
+                $email_arr[$key]['chapter'] = $value['chapter'];
+                $email_arr[$key]['id'] = $cid;
+            } else {
+                $cid = $is_exists['id'];
+                if (!$is_exists['send_email']) {
+                    $email_arr[$key]['url'] = $value['original_url'];
+                    $email_arr[$key]['chapter'] = $value['chapter'];
+                    $email_arr[$key]['id'] = $cid;
+                }
+            }
+        } 
+        if(!$email_arr){
+            echo date("Y-m-d H:i:s");
+            exit;
+        }
+        $send_body = '';
+        foreach ($email_arr as $key => $value) {
+            $idd = $value['id'];
+            $bodyreg = array(
+                'body' => array('#booktext', 'html')
+            );
+            $cons = QueryList::Query($value['url'], $bodyreg);
+            $body = $cons->getData(function($item) {
+                $item['body'] = iconv("GBK", "utf-8", $item['body']);
+                $item['body'] = str_replace('天才壹秒記住', '', $item['body']);
+                $item['body'] = str_replace('『愛♂去÷小?說→網wWw.AiQuxS.Com』，', '', $item['body']);
+                $item['body'] = str_replace('為您提供精彩小說閱讀。', '', $item['body']);
+                $item['body'] = str_replace(array('ads_wz_3X3_1();', 'ads_wz_3X3_2();', 'ads_wz_3X3_3();'), '', $item['body']);
+                $item['body'] = str_replace(array('<div class="ad_1"><script></script></div>', '<div class="ad_2"><script></script></div>', '<div class="ad_3"><script></script></div>', '<div class="con_ad">', '</div>'), '', $item['body']);
+                $item['body'] = trim($item['body']);
+                $item['body'] = trim($item['body'], '&amp;#160;');
+                return $item;
+            });
+            $uparr['content'] = $body[0]['body'];
+            $uparr['date'] = date("Y-m-d H:i:s");
+            $send_body .= $value['chapter'];
+            $send_body .= '：<a href="' . $value['url'] . '">链接</a>';
+            $send_body .='<br><hr>';
+            $upd = $db->where(" id = '$idd'")->save($uparr); 
+        } 
+            $array = array('15736744455@139.com', '281574471@qq.com');
+         foreach ($array as $k => $v) {
+                $to = $v; 
+                echo $seres = think_send_mail($to, '', $value['chapter'], $send_body);
+                $sera = explode('|', $seres);
+                if ($sera[1] == 'ok') {
+                    $chmail['send_email'] = 1;
+                    $db->where(" id != ''")->save($chmail);
+                }
+            }
+    }
+
+//海贼王 更新监控
+    public function hzw() {
+        set_time_limit(0);
+        $db = D("hzw");
+        $list = 'http://www.iqiyi.com/a_19rrhb3xvl.html?vfm=2008_aldbd';
+        $reg = array(
+            "newpage" => array('.mod-album_tab_num a:last-child', 'text')
+        );
+        $hj = QueryList::Query($list, $reg);
+        $data = $hj->getData(function($item) {
+            return $item;
+        });
+        $pagel = explode('-', $data[0]['newpage']);
+        $max = $pagel[1];
+        $maxPage = ceil($max / 50);
+        // $keys = array('id', 'pd', 'shortTitle', 'tvQipuId', 'videoFocuses', 'timeLength', 'desc', 'publishTimedatetime', 'exclusive', 'vt', 'pds', 'vpic', 'type', 'payMark', 'qiyiProduced', 'vn', 'plcdown', 'mdown', 'purType', 'vurl', 'vid'); 
+        $datass = file_get_contents('http://cache.video.qiyi.com/jp/avlist/202861101/' . $maxPage . '/50/');
+        $str = explode('=', $datass);
+        $a = $str[1];
+        $a = json_decode($a, true);
+        $dataall = $a['data'];
+
+        $vlist = $dataall['vlist']; 
+        $email = [];
+        foreach ($vlist as $key => $value) {
+            $indata = array();
+            $indata['aQipuId'] = $dataall['aQipuId'];
+            if (!$indata['aQipuId']) {
+                $indata['aQipuId'] = 202861101;
+            }
+            $indata['bossType'] = $dataall['bossType'];
+            $pd = $value['pd'];
+            $isexist = $db->where("pd='$pd'")->find();
+            if ($isexist) {
+                if(!$isexist['send_email']){
+                    $email[$key] = $pd;
+                }                
+                continue;
+            }
+            foreach ($value as $k => $v) {
+                if (is_array($v)) {
+                    $indata[$k] = '';
+                } else {
+                    $indata[$k] = $v;
+                }
+            }
+            $indata['indate'] = date('Y-m-d H:i:s');
+            $isadd = $db->add($indata);
+            if ($isadd) {
+                $email[$key] = $indata['pd'];
+            }
+        }
+
+        $body = '';
+        $pssend = '(';
+        $p = '';
+        if(!$email){
+            echo date("Y-m-d H:i:s");
+            exit;
+        }
+        foreach ($email as $key => $value) {
+            $senda = $db->where("pd='$value'")->find();
+            $vurl = $senda['vurl'];
+            $vpic = $senda['vpic'];
+            $pd = $senda['pd'];
+            $body .=$senda['vn'] . '--' . $senda['vt'] . '<br>';
+            $body .="<a href='http://hzji.win/index.php/Home/index/hzw_url?pd=$pd'>链接</a><br>";
+            $body .="<a href='$vurl'>爱奇艺链接</a><br>";
+            $body .="<img src='$vpic'><br>";
+            $body .="<hr>";
+            $pssend .=$p . "'$value'";
+            $p = ',';
+        }
+        $pssend .=')';
+        // echo $pssend;
+        // echo $body;
+        // exit;
+        $array = array('15736744455@139.com', '281574471@qq.com');
+        foreach ($array as $k => $v) {
+            $to = $v;
+            $send_body = $body;
+            echo $seres = think_send_mail($to, '', '海贼王--更新通知', $send_body);
+            $sera = explode('|', $seres);
+            if ($sera[1] == 'ok') {
+                $chmail['send_email'] = 1;
+                $db->where(" pd in $pssend")->save($chmail);
+            }
+        }
+         
+        //dump($a); 
+    }
+//海贼王 新地址
+public function hzw_url(){
+    if($_GET['pd']){
+        $pd = $_GET['pd'];
+        $db=D('hzw');
+        $res= $db->where("pd='$pd'")->find(); 
+        $this->assign("data",$res);
+        $this->display('hzw');
+    }else{
+        echo "<h1>参数错误！</h1>";
+    }
+}
+//TongEASY 从sysname同步到表tongeasy_nodeinfo
+    public function easytongbu() {
+        $dbsys = M("sysname");
+        $dbeasy = M("tongeasy_nodeinfo");
+        $res1 = $dbsys->select();
+        $num = 0;
+        foreach ($res1 as $key => $value) {
+            $data = array();
+            $data['sys_name'] = $value['sys_name'];
+            $is = $dbeasy->where($data)->select();
+            if (!$is) {
+                $data['sys_ver'] = $value['os_ver'];
+                $data['use_rname'] = $value['use_rname'];
+                $data['node_name'] = $value['tenodename'];
+                $data['sys_ip'] = $value['sys_ip'];
+                $data['manager'] = $value['manager'];
+                $data['modtime'] = $value['date'];
+                $dbeasy->add($data);
+                if ($dbeasy->add($data)) {
+                    $num++;
+                }
+            }
+        }
+        $res2 = $dbeasy->select();
+        $nu = 0;
+        foreach ($res2 as $key => $value) {
+            $data = array();
+            $data['sys_name'] = $value['sys_name'];
+            $is = $dbsys->where($data)->select();
+            if (!$is) {
+                $isd = $dbeasy->delete($value['node_id']);
+                if (!$isd) {
+                    $nu++;
+                }
+            }
+        }
+        echo '添加' . $num . '个----删除' . $nu . '个';
+    }
+
+//删除重复行
+    public function delRepeat() {
+        $sql = 'create temporary table temp as select min(sys_id) as MINID from sysname group by sys_name; delete from sysname where sys_id not in (select minid from temp);';
+        M()->execute($sql);
+    }
+
+    //发送一天的电信宽带监控数据
+    public function send_dx360_email() {
+        $db = D("linetag");
+        $sid = $db->where("tag='dianxin360'")->find();
+        echo $sign = $sid['line'];
+        $filepath = "/home/logs/dianxin360.log";
+        $i = 0;
+        $f = fopen($filepath, "r");
+        $con = '';
+        while (!feof($f)) {
+            $line = fgets($f);
+            $i++;
+            if ($i > $sign) {
+                $con .= $line . "<br>";
+                $sign++;
+            }
+        }
+        $data['date'] = date("Y-m-d H:i:s");
+        $data['line'] = $i;
+        if ($db->where("tag='dianxin360'")->select()) {
+            $db->where("tag='dianxin360'")->save($data);
+        } else {
+            $data['tag'] = 'dianxin360';
+            $db->add($data);
+        }
+        if ($db->select()) {
+            $array = array('281574471@qq.com');
+            foreach ($array as $key => $value) {
+                $to = $value;
+                think_send_mail($to, '', '360无线家宽监控', $con);
+            }
+        }
+    }
+
+}

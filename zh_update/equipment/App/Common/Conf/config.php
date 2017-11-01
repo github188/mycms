@@ -1,0 +1,40 @@
+<?php
+
+return array(
+    //'配置项'=>'配置值'
+    'URL_CASE_INSENSITIVE' => true,
+    'DB_TYPE' => 'MYSQL',
+    'DB_HOST' => '127.0.0.1',
+    'DB_USER' => 'root',
+    'DB_PWD' => '123qwe',
+    'DB_NAME' => 'xtsgldb',
+    'DB_PORT' => '3400',
+    'DB_PREFIX' => '',
+    'ORACLE_DB' => array(
+        'DB_TYPE' => 'oracle',
+        'DB_HOST' => '192.168.2.113/ORCL',
+        'DB_NAME' => 'gtpsys',
+        'DB_USER' => 'gtpsys',
+        'DB_PWD' => 'zzh',
+        'DB_PORT' => '1521',
+    ),
+    'HXTONG' => array(
+        'URL_CASE_INSENSITIVE' => true,
+        'DB_TYPE' => 'MYSQL',
+        'DB_HOST' => '127.0.0.1',
+        'DB_USER' => 'root',
+        'DB_PWD' => '123qwe',
+        'DB_NAME' => 'hxtong',
+        'DB_PORT' => '3400',
+    ),
+    'HXMQM2' =>'mysql://root:123qwe@127.0.0.1:3306/hxmqm2',
+    'HXGTP' =>'mysql://root:123qwe@127.0.0.1:3306/hxgtp', 
+    'TMPL_CACHE_ON' => true,
+    'SESSION_AUTO_START' => 'true',
+    //'SHOW_PAGE_TRACE'=>'true' ,
+    'URL_ROUTER_ON' => true,
+    'APP_GROUP_LIST' => 'Home,Test',
+    'DEFAULT_GROUP' => 'Home',
+    'DEFAULT_MODULE' => 'Home',
+    'URL_MODEL' => '2',
+);

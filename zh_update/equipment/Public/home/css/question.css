@@ -1,0 +1,197 @@
+.container{
+    margin:50px 0px 0px 0px;
+    padding: 0;  
+    height:100%;
+    width: 100%; 
+}
+.question-left {
+    background: #f0f0f0 url("/Public/home/img/aside-shadow.png") repeat-y scroll right top;
+    border-right: 1px solid #c6c8cc; 
+    padding-top: 10px;
+    width: 210px;
+    position: relative;
+    float: left;
+}
+.question-left ul{
+    width: 210px;
+    padding-left: 20px; 
+}
+.zTreetitle{
+    font-size: 20px;
+    margin-left: 20px;
+}
+.question-right{
+    left:210px;
+    position: fixed;
+    background-color: #e3e3e3;
+    margin:1px auto;
+    overflow: hidden; 
+}
+.question-tool button{
+    font-size: 16px;
+    margin-left: 20px;
+}
+.question-tool .btn{
+    padding: 3px 8px !important;
+}
+.question-right-body{
+    width: 100%;
+    clear: both;
+    position: relative;     
+}
+.question-right-body-content{
+    clear: both;
+    position: relative;
+}
+#uploadqu table {
+    border: 1px solid #fff;
+    margin: 10px auto;
+    width: 900px;
+    background-color: #F0F0F0;
+}
+/* 时间轴css */
+.container{
+    margin:50px 0px 0px 0px;
+    padding: 0;  
+    height:100%;
+    width: 100%;
+}
+.question-left {
+    background: #f0f0f0 url("/Public/home/img/aside-shadow.png") repeat-y scroll right top;
+    border-right: 1px solid #c6c8cc; 
+    padding-top: 10px;
+    width: 210px;
+    position: relative;
+    float: left;
+}
+.question-left ul{
+    width: 210px;
+    padding-left: 20px; 
+}
+.zTreetitle{
+    font-size: 20px;
+    margin-left: 20px;
+}
+.question-right{
+    left:210px;
+    position: fixed;
+    background-color: #F0F0F0;
+    margin:1px auto;
+    overflow: hidden; 
+}
+.question-tool button{
+    font-size: 16px;
+    margin-left: 20px;
+}
+.question-tool .btn{
+    padding: 3px 8px !important;
+}
+.question-right-body{
+    width: 100%;
+    clear: both;
+    position: relative;     
+}
+.question-right-body-content{
+    clear: both;
+    position: relative; 
+}
+#uploadqu table {
+    border: 1px solid #fff;
+    margin: 10px auto;
+    width: 900px;
+    background-color: #F0F0F0;
+}
+.questionlist{
+    overflow: scroll;
+}
+/* 时间轴css */ 
+/*= Reset =*/
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,p,blockquote,th,td,figure{margin:0;padding:0;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+table{border-collapse:collapse;border-spacing:0;}
+caption,th{font-weight:normal;text-align:left;}
+fieldset,img{border:0;}
+ul li{list-style:none;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+h5{font-size:18px;margin-bottom:20px;color:#666;}
+h5 span{font-size:12px;color:#ccc;font-weight:normal;}
+blockquote:before,blockquote:after,q:before,q:after{content:"";}
+html{-webkit-text-size-adjust:none;-ms-text-size-adjust:none;}
+body{font:normal 14px/24px "Helvetica Neue",Helvetica,STheiti,"Microsoft Yahei","冬青黑体简体中文 w3",宋体,Arial,Tahoma,sans-serif,serif;word-wrap:break-word;background: #F0F0F0;}
+input,button,textarea,select,option,optiongroup{font-family:inherit;font-size:inherit;}
+code,pre{font-family:"Microsoft YaHei",Consolas,"Courier New",monospace;}
+.bw0{border: none !important;}
+*:focus{outline:0;}
+legend{color:#000;}
+/* input,select{vertical-align:middle;} */
+button{overflow:visible;}
+input.button,button{cursor:pointer;}
+button,input,select,textarea{margin:0;}
+textarea{overflow:auto;resize:none;}
+label[for],input[type="button"],input[type="submit"],input[type="reset"]{cursor:pointer;}
+/* input[type="button"]::-moz-focus-inner,input[type="submit"]::-moz-focus-inner,input[type="reset"]::-moz-focus-inner,button::-moz-focus-inner{border:0;padding:0;} */
+a { text-decoration:none;color:#1C3D72 }
+img{-ms-interpolation-mode:bicubic;}
+/* new clearfix */
+.clearfix:after {
+visibility: hidden;
+display: block;
+font-size: 0;
+content: " ";
+clear: both;
+height: 0;
+}
+
+.box { width:1004px;margin:18px auto 0 auto;background-color: #F0F0F0;}
+
+.event_year { width:60px;border-bottom:2px solid #DDD;text-align:center;float:left;margin-top:10px; }
+.event_year li { height:40px;width: 60px;line-height:40px;background:#FFF;margin-bottom:1px;font-size:18px;color:#828282;cursor:pointer; }
+.event_year li.current { width:61px;background:#0066ff url('/Public/home/img/jian.png') 60px 0 no-repeat;color:#FFF;text-align:left;padding-left:9px; }
+.event_list { width:850px;float:left;background:url('/Public/home/img/dian3.png') 139px 0 repeat-y;margin:10px 0 20px 40px; }
+.event_list h3 { margin:0 0 10px 132px;font-size:24px;font-family:Georgia;color:#0066ff;padding-left:25px;background:url('/Public/home/img/jian.png') 0 -45px no-repeat;height:38px;line-height:30px;font-style:italic; }
+.event_list li { background:url('/Public/home/img/jian.png') 136px -80px no-repeat; margin-top:20px;}
+.event_list li .monthtitle { width:127px;text-align:right;display:block;float:left;margin-top:10px; }
+.event_list li .list-content { width:680px;margin-left:24px;display:inline-block;padding-left:10px;background:url('/Public/home/img/jian.png') -21px 0 no-repeat;line-height:25px;/* float:left; */ }
+.event_list li .list-content .list-con,.list-he { width:650px;text-align:left;padding:10px 15px;background:#FFF;margin:0; }
+.list-con{
+    clear: both;
+    border-bottom:2px solid #DDD;
+}
+.list-con p{
+    font-weight: 800;
+}
+.list-he{  
+     font-weight: 800;
+}
+.list-he .subspan{
+    margin-right:30px;
+}
+hr{
+    margin:0;
+    padding: 0;
+}
+/* .event_list li p { width:680px;margin-left:24px;display:inline-block;padding-left:10px;background:url('/Public/home/img/jian.png') -21px 0 no-repeat;line-height:25px;_float:left; }
+.event_list li p span { width:650px;text-align:left;border-bottom:2px solid #DDD;padding:10px 15px;background:#FFF;margin:0; } */
+
+.titlelist{line-height:24px;color: #8C8C8C;padding-bottom:20px;}
+.titlelist dt { font-weight: bold;color:#666;white-space: nowrap;margin:10px;}
+.titlelist dd {padding-left: 13px;}
+h1 {
+    font-family: Tahoma,Arial,sans-serif;
+    font-size: 14px;
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+}
+.hr {
+    border-top: 1px solid #CCD5DE;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    margin: 15px 0;
+}
+.red {
+    color: #0065CB;
+    font-size:15px;
+}
+
+/* 时间轴css end */ 

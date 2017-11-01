@@ -1,0 +1,78 @@
+.report-left{
+    height: 100%;
+    background: #f0f0f0 url("/Public/home/img/aside-shadow.png") repeat-y scroll right top;
+    border-right: 1px solid #c6c8cc;
+    height: 100%;
+    padding-top: 10px;
+    position: relative;
+}
+.report-right{
+    padding: 0;
+    margin: 0;
+}
+.report-toolbar{
+    background: #f7f7f7 url("/Public/home/img/outer_bn2.gif") repeat-x scroll left -53px;
+    border-bottom: 1px solid #d2d2d2;
+    position: relative;
+    width: 100%;
+    height: 45px;
+    z-index: 4;
+}
+
+.right-content.view-header {
+    background: #f7f7f7 none repeat scroll 0 0;
+    height: 43px;
+    position: relative;
+    z-index: 3;
+}
+#rmodal_upload .modal-header{
+    padding:0 10px;
+}
+#rmodal_upload .modal-body{
+    padding:0;
+}
+#rmodal_upload #report_ups{
+    margin:15px;
+}
+.report-toolbar{
+    padding: 8px;
+}
+#upsinfo { 
+    border: 1px solid #ddd;
+    /* 
+    height: 290px; */
+    width: 100%;
+    overflow: auto;
+}
+.upsinfo-note{
+    border-bottom: 1px solid #ddd;
+}
+.upsinfo-note .info{
+    width: 100%;
+    color: #224;
+    font-size: 12px;
+    line-height: 35px;
+    padding: 0 5px;
+    position: relative;
+}
+.upsinfo-note .title{ 
+    display: block;
+    font-size: 20px; 
+    width: 400px;
+    overflow: hidden;
+    float: left;
+    position: relative;
+}
+.upsinfo-note .state{ 
+    float: left;
+    display: block;
+    font-size: 16px; 
+    width: 100px;
+    position: relative;
+}
+#uploaded .info{
+    font-size: 16px;
+}
+#uploaded .info label{
+    margin: 5px;
+}

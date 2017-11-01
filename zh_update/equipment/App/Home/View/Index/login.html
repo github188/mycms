@@ -1,0 +1,281 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>控制台登录</title>  
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <script src="__PUBLIC__/jquery-1.12.3.min.js" type="text/javascript" ></script> 
+        <link rel="stylesheet" type="text/css" href="__PUBLIC__/home/css/logreg.css" />
+        <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="__PUBLIC__/bootstrap/js/bootstrap.min.js" type="text/javascript" ></script> 
+        <!--[if lt IE 9]>
+        <script src="__PUBLIC__/bootstrap/js/respond.js" type="text/javascript" ></script>
+        <script src="__PUBLIC__/bootstrap/js/html5shiv.js" type="text/javascript" ></script>
+        <link href="__PUBLIC__/home/css/loginie8.css" rel="stylesheet" />
+        <![endif]--> 
+        <style>
+            #regmodal table tr td{
+                padding-top:10px;
+            }
+        </style> 
+        <style type="text/css">
+           /*  html {
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                background: #ffc000;
+            }
+
+            *,
+            *:before,
+            *:after {
+                box-sizing: inherit;
+            }
+
+            body {
+                width: 100%;
+                height: 100%; 
+            }
+
+            svg {
+                width:100%;
+                height: 100%;
+            } */
+        </style>
+    </head>
+    <body> 
+        <div style="align-content: center;width: 100%;margin-top:15%;">
+                <div class="login"  > 
+                    <div class="header">
+                        <div class="switch" id="switch"><a class="switch_btn_focus" id="switch_qlogin" href="javascript:void(0);" tabindex="7">控制台登录</a> 
+                        </div>
+                    </div>    
+                    <div id="login_err" class="login_err"></div> 
+                    <div class="web_qr_login" id="web_qr_login" style="display: block; height: 235px;">    
+
+                        <!--登录-->
+                        <div class="web_login" id="web_login"> 
+                            <div class="login-box"> 
+                                <div class="login_form">
+                                    <form action="" name="login" accept-charset="utf-8" id="login" class="loginForm" method="post"> 
+                                        <div class="uinArea" id="uinArea">
+                                            <label class="input-tips" for="u">帐号：</label>
+                                            <div class="inputOuter" id="uArea"> 
+                                                <input type="text" id="u" name="username" class="inputstyle"/>
+                                            </div>
+                                        </div>
+                                        <div class="pwdArea" id="pwdArea">
+                                            <label class="input-tips" for="p">密码：</label> 
+                                            <div class="inputOuter" id="pArea"> 
+                                                <input type="password" id="p" name="password" class="inputstyle"/>
+                                            </div>
+                                        </div> 
+                                        <div style="padding-left:50px;margin-top:20px;"><input  type="submit" value="登 录" style="width:100px;" class="button_blue" id="input_go"/>&nbsp;&nbsp; <input  type="button" value="注 册" style="width:100px;margin-left:10px;" class="button_blue" id="input_add" />
+                                        </div>
+                                    </form>
+                                </div> 
+                            </div> 
+                        </div>
+                        <!--登录end-->
+                    </div> 
+                </div>
+            </div>
+            <div id="regmodal" class="modal fade" style="display:none;width:100%;">
+                <!-- 窗口声明 -->
+                <div class="modal-dialog modal-lg" style="width:568px;">
+                    <!-- 内容声明 -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button class="close" data-dismiss="modal"><span>&times;</span>
+                            </button>
+                            <h2 class="modal-tittle" style="margin-left: 230px;">注  册</h2>
+                        </div>
+                        <div class="modal-body">
+                            <form name="formuadd" id="formuadd">
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center"> 
+                                    <tr> 
+                                        <td width="15%" align="right"><font color="red">*</font> 用户名：</td>
+                                        <td width="35%" class="tdinput"><input id="regusername" class="form-control" name="username"></td>
+                                    </tr>  
+                                    <tr>
+                                        <td align="right"><font color="red">*</font> 密码：</td>
+                                        <td class="tdinput"><input  type="password" class="form-control" value="" name="password"></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right"><font color="red">*</font> 确认密码：</td>
+                                        <td class="tdinput"><input  type="password" class="form-control" value="" name="password2"></td>
+                                    </tr> 
+                                </table>
+                            </form>
+                        </div>
+                        <div class="modal-footer" style="text-align: center;">
+                            <span id="regArealog" style="margin-left:-57px;width:100px;"></span>
+                            <button class="btn btn-primary" id="doreg">注 册</button>
+                            <button class="btn btn-primary" data-dismiss="modal">关 闭</button>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <!-- 通用模态框 -->
+            <div id="commonmodal" class="modal fade" style="display:none;">
+                <!-- 窗口声明 -->
+                <div class="modal-dialog modal-lg"  style="width:403px;margin:200px auto;">
+                    <!-- 内容声明 -->
+                    <div class="modal-content">
+                        <div class="modal-header" style="font-size:16px;font-weight:bold;color:white;padding-left:8px;background: #157fcc none repeat scroll 0 0;height: 48px; line-height: 48px;  overflow: hidden;">
+                            <button class="close" data-dismiss="modal"><span>&times;</span>
+                            </button>
+                            <h4 style="font-size:28px;font-weight:bold;margin-top: -20px;" class="modal-tittle panel-heading">信息提示</h4>
+                        </div>
+                        <div class="modal-body" style="text-align: center;font-size:18px;font-weight:bold;">
+                            加载中.....
+                        </div>
+                        <div class="modal-footer">
+                            <span id="msgview"></span>&nbsp;
+                            <span id="button">
+                                <button class="btn btn-primary" data-dismiss="modal">关闭</button>
+                            </span>
+                        </div>
+                    </div> 
+                </div>
+            </div> 
+            <div class="jianyi">
+                <span>*推荐使用ie9以上版本的ie浏览器或Chrome浏览器访问本站</span>
+                <!---p> 点击<a target="_blank" href="__ROOT__/Public/upload/software/chrome_installer.exe">下载Chrome</a></p--->
+            </div> 
+        <script>
+            jQuery(function ($) {
+                $("#input_go").click(function () {
+                    $("#input_go").val("登陆中...");
+                    var username = $("input[name=username]").val();
+                    if (!username) {
+                        $("input[name=username]").focus();
+                        $("#login_err").html("用户名不能为空");
+                        $("#input_go").val("登陆");
+                        return false;
+                    }
+                    var password = $("input[name=password]").val();
+                    if (!password) {
+                        $("input[name=password]").focus();
+                        $("#login_err").html("密码不能为空");
+                        $("#input_go").val("登陆");
+                        return false;
+                    }
+                    $("#login_err").html("");
+                    $.ajax({
+                        url: '__ROOT__/index.php/Home/Index/login',
+                        type: 'post',
+                        data: $("#login").serialize(),
+                        success: function (json) {
+                            if (json == "10000") {
+                                window.location.reload();
+                                location.reload();
+                            } else {
+                                $("#login_err").html(json);
+                                $("#input_go").val("登陆");
+                            } 
+                        }
+                    });
+                    return false;
+                });
+                $("#input_add").click(function () {
+                    $("#regmodal").modal("show");
+                });
+            });
+//验证用户名是否存在
+            $("#regusername").keyup(function () {
+                var username = $("#regmodal input[name=username]").val();
+                $.ajax({
+                    url: '__ROOT__/index.php/Home/Index/CheckUser?username=' + username,
+                    type: 'post',
+                    success: function (json) {
+                        json = eval("(" + json + ")");
+                        if (json.code == 10000) {
+                            $("#regArealog").html("<span style='color:red'>" + json.message + "</span>");
+                            $("#regmodal input[name=username]").focus();
+                            return false;
+                        } else if (json.code == 10001) {
+                            $("#regArealog").html("");
+                        }
+                    } 
+                });
+                return false;
+            });
+            //添加用户
+            $("#doreg").click(function () {
+                var username = $("#regmodal input[name=username]").val();
+                var password = $("#regmodal input[name=password]").val();
+                var password2 = $("#regmodal input[name=password2]").val();
+                if (!username) {
+                    $("#regArealog").html("<span style='color:red'>账号不能为空</span>");
+                    $("input[name=username]").focus();
+                    return false;
+                } else {
+                    $("#regArealog").html("");
+                }
+                if (!password) {
+                    $("#regArealog").html("<span style='color:red'>密码不能为空</span>");
+                    $("input[name=password]").focus();
+                    return false;
+                } else {
+                    $("#regArealog").html("");
+                }
+                if (password != password2) {
+                    $("#regArealog").html("<span style='color:red'>密码不一致</span>");
+                    $("input[name=password2]").focus();
+                    return false;
+                } else {
+                    $("#regArealog").html("");
+                }
+                $.ajax({
+                    url: '__ROOT__/index.php/Home/Index/AddUserDo',
+                    data: $("#formuadd").serialize(),
+                    type: 'post',
+                    success: function (json) {
+                        json = eval("(" + json + ")");
+                        if (json.code == 10000) {
+                            $("#regmodal").modal('hide');
+                            setTimeout(function () {
+                                $("#commonmodal .modal-body").html("<h2>添加成功</h2>");
+                                $("#commonmodal").modal('show');
+                                clearForm("#formuadd");
+                                $("#commonmodal").on('hidden.bs.modal', function () {
+                                    window.location.reload();
+                                })
+                            }, 100);
+                        } else if (json.code == 10003) {
+                            $("#regArealog").html("<span style='color:red'>用户名已经存在</span>");
+                            $("input[name=username]").focus();
+                            return false;
+                        } else {
+                            $("#regArealog").html("<h2>" + json.message + "</h2>");
+                            return false;
+                        }
+                    } 
+                });
+                return false;
+            });
+//清空表单
+            function clearForm(form) {
+                // iterate over all of the inputs for the form
+                // element that was passed in
+                $(':input', form).each(function () {
+                    var type = this.type;
+                    var tag = this.tagName.toLowerCase(); // normalize case
+                    // it's ok to reset the value attr of text inputs,
+                    // password inputs, and textareas
+                    if (type == 'text' || type == 'password' || tag == 'textarea')
+                        this.value = "";
+                    // checkboxes and radios need to have their checked state cleared
+                    // but should *not* have their 'value' changed
+                    else if (type == 'checkbox' || type == 'radio')
+                        this.checked = false;
+                    // select elements need to have their 'selectedIndex' property set to -1
+                    // (this works for both single and multiple select elements)
+                    else if (tag == 'select')
+                        this.selectedIndex = -1;
+                });
+            }
+            ;
+        </script>
+    </body>
+</html>

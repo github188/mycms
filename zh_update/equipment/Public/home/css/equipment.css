@@ -1,0 +1,398 @@
+
+.content-wrapper,.body{
+    margin-top:50px; 
+}
+.inputs{margin-left:20px;margin-right:20px;}
+.inputs .row .col-md-4,.inputs .row .col-md-3{margin: 5px auto;}
+.button-box{margin:1px auto;width:200px;}
+.button-box button{margin-left:10px; }
+.layer_new_add{ margin: 15px auto; width:200px;float:left;background-color: #ded;}
+/* 首页css 开始 */
+body{
+    background-color: #F0F2F5; 
+    height: 100%;
+}
+.body .mod-pay, .body .mod-shop {
+    padding-bottom: 180px;
+}
+
+.shop-head-title {
+    background-color: #fff;
+    box-shadow: 0 2px 3px #e2e9ee;
+}
+
+.shop-body {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1180px;
+}
+.clearfix::after, .clearfix::before {
+    content: "";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}.shop-head-title {
+    background-color: #fff;
+    box-shadow: 0 2px 3px #e2e9ee;
+}
+.shop-head-mod {
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1180px;
+}
+.shop-head-title h2 {
+    color: #000;
+    float: left;
+    font-size: 24px;
+    font-weight: 400;
+    margin-right: 20px;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+.shop-head-title .button-wrap {
+    padding-bottom: 15px;
+    padding-top: 19px;
+}
+.shop-head-title .button-wrap .shop-btn i {
+    margin-right: 5px;
+    margin-top: -3px;
+}
+.shop-tit-back::after {
+    /*  border-left: 1px solid #ccc; */
+    content: "";
+    height: 20px;
+    position: absolute;
+    right: 5px;
+    top: 4px;
+    width: 0;
+}
+.shop-tit-back {
+    display: inline-block;
+    font-size: 24px;
+    padding-right: 20px;
+    position: relative;
+    vertical-align: middle;
+}
+.shop-tit-back span {
+    vertical-align: middle;
+}
+
+.shop-container {
+    background-color: #fff;
+    margin-top: 20px;
+}
+body, button, dd, div, dl, dt, form, h1, h2, h3, h4, h5, h6, hr, input, li, ol, p, td, textarea, th, ul {
+    margin: 0;
+    padding: 0; 
+}
+
+/* .shop-list {
+    padding: 18px 0;
+} */
+.shop-list .list {
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 3px 0;
+    position: relative;
+}
+li {
+    list-style: outside none none;
+}
+.shop-list-tit {
+    color: #666;
+    font-size: 14px;
+    left: 0;
+    line-height: 24px;
+    position: absolute;
+    top: 4px;
+    vertical-align: top;
+    width: 95px;
+    z-index: 2;
+}
+.shop-list-con {
+    min-height: 35px;
+    padding-left: 95px;
+    position: relative;
+    z-index: 1;
+}
+.shop-list-tit span {
+    vertical-align: middle;
+}
+.shop-ui-block {
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+}
+.ui-block-auto .b-item {
+    min-width: 70px;
+    padding: 0 15px;
+    text-align: center;
+}
+.shop-ui-block .b-selected, .shop-ui-block .b-selected:hover {
+    background: #d7e6f8 none repeat scroll 0 0;
+    border-color: #2277da;
+    color: #2277da;
+    position: relative;
+    z-index: 2;
+}
+.shop-ui-block .b-first {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+    margin-left: 0;
+}
+.shop-ui-block .b-item {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ccd1d9;
+    color: #333;
+    float: left;
+    font-size: 14px;
+    height: 33px;
+    line-height: 33px;
+    margin-left: -1px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 0;
+}
+.slice {
+    border-bottom: 1px solid #e4e9f0;
+    clear: both;
+    margin-left: 40px;
+    margin-right: 40px;
+}  .shop-dropdown.long {
+    width: 300px;
+}
+.shop-dropdown-btn-style.shop-menu-active {
+    z-index: 8;
+}
+.shop-dropdown-btn-style {
+    background-color: #fff;
+    font-size: 12px;
+}
+.shop-menu-active {
+    z-index: 3;
+}
+.shop-dropdown {
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1;
+    position: relative;
+    vertical-align: middle;
+    width: 200px;
+}.shop-dropdown-btn-style .shop-dropdown-link {
+    border: 1px solid #bcc0c9;
+    border-radius: 2px;
+    overflow: hidden;
+    padding: 0 49px 0 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.shop-dropdown-btn-style .shop-dropdown-link, .shop-dropdown-btn-style .shop-dropdown-menu li a {
+    color: #171d25;
+    height: 33px;
+    line-height: 33px;
+}
+.shop-dropdown-allow-hover:hover .shop-dropdown-link, .shop-menu-active .shop-dropdown-link {
+    background-color: #fff;
+    border-color: #bcc0c9;
+}
+.shop-dropdown .shop-dropdown-link {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 1px 1px 0;
+    display: block;
+    overflow: hidden;
+    padding: 0 21px 0 5px;
+    position: relative;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    white-space: nowrap;
+    z-index: 2;
+}
+.shop-dropdown .shop-dropdown-link, .shop-dropdown .shop-dropdown-menu li a {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-decoration: none;
+} 
+.shop-dropdown-btn-style .shop-dropdown-link .caret {
+    background-image: url("sprite/shopcart-201704251038.png");
+    background-position: -54px -299px;
+    right: 8px;
+    top: 9px;
+}
+.shop-dropdown-allow-hover.shop-menu-active .shop-dropdown-link:hover .caret, .shop-dropdown-allow-hover:hover .shop-dropdown-link .caret, .shop-menu-active .shop-dropdown-link .caret {
+    background-image: url("sprite/shopcart-201704251038.png");
+    background-position: 0 -299px;
+}
+.shop-dropdown-link .caret {
+    background-image: url("sprite/shopcart-201704251038.png");
+    background-position: -307px -270px;
+    height: 16px;
+    position: absolute;
+    right: 2px;
+    top: 10px;
+    width: 16px;
+}
+em, i {
+    font-style: normal;
+    font-weight: 400;
+}
+.shop-dropdown-btn-style .shop-dropdown-menu {
+    border-radius: 2px;
+    left: 0;
+    margin-top: 5px;
+    max-width: 100%;
+    right: auto;
+}
+.shop-dropdown-allow-hover:hover .shop-dropdown-menu, .shop-menu-active .shop-dropdown-menu {
+    display: block;
+}
+.shop-dropdown > .shop-dropdown-menu {
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.shop-dropdown .shop-dropdown-menu {
+    background-color: #fff;
+    border: 1px solid #d1d2d3;
+    box-sizing: border-box;
+    display: none;
+    margin-top: -1px;
+    min-width: 100%;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    z-index: 1;
+}
+.shop-dropdown-btn-style .shop-dropdown-menu li a {
+    padding: 0 10px;
+    text-align: left;
+}
+.shop-dropdown-btn-style .shop-dropdown-link, .shop-dropdown-btn-style .shop-dropdown-menu li a {
+    color: #171d25;
+    height: 33px;
+    line-height: 33px;
+}
+.shop-dropdown .shop-dropdown-menu li a {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 0 21px;
+    text-align: right;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.shop-dropdown .shop-dropdown-link, .shop-dropdown .shop-dropdown-menu li a {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-decoration: none;
+}
+.shop-ui-block .b-selected, .shop-ui-block .b-selected:hover {
+    background: #d7e6f8 none repeat scroll 0 0;
+    border-color: #2277da;
+    color: #2277da;
+    position: relative;
+    z-index: 2;
+}
+.shop-ui-block .b-item:hover {
+    border: 1px solid #8a9099;
+    z-index: 1;
+}
+.shop-submit {
+    background-color: #fff;
+    border-top: 1px solid #dbe3e4;
+    box-shadow: 0 -4px 4px -2px #e4e9f0;
+    padding: 15px 0 15px 135px;
+}
+.shop-submit .cost {
+    font-size: 0;
+    left: -95px;
+    margin-bottom: 10px;
+    position: relative;
+}.shop-submit .tit {
+    display: inline-block;
+    font-size: 14px;
+    margin-top: 10px;
+    vertical-align: top;
+    width: 95px;
+}
+.cost .tit {
+    color: #666;
+}
+.shop-submit .price, .shop-submit .price-control {
+    display: inline-block;
+    vertical-align: top;
+}
+.cost .price {
+    color: #ed711f;
+}
+.shop-submit .price, .shop-submit .price-control {
+    display: inline-block;
+    vertical-align: top;
+}
+.shop-submit .price em {
+    bottom: -3px;
+    font-size: 25px;
+    line-height: 30px;
+    margin-left: 3px;
+    margin-right: 3px;
+    position: relative;
+}
+.shop-submit .price .unit-txt {
+    font-size: 14px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.shop-submit .price .strike-inline {
+    color: #999;
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+.shop-submit .shop-btn {
+    margin-right: 5px;
+}
+.shop-btn {
+    background: #2277da none repeat scroll 0 0;
+    border: 1px solid #2277da;
+    border-radius: 2px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 33px;
+    line-height: 33px;
+    min-width: 24px;
+    outline: 0 none;
+    padding: 0 20px;
+    text-align: center;
+}
+.cover_padding_6_10{
+    padding: 6px 12px;
+    width: auto;
+}
+.cover_padding_6_3{
+    padding: 6px 3px;
+} 
+#new_add_select{
+    background-color: #e9e9e9;
+    box-shadow: 1px 1px 0 0 green;
+    left:15px;
+}
+#yewu,#e_xinghao,#ip{
+    width: 484px;
+}
+#e_xinghao,#ip{
+    width: 484px;
+    
+}
+/* .opacity{  
+      filter:alpha(opacity=50);  
+      -moz-opacity:0.5;  
+      -khtml-opacity: 0.5;  
+      opacity: 0.5;  
+}  */ 

@@ -1,0 +1,224 @@
+/* for 980px or less */
+@media screen and (min-width: 700px) {
+    .case-nav{
+    margin: -46px auto auto 176px;
+    width: 100%;
+}
+}
+.case-nav li:hover{
+    background: #7CAACB none repeat scroll 0 0;
+}
+#case_nav .navbar-header .navbar-brand{
+font-size: 36px;font-weight: 600;
+}
+#case_nav .fm{
+/* width: 600px; */
+}
+#csu{
+    height: 34px;
+    width: 53px;
+}
+#add-case,#download{
+    margin-top:6px  ;
+}
+/* 新增案例样式表 */
+#addpage{
+    margin-top: 50px; 
+    background-color: #fff;
+} 
+#addpage .formWraper{
+    background-color: #fff;
+    min-height: 560px;
+    padding: 18px 45px 120px;
+}
+#addpage .maintitle {
+    color: #333;
+    font-size: 26px;
+    font-weight: normal;
+    width: 100%;
+    margin: 1px auto;
+    padding: 1px auto;
+} 
+.claer{
+    clear: both;
+}
+#addpage .formRow {
+    margin-top: 20px;
+    word-wrap: break-word;
+}
+
+#addpage  .formControls {
+    position: relative;
+}
+.formRow::before, .formRow::after {
+    content: " ";
+    display: table;
+}
+.formRow::before, .formRow::after {
+    content: " ";
+    display: table;
+}
+ .formControls .input-group-addon{
+    width: 102px;
+ }
+  .formControls [type=text]{
+    width: 305px;
+ }
+   .formControls [type=file]{ 
+    padding: 0;
+    margin: 0; 
+ }
+.error{
+    background-color: #f7ecec;
+    border-color: #ef392b !important;
+    color: #c00;
+} 
+.success i{
+    color: green;
+}
+/* 新增案例样式表   end*/
+/* 展示页面   start*/
+.showpage{
+ margin: 50px auto;
+ width: 90%;
+}
+.pdfpage{
+ margin: 50px auto;
+ width: 97%;
+}
+.pdfbox{
+       -webkit-box-shadow: #666 0px 0px 10px;  
+   -moz-box-shadow: #666 0px 0px 10px;  
+   box-shadow: #666 0px 0px 10px;  
+   /* background: #EEFF99;   */
+   background: #FFFFFF;   
+   margin-top: 33px; 
+   height: 100%;
+}
+.scontainer{
+    -webkit-box-shadow: #666 0px 0px 10px;  
+   -moz-box-shadow: #666 0px 0px 10px;  
+   box-shadow: #666 0px 0px 10px;  
+   /* background: #EEFF99;   */
+   background: #FFFFFF;  
+   padding: 1px 30px;
+   margin-top: 33px;
+   line-height: 2.5em;
+   word-wrap: break-word;
+}
+.showpage .tags span{
+    margin-right: 5px;
+}
+.showpage .tags{
+    margin-top: 14px ;
+    font-size: 14px;
+}
+.showpage .tags a {
+    margin-right: 15px;
+}
+.showpage .tags a:hover{
+    text-decoration:  underline; 
+}
+/* 首页展示页面   start*/
+.container{
+    width: 95%;
+}
+.case_loop {
+    border-bottom: 1px solid #dcdcdc;
+    padding: 32px 0;
+    position: relative;
+    width: auto;
+    font-size: 15px;
+}
+.first_loop {
+    border-top: 1px solid #dcdcdc; 
+}
+.case_loop a:hover{
+    text-decoration:underline;
+}
+.case_tc {
+    float: none; 
+    width: 100%;
+}
+.case_tc b {
+    display: block;
+    font: bold 24px/1.5 microsoft yahei,verdana;
+    margin-top: -7px;
+}
+.case_tc b a {
+    color: #444;
+} 
+.case_tc p {
+    color: #5f5f5f;
+    font: 14px/24px microsoft yahei,verdana;
+}
+.case_tc p a {
+    color: #4c88b6;
+    padding: 0 5px;
+}
+
+.clear {
+    clear: both;
+    display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+} 
+.case_time {
+    background: #fff none repeat scroll 0 0;
+    font: 12px/1 microsoft yahei,verdana;
+    padding: 0 0 0 10px;
+    position: absolute;
+    right: -10px;
+    top: -7px;
+    width: 140px;
+    z-index: 400;
+} 
+.title {
+    /* background: #157fcc none repeat scroll 0 0; */ 
+    font-size: 14px;    
+    line-height: 40px;
+    overflow: hidden;
+    text-align: left;
+}
+#case_nav .active a{
+    background-color: #3399FF;
+}
+.ranklist ol{
+    margin: 0;
+    padding: 0;
+}
+.ranklist li {
+    height: 16px;
+    line-height: 16px;
+    margin: 0 0 10px;
+    overflow: hidden;
+    padding: 0 70px 0 30px;
+    position: relative;}
+
+.ranklist li.top em {
+    background-position: 0 0;
+    color: #fff;
+}  
+.ranklist li em {
+    background: rgba(0, 0, 0, 0) url("/Public/home/img/mun.gif") no-repeat scroll 0 0;
+    color: #333;
+    display: block;
+    font-style: normal;
+    height: 16px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 20px;
+     background-position: 0 -16px;
+}
+
+.ranklist li .num {
+    color: #999;
+    position: absolute;
+    right: 0;
+    top: 0;
+}

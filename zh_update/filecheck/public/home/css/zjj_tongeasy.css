@@ -1,0 +1,30 @@
+ 
+.gtp_nums a{
+    color: #626262;
+    float: left;
+    font-size: 17px;
+    font-family: Serif,Georgia,;
+    height: 75px;
+    font-weight: 800;
+    margin: 16px 32px -5px;
+    width: 239px;
+}
+.gtp_nums a:hover{
+    color: #000; 
+}
+.tongeasy_count{
+    color: green;
+    float: left;
+    font-size: 17px;
+    font-family: Serif,Georgia,;
+    height: 75px;
+    font-weight: 800;
+    margin: 16px 32px -5px;
+    width: 239px;
+}
+#infologs ul{
+    padding: 10px 0;
+}
+#infologs ul li{
+    font-size: 21px;
+}

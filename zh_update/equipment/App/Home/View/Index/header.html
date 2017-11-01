@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>{$title}</title>
+        <meta charset="UTF-8"> 
+<!--        <meta name="viewport" http-equiv="X-UA-Compatible" content="IE=9;IE=8;IE=7;IE=edge,chrome=1,width=device-width, initial-scale=1.0">-->
+        <meta  content="IE=9;IE=8;IE=7;IE=edge,chrome=1">
+        <script src="__PUBLIC__/jquery-1.12.3.min.js" type="text/javascript" ></script> 
+        <!--link rel="stylesheet" type="text/css" href="__PUBLIC__/ztree/css/metroStyle/metroStyle.css" /--> 
+        <!--script type="text/javascript" src="__PUBLIC__/ztree/js/jquery.ztree.all.min.js"></script-->
+        <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="__PUBLIC__/bootstrap/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+        <script src="__PUBLIC__/bootstrap/js/bootstrap.min.js" type="text/javascript" ></script> 
+        <script type="text/javascript" src="__PUBLIC__/bootstrap/js/bootstrap-datetimepicker.min.js"></script> 
+        <link rel="stylesheet" href="__PUBLIC__/home/css/jquery.mCustomScrollbar.min.css">
+        <!--[if lt IE 9]>
+        <script src="__PUBLIC__/bootstrap/js/respond.js" type="text/javascript" ></script>
+        <script src="__PUBLIC__/bootstrap/js/html5shiv.js" type="text/javascript" ></script>
+        <script src="__PUBLIC__/bootstrap/js/css3-mediaqueries.js"></script>
+        <![endif]--> 
+        <link href="__PUBLIC__/home/css/style.css" rel="stylesheet">
+        <link href="__PUBLIC__/home/css/report.css" rel="stylesheet">
+        <link href="__PUBLIC__/font-awesome/css/font-awesome.min.css" rel="stylesheet">   
+        <link href="__PUBLIC__/home/font-awesome/css/font-awesome.min.css" rel="stylesheet">   
+        <script src="__PUBLIC__/home/js/bootstrap-hover-dropdown.min.js" type="text/javascript"></script>  
+        <!-- script src="__PUBLIC__/home/js/header.js" type="text/javascript"></script -->  
+        <script src="__PUBLIC__/home/js/layer/layer.js" type="text/javascript"></script>             
+        <script src="__PUBLIC__/home/js/laydate/laydate.js" type="text/javascript"></script> 
+        <script src="__PUBLIC__/home/js/pdfobject.min.js" type="text/javascript"></script>  
+    </head>
+
+    <body>     
+        <div id="header" rol="navigation"  class="navbar navbar-inverse navbar-fixed-top header">
+            <div class="content">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse"
+                            data-target="#example-navbar-collapse">
+                        <span class="sr-only">切换导航</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/index.php" class="navbar-brand hidden-sm" style="font-size: 22px;">系统管理综合服务平台</a>
+                </div>
+                <div class="collapse navbar-collapse" id="example-navbar-collapse">
+                    <div class="navbar-left"> 
+                        <ul class="nav navbar-nav ">
+                            <li ><a href="__ROOT__">首页</a></li>
+                            <li ><a href="http://102.200.2.224/report/inputhost/">添加上线主机</a></li> 
+                            <!--<li class="{$active5}"> -->
+                            <!--    <a id="loginfo" data-toggle="dropdown" href="#"> 信息查询<span class="caret"></span></a> -->
+                            <!--    <ul class="nav dropdown-menu">-->
+                            <!--        <li><a id="txlog" target="_blank" href="/index.php/home/query/txlog">txlog错误信息对照表</a></li>-->
+                            <!--        <li id="syslog"><a target="_blank" href="/index.php/home/query/syslog">syslog错误信息对照表</a></li>-->
+                            <!--        <li id="gtplog"><a target="_blank" href="/index.php/home/query/gtplog">gtplog错误信息对照表</a></li>-->
+                            <!--        <li id="gtpslog"><a target="_blank" href="/index.php/home/query/gtpslog">gtp.sys文件格式</a></li>-->
+                            <!--    </ul>-->
+                            <!--</li>-->
+                            <!--<li> <a href="/report_demo">系统巡检</a></li>-->
+                        </ul>
+                    </div>  
+                    <div class="navbar-right"> 
+                        <ul class="nav navbar-nav">
+                            <li class="btn-group">
+                                <button type="button"  class="btn btn-Primary nav"><i class="icon-user"></i> {$username}</button>
+                                <button type="button" class="btn btn-Primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > <span class="caret"></span></button> 
+                                <ul class="dropdown-menu">
+                                    <li><a id="loginout" href="#">注销</a></li>
+                                    <li><a target="_blank" href="__ROOT__/index.php/Home/Index/changepw">修改密码</a></li> 
+                                </ul> 
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> 

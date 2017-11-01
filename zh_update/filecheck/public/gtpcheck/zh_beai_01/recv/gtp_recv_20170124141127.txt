@@ -1,0 +1,3 @@
+Find file:/repfile/out_put/GMZS.succ/INVM_0800_20170114.TXT
+/repfile/out_put/JH.succ/INVM_0800_20170114.TXT
+/repfile/out_put/toFinance.succ/INVM_0800_20170114.TXT
