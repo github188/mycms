@@ -1,28 +1,22 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1509324338;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509588064;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:58:"E:\webproject\mycms/application/index\view\user\index.html";i:1509324338;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509592605;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
   <meta charset="utf-8" /> 
   <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
-  <title><?php echo $title; ?></title> 
-  <!-- Tell the browser to be responsive to screen width --> 
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" /> 
-  <!-- jQuery 3.1.1 --> 
-  <script src="__ROOT__/public/plugins/jQuery/jquery.min.js"></script> 
-  <!-- Bootstrap 3.3.7 --> 
-  <link rel="stylesheet" href="__ROOT__/public/plugins/bootstrap/css/bootstrap.min.css" /> 
-  <!-- Font Awesome --> 
+  <title><?php echo $title; ?></title>  
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />  
+  <script src="__ROOT__/public/plugins/jQuery/jquery.min.js"></script>  
+  <link rel="stylesheet" href="__ROOT__/public/plugins/bootstrap/css/bootstrap.min.css" />  
   <link rel="stylesheet" href="__ROOT__/public/plugins/font-awesome/css/font-awesome.min.css" /> 
-  <link rel="stylesheet" href="__ROOT__/public/plugins/treeTable/treeTable.css" /> 
-  <!-- Theme style --> 
+  <link rel="stylesheet" href="__ROOT__/public/plugins/treeTable/treeTable.css" />  
   <link rel="stylesheet" href="__ROOT__/public/dist/css/AdminLTE.min.css" /> 
   <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css" /> 
   <!--[if lt IE 9]>
   <script src="__ROOT__/public/plugins/html5shiv/html5shiv.min.js"></script>
   <script src="__ROOT__/public/plugins/respond/respond.min.js"></script>
   <![endif]-->
- </head>
- <body class="hold-transition skin-blue sidebar-mini fixed">
+  <link rel="stylesheet" href="__ROOT__/public/static/css/base.css" /> 
    
 <link rel="stylesheet" href="__ROOT__/public/static/css/user.css">
 <style>
@@ -39,11 +33,15 @@
 }
 </style>
    
+ </head>
+ <body class="hold-transition skin-blue sidebar-mini fixed">
   <div class="wrapper"> 
    <header class="main-header"> 
     <a href="__ROOT__" class="logo"> 
-     <!-- mini logo for sidebar mini 50x50 pixels --> <span class="logo-mini"><b>XTS</b></span> 
-     <!-- logo for regular state and mobile devices --> <span class="logo-lg"><b>系统室管理</b></span> </a> 
+     <!-- mini logo for sidebar mini 50x50 pixels --> 
+     <span class="logo-mini"><b>XTS</b></span> 
+     <!-- logo for regular state and mobile devices --> 
+     <span class="logo-lg"><b>系统室管理</b></span> </a> 
     <!-- Header Navbar: style can be found in header.less --> 
     <nav class="navbar navbar-static-top"> 
      <!-- Sidebar toggle button--> 
@@ -64,12 +62,16 @@
     <section class="sidebar"> 
      <div class="user-panel" style="height:35px;"> 
       <div class="pull-left  info"> 
-       <p style="margin: 0;">菜单</p> 
+       <p style="margin: 0;"><a href="<?php echo url('publics/login'); ?>" target="_seft">查看登陆页</a> </p> 
       </div> 
-     </div> <?php echo $menus; ?> 
+     </div> 
+     <div id="left_menu_list">
+     	<?php echo $menus; ?> 
+     </div>
     </section> 
    </aside> 
    <div class="content-wrapper">
+   	<div class="content-body">
      
 <section class="content-header" style="border-bottom: 1px #d2d6de solid;padding-bottom: 10px; ">
     <h1>
@@ -174,9 +176,9 @@
     </div>
 </div>
 <script src="__ROOT__/public/static/js/user.js"></script>
- 
-   </div> 
-   <div class="control-sidebar-bg"></div> 
+  
+   	</div> 
+   </div>  
   </div> 
   <script src="__ROOT__/public/plugins/bootstrap/js/bootstrap.min.js"></script> 
   <!-- FastClick --> 
@@ -189,6 +191,20 @@
   <!-- <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> --> 
   <!-- SlimScroll 1.3.0 --> 
-  <!-- <script src="__ROOT__/public/plugins/slimScroll/jquery.slimscroll.min.js"></script>  -->    
+  <script src="__ROOT__/public/plugins/slimScroll/jquery.slimscroll.min.js"></script>  
+     
+  <script type="text/javascript">
+  	$(function(){ 
+  	  $("#left_menu_list").slimScroll({
+           height: '100%',
+           alwaysVisible: false,
+       }); 
+  	  $(".content-body").slimScroll({
+           height: ($(window).height()-50),
+           alwaysVisible: true,
+           size: '8px'
+       });  
+  	  })
+  </script>
  </body>
 </html>

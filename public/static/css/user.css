@@ -1,79 +1,270 @@
-.container{
-    width: 100%; 
+.container {
+    width: 100%;
     padding: 0;
-    margin:0;
+    margin: 0;
 }
-*{font-family:微软雅黑,Verdana, Geneva, sans-serif;padding:0px;margin:0px;}
-body{color:#333333;margin:0px;border:0;font-size:14px;}
-td,button{ font-size:14px}
-a,c,.cursor{cursor:pointer;}
-p{text-indent:24pt;margin:10px 0px}
-ul,li,a{ list-style-type:none;}
-ul,li{padding:0px;margin:0px}
-.relative{position:relative}
-.zhu{ color:#ffffff}
-img{border:0}
-.tabsindex{height:44px;overflow:hidden;background:#f1f1f1;}
-.tabsindex div{height:44px;overflow:hidden;line-height:44px;padding:0px 20px;float:left;color:#888888;cursor:pointer;position:relative;}
-.tabsindex div.active{background-color:#ffffff;color:#000000}
-.tabsindex div:hover{color:#000000}
-.tabsindex div span{font-size:12px;color:#888888;position:absolute;top:3px;right:5px}
-.floats{display:inline-block;width:100%}
-.floats li{float:left}
-.floats30{float:left;width:30%}
-.floats20{float:left;width:20%}
-.floats80{float:left;width:80%}
-.floats60{float:left;width:60%}
-.floats40{float:left;width:40%}
-.floats50{float:left;width:50%}
-.floats70{float:left;width:70%}
-.floatr20{float:right;width:20%}
+
+* {
+    font-family: 微软雅黑, Verdana, Geneva, sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    color: #333333;
+    margin: 0px;
+    border: 0;
+    font-size: 14px;
+}
+
+td,
+button {
+    font-size: 14px
+}
+
+a,
+c,
+.cursor {
+    cursor: pointer;
+}
+
+p {
+    text-indent: 24pt;
+    margin: 10px 0px
+}
+
+ul,
+li,
+a {
+    list-style-type: none;
+}
+
+ul,
+li {
+    padding: 0px;
+    margin: 0px
+}
+
+.relative {
+    position: relative
+}
+
+.zhu {
+    color: #ffffff
+}
+
+img {
+    border: 0
+}
+
+.tabsindex {
+    height: 44px;
+    overflow: hidden;
+    background: #f1f1f1;
+}
+
+.tabsindex div {
+    height: 44px;
+    overflow: hidden;
+    line-height: 44px;
+    padding: 0px 20px;
+    float: left;
+    color: #888888;
+    cursor: pointer;
+    position: relative;
+}
+
+.tabsindex div.active {
+    background-color: #ffffff;
+    color: #000000
+}
+
+.tabsindex div:hover {
+    color: #000000
+}
+
+.tabsindex div span {
+    font-size: 12px;
+    color: #888888;
+    position: absolute;
+    top: 3px;
+    right: 5px
+}
+
+.floats {
+    display: inline-block;
+    width: 100%
+}
+
+.floats li {
+    float: left
+}
+
+.floats30 {
+    float: left;
+    width: 30%
+}
+
+.floats20 {
+    float: left;
+    width: 20%
+}
+
+.floats80 {
+    float: left;
+    width: 80%
+}
+
+.floats60 {
+    float: left;
+    width: 60%
+}
+
+.floats40 {
+    float: left;
+    width: 40%
+}
+
+.floats50 {
+    float: left;
+    width: 50%
+}
+
+.floats70 {
+    float: left;
+    width: 70%
+}
+
+.floatr20 {
+    float: right;
+    width: 20%
+}
+
 .tdinput {
     padding: 5px 15px 5px 0;
     text-align: left;
 }
-.rockmenu{ position:absolute;display:none; z-index:99}
-.rockmenuli{border:1px #eeeeee solid; background-color:#ffffff; left:0px; top:0px; background:rgba(255,255,255,0.9);box-shadow:0px 0px 5px rgba(0,0,0,0.3);}
-.rockmenulijt{ padding:0px; text-align:center}
-.rockmenu ul{padding:0px;margin:0px}
-.rockmenu li{ list-style-type:none; padding:8px 12px; cursor:pointer; text-align:left; border-bottom:1px #eeeeee dotted;}
-.rockmenu li.li01{ background-color:#eeeeee;}
-.rockmenu li span{ font-size:10px; }
-.rockmenu li.li01 span{}
-.rockmenuli li img.iconsa{ vertical-align:middle; width:16px; height:16px; margin-right:8px}
 
-.rockmenu .arrow-up{
-width: 0;
-height: 0;
-border-left: 10px solid transparent; /* 左边框的宽 */
-border-right: 10px solid transparent; /* 右边框的宽 */
-border-bottom: 10px solid #cccccc; /* 下边框的长度|高,以及背景色 */
-font-size: 0;
-line-height: 0;
-} 
-.input:focus, input:focus {
+.rockmenu {
+    position: absolute;
+    display: none;
+    z-index: 99
+}
+
+.rockmenuli {
+    border: 1px #eeeeee solid;
+    background-color: #ffffff;
+    left: 0px;
+    top: 0px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.rockmenulijt {
+    padding: 0px;
+    text-align: center
+}
+
+.rockmenu ul {
+    padding: 0px;
+    margin: 0px
+}
+
+.rockmenu li {
+    list-style-type: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    text-align: left;
+    border-bottom: 1px #eeeeee dotted;
+}
+
+.rockmenu li.li01 {
+    background-color: #eeeeee;
+}
+
+.rockmenu li span {
+    font-size: 10px;
+}
+
+.rockmenu li.li01 span {}
+
+.rockmenuli li img.iconsa {
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px
+}
+
+.rockmenu .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    /* 左边框的宽 */
+    border-right: 10px solid transparent;
+    /* 右边框的宽 */
+    border-bottom: 10px solid #cccccc;
+    /* 下边框的长度|高,以及背景色 */
+    font-size: 0;
+    line-height: 0;
+}
+
+.input:focus,
+input:focus {
     border: 1px solid #0887cc;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     color: #000000;
 }
 
-/*	*/
-.action-btn{
-		float: right;
-        background: transparent;
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 12px;
-        padding: 7px 5px;
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        border-radius: 2px;
- 	}
-#tableShowUsers  td{
-        text-align:center;
-    }
-    .overlay{
-        display: none;
-    }
-    .user_status{cursor:pointer;}
+
+/*  */
+
+.action-btn {
+    float: right;
+    background: transparent;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    padding: 7px 5px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    border-radius: 2px;
+}
+
+#tableShowUsers td {
+    text-align: center;
+}
+
+.overlay {
+    display: none;
+}
+
+.user_status {
+    cursor: pointer;
+}
+
+.content-header {
+    border-bottom: 1px #d2d6de solid;
+    padding-bottom: 10px;
+}
+
+.main-box {
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 1px #73080a;
+    border-radius: 5px;
+}
+
+.from-box {
+    margin-left: -10px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.action-header{
+    border-bottom: 1px #d3d4de solid;
+    padding-bottom: 6px;
+}
+.invoice{
+    box-shadow: 0px 0px 1px #73080a;
+    border-radius: 16px;
+}

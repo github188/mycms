@@ -6,7 +6,7 @@ class Nav extends Baseinit {
 	public function index() {
 		return $this->fetch();
 	}
-	public add(){
-		
+	public function add() {
+
 	}
 }

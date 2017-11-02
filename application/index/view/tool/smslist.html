@@ -1,0 +1,103 @@
+{extend name="public/base"} {block name="style"}
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css">
+<style>
+div.dataTables_info {
+    padding-top: 8px;
+    white-space: nowrap;
+}
+
+div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+}
+
+div.dataTables_paginate ul.pagination {
+    margin: 2px 0;
+    white-space: nowrap;
+}
+</style>
+{/block} {block name="body"}
+<section class="content-header">
+    <h1>
+        短信黑名单列表
+        <!-- <small>后台菜单列表</small> -->
+        <div class="pull-right action-btn">
+          <a href="{:url('Tool/sms')}" class="btn btn-primary">添加新规则</a>
+        </div>
+      </h1>
+</section>
+<div class="invoice container-fluid">
+    <div class="row">
+        <div class="col-xs-12 action-header">
+            <div class="pull-left">
+                <button class="btn  btn-default"><i class="fa fa-square-o"></i> 全 选</button>
+                <button class="btn  btn-default"><i class="fa fa-trash-o"></i> 删 除</button>
+            </div>
+            <div class="pull-right">
+                <button class="btn btn-succ">删除</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>级别</th>
+                        <th>主题</th>
+                        <th>附件</th>
+                        <th>日期</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-red">重要</td>
+                        <td>文件</td>
+                        <td>文件221.pdf</td>
+                        <td>20170806 12:11:13</td>
+                        <td>查看详情|下载附件</td>
+                    </tr>
+                    <tr>
+                        <td class="text-red">重要</td>
+                        <td>文件</td>
+                        <td>文件221.pdf</td>
+                        <td>20170806 12:11:13</td>
+                        <td>查看详情|下载附件</td>
+                    </tr>
+                    <tr>
+                        <td class="text-red">重要</td>
+                        <td>文件</td>
+                        <td>文件221.pdf</td>
+                        <td>20170806 12:11:13</td>
+                        <td>查看详情|下载附件</td>
+                    </tr>
+                    <tr>
+                        <td class="text-red">重要</td>
+                        <td>文件</td>
+                        <td>文件221.pdf</td>
+                        <td>20170806 12:11:13</td>
+                        <td>查看详情|下载附件</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-5">
+            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">第 41-50/共 57 条</div>
+        </div>
+        <div class="col-xs-7">
+            <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                <ul class="pagination">
+                    <li class="paginate_button previous" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">上一页</a></li>
+                    <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
+                    <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
+                    <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">下一页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{/block}
