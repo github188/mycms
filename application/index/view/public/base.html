@@ -48,15 +48,19 @@
     <section class="sidebar"> 
      <div class="user-panel" style="height:35px;"> 
       <div class="pull-left  info"> 
-       <p style="margin: 0;">菜单</p> 
+       <p style="margin: 0;"><a href="{:url('publics/login')}" target="_seft">查看登陆页</a> </p> 
       </div> 
-     </div> {$menus} 
+     </div> 
+     <div id="left_menu_list">
+     	{$menus} 
+     </div>
     </section> 
    </aside> 
    <div class="content-wrapper">
-     {block name="body"}content{/block} 
-   </div> 
-   <div class="control-sidebar-bg"></div> 
+   	<div class="content-body">
+     {block name="body"}content{/block}  
+   	</div> 
+   </div>  
   </div> 
   <script src="__ROOT__/public/plugins/bootstrap/js/bootstrap.min.js"></script> 
   <!-- FastClick --> 
@@ -69,6 +73,20 @@
   <!-- <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> --> 
   <!-- SlimScroll 1.3.0 --> 
-  <!-- <script src="__ROOT__/public/plugins/slimScroll/jquery.slimscroll.min.js"></script>  --> {block name="script"} {/block}  
+  <script src="__ROOT__/public/plugins/slimScroll/jquery.slimscroll.min.js"></script>  
+  {block name="script"} {/block}  
+  <script>
+  	$(function(){ 
+  	  $("#left_menu_list").slimScroll({
+           height: '100%',
+           alwaysVisible: false,
+       }); 
+  	  $(".content-body").slimScroll({
+           height: ($(window).height()-50),
+           alwaysVisible: false,
+       }); 
+  	  console.log(($(window).height()-50));
+  	  })
+  </script>
  </body>
 </html>
