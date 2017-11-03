@@ -1,7 +1,6 @@
 /* iCheck plugin Flat skin, blue
 ----------------------------------- */
-.icheckbox_flat-blue,
-.iradio_flat-blue {
+.icheckbox_flat-blue,.iradio_flat-blue {
     display: inline-block;
     *display: inline;
     vertical-align: middle;

@@ -1,0 +1,180 @@
+{extend name="public/base"} {block name="style"}
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css">
+<style>
+</style>
+{/block} {block name="body"}
+<section class="content-header">
+    <h1>
+        设备故障统计分析
+        <!-- <small>后台菜单列表</small> -->
+      </h1>
+    <div class="pull-right action-btn">
+        <a class="btn btn-primary" id="add_menu_button" href="{:url('Tool/addEq')}">添加故障信息</a>
+        <a class="btn btn-primary" id="add_menu_button" href="{:url('Tool/inputEq')}">导入模板信息</a>
+        <a class="btn btn-primary" id="add_menu_button" href="{:url('Tool/editEq')}">修改鼓掌信息</a>
+    </div>
+</section>
+ <div class="main-box clearfix ">
+    <form id="inputs" name="inputs">
+                    <ul class="shop-list">
+                        <li class="list"><label class="shop-list-tit"><span>发现日期</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <input type="text" class="form-control" id="hapend_date" name="hapend_date" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})">
+                                </div>
+                            </div></li>
+                    </ul>
+                    <div class="slice"></div>
+                    <ul class="shop-list"> 
+                        <li class="list"><label class="shop-list-tit"><span>序列号</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <input type="text" class="form-control" id="codeid"  name="codeid">
+                                </div>
+                            </div></li>
+                        <li class="list"><label class="shop-list-tit"><span>所在机房</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <div  id="jifang"> 
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">中金421</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">中金422</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">中金433</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">中金434</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">中金725</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">中金726</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">中金727</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">中金736</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">西三旗</span></a></span> 
+                                        <span><a href="javascript:void(0);" id="new_add_select" class="b-item"><span class="text">新增</span></a></span>                           
+                                    </div> 
+                                </div> 
+                            </div></li>
+                        <li class="list"><label class="shop-list-tit"><span>环境类型</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <div  id="huanjing" name="huanjing">  
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">测试/准生产</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">生产</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">灾备</span></a></span>
+
+                                    </div> 
+                                </div> 
+                            </div></li>
+                        <li class="list"><label class="shop-list-tit"><span>业务名称</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <input type="text" class="form-control" id="yewu" name="yewu">
+                                </div> 
+                            </div></li>
+                        <li class="list"><label class="shop-list-tit"><span>设备类型</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <div   id="e_type" name="e_type">
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">小型机</span></a></span> 
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">PC服务器</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">存储</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">其它</span></a></span>
+                                    </div>
+                                </div> 
+                            </div></li>
+                        <li class="list"><label class="shop-list-tit"><span>设备品牌</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <div id="e_pinpai">
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">IBM </span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">华为</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">联想</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">浪潮</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">EMC </span></a></span>
+                                    </div>
+                                </div> 
+                            </div></li>
+                        <li class="list"><label class="shop-list-tit"><span>设备型号</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <input type="text" class="form-control" id="e_xinghao" name="e_xinghao">
+                                </div> 
+                            </div></li> 
+                        <li class="list"><label class="shop-list-tit"><span>IP地址</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <input type="text" class="form-control" id="ip" name="ip">
+                                </div> 
+                            </div></li> 
+                    </ul>
+                    <div class="slice"></div>
+                    <ul class="shop-list">
+                        <li class="list"><label class="shop-list-tit"><span>预警情况</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <div  id="yujing">
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">监控</span></a></span>
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">巡检</span></a></span> 
+                                    </div>
+                                </div> 
+                            </div></li>
+                        <li class="list"><label class="shop-list-tit"><span>故障部位</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <div  id="buwei">
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">CPU</span></a></span> 
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">内存</span></a></span> 
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">硬盘</span></a></span> 
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">电源</span></a></span> 
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">风扇</span></a></span> 
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">其它</span></a></span>
+                                    </div>
+                                </div> 
+                            </div></li>
+                        <li class="list"><label class="shop-list-tit"><span>是否需要停机</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <div  id="istingji">
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">在线更换</span></a></span> 
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">停机更换</span></a></span> 
+                                        <span><a href="javascript:void(0);" class="b-item"><span class="text">已经宕机</span></a></span> 
+                                    </div>
+                                </div> 
+                            </div></li>
+                        <li class="list"><label class="shop-list-tit"><span>设备使用年限</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <div class="input-group" style="width:60px;"> 
+                                        <input  type="text" class="form-control cover_padding_6_10" id="syears" name="syears">
+                                        <div class="input-group-addon cover_padding_6_3">年</div>
+                                    </div>
+                                </div> 
+                            </div></li>
+                    </ul>
+                    <div class="slice"></div>
+                    <ul class="shop-list">
+                        <li class="list"><label class="shop-list-tit"><span>处理人员</span></label>
+                            <div class="shop-list-con">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <input type="text" class="form-control" id="chuli" name="chuli">
+                                </div>
+                            </div></li>
+                        <li class="list"><label class="shop-list-tit"><span>处理结果</span></label>
+                            <div class="shop-list-con" style="position: static;">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <input type="text" class="form-control" id="result" name="result">
+                                </div>
+                            </div></li>
+                        <li class="list"><label class="shop-list-tit"><span>恢复日期</span></label>
+                            <div class="shop-list-con" style="position: static;">
+                                <div class="shop-ui-block ui-block-auto">
+                                    <input type="text" class="form-control" id="huifu_date" name="huifu_date" placeholder="2017-04-02" onclick="laydate({istime: true, format: 'YYYY-MM-DD'})"> 
+                                </div>
+                            </div></li>
+                    </ul> 
+
+                    <div class="shop-submit-wrap">
+                        <div class="shop-submit"> 
+                            <a class="shop-btn" href="javascript:void(0)">提交</a>
+                        </div>
+                    </div>
+                </form>
+</div>
+<script type="text/javascript">
+</script>
+{/block}

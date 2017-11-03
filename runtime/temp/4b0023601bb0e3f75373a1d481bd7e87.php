@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:56:"E:\webproject\mycms/application/index\view\tool\sms.html";i:1509607861;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509672427;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\tool\host.html";i:1509700535;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509696189;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -9,7 +9,7 @@
   <script src="__ROOT__/public/plugins/jQuery/jquery.min.js"></script>  
   <link rel="stylesheet" href="__ROOT__/public/plugins/bootstrap/css/bootstrap.min.css" />  
   <link rel="stylesheet" href="__ROOT__/public/plugins/font-awesome/css/font-awesome.min.css" /> 
-  <link rel="stylesheet" href="__ROOT__/public/plugins/treeTable/treeTable.css" />  
+<!--   <link rel="stylesheet" href="__ROOT__/public/plugins/treeTable/treeTable.css" />   -->
   <link rel="stylesheet" href="__ROOT__/public/dist/css/AdminLTE.min.css" /> 
   <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css" /> 
   <!--[if lt IE 9]>
@@ -65,129 +65,83 @@
    	<div class="content-body">
      
 <section class="content-header">
-    <h1>
-        中间件报警短信黑名单录入
-        <small><a class="link" href="<?php echo url('Tool/smsList'); ?>">查看已有规则</a></small>
-      </h1>
+    <h1>添加巡检主机信息</h1>
+    <div class="pull-right action-btn">
+        d
+    </div>
 </section>
 <div class="main-box clearfix ">
-    <form method="post" id="user_add_form" checkurl="/mycms/index/user/checkusername" action="/mycms/index/user/addpost.html" class="form form-horizontal">
+    <form method="post" id="user_add_form" checkurl="<?php echo url('User/checkusername','',''); ?>" action="<?php echo isset($info['id'])?url('User/editPost'):url('User/addPost'); ?>" class="form form-horizontal">
         <div class="row from-box">
             <div class="form-group">
-                <label class="col-lg-2 control-label">中间件</label>
+                <label class="col-lg-2 control-label">系统名称</label>
                 <div class="col-lg-10 col-sm-10">
-                    <select name="type" id="type" class="form-control">
-                        <option value=''>请选择</option>
-                        <option>GTP</option>
-                        <option>TongEASY</option>
-                        <option>MQ</option>
+                    <input type="text" class="form-control" name="nodename" id="nodename" placeholder="用户名" value="<?php echo $info['nodename']; ?>" />
+                    <div class="help-block">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">主机名</label>
+                <div class="col-lg-10 col-sm-10">
+                    <input type="text" class="form-control" name="hostname" id="hostname" value="<?php echo $info['hostname']; ?>" />
+                    <div class="help-block">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">所在地</label>
+                <div class="col-lg-10 col-sm-10">
+                    <select name="location_id" class="form-control">
+                        <option selected value="3">亦庄中金</option>
+                        <option value="2">西三旗</option>
+                        <option value="7">东单</option>
                     </select>
                     <div class="help-block">
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-lg-2 control-label">开始时间</label>
+                <label class="col-lg-2 control-label">操作系统</label>
                 <div class="col-lg-10 col-sm-10">
-                    <input type="text" class="form-control" name="user_nickname" id="user_nickname" value="">
-                    <div class="help-block">
-                        （<span class="text-red"> 若为空,则立即生效</span>）
+                    <select name="os_type" class="form-control">
+                        <option value="1">AIX</option>
+                        <option value="2">Solaris</option>
+                        <option value="4">Windows</option>
+                        <option value="8">Linux</option>
+                    </select>
+                    <div class="repassword-block">
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-lg-2 control-label">结束时间</label>
+                <label class="col-lg-2 control-label">应用类型</label>
                 <div class="col-lg-10 col-sm-10">
-                    <input type="password" class="form-control" name="user_password" id="user_password">
-                    <div class="help-block">
-                        （<span class="text-red"> 若为空,则立即生效</span>）
-                    </div>
+                    <input type="checkbox" id="input-1">
+                    <label for="input-1">Checkbox, <span>#input-1</span></label>
+                    <input tabindex="16" type="radio" id="flat-radio-2" name="flat-radio" checked>
+                    <label for="flat-radio-2">Radio button 2</label>
+                     
+                     <input tabindex="18" type="checkbox" id="line-checkbox-2" checked>
+                    <label for="line-checkbox-2">Checkbox 2</label>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-lg-2 control-label">过滤关键字</label>
+                <label class="col-lg-2 control-label">服务ID</label>
                 <div class="col-lg-10 col-sm-10">
-                    <textarea class="form-control" id="keywords" name="keywords" cols="50" rows="5"></textarea>
-                    <div class="help-block">
-                        <p style="font-size:18px;font-weight:800;color:#ffaa22">规则中可以用“+”或“#”联接（+代表“<span>与/and</span>”，#代表“<span>或/or</span>”），<span style="color:red;">关键字为空项则过滤掉所选中间件的所有短信</span>。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-lg-2 control-label">节点提示</label>
-                <div class="col-lg-10 col-sm-10">
-                    <div class="form-group">
-                        <select name="sysname" id="sysname" class="form-control" style="max-width:200px;float:left;">
-                            <option>请选择系统</option>
-                        </select>
-                        <select name="othername" id="othername" class="form-control" style="max-width:200px;float:left;display:none;">
-                            <option>------</option>
-                        </select>
-                    </div>
-                    <div class="email-block">
-                    </div>
+                    <input type="text" class="form-control" name="server_id" id="server_id" value="<?php echo $info['server_id']; ?>" />
                 </div>
             </div>
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
-                    <input type="hidden" class="form-control" name="id" id="id" value="">
-                    <button class="btn btn-success user_add_submit" type="button">提 交</button>
+                    <input type="hidden" class="form-control" name="id" id="id" value="<?php echo $info['id']; ?>" />
+                    <button class="btn btn-success user_add_submit" type="button">确 定</button>
                     <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
                 </div>
             </div>
         </div>
     </form>
 </div>
-<script type="text/javascript">
-$("#sub_query").on('click', function() {
-    var nodename = $("[name=nodename]").val();
-    var filename = $("[name=filename]").val();
-    var sendfile = $("[name=sendfile]").val();
-    if (!nodename) {
-        $("[name=nodename]").focus();
-        layer.msg('节点名称不能为空');
-        return false;
-    }
-    if (!sendfile) {
-        $("[name=sendfile]").focus();
-        layer.msg('发送目录不能为空');
-        return false;
-    }
-    if (!filename) {
-        $("[name=filename]").focus();
-        layer.msg('文件名不能为空');
-        return false;
-    }
-    var loading = layer.load(1, {
-        shade: [0.1, '#000'] //0.1透明度的白色背景
-    });
-    $.ajax({
-            url: '<?php echo url("tool/filePost"); ?>',
-            type: 'post',
-            data: { 'nodename': nodename, 'filename': filename, 'sendfile': sendfile },
-            success: function(json) {
-                layer.close(loading);
-                console.log(json);
-                if (json.code && json.code == 1) {
-                    layer.msg(json.msg, function() {
-                        location.reload();
-                    });
-                } else {
-                    layer.msg(json.msg);
-                }
-            },
-        })
-        .fail(function(json) {
-            layer.close(loading);
-            layer.open({
-                title: '系统错误',
-                area: ['50%', '80%'],
-                content: json.responseText
-            });
-        });
-    return false;
-})
-</script>
   
    	</div> 
    </div>  
@@ -198,13 +152,35 @@ $("#sub_query").on('click', function() {
   <!-- AdminLTE App --> 
   <script src="__ROOT__/public/dist/js/adminlte.js"></script> 
   <script src="__ROOT__/public/plugins/layer/layer.js"></script> 
-  <script src="__ROOT__/public/plugins/treeTable/treeTable.js"></script> 
+<!--   <script src="__ROOT__/public/plugins/treeTable/treeTable.js"></script>  -->
   <!-- jvectormap --> 
   <!-- <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> --> 
   <!-- SlimScroll 1.3.0 --> 
   <script src="__ROOT__/public/plugins/slimScroll/jquery.slimscroll.min.js"></script>  
-     
+  
+<link rel="stylesheet" href="__ROOT__/public/plugins/iCheck/all.css" />
+<script src="__ROOT__/public/plugins/iCheck/icheck.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('[type=checkbox]').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%'
+    });
+    $('[type=radio]').iCheck({
+        checkboxClass: 'icheckbox_square-red',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%'
+    });
+    $('#line-checkbox-2').iCheck({
+            checkboxClass: 'icheckbox_line-blue',
+            radioClass: 'iradio_line-blue',
+            insert: '<div class="icheck_line-icon"></div>' + label_text 
+    });
+});
+</script>
+  
   <script type="text/javascript">
   	$(function(){ 
   	  $("#left_menu_list").slimScroll({ 

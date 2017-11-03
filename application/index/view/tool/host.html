@@ -1,0 +1,103 @@
+{extend name="public/base"} {block name="style"}
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css"> {/block} {block name="body"}
+<section class="content-header">
+    <h1>添加巡检主机信息</h1>
+    <div class="pull-right action-btn">
+        d
+    </div>
+</section>
+<div class="main-box clearfix ">
+    <form method="post" id="user_add_form" checkurl="{:url('User/checkusername','','')}" action="{:isset($info.id)?url('User/editPost'):url('User/addPost')}" class="form form-horizontal">
+        <div class="row from-box">
+            <div class="form-group">
+                <label class="col-lg-2 control-label">系统名称</label>
+                <div class="col-lg-10 col-sm-10">
+                    <input type="text" class="form-control" name="nodename" id="nodename" placeholder="用户名" value="{$info.nodename}" />
+                    <div class="help-block">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">主机名</label>
+                <div class="col-lg-10 col-sm-10">
+                    <input type="text" class="form-control" name="hostname" id="hostname" value="{$info.hostname}" />
+                    <div class="help-block">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">所在地</label>
+                <div class="col-lg-10 col-sm-10">
+                    <select name="location_id" class="form-control">
+                        <option selected value="3">亦庄中金</option>
+                        <option value="2">西三旗</option>
+                        <option value="7">东单</option>
+                    </select>
+                    <div class="help-block">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">操作系统</label>
+                <div class="col-lg-10 col-sm-10">
+                    <select name="os_type" class="form-control">
+                        <option value="1">AIX</option>
+                        <option value="2">Solaris</option>
+                        <option value="4">Windows</option>
+                        <option value="8">Linux</option>
+                    </select>
+                    <div class="repassword-block">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">应用类型</label>
+                <div class="col-lg-10 col-sm-10">
+                    <input type="checkbox" id="input-1">
+                    <label for="input-1">Checkbox, <span>#input-1</span></label>
+                    <input tabindex="16" type="radio" id="flat-radio-2" name="flat-radio" checked>
+                    <label for="flat-radio-2">Radio button 2</label>
+                     
+                     <input tabindex="18" type="checkbox" id="line-checkbox-2" checked>
+                    <label for="line-checkbox-2">Checkbox 2</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">服务ID</label>
+                <div class="col-lg-10 col-sm-10">
+                    <input type="text" class="form-control" name="server_id" id="server_id" value="{$info.server_id}" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <input type="hidden" class="form-control" name="id" id="id" value="{$info.id}" />
+                    <button class="btn btn-success user_add_submit" type="button">确 定</button>
+                    <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{/block} {block name="script"}
+<link rel="stylesheet" href="__ROOT__/public/plugins/iCheck/all.css" />
+<script src="__ROOT__/public/plugins/iCheck/icheck.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('[type=checkbox]').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%'
+    });
+    $('[type=radio]').iCheck({
+        checkboxClass: 'icheckbox_square-red',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%'
+    });
+    $('#line-checkbox-2').iCheck({
+            checkboxClass: 'icheckbox_line-blue',
+            radioClass: 'iradio_line-blue',
+            insert: '<div class="icheck_line-icon"></div>' + label_text 
+    });
+});
+</script>
+{/block}
