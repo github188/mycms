@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\tool\file.html";i:1509597587;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509672427;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\tool\file.html";i:1509751281;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509751281;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -9,7 +9,7 @@
   <script src="__ROOT__/public/plugins/jQuery/jquery.min.js"></script>  
   <link rel="stylesheet" href="__ROOT__/public/plugins/bootstrap/css/bootstrap.min.css" />  
   <link rel="stylesheet" href="__ROOT__/public/plugins/font-awesome/css/font-awesome.min.css" /> 
-  <link rel="stylesheet" href="__ROOT__/public/plugins/treeTable/treeTable.css" />  
+<!--   <link rel="stylesheet" href="__ROOT__/public/plugins/treeTable/treeTable.css" />   -->
   <link rel="stylesheet" href="__ROOT__/public/dist/css/AdminLTE.min.css" /> 
   <link rel="stylesheet" href="__ROOT__/public/dist/css/skins/_all-skins.min.css" /> 
   <!--[if lt IE 9]>
@@ -182,7 +182,7 @@ $("#sub_query").on('click', function() {
   <!-- AdminLTE App --> 
   <script src="__ROOT__/public/dist/js/adminlte.js"></script> 
   <script src="__ROOT__/public/plugins/layer/layer.js"></script> 
-  <script src="__ROOT__/public/plugins/treeTable/treeTable.js"></script> 
+<!--   <script src="__ROOT__/public/plugins/treeTable/treeTable.js"></script>  -->
   <!-- jvectormap --> 
   <!-- <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> --> 

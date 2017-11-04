@@ -31,12 +31,4 @@ class Tool extends Baseinit {
 	public function addEq() {
 		return $this->fetch();
 	}
-	/**
-	 * 新上线主机添加
-	 * @author 钟朝辉 <zzhhuii@qq.com>
-	 * @date   2017-11-03T10:50:48+0800
-	 */
-	public function host() {
-		return $this->fetch();
-	}
 }
