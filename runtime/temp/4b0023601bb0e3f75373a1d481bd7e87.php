@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\tool\host.html";i:1509759936;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509752993;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\tool\host.html";i:1509858412;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509752993;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -218,7 +218,7 @@ $(document).ready(function() {
                 layer.close(loading);
                 if (json.code == 1) {
                     layer.msg(json.msg, function() {
-                        //location.reload();
+                        location.reload();
                     });
                 } else {
                     layer.msg(json.msg);

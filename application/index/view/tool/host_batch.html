@@ -1,0 +1,116 @@
+{extend name="public/base"} {block name="style"}
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css">
+<style>
+.table-bordered {
+    border: 1px solid #2d2d2d;
+}
+textarea::-webkit-input-placeholder:after{
+  display:block;
+  content:"line@ \A line#";/*  \A 表示换行  */
+  color:red;
+}
+textarea::-moz-placeholder:after{
+  content:"line@ \A line#";/*  \A 表示换行  */
+  color:red;
+};
+</style>
+{/block} {block name="body"}
+<section class="content-header">
+    <h1>批量添加巡检主机信息</h1>
+</section>
+<div class="main-box clearfix ">
+    <form method="post" id="host_add_form" action="{:isset($info.id)?url('Host/editPost'):url('Host/batchPost')}" class="form form-horizontal">
+        <div class="row from-box">
+            <div class="form-group">
+                <label class="col-lg-2 control-label">系统名称</label>
+                <div class="col-lg-10 col-sm-10">
+                    <textarea   rows="4" class="form-control" name="data" id="data" placeholder="系统名,位置ID,服务ID,主机名,操作系统类型,[应用值1|应用值2...];" value="{$info.nodename}"></textarea>
+                    <div class="help-block">
+                        <div class="row">
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>位置ID</td>
+                                    <td>操作系统编号对应</td>
+                                    <td>应用类型编号对应</td>
+                                </tr>
+                                <tr>
+                                    <td>西三旗=>2，
+                                    亦庄中金=>3，
+                                    东单=>7，
+                                    所有地方=>99，</td>
+                                    <td>AIX=>1，
+                                    Solaris=>2，
+                                    Windows=>4，
+                                    Linux=> 8，</td>
+                                    <td>MQ=> 1，
+                                    WAS=>2，
+                                    Oracle=>4，
+                                    Tong=>8，
+                                    Informix=>16，
+                                    CV=>32，
+                                    GTP=>64，</td>
+                                </tr>
+                            </table> 
+                            <p class="text-red">数据结尾和多条数据之间用“;”分割。如下：<br>中金CV服务器1,3,0017,hxbackup1,4,[2|32];<br>中金CV服务器2,3,0018,hxbackup2,4,[2|32];</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <input type="hidden" class="form-control" name="id" id="id" value="{$info.id}" />
+                    <button class="btn btn-success host_add_submit" type="button">确 定</button>
+                    <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+                </div>
+            </div>
+    </form>
+    </div>
+    {/block} {block name="script"}
+    <link rel="stylesheet" href="__ROOT__/public/plugins/iCheck/all.css" />
+    <script src="__ROOT__/public/plugins/iCheck/icheck.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.applist input').each(function() {
+            var self = $(this),
+                label = self.next(),
+                label_text = label.text();
+            label.remove();
+            self.iCheck({
+                checkboxClass: 'icheckbox_line-blue',
+                radioClass: 'iradio_line-blue',
+                insert: '<div class="icheck_line-icon"></div>' + label_text
+            });
+        });
+        $(".host_add_submit").on("click", function() {
+            var posturl = $("#host_add_form").attr("action");
+            var loading = layer.load(1, {
+                shade: [0.1, '#000'] //0.1透明度的白色背景
+            });
+            $.ajax({
+                    url: posturl,
+                    type: 'post',
+                    data: $("#host_add_form").serialize(),
+                })
+                .done(function(json) {
+                    layer.close(loading);
+                    if (json.code == 1) {
+                        layer.msg(json.msg, function() {
+                            //location.reload();
+                        });
+                    } else {
+                        layer.msg(json.msg);
+                    }
+                })
+                .fail(function(json) {
+                    layer.close(loading);
+                    layer.open({
+                        title: '系统错误',
+                        area: ['50%', '80%'],
+                        content: json.responseText
+                    });
+                });
+            return false;
+        });
+    });
+    </script>
+    {/block}

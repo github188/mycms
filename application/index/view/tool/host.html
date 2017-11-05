@@ -138,7 +138,7 @@ $(document).ready(function() {
                 layer.close(loading);
                 if (json.code == 1) {
                     layer.msg(json.msg, function() {
-                        //location.reload();
+                        location.reload();
                     });
                 } else {
                     layer.msg(json.msg);

@@ -2,14 +2,13 @@
 use think\Db;
 use think\Request;
 
-// function first_init_menus() {
-// 	$menuModel = new Baseinit();
-// 	$menus = $menuModel->initMenu();
-// }
-// function reset_init_menus() {
-// 	$menuModel = new Baseinit();
-// 	$menus = $menuModel->initMenu();
-// }
+function a($name = '', $info = '') {
+	if (empty($name)) {
+		return $info . "不能为空!";
+	} else {
+		return 'ok';
+	}
+}
 //参数错误返回json
 function parameterErr() {
 	echo json_encode(array("statu" => 'err', "msg" => "parameter err"));
