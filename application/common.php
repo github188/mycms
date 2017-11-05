@@ -2,12 +2,18 @@
 use think\Db;
 use think\Request;
 
-function a($name = '', $info = '') {
-	if (empty($name)) {
-		return $info . "不能为空!";
+function getClientIp() {
+	$ip = '';
+	if (getenv("HTTP_CLIENT_IPT")) {
+		$ip = getenv("HTTP_CLIENT_IPT");
+	} elseif (getenv("HTTP_X_FORWARDED_ROR")) {
+		$ip = getenv("HTTP_X_FORWARDED_ROR");
+	} elseif (getenv("REMOTE_ADDR")) {
+		$ip = getenv("REMOTE_ADDR");
 	} else {
-		return 'ok';
+		$ip = " ";
 	}
+	return $ip;
 }
 //参数错误返回json
 function parameterErr() {

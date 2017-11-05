@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:56:"E:\webproject\mycms/application/index\view\tool\sms.html";i:1509751281;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509752993;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:56:"E:\webproject\mycms/application/index\view\tool\sms.html";i:1509902953;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509752993;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -71,16 +71,16 @@
       </h1>
 </section>
 <div class="main-box clearfix ">
-    <form method="post" id="user_add_form" checkurl="/mycms/index/user/checkusername" action="/mycms/index/user/addpost.html" class="form form-horizontal">
+    <form method="post" id="sms_form" action="<?php echo url('tool/smsPost'); ?>" class="form form-horizontal">
         <div class="row from-box">
             <div class="form-group">
                 <label class="col-lg-2 control-label">中间件</label>
                 <div class="col-lg-10 col-sm-10">
                     <select name="type" id="type" class="form-control">
                         <option value=''>请选择</option>
-                        <option>GTP</option>
-                        <option>TongEASY</option>
-                        <option>MQ</option>
+                        <option value='GTP'>GTP</option>
+                        <option value='TE'>TongEASY</option>
+                        <option value='MQ'>MQ</option>
                     </select>
                     <div class="help-block">
                     </div>
@@ -89,7 +89,7 @@
             <div class="form-group">
                 <label class="col-lg-2 control-label">开始时间</label>
                 <div class="col-lg-10 col-sm-10">
-                    <input type="text" class="form-control" name="user_nickname" id="user_nickname" value="">
+                    <input type="text" class="form-control" name="strtime" id="strtime" value="">
                     <div class="help-block">
                         （<span class="text-red"> 若为空,则立即生效</span>）
                     </div>
@@ -98,7 +98,7 @@
             <div class="form-group">
                 <label class="col-lg-2 control-label">结束时间</label>
                 <div class="col-lg-10 col-sm-10">
-                    <input type="password" class="form-control" name="user_password" id="user_password">
+                    <input type="text" class="form-control" name="endtime" id="endtime">
                     <div class="help-block">
                         （<span class="text-red"> 若为空,则立即生效</span>）
                     </div>
@@ -131,7 +131,7 @@
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
                     <input type="hidden" class="form-control" name="id" id="id" value="">
-                    <button class="btn btn-success user_add_submit" type="button">提 交</button>
+                    <button class="btn btn-success sms_add_submit" type="button">提 交</button>
                     <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
                 </div>
             </div>
@@ -139,43 +139,51 @@
     </form>
 </div>
 <script type="text/javascript">
-$("#sub_query").on('click', function() {
-    var nodename = $("[name=nodename]").val();
-    var filename = $("[name=filename]").val();
-    var sendfile = $("[name=sendfile]").val();
-    if (!nodename) {
-        $("[name=nodename]").focus();
-        layer.msg('节点名称不能为空');
-        return false;
-    }
-    if (!sendfile) {
-        $("[name=sendfile]").focus();
-        layer.msg('发送目录不能为空');
-        return false;
-    }
-    if (!filename) {
-        $("[name=filename]").focus();
-        layer.msg('文件名不能为空');
+var date = new Date();
+var hours = minutes = secondes = '';
+if (date.getHours() < 10) {
+    hours = '0' + date.getHours();
+} else {
+    hours = date.getHours();
+}
+if (date.getMinutes() < 10) {
+    minutes = '0' + date.getMinutes();
+} else {
+    minutes = date.getMinutes();
+}
+if (date.getSeconds() < 10) {
+    secondes = '0' + date.getSeconds();
+} else {
+    secondes = date.getSeconds();
+}
+var nowdate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + " " + hours + ':' + minutes + ':' + secondes;
+$("#strtime,#endtime").val(nowdate);
+
+$(".sms_add_submit").click(function() {
+    var type = $("#type").val();
+    if (!type || type == "请选择") {
+        layer.msg("<span style='color:red'>请选择中间件！</span>");
+        $("#type").focus();
         return false;
     }
     var loading = layer.load(1, {
-        shade: [0.1, '#000'] //0.1透明度的白色背景
-    });
+            shade: [0.1, '#000'] //0.1透明度的白色背景
+        });
+    var url = $("#sms_form").attr('action');
     $.ajax({
-            url: '<?php echo url("tool/filePost"); ?>',
-            type: 'post',
-            data: { 'nodename': nodename, 'filename': filename, 'sendfile': sendfile },
-            success: function(json) {
-                layer.close(loading);
-                console.log(json);
-                if (json.code && json.code == 1) {
-                    layer.msg(json.msg, function() {
-                        location.reload();
-                    });
-                } else {
-                    layer.msg(json.msg);
-                }
-            },
+            url: url,
+            type: "post",
+            data: $("#sms_form").serialize(),
+        })
+        .done(function(json) {
+            layer.close(loading);
+            if (json.code == 1) {
+                layer.msg(json.msg, function() {
+                    location.reload();
+                });
+            } else {
+                layer.msg(json.msg);
+            }
         })
         .fail(function(json) {
             layer.close(loading);
@@ -186,7 +194,7 @@ $("#sub_query").on('click', function() {
             });
         });
     return false;
-})
+});
 </script>
   
    	</div> 
@@ -204,7 +212,13 @@ $("#sub_query").on('click', function() {
 <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> --> 
   <!-- SlimScroll 1.3.0 --> 
   <script src="__ROOT__/public/plugins/slimScroll/jquery.slimscroll.min.js"></script>  
-     
+  
+<script type="text/javascript" src="__ROOT__/public/plugins/laydate/laydate.js"></script>
+<script>
+laydate.render({ elem: '#endtime', type: 'datetime' });
+laydate.render({ elem: '#strtime', type: 'datetime' });
+</script>
+  
   <script type="text/javascript">
   	$(function(){ 
   	  $("#left_menu_list").slimScroll({ 

@@ -18608,3 +18608,1407 @@
 [ info ] [ PARAM ] array (
 )
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-05T23:28:22+08:00 ] ::1 ::1 GET /mycms/
+[ info ] localhost/mycms/ [运行时间：0.037867s][吞吐率：26.41req/s] [内存消耗：1,324.52kb] [文件加载：35]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-05T23:28:22+08:00 ] ::1 ::1 GET /mycms/index/publics/login.html
+[ info ] localhost/mycms/index/publics/login.html [运行时间：0.034124s][吞吐率：29.30req/s] [内存消耗：1,371.93kb] [文件加载：37]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'publics',
+    2 => 'login',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\index\controller\Publics->login[ E:\webproject\mycms\application\index\controller\Publics.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\user\login_index.html [ array (
+  0 => 'img',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2017-11-05T23:28:32+08:00 ] ::1 ::1 POST /mycms/index/publics/dologin.html
+[ info ] localhost/mycms/index/publics/dologin.html [运行时间：0.220133s][吞吐率：4.54req/s] [内存消耗：2,191.45kb] [文件加载：46]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'publics',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'content-length' => '29',
+  'accept' => '*/*',
+  'origin' => 'http://localhost',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'referer' => 'http://localhost/mycms/index/publics/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => 'admin',
+)
+[ info ] [ RUN ] app\index\controller\Publics->doLogin[ E:\webproject\mycms\application\index\controller\Publics.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003291s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.015165s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  (  user_name='admin' ) LIMIT 1 [ RunTime:0.001085s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_role_user` [ RunTime:0.014788s ]
+[ sql ] [ SQL ] SELECT `role_id` FROM `mc_role_user` `a` INNER JOIN `mc_role` `b` ON `a`.`role_id`=`b`.`id` WHERE  `user_id` = 1  AND `status` = 1 LIMIT 1 [ RunTime:0.001188s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user_token` [ RunTime:0.012703s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user_token` WHERE  `user_id` = 1  AND `device_type` = 'web' LIMIT 1 [ RunTime:0.000616s ]
+[ sql ] [ SQL ] UPDATE `mc_user_token`  SET `token`='856e573a3fccff5175d77a937aa9764fae516e73810cc3e4643d83376f2babca',`expire_time`=1525447712,`create_time`=1509895712  WHERE  `user_id` = 1  AND `device_type` = 'web' [ RunTime:0.046847s ]
+[ sql ] [ SQL ] UPDATE `mc_user`  SET `id`=1,`user_type`=1,`sex`=0,`birthday`=0,`last_login_time`=1509895712,`user_logintimes`=13,`coin`=0,`create_time`=1508811133,`user_status`=1,`user_name`='admin',`user_password`='99c348ce96784563b08f4e36c11ec5ab',`user_nickname`='超级管理员',`user_email`='',`user_url`='',`avatar`='',`signature`='',`last_login_ip`='0.0.0.0',`user_activation_key`='',`mobile`='',`more`=NULL  WHERE  `id` = 1 [ RunTime:0.057449s ]
+---------------------------------------------------------------
+[ 2017-11-05T23:28:32+08:00 ] ::1 ::1 GET /mycms/index/index/index.html
+[ info ] localhost/mycms/index/index/index.html [运行时间：0.128125s][吞吐率：7.80req/s] [内存消耗：2,519.23kb] [文件加载：49]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/publics/login.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\webproject\mycms\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\index\index.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001824s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.014073s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000841s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.012896s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.001262s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.001038s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000749s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000867s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000663s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000679s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.001368s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000769s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000784s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000632s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000533s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000738s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000758s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000537s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.001286s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:28:42+08:00 ] ::1 ::1 GET /mycms/index/tool/chart.html
+[ info ] localhost/mycms/index/tool/chart.html [运行时间：0.118075s][吞吐率：8.47req/s] [内存消耗：2,522.80kb] [文件加载：49]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'tool',
+    2 => 'chart',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/index/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Tool->chart[ E:\webproject\mycms\application\index\controller\Tool.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\tool\chart.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002158s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.015374s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000736s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.022323s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000745s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000666s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000646s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000612s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000580s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000707s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000609s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000590s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000617s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000674s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000739s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000654s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000605s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000633s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000585s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:28:44+08:00 ] ::1 ::1 GET /mycms/index/tool/file.html
+[ info ] localhost/mycms/index/tool/file.html [运行时间：0.135229s][吞吐率：7.39req/s] [内存消耗：2,687.50kb] [文件加载：51]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'tool',
+    2 => 'file',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/tool/chart.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Tool->file[ E:\webproject\mycms\application\index\controller\Tool.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\tool\file.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001822s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.012602s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000724s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.011736s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000738s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000708s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000736s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000584s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000669s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000608s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000673s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000551s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000852s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000676s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000859s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000587s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000602s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000638s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:28:47+08:00 ] ::1 ::1 GET /mycms/index/tool/gtp.html
+[ info ] localhost/mycms/index/tool/gtp.html [运行时间：0.139586s][吞吐率：7.16req/s] [内存消耗：2,522.88kb] [文件加载：49]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'tool',
+    2 => 'gtp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/tool/file.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Tool->_empty[ E:\webproject\mycms\application\index\controller\Tool.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\public\develing.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001929s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.032033s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000930s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.011744s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000785s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000794s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000701s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000600s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000727s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000606s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000639s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000578s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.001998s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000757s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000529s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000502s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000439s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000499s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:28:52+08:00 ] ::1 ::1 GET /mycms/index/tool/file.html
+[ info ] localhost/mycms/index/tool/file.html [运行时间：0.105982s][吞吐率：9.44req/s] [内存消耗：2,522.80kb] [文件加载：49]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'tool',
+    2 => 'file',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/tool/gtp.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Tool->file[ E:\webproject\mycms\application\index\controller\Tool.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\tool\file.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001920s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.010767s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000705s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.011568s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000637s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000650s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000642s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000693s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000856s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000671s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000837s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000680s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000643s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000642s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000659s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000609s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000592s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000526s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:28:59+08:00 ] ::1 ::1 GET /mycms/index/tool/gtp.html
+[ info ] localhost/mycms/index/tool/gtp.html [运行时间：0.109823s][吞吐率：9.11req/s] [内存消耗：2,522.88kb] [文件加载：49]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'tool',
+    2 => 'gtp',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/tool/file.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Tool->_empty[ E:\webproject\mycms\application\index\controller\Tool.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\public\develing.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001961s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.012466s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000729s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.011459s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000953s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000756s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000498s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000473s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000548s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000475s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000488s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000456s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000485s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000503s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000585s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000569s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000476s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000641s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000611s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000479s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000527s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:31:16+08:00 ] ::1 ::1 GET /mycms/
+[ info ] localhost/mycms/ [运行时间：0.123577s][吞吐率：8.09req/s] [内存消耗：2,519.09kb] [文件加载：49]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ E:\webproject\mycms\application\index\controller\Index.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\index\index.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002004s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.014293s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000835s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.019040s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000760s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000714s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000601s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000632s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000632s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000563s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000580s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000689s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000652s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000590s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000648s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000566s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000557s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000572s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:39:12+08:00 ] ::1 ::1 GET /mycms/index/menu/index.html
+[ info ] localhost/mycms/index/menu/index.html [运行时间：0.191511s][吞吐率：5.22req/s] [内存消耗：2,660.04kb] [文件加载：50]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'menu',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/tool/gtp.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Menu->index[ E:\webproject\mycms\application\index\controller\Menu.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\menu\index.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+  4 => 'category',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002109s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.013248s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.014208s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000703s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000763s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000671s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000632s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000656s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000621s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000642s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000612s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000727s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000834s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.001414s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000658s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000779s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000572s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000817s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000718s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000625s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000700s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` ORDER BY `list_order`  ASC [ RunTime:0.000764s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:39:17+08:00 ] ::1 ::1 GET /mycms/index/tool/sms.html
+[ info ] localhost/mycms/index/tool/sms.html [运行时间：0.109077s][吞吐率：9.17req/s] [内存消耗：2,523.02kb] [文件加载：49]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'tool',
+    2 => 'sms',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/menu/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Tool->sms[ E:\webproject\mycms\application\index\controller\Tool.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\tool\sms.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001793s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.012010s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000740s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.012713s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000669s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000725s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000675s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000803s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000652s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000711s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000629s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000609s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000622s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000681s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000657s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000607s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000559s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000591s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000566s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:42:27+08:00 ] ::1 ::1 GET /mycms/index/tool/sms.html
+[ info ] localhost/mycms/index/tool/sms.html [运行时间：0.136686s][吞吐率：7.32req/s] [内存消耗：2,691.12kb] [文件加载：51]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'tool',
+    2 => 'sms',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/menu/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Tool->sms[ E:\webproject\mycms\application\index\controller\Tool.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\tool\sms.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001730s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.016201s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000769s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.022745s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000736s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000685s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000589s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000631s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000611s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000613s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000678s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000786s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000747s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000727s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000640s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000726s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000630s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000848s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000597s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000615s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000642s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000543s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:43:45+08:00 ] ::1 ::1 GET /mycms/index/tool/sms.html
+[ info ] localhost/mycms/index/tool/sms.html [运行时间：0.131453s][吞吐率：7.61req/s] [内存消耗：2,691.47kb] [文件加载：51]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'tool',
+    2 => 'sms',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/menu/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Tool->sms[ E:\webproject\mycms\application\index\controller\Tool.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\tool\sms.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001712s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.015361s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000731s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.019589s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000804s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000704s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000615s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000649s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000594s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000774s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000814s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000834s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000660s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000594s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000525s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000510s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000654s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000812s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000692s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:54:13+08:00 ] ::1 ::1 GET /mycms/index/tool/sms.html
+[ info ] localhost/mycms/index/tool/sms.html [运行时间：0.140727s][吞吐率：7.11req/s] [内存消耗：2,690.71kb] [文件加载：51]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'tool',
+    2 => 'sms',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/menu/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Tool->sms[ E:\webproject\mycms\application\index\controller\Tool.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\tool\sms.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001920s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.016338s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000890s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.019594s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000777s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000836s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000604s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000868s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000839s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000889s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000814s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000620s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000639s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000612s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000593s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000624s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000636s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000801s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000968s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000786s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000703s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000572s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:56:33+08:00 ] ::1 ::1 GET /mycms/index/tool/sms.html
+[ info ] localhost/mycms/index/tool/sms.html [运行时间：0.137482s][吞吐率：7.27req/s] [内存消耗：2,690.98kb] [文件加载：51]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'tool',
+    2 => 'sms',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/menu/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Tool->sms[ E:\webproject\mycms\application\index\controller\Tool.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\tool\sms.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002272s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.015384s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000657s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.018377s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000880s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000714s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000627s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000628s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000639s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000670s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000537s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000581s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000653s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000556s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000633s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000805s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000916s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000720s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000792s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000789s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000583s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000550s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000575s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:58:09+08:00 ] ::1 ::1 GET /mycms/index/tool/sms.html
+[ info ] localhost/mycms/index/tool/sms.html [运行时间：0.141873s][吞吐率：7.05req/s] [内存消耗：2,690.98kb] [文件加载：51]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'tool',
+    2 => 'sms',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/menu/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Tool->sms[ E:\webproject\mycms\application\index\controller\Tool.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\tool\sms.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003690s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.013840s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001053s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.013545s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000579s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000518s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000418s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000384s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000381s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000393s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.001337s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000854s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000697s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000491s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000465s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000423s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000409s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000422s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000453s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000679s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000603s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000602s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:58:29+08:00 ] ::1 ::1 GET /mycms/index/tool/sms.html
+[ info ] localhost/mycms/index/tool/sms.html [运行时间：0.130431s][吞吐率：7.67req/s] [内存消耗：2,523.23kb] [文件加载：49]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'tool',
+    2 => 'sms',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/menu/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Tool->sms[ E:\webproject\mycms\application\index\controller\Tool.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\tool\sms.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001970s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.012996s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.001079s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.016695s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000734s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000753s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000563s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000762s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000833s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000817s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000637s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000667s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000531s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000573s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000568s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000551s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000662s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000567s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000704s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.001212s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000696s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000620s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000644s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+---------------------------------------------------------------
+[ 2017-11-05T23:59:23+08:00 ] ::1 ::1 GET /mycms/index/tool/sms.html
+[ info ] localhost/mycms/index/tool/sms.html [运行时间：0.135633s][吞吐率：7.37req/s] [内存消耗：2,691.00kb] [文件加载：51]
+[ info ] [ LANG ] E:\webproject\mycms\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'tool',
+    2 => 'sms',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'localhost',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3236.0 Safari/537.36',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+  'referer' => 'http://localhost/mycms/index/menu/index.html',
+  'accept-encoding' => 'gzip, deflate, br',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'admin_username=admin; PHPSESSID=leh3kag5kg1anbfdtqcfsd6c56',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Tool->sms[ E:\webproject\mycms\application\index\controller\Tool.php ]
+[ info ] [ VIEW ] E:\webproject\mycms/application/index\view\tool\sms.html [ array (
+  0 => 'admin',
+  1 => 'menus',
+  2 => 'userinfo',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.004553s ] mysql:host=127.0.0.1;dbname=mycms;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_user` [ RunTime:0.012883s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_user` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.000873s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `mc_menu` [ RunTime:0.011366s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 0  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000598s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 4  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000588s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 6  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000555s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 7  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000523s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 8  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000532s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 9  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000519s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 22  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000522s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 5  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000574s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 11  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000648s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 12  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 13  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000599s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 14  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000769s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 15  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000495s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 21  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000523s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 16  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000455s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 17  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000447s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 18  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000448s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 19  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000441s ]
+[ sql ] [ SQL ] SELECT * FROM `mc_menu` WHERE  `pid` = 20  AND `status` = 1 ORDER BY `list_order`  ASC [ RunTime:0.000443s ]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]
+[ error ] [8]未定义数组索引: items[E:\webproject\mycms\application\index\model\Menu.php:135]

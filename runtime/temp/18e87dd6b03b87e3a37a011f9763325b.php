@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:60:"E:\webproject\mycms/application/index\view\tool\smslist.html";i:1509614050;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509672427;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:60:"E:\webproject\mycms/application/index\view\tool\smslist.html";i:1509751281;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509752993;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -16,7 +16,7 @@
   <script src="__ROOT__/public/plugins/html5shiv/html5shiv.min.js"></script>
   <script src="__ROOT__/public/plugins/respond/respond.min.js"></script>
   <![endif]-->
-  <link rel="stylesheet" href="__ROOT__/public/static/css/base.css" /> 
+  <!-- <link rel="stylesheet" href="__ROOT__/public/static/css/base.css" />  -->
   <style>
     #left_menu_list>ul{
       margin-bottom: 100px;
