@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\menu\edit.html";i:1509158593;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509752993;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\menu\edit.html";i:1509324338;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509931430;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 

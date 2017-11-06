@@ -7,6 +7,10 @@ use think\Db;
 use think\Db\Query;
 
 class User extends Baseinit {
+	public function _initialize() {
+		parent::_initialize();
+		$this->assign("title", "用户管理");
+	}
 	public function index() {
 		$this->assign('title', "用户管理");
 		$menuModel = new Menu();
@@ -190,6 +194,8 @@ class User extends Baseinit {
 				$this->error("请为此用户指定角色！");
 			}
 
+		} else {
+			$this->error("参数错误！");
 		}
 	}
 	/**
@@ -200,7 +206,7 @@ class User extends Baseinit {
 	public function auth($id) {
 		$roles = Db::name("role")->where(['status' => 1])->field("id,role_name,description")->select();
 		$rule = Db::name("RoleUser")->where("user_id='$id'")->find();
-		$this->assign("rule", $rule);
+		$this->assign("info", $rule);
 		$this->assign("roles", $roles);
 		return $this->fetch();
 	}
@@ -209,7 +215,19 @@ class User extends Baseinit {
 	 * @author 钟朝辉 <zzhhuii@qq.com>
 	 * @date   2017-10-30T10:04:50+0800
 	 */
-	public function authPost($id) {
-		return $this->success("保存成功！");
+	public function authPost() {
+		if (input("post.user_id/d") && input("post.role_id/d")) {
+			$data['user_id'] = input("post.user_id/d");
+			$data['role_id'] = input("post.role_id/d");
+			$update = DB::name("RoleUser")->where(["user_id" => $data['user_id']])->update($data);
+			if ($update) {
+				$this->success("授权成功！");
+			} else {
+				$this->error("保存失败！");
+			}
+
+		} else {
+			$this->error("参数错误！");
+		}
 	}
 }

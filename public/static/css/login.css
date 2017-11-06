@@ -11,19 +11,19 @@ body {
 }
 
 a {
-    text-decoration: none;
+/*    text-decoration: none;*/
     color: #999
 }
 
 a:hover {
-    text-decoration: none;
+    text-decoration:underline;
     color: #999
 }
  .col {
 	padding: 20px;
 	padding-bottom: 50px;
 }
- .tab-h2 {
+ .tab-h2,a {
 	font-size: 20px;
 	text-align: center;
 	letter-spacing: 1px;

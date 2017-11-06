@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:60:"E:\webproject\mycms/application/index\view\tool\smslist.html";i:1509751281;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509752993;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:60:"E:\webproject\mycms/application/index\view\tool\smslist.html";i:1509959784;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509931430;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -40,6 +40,12 @@ div.dataTables_paginate ul.pagination {
     margin: 2px 0;
     white-space: nowrap;
 }
+tr:hover,td:hover{
+    background-color: #dad6d6;
+}
+.table-bordered,th,tr,td{
+    border: 1px solid #dad6d6 !important;
+} 
 </style>
    
  </head>
@@ -105,45 +111,44 @@ div.dataTables_paginate ul.pagination {
     </div>
     <div class="row">
         <div class="col-xs-12 table-responsive">
-            <table class="table table-striped">
+            <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th>级别</th>
-                        <th>主题</th>
-                        <th>附件</th>
-                        <th>日期</th>
-                        <th>操作</th>
+                        <th width="40">ID</th>
+                        <th>
+                            <div align="center">中间件</div>
+                        </th>
+                        <th nowrap="">
+                            <div align="center">开始时间</div>
+                        </th>
+                        <th nowrap="">
+                            <div align="center"> 结束时间
+                            </div>
+                        </th>
+                        <th nowrap="">
+                            <div align="center">过滤规则 </div>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $key = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$list): $mod = ($key % 2 );++$key;?>
                     <tr>
-                        <td class="text-red">重要</td>
-                        <td>文件</td>
-                        <td>文件221.pdf</td>
-                        <td>20170806 12:11:13</td>
-                        <td>查看详情|下载附件</td>
+                        <td width="40"><?php echo $list['id']; ?></td>
+                        <td>
+                            <div align="center"><?php echo $list['type']=='TE'?'TongEASY':$list['type']; ?></div>
+                        </td>
+                        <td nowrap="">
+                            <div align="center"><?php echo $list['strtime']; ?></div>
+                        </td>
+                        <td nowrap="">
+                            <div align="center"> <?php echo $list['endtime']; ?>
+                            </div>
+                        </td>
+                        <td nowrap="">
+                            <div align="center"><?php echo $list['keywords']; ?> </div>
+                        </td>
                     </tr>
-                    <tr>
-                        <td class="text-red">重要</td>
-                        <td>文件</td>
-                        <td>文件221.pdf</td>
-                        <td>20170806 12:11:13</td>
-                        <td>查看详情|下载附件</td>
-                    </tr>
-                    <tr>
-                        <td class="text-red">重要</td>
-                        <td>文件</td>
-                        <td>文件221.pdf</td>
-                        <td>20170806 12:11:13</td>
-                        <td>查看详情|下载附件</td>
-                    </tr>
-                    <tr>
-                        <td class="text-red">重要</td>
-                        <td>文件</td>
-                        <td>文件221.pdf</td>
-                        <td>20170806 12:11:13</td>
-                        <td>查看详情|下载附件</td>
-                    </tr>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>  
                 </tbody>
             </table>
         </div>

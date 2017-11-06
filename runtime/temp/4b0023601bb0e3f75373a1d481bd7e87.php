@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\tool\host.html";i:1509858412;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509752993;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\tool\host.html";i:1509941122;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509931430;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -84,7 +84,7 @@
     </div>
 </section>
 <div class="main-box clearfix ">
-    <form method="post" id="host_add_form"  action="<?php echo isset($info['id'])?url('Host/editPost'):url('Host/addPost'); ?>" class="form form-horizontal">
+    <form method="post" id="host_add_form" action="<?php echo isset($info['id'])?url('Host/editPost'):url('Host/addPost'); ?>" class="form form-horizontal">
         <div class="row from-box">
             <div class="form-group">
                 <label class="col-lg-2 control-label">系统名称</label>
@@ -156,18 +156,20 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label class="col-lg-2 control-label">服务ID</label>
-            <div class="col-lg-10 col-sm-10">
-                <input type="text" class="form-control" name="server_id" id="server_id" value="<?php echo $info['server_id']; ?>" />
+            <div class="form-group">
+                <label class="col-lg-2 control-label">服务ID</label>
+                <div class="col-lg-10 col-sm-10">
+                    <input type="text" class="form-control" name="server_id" id="server_id" value="<?php echo $info['server_id']; ?>" />
+                    <div class="help-block">
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-lg-offset-2 col-lg-10">
-                <input type="hidden" class="form-control" name="id" id="id" value="<?php echo $info['id']; ?>" />
-                <button class="btn btn-success host_add_submit" type="button">确 定</button>
-                <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <input type="hidden" class="form-control" name="id" id="id" value="<?php echo $info['id']; ?>" />
+                    <button class="btn btn-success host_add_submit" type="button">确 定</button>
+                    <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+                </div>
             </div>
         </div>
     </form>
@@ -204,17 +206,17 @@ $(document).ready(function() {
             insert: '<div class="icheck_line-icon"></div>' + label_text
         });
     });
-    $(".host_add_submit").on("click",function(){
+    $(".host_add_submit").on("click", function() {
         var posturl = $("#host_add_form").attr("action");
         var loading = layer.load(1, {
             shade: [0.1, '#000'] //0.1透明度的白色背景
         });
         $.ajax({
-            url:posturl,
-            type:'post',
-            data:$("#host_add_form").serialize(),
-        })
-        .done(function(json) {
+                url: posturl,
+                type: 'post',
+                data: $("#host_add_form").serialize(),
+            })
+            .done(function(json) {
                 layer.close(loading);
                 if (json.code == 1) {
                     layer.msg(json.msg, function() {

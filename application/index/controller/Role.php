@@ -6,6 +6,10 @@ use com\Tree;
 use think\Db;
 
 class Role extends Baseinit {
+	public function _initialize() {
+		parent::_initialize();
+		$this->assign("title", "角色管理");
+	}
 	public function index() {
 		$this->assign('title', '角色管理');
 		$list = db('role')->select();
@@ -111,9 +115,9 @@ class Role extends Baseinit {
                    <td style='padding-left:30px;'>\$spacer<input type='checkbox' name='menuId[]' value='\$id' level='\$level' \$checked onclick='javascript:checknode(this);'> \$name</td>
     			</tr>";
 		$tree->init($result);
-
+		$info = Db::name("role")->field('role_name')->find($roleId);
 		$category = $tree->getTree(0, $str);
-
+		$this->assign("info", $info);
 		$this->assign("category", $category);
 		$this->assign("roleId", $roleId);
 		return $this->fetch();

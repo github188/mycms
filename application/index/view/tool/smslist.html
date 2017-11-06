@@ -16,6 +16,12 @@ div.dataTables_paginate ul.pagination {
     margin: 2px 0;
     white-space: nowrap;
 }
+tr:hover,td:hover{
+    background-color: #dad6d6;
+}
+.table-bordered,th,tr,td{
+    border: 1px solid #dad6d6 !important;
+} 
 </style>
 {/block} {block name="body"}
 <section class="content-header">
@@ -41,45 +47,44 @@ div.dataTables_paginate ul.pagination {
     </div>
     <div class="row">
         <div class="col-xs-12 table-responsive">
-            <table class="table table-striped">
+            <table class="table table-striped table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th>级别</th>
-                        <th>主题</th>
-                        <th>附件</th>
-                        <th>日期</th>
-                        <th>操作</th>
+                        <th width="40">ID</th>
+                        <th>
+                            <div align="center">中间件</div>
+                        </th>
+                        <th nowrap="">
+                            <div align="center">开始时间</div>
+                        </th>
+                        <th nowrap="">
+                            <div align="center"> 结束时间
+                            </div>
+                        </th>
+                        <th nowrap="">
+                            <div align="center">过滤规则 </div>
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
+                    {volist name="list" id="list" key="key"}
                     <tr>
-                        <td class="text-red">重要</td>
-                        <td>文件</td>
-                        <td>文件221.pdf</td>
-                        <td>20170806 12:11:13</td>
-                        <td>查看详情|下载附件</td>
+                        <td width="40">{$list.id}</td>
+                        <td>
+                            <div align="center">{:$list.type=='TE'?'TongEASY':$list.type}</div>
+                        </td>
+                        <td nowrap="">
+                            <div align="center">{$list.strtime}</div>
+                        </td>
+                        <td nowrap="">
+                            <div align="center"> {$list.endtime}
+                            </div>
+                        </td>
+                        <td nowrap="">
+                            <div align="center">{$list.keywords} </div>
+                        </td>
                     </tr>
-                    <tr>
-                        <td class="text-red">重要</td>
-                        <td>文件</td>
-                        <td>文件221.pdf</td>
-                        <td>20170806 12:11:13</td>
-                        <td>查看详情|下载附件</td>
-                    </tr>
-                    <tr>
-                        <td class="text-red">重要</td>
-                        <td>文件</td>
-                        <td>文件221.pdf</td>
-                        <td>20170806 12:11:13</td>
-                        <td>查看详情|下载附件</td>
-                    </tr>
-                    <tr>
-                        <td class="text-red">重要</td>
-                        <td>文件</td>
-                        <td>文件221.pdf</td>
-                        <td>20170806 12:11:13</td>
-                        <td>查看详情|下载附件</td>
-                    </tr>
+                    {/volist}  
                 </tbody>
             </table>
         </div>

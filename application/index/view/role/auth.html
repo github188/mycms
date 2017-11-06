@@ -22,7 +22,7 @@
 </style>
 {/block} {block name="body"}
 <section class="content-header">
-    <h1><a class="title" id="add_auth_button" href="{:url('index')}">权限管理</a> <small>{:isset($info['id'])?'编辑':'新增'}授权</small></h1>
+    <h1><a class="title" id="add_auth_button" href="{:url('index')}">权限管理</a> <small>{:isset($info['role_name'])?'给「'.$info['role_name']:'新增'}」角色授权</small></h1>
 </section>
 <div class="main-box clearfix ">
     <form class="auth-ajax-form from-box" action="{:url('Role/authPost')}" method="post">

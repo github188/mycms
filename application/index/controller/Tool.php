@@ -67,6 +67,10 @@ class Tool extends Baseinit {
 		}
 	}
 	public function smsList() {
+		$db = new Blacklist();
+		$list = $db->table("blacklist")->select()->toArray();
+		$this->assign("list", $list);
+		//dump($list);exit;
 		return $this->fetch();
 	}
 	public function chart() {

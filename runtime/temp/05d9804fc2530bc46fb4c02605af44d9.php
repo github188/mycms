@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\webproject\mycms/application/index\view\user\login_index.html";i:1509751281;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\webproject\mycms/application/index\view\user\login_index.html";i:1509940024;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -50,9 +50,9 @@
         </div>
     </div>
     <div class="container">
-    <h2 class="tab-h2">「系统巡检报告查询」</h2>
-    <p class="tab-p">简单的内容管理系统，让巡检更方便，更快捷</p>
-    <div style="clear:both;"></div>
+        <h2 class="tab-h2"><a href="../report/">「系统巡检报告查询」</a></h2>
+        <p class="tab-p">简单的内容管理系统，让巡检更方便，更快捷</p>
+        <div style="clear:both;"></div>
         <div class="row">
             <div class="col-md-4 col">
                 <div class="media-left">
@@ -76,7 +76,7 @@
             </div>
             <div class="col-md-4 col">
                 <div class="media-left">
-                    <img src="__ROOT__/public/static/images/login/tab1-3.png" class="media-object"  onerror="this.src='__ROOT__/public/static/images/login/default.png'" width="100px" alt="Oracle巡检" />
+                    <img src="__ROOT__/public/static/images/login/tab1-3.png" class="media-object" onerror="this.src='__ROOT__/public/static/images/login/default.png'" width="100px" alt="Oracle巡检" />
                     <!-- <i class="fa fa-database" style="font-size:6em;width: 100px;"></i> -->
                 </div>
                 <div class="media-body">
@@ -94,7 +94,7 @@
                     <p> </p>
                 </div>
             </div>
-        </div> 
+        </div>
     </div>
     <footer id="footer">
         <div class="container">
@@ -105,6 +105,11 @@
     <script src="__ROOT__/public/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="__ROOT__/public/plugins/layer/layer.js"></script>
     <script type="text/javascript">
+    $("#password").keydown(function(event) {
+        if (event.keyCode == 13) {
+            $("#submit").click();
+        }
+    });
     $("#submit").click(function() {
         var username = $("#username").val();
         var password = $("#password").val();
@@ -134,7 +139,7 @@
                 layer.close(loading);
                 if (json.code == 1) {
                     layer.msg(json.msg, function() {
-                        
+
                     });
                     location.href = json.url;
                 } else {
