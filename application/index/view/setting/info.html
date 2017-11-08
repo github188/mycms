@@ -24,20 +24,20 @@
     <h1><a href="{:url('role/index')}" class="link">修改信息</a></h1>
 </section>
 <div class="main-box clearfix ">
-    <form method="post" id="setting_info_form" class="form form-horizontal">
+    <form method="post" id="setting_info_form" action="{:url('Setting/infoPost')}" class="form form-horizontal">
         <div class="row from-box">
             <div class="form-group">
                 <label class="col-lg-2 control-label">昵称</label>
                 <div class="col-lg-10 col-sm-10">
                     <input type="text" class="form-control" name="user_nickname" id="user_nickname" placeholder="昵称" value="{$info.user_nickname}" />
-                    <div class="help-block">（必填）
+                    <div class="help-block">
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-2 control-label">手机</label>
                 <div class="col-lg-10 col-sm-10">
-                    <input type="text" class="form-control" name="mobile" id="mobile" value="" />
+                    <input type="text" class="form-control" name="mobile" id="mobile" value="{$info.mobile}"/>
                     <div class="help-block">
                     </div>
                 </div>
@@ -45,19 +45,57 @@
             <div class="form-group">
                 <label class="col-lg-2 control-label">邮箱</label>
                 <div class="col-lg-10 col-sm-10">
-                    <input type="text" class="form-control" name="user_email" id="user_email" value="" />
+                    <input type="text" class="form-control" name="user_email" id="user_email"  value="{$info.user_email}"/>
                     <div class="help-block">
                     </div>
                 </div>
-            </div> 
+            </div>
             <div class="form-group">
                 <div class="col-lg-offset-2 col-lg-10">
                     <input type="hidden" name="id" value="{$info.id|default=''}">
-                    <button class="btn btn-success role_add_submit" type="button">确 定</button>
+                    <button class="btn btn-success edit_info_submit" type="button">确 定</button>
                     <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
                 </div>
             </div>
         </div>
     </form>
 </div>
+{/block} {block name="script"}
+<script type="text/javascript">
+$(".edit_info_submit").on('click', function() {
+    var id = $("[name=id]").val();
+    var posturl = $("#setting_info_form").attr("action");
+    if (!id) {
+        layer.msg('param error');
+        return false;
+    }
+    var loading = layer.load(1, {
+        shade: [0.5, '#000'] //0.1透明度的白色背景
+    });
+    $.ajax({
+            url: posturl,
+            type: 'POST',
+            data: $("#setting_info_form").serialize(),
+        })
+        .done(function(json) {
+            layer.close(loading);
+            if (json.code == 1) {
+                layer.msg(json.msg,{time:500}, function() {
+                    location.reload();
+                }); 
+            } else {
+                layer.msg(json.msg);
+            }
+        })
+        .fail(function(json) {
+            layer.close(loading);
+            layer.open({
+                title: '系统错误',
+                area: ['50%', '80%'],
+                content: json.responseText
+            });
+        });
+
+});
+</script>
 {/block}
