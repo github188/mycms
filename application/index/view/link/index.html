@@ -1,0 +1,124 @@
+{extend name="public/base"} {block name="style"}
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css">
+<style>
+div.dataTables_info {
+    padding-top: 8px;
+    white-space: nowrap;
+}
+
+div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+}
+
+div.dataTables_paginate ul.pagination {
+    margin: 2px 0;
+    white-space: nowrap;
+}
+
+tr:hover,
+td:hover {
+    background-color: #dad6d6;
+}
+
+.table-bordered,
+th,
+tr,
+td {
+    border: 1px solid #dad6d6 !important;
+}
+</style>
+{/block} {block name="body"}
+<section class="content-header">
+    <h1>
+        登陆页面超链
+        <!-- <small>后台菜单列表</small> -->
+        <div class="pull-right action-btn">
+          <a href="{:url('Link/add')}" class="btn btn-primary">新增链接</a>
+        </div>
+      </h1>
+</section>
+<div class="invoice container-fluid">
+    <div class="row">
+        <div class="col-xs-12 action-header">
+            <div class="pull-left">
+                <!-- <button class="btn  btn-default"><i class="fa fa-square-o"></i> 全 选</button> -->
+                <!-- <button class="btn  btn-default"><i class="fa fa-trash-o"></i> 删 除</button> -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 table-responsive">
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th width="40">#</th>
+                        <th>
+                            <div align="center">标题</div>
+                        </th>
+                        <th nowrap="">
+                            <div align="center">链接</div>
+                        </th>
+                        <th nowrap="">
+                            <div align="center"> 状态
+                            </div>
+                        </th>
+                        <th nowrap="">
+                            <div align="center">操作 </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {volist name="list" id="item"}
+                    <tr>
+                        <td>
+                            <input class="ids row-selected" type="checkbox" name="ids[]" value="{$item['id']}" />
+                        </td> 
+                        <td><a href="#" class="editable editable-click" data-id="{$item['id']}" data-name="role_name" data-pk="{$item['id']}" data-url="{:url('edit')}">{$item['title']}</a></td>
+                        <td align="center">{$item['link']}</td>
+                        <td align="center"> {if condition="$item['status'] eq '0'"} <span class="label label-danger">隐藏</span> {elseif condition="$item['status'] eq '1'"/} <span class="label label-primary">显示</span> {/if} </td>
+                        <td align="center"> {if condition="$item.id neq 1"}
+                            <a href="{:url('Link/edit',array('id'=>$item['id']))}">编辑</a>    <a href="{:url('Link/del',array('id'=>$item['id']))}" class="confirm ajax-get">删除</a> {/if}
+                        </td>
+                    </tr>
+                    {/volist}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--     <div class="row">
+        <div class="col-xs-5">
+            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">第 41-50/共 57 条</div>
+        </div>
+        <div class="col-xs-7">
+            <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
+                <ul class="pagination">
+                    <li class="paginate_button previous" id="example2_previous"><a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0">上一页</a></li>
+                    <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0">1</a></li>
+                    <li class="paginate_button "><a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0">2</a></li>
+                    <li class="paginate_button next" id="example2_next"><a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0">下一页</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+</div>
+{/block} {block name="script"}
+<link rel="stylesheet" href="__ROOT__/public/plugins/iCheck/all.css" />
+<script src="__ROOT__/public/plugins/iCheck/icheck.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('.applist input').each(function() {
+        var self = $(this),
+            label = self.next(),
+            label_text = label.text();
+        label.remove();
+        self.iCheck({
+            checkboxClass: 'icheckbox_line-blue',
+            radioClass: 'iradio_line-blue',
+            insert: '<div class="icheck_line-icon"></div>' + label_text
+        });
+    });
+});
+</script>
+{/block}

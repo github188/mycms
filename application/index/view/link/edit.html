@@ -1,0 +1,155 @@
+{extend name="public/base"}  
+{block name="style"}
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css"> 
+<style>
+.content-header{
+    border-bottom: 1px #d2d6de solid;padding-bottom: 10px;
+} 
+.main-box{margin:20px;background-color:#fff;box-shadow: 0px 0px 1px #73080a; border-radius: 5px;}
+.from-box{margin-left:-10px;margin-right: 20px;margin-top:20px;}
+</style> 
+{/block}
+{block name="body"}  
+<section class="content-header"> 
+   <h1><a href="{:url('Link/index')}" class="link">登陆页面超链</a> <small>{:isset($info['id'])?'编辑':'新增'}超链</small></h1> 
+   {if condition="$info gt 0"}
+   <div class="pull-right  action-btn clearfix"> 
+    <a class="btn btn-primary" href="{:url('Link/add')}">新增超链</a> 
+   </div> 
+   {/if}
+</section> 
+<div class="main-box clearfix ">
+    <form method="post" id="add_link_form" action="{:url('Link/addPost')}" class="form form-horizontal">
+        <div class="row from-box">
+            <div class="form-group">
+                <label class="col-lg-2 control-label">标题</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="title" value="{$info.title|default=''}">
+                    <div class="help-block">
+                         （<span class="title_block text-red">必填</span>）
+                    </div>
+                </div>
+            </div> 
+            <div class="form-group">
+                <label class="col-lg-2 control-label">链接</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="link" value="{$info.app|default=''}">
+                    <div class="help-block">
+                        例如：http://102.200.2.224/report（<span class="title_block text-red">必填</span>）
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">打开方式</label>
+                <div class="col-md-6 col-sm-10">
+                    <select class="form-control valid" name="target" aria-invalid="false">
+                        <option value="_blank">在新窗口打开</option>
+                        <option value="_self" {if isset($info['status']) && $info['target']=='_self'}selected{/if}>在当前窗口</option>
+                    </select>
+                    <div class="help-block"> 
+                    </div>
+                </div>
+            </div> 
+            <div class="form-group">
+                <label class="col-lg-2 control-label">图片</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="picture" value="{$info.picture|default=''}" />
+                    <div class="help-block">  用于显示在登陆首页，分辨率100*100
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">小图标</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="icon" value="{$info.icon|default=''}" />
+                    <div class="help-block">
+                        用于显示在菜单左侧，不填则不显示
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">排序</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="list_order" value="{$info.list_order|default=0}" />
+                    <div class="help-block">
+                        用于分组显示的顺序
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">状态</label>
+                <div class="col-md-6 col-sm-10">
+                    <select class="form-control valid" name="status" aria-invalid="false">
+                        <option value="1">显示</option>
+                        <option value="0" {if isset($info['status']) && $info['status']==0}selected{/if}>隐藏</option>
+                    </select>
+                    <div class="help-block">
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">备注</label>
+                <div class="col-md-6 col-sm-10">
+                    <input type="text" class="form-control" name="remark" value="{$info.remark|default=''}" />
+                    <div class="help-block">
+                        菜单详细说明
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-offset-2 col-lg-10">
+                    <input type="hidden" name="id" value="{$info['id']|default=''}"> 
+                    <button class="btn btn-success add_link_submit" type="button">提 交</button>
+                    <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+{/block}
+{block name="script"}  
+<script> 
+    $(".add_link_submit").on("click",function(){
+        var title = $("input[name=title]").val();
+        var link = $("input[name=link]").val();
+        var posturl = $("#add_link_form").attr("action");
+        if(!title){
+            $("input[name=title]").focus();
+            layer.tips("标题不能为空","input[name=title]",{tips:1});
+            return false;
+        }
+        if(!link){
+            $("input[name=link]").focus();
+            layer.tips("链接不能为空","input[name=link]",{tips:1});
+            return false;
+        } 
+        var loading = layer.load(1, {
+            shade: [0.5, '#000'] //0.1透明度的白色背景
+        });
+        $.ajax({
+            url: posturl,
+            type: 'post', 
+            data: $("#add_link_form").serialize(),
+        })
+        .done(function(json) {
+            layer.close(loading);
+            if (json.code == 1) {
+                layer.msg(json.msg,{time:500}, function() {
+                    location.reload();
+                }); 
+            } else {
+                layer.msg(json.msg);
+            }
+        })
+        .fail(function(json) {
+            layer.close(loading);
+            layer.open({
+                title: '系统错误',
+                area: ['50%', '80%'],
+                content: json.responseText
+            });
+        });
+        return false;
+    });
+</script>
+{/block}

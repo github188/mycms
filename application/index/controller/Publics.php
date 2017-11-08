@@ -44,6 +44,12 @@ class Publics extends Baseinit {
 				if ($result["id"] != 1 && (empty($groups) || empty($result['user_status']))) {
 					return $this->error("用户禁止登陆");
 				}
+				$access = Db::name('AuthAccess')->where("role_id='" . $groups . "'")->count();
+				// dump($groups);
+				// echo Db::name('AuthAccess')->getLastSql();exit;
+				if ($result["id"] != 1 && (empty($access))) {
+					return $this->error("用户所属角色未授权");
+				}
 				//登入成功页面跳转
 				session('ADMIN_ID', $result["id"]);
 				session('user_name', $result["user_name"]);

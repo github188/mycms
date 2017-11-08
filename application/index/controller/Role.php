@@ -16,13 +16,23 @@ class Role extends Baseinit {
 		$this->assign('list', $list);
 		return $this->fetch();
 	}
-	public function checkName($role_name = '') {
+	public function checkName($role_name = '', $id = 0) {
 		if (!empty($role_name)) {
-			if (db('role')->where("role_name='$role_name'")->find()) {
-				return $this->error("角色已经存在");
+			$sid = db('role')->where("role_name='$role_name'")->value('id');
+			if ($sid) {
+				if (!empty($id) && $sid == $id) {
+					return $this->success("ok");
+				} else {
+					return $this->error("角色已经存在");
+				}
 			} else {
 				return $this->success("ok");
-			};
+			}
+			// if (db('role')->where()->find()) {
+			// 	return $this->error("角色已经存在");
+			// } else {
+			// 	return $this->success("ok");
+			// };
 		} else {
 			return $this->error("参数错误！");
 		}

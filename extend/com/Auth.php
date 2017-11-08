@@ -55,6 +55,8 @@ class Auth {
 			->join('__ROLE__ r', 'a.role_id = r.id')
 			->where(["a.user_id" => $uid, "r.status" => 1])
 			->column("role_id");
+		// echo Db::name('RoleUser')->getLastSql();
+		// exit;
 		if (in_array(1, $groups)) {
 			return true;
 		}

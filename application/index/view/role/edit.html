@@ -12,17 +12,22 @@
 {block name="body"}  
 <section class="content-header"> 
    <h1><a href="{:url('role/index')}" class="link">角色管理</a> <small>{:isset($info['id'])?'编辑':'新增'}角色</small></h1> 
+   {if condition="$info gt 0"}
+   <div class="pull-right  action-btn clearfix"> 
+    <a class="btn btn-primary" href="{:url('Role/add')}">新增角色</a> 
+   </div> 
+   {/if}
 </section> 
   <div class="container"> 
    <div id="indexcontent"> 
     <div class="main-box clearfix "> 
      <div class="col-lg-12"> 
-      <form method="post" id="role_add_form" class="form form-horizontal"> 
+      <form method="post" id="role_add_form" check-name="{:url('role/checkName')}" class="form form-horizontal"> 
        <div class="row from-box"> 
         <div class="form-group"> 
          <label class="col-lg-2 control-label">角色名</label> 
          <div class="col-lg-10 col-sm-10"> 
-          <input type="text" class="form-control" name="role_name" id="role_name" placeholder="角色名" value="{$info.role_name}" /> 
+          <input type="text"  class="form-control" name="role_name" id="role_name" placeholder="角色名" value="{$info.role_name}" /> 
           <div class="help-block">（必填） 
           </div> 
          </div> 
@@ -51,7 +56,7 @@
         <div class="form-group"> 
          <div class="col-lg-offset-2 col-lg-10">  
             <input type="hidden" name="id" value="{$info.id|default=''}">
-          <button class="btn btn-success role_add_submit" type="button">确 定</button> 
+          <button class="btn btn-success role_edit_submit" type="button">提 交</button> 
           <button class="btn btn-danger btn-return" onclick="javascript:history.back(-1);return false;">返 回</button> 
          </div> 
         </div> 
@@ -69,6 +74,8 @@
          */
         function check_role(){
         var role_name = $("[name=role_name]").val();
+        var curl = $("#role_add_form").attr('check-name'); 
+        var role_id = $("input[name=id]").val();
         var input = $("[name=role_name]");
         var help = input.siblings(".help-block"); 
         if (!role_name) {
@@ -77,7 +84,7 @@
             return false;
         }  
         $.ajax({
-            url: 'checkName?role_name='+role_name,
+            url: curl+'?role_name='+role_name+'&id='+role_id,
             type: 'POST',
             success:function(json){ 
                 if(json.code==1){
@@ -97,8 +104,9 @@
     $("[name=role_name]").on("blur",function(){
         check_role(); 
     });
-    $(".role_add_submit").on("click",function(){
+    $(".role_edit_submit").on("click",function(){
         var role_name = $("input[name=role_name]").val();
+        var role_id = $("input[name=id]").val();
         if(!role_name){
             $("input[name=role_name]").focus();
             return false;

@@ -111,10 +111,12 @@ class Menu extends Model {
 	 */
 	public function menuTree() {
 		$data = $this->getTree(0);
-		$list = '<ul class="sidebar-menu" data-widget="tree">';
-		$list .= $this->menuUl($data);
-		//dump($data);exit;
-		$list .= '</ul>';
+		$list = '';
+		if ($data) {
+			$list .= '<ul class="sidebar-menu" data-widget="tree">';
+			$list .= $this->menuUl($data);
+			$list .= '</ul>';
+		}
 		return $list;
 	}
 	/**

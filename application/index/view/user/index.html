@@ -104,7 +104,7 @@
                             <a href="{:url('user/auth',array('id'=>$users['id']))}" class="table-link">
                                             授权
                                         </a>
-                            <a href="{:url('user/del',array('id'=>$users['id']))}" class="table-link confirm ajax-get">
+                            <a href="javascript:void(0);" go-url="{:url('user/del',array('id'=>$users['id']))}" class="table-link confirm ajax-get-user" del-user="{$users.user_name}">
                                             删除
                                         </a> {/if}
                         </td>

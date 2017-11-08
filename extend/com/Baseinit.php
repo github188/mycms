@@ -24,6 +24,7 @@ class Baseinit extends Controller {
 			}
 		}
 		$this->initMenu();
+
 		$this->assign("menus", session("menus"));
 		$this->assign('userinfo', session('userinfo'));
 	}

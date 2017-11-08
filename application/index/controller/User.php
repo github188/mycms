@@ -43,6 +43,11 @@ class User extends Baseinit {
 			parameterErr();
 		}
 	}
+	/**
+	 * 新增用户添加
+	 * @author 钟朝辉 <zzhhuii@qq.com>
+	 * @date   2017-11-08T09:40:49+0800
+	 */
 	public function addPost() {
 		if (request()->isPost()) {
 			$password = $_POST['user_password'];
@@ -57,7 +62,7 @@ class User extends Baseinit {
 			unset($_POST['repassword']);
 			$db = db('user');
 			$data = $_POST;
-			$data['user_password'] = md5(md5($_POST['password']) . "zzh");
+			$data['user_password'] = md5(md5($_POST['user_password']) . "zzh");
 			$data['create_time'] = time();
 			$res = $db->insertGetId($data);
 			if ($res !== false) {
@@ -106,6 +111,7 @@ class User extends Baseinit {
 		} else if ($find["user_name"] === session("username")) {
 			return $this->error($errormsg ? $errormsg : '不能删除自己！');
 		} else {
+
 			if (db('user')->where(array('id' => $id))->delete()) {
 				Db::name("RoleUser")->where(["user_id" => $id])->delete();
 				return $this->success('删除用户成功！');
@@ -220,12 +226,7 @@ class User extends Baseinit {
 			$data['user_id'] = input("post.user_id/d");
 			$data['role_id'] = input("post.role_id/d");
 			$update = DB::name("RoleUser")->where(["user_id" => $data['user_id']])->update($data);
-			if ($update) {
-				$this->success("授权成功！");
-			} else {
-				$this->error("保存失败！");
-			}
-
+			$this->success("授权成功！");
 		} else {
 			$this->error("参数错误！");
 		}

@@ -15,7 +15,7 @@ $(function($) {
         }
         var checkurl = $("#user_add_form").attr("checkurl");
         $.ajax({
-            url: checkurl+'?username=' + user_name+'&id='+id,
+            url: checkurl + '?username=' + user_name + '&id=' + id,
             type: 'POST',
             success: function(json) {
                 var json = eval("(" + json + ")");
@@ -119,19 +119,19 @@ $(function($) {
                 url: posturl,
                 type: 'post',
                 data: $("#user_add_form").serialize(),
-                success: function(json) { 
+                success: function(json) {
                     layer.close(loading);
                     if (json.code == 1) {
-                    layer.msg("成功", function() {
-                        location.href = json.url;
-                    });
-                } else {
-                    layer.msg(json.msg);
-                }
+                        layer.msg("成功", function() {
+                            location.href = json.url;
+                        });
+                    } else {
+                        layer.msg(json.msg);
+                    }
                 }
             })
             .fail(function(json) {
-            	layer.close(loading);
+                layer.close(loading);
                 layer.open({
                     title: '系统错误',
                     area: ['50%', '80%'],
@@ -142,7 +142,7 @@ $(function($) {
         return false;
     });
     /*
-    列表页切换用户状态	
+    列表页切换用户状态   
      */
     $(".user_status").on("click", function() {
         var status = 1;
@@ -186,17 +186,28 @@ $(function($) {
     /*
     ajax-get 
      */
-    $(".ajax-get").on("click", function(e) {
+    $(".ajax-get-user").on("click", function(e) {
         e.preventDefault;
-        var url = $(this).attr("href");
-        $.ajax({
-                url: url,
-            })
-            .done(function(json) {
-                layer.msg(json.msg, function() {
-                    location.reload();
+        var url = $(this).attr("go-url");
+        var user = $(this).attr("del-user");  
+        layer.confirm('您确定要删除「' + user + '」用户吗？', { btn: ['删除', '取消'] }, function() {
+            $.ajax({
+                    url: url,
+                })
+                .done(function(json) {
+                    layer.msg(json.msg,{time:500}, function() {
+                        location.reload();
+                    });
+                })
+                .fail(function(json) {
+                layer.close(loading);
+                layer.open({
+                    title: '系统错误',
+                    area: ['50%', '80%'],
+                    content: json.responseText
                 });
             });
+        });
         return false;
     });
 });
