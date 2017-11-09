@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\role\edit.html";i:1510118354;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\role\edit.html";i:1510213298;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -73,7 +73,7 @@
    	<div class="content-body">
        
 <section class="content-header"> 
-   <h1><a href="<?php echo url('role/index'); ?>" class="link">角色管理</a> <small><?php echo isset($info['id'])?'编辑':'新增'; ?>角色</small></h1> 
+   <h1><a href="<?php echo url('role/index'); ?>" class="link"><角色管理</a> <small><?php echo isset($info['id'])?'编辑':'新增'; ?>角色</small></h1> 
    <?php if($info > 0): ?>
    <div class="pull-right  action-btn clearfix"> 
     <a class="btn btn-primary" href="<?php echo url('Role/add'); ?>">新增角色</a> 
@@ -86,7 +86,7 @@
      <div class="col-lg-12"> 
       <form method="post" id="role_add_form" check-name="<?php echo url('role/checkName'); ?>" class="form form-horizontal"> 
        <div class="row from-box"> 
-        <div class="form-group"> 
+        <div class="form-group error"> 
          <label class="col-lg-2 control-label">角色名</label> 
          <div class="col-lg-10 col-sm-10"> 
           <input type="text"  class="form-control" name="role_name" id="role_name" placeholder="角色名" value="<?php echo $info['role_name']; ?>" /> 

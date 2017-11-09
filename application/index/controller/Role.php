@@ -80,8 +80,25 @@ class Role extends Baseinit {
 			return $this->fetch('edit');
 		}
 	}
-	public function del() {
-
+	/*
+		del 删除角色
+	*/
+	public function del($id = 0) {
+		if ($id == 1) {
+			$this->error("超级管理员角色不能被删除！");
+		}
+		$count = Db::name('RoleUser')->where(['role_id' => $id])->count();
+		if ($count > 0) {
+			$this->error("该角色已经有用户！");
+		} else {
+			$status = Db::name('role')->delete($id);
+			if (!empty($status)) {
+				Db::name('AuthAccess')->where("role_id='$id'")->delete();
+				$this->success("删除成功！", url('Role/index'));
+			} else {
+				$this->error("删除失败！");
+			}
+		}
 	}
 	/**
 	 * 设置角色权限

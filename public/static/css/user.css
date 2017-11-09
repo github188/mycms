@@ -266,5 +266,34 @@ input:focus {
 }
 .invoice{
     box-shadow: 0px 0px 1px #73080a;
-    border-radius: 16px;
+    border-radius: 6px;
+}
+
+div.dataTables_info {
+    padding-top: 8px;
+    white-space: nowrap;
+}
+
+div.dataTables_paginate {
+    margin: 0;
+    white-space: nowrap;
+    text-align: right;
+}
+
+div.dataTables_paginate ul.pagination {
+    margin: 2px 0;
+    white-space: nowrap;
+}
+
+tr:hover,
+td:hover {
+    background-color: #dad6d6;
+}
+
+.table-bordered,
+th,
+tr,
+td {
+    border: 1px solid #dad6d6 !important;
+    text-align: center;
 }

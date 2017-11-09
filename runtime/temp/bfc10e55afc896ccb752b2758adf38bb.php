@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:58:"E:\webproject\mycms/application/index\view\role\index.html";i:1510130504;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:58:"E:\webproject\mycms/application/index\view\role\index.html";i:1510215653;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -23,24 +23,7 @@
     }
   </style>
    
- <style>
- 	.content-header{
- 		border-bottom: 1px #d2d6de solid;padding-bottom: 10px; 
- 	}
- 	.action-btn{
-		float: right;
-        background: transparent;
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 12px;
-        padding: 7px 5px;
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        border-radius: 2px;
- 	}
- </style>
-   
+<link rel="stylesheet" href="__ROOT__/public/static/css/user.css">    
  </head>
  <body class="hold-transition skin-blue sidebar-mini fixed">
   <div class="wrapper"> 
@@ -80,43 +63,50 @@
    </aside> 
    <div class="content-wrapper">
    	<div class="content-body">
-       
-<section class="content-header"> 
-   <h1> 角色管理 <small>角色列表</small> </h1>  
-   <div class="pull-right  action-btn clearfix"> 
-    <a class="btn btn-primary" href="<?php echo url('add'); ?>">新增角色</a> 
-   </div> 
-   <div class="clearfix"></div>
-  </section> 
-  <div class="main-box-body"> 
-   <table class="table  table-bordered table-hover table-striped"> 
-    <thead> 
-     <tr> 
-      <th width="30"><input class="checkbox check-all" type="checkbox" /></th> 
-      <th width="60">ID</th> 
-      <th>角色</th> 
-      <th>描述</th> 
-      <th>状态</th> 
-      <th>操作</th> 
-     </tr> 
-    </thead> 
-    <tbody>
-    <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?> 
-     <tr> 
-      <td><input class="ids row-selected" type="checkbox" name="ids[]" value="<?php echo $item['id']; ?>" /></td> 
-      <td><?php echo $item['id']; ?></td> 
-      <td><a href="#" class="editable editable-click" data-id="<?php echo $item['id']; ?>" data-name="role_name" data-pk="<?php echo $item['id']; ?>" data-url="<?php echo url('edit'); ?>"><?php echo $item['role_name']; ?></a></td> 
-      <td><?php echo $item['description']; ?></td> 
-      <td> <?php if($item['status'] == '0'): ?> <span class="label label-danger">禁用</span> <?php elseif($item['status'] == '1'): ?> <span class="label label-primary">启用</span> <?php endif; ?> </td> 
-      <td> <?php if($item['id'] != 1): ?>
-        <a href="<?php echo url('role/edit',array('id'=>$item['id'])); ?>">编辑</a> <a href="<?php echo url('role/auth',array('id'=>$item['id'])); ?>">授权</a> <a href="<?php echo url('role/del',array('id'=>$item['id'])); ?>" class="confirm ajax-get">删除</a> 
-      <?php endif; ?>
-      </td> 
-     </tr>
-    <?php endforeach; endif; else: echo "" ;endif; ?> 
-    </tbody> 
-   </table>  
-  </div>
+     
+<section class="content-header">
+    <h1> 角色管理 <small>角色列表</small> </h1>
+    <div class="pull-right  action-btn clearfix">
+        <a class="btn btn-primary" href="<?php echo url('add'); ?>">新增角色</a>
+    </div>
+    <div class="clearfix"></div>
+</section>
+<div class="invoice container-fluid">
+    <div class="row">
+        <div class="col-xs-12 table-responsive">
+            <table class="table  table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <th width="30">
+                            <input class="checkbox check-all" type="checkbox" />
+                        </th>
+                        <th width="60">ID</th>
+                        <th>角色</th>
+                        <th>描述</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if(is_array($list) || $list instanceof \think\Collection || $list instanceof \think\Paginator): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?>
+                    <tr>
+                        <td>
+                            <input class="ids row-selected" type="checkbox" name="ids[]" value="<?php echo $item['id']; ?>" />
+                        </td>
+                        <td><?php echo $item['id']; ?></td>
+                        <td><a href="#" class="editable editable-click" data-id="<?php echo $item['id']; ?>" data-name="role_name" data-pk="<?php echo $item['id']; ?>" data-url="<?php echo url('edit'); ?>"><?php echo $item['role_name']; ?></a></td>
+                        <td><?php echo $item['description']; ?></td>
+                        <td> <?php if($item['status'] == '0'): ?> <span class="label label-danger">禁用</span> <?php elseif($item['status'] == '1'): ?> <span class="label label-primary">启用</span> <?php endif; ?> </td>
+                        <td> <?php if($item['id'] != 1): ?>
+                            <a href="<?php echo url('role/edit',array('id'=>$item['id'])); ?>">编辑</a> <a href="<?php echo url('role/auth',array('id'=>$item['id'])); ?>">授权</a> <a href="<?php echo url('role/del',array('id'=>$item['id'])); ?>" id="delete_role">删除</a> <?php endif; ?>
+                        </td>
+                    </tr>
+                    <?php endforeach; endif; else: echo "" ;endif; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
   
    	</div> 
    </div>  
@@ -133,7 +123,31 @@
 <script src="__ROOT__/public/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script> --> 
   <!-- SlimScroll 1.3.0 --> 
   <script src="__ROOT__/public/plugins/slimScroll/jquery.slimscroll.min.js"></script>  
-     
+  
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#delete_role").on('click', function(e) {
+        e.preventDefault();
+        var url = $(this).attr("href");
+        $.ajax({
+                url: url,
+                type: 'POST',
+            })
+            .done(function() {
+                console.log("success");
+            })
+            .fail(function() {
+                console.log("error");
+            })
+            .always(function() {
+                console.log("complete");
+            });
+            return false;
+
+    });
+});
+</script>
+  
   <script type="text/javascript">
   	$(function(){ 
   	  $("#left_menu_list").slimScroll({ 

@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2017-11-08 17:15:54
+Date: 2017-11-09 12:11:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,9 +31,3 @@ CREATE TABLE `mc_link` (
   `remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='超级链接表';
-
--- ----------------------------
--- Records of mc_link
--- ----------------------------
-INSERT INTO `mc_link` VALUES ('1', '0', '333', '1', '0', '', '33', '', '');
-INSERT INTO `mc_link` VALUES ('2', '0', '1122', '1', '0', '', '1122', '', '');

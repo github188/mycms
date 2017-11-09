@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\link\edit.html";i:1510130223;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\link\edit.html";i:1510210626;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -73,7 +73,7 @@
    	<div class="content-body">
        
 <section class="content-header"> 
-   <h1><a href="<?php echo url('Link/index'); ?>" class="link">登陆页面超链</a> <small><?php echo isset($info['id'])?'编辑':'新增'; ?>超链</small></h1> 
+   <h1><a href="<?php echo url('Link/index'); ?>" class="link"><登陆页面超链</a> <small><?php echo isset($info['id'])?'编辑':'新增'; ?>超链</small></h1> 
    <?php if($info > 0): ?>
    <div class="pull-right  action-btn clearfix"> 
     <a class="btn btn-primary" href="<?php echo url('Link/add'); ?>">新增超链</a> 
@@ -212,7 +212,7 @@
             layer.close(loading);
             if (json.code == 1) {
                 layer.msg(json.msg,{time:500}, function() {
-                    //location.reload();
+                    location.reload();
                 }); 
             } else {
                 layer.msg(json.msg);

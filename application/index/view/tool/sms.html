@@ -60,8 +60,7 @@
                             <option>------</option>
                         </select>
                     </div>
-                    <div class="email-block">
-                    </div>
+                    <div class="help-block"></div>
                 </div>
             </div>
             <div class="form-group">
@@ -75,6 +74,9 @@
     </form>
 </div>
 <script type="text/javascript">
+/**
+ * 获取当前时间 
+ */
 var date = new Date();
 var hours = minutes = secondes = '';
 if (date.getHours() < 10) {
@@ -94,7 +96,11 @@ if (date.getSeconds() < 10) {
 }
 var nowdate = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate() + " " + hours + ':' + minutes + ':' + secondes;
 $("#strtime,#endtime").val(nowdate);
-
+/**
+ * 提交规则
+ * @author 钟朝辉 <zzhhuii@qq.com>
+ * @date   2017-11-09T09:51:49+0800              
+ */
 $(".sms_add_submit").click(function() {
     var type = $("#type").val();
     if (!type || type == "请选择") {
@@ -103,8 +109,8 @@ $(".sms_add_submit").click(function() {
         return false;
     }
     var loading = layer.load(1, {
-            shade: [0.1, '#000'] //0.1透明度的白色背景
-        });
+        shade: [0.1, '#000'] //0.1透明度的白色背景
+    });
     var url = $("#sms_form").attr('action');
     $.ajax({
             url: url,
@@ -114,7 +120,7 @@ $(".sms_add_submit").click(function() {
         .done(function(json) {
             layer.close(loading);
             if (json.code == 1) {
-                layer.msg(json.msg, function() {
+                layer.msg(json.msg,{time:500}, function() {
                     location.reload();
                 });
             } else {
@@ -130,6 +136,131 @@ $(".sms_add_submit").click(function() {
             });
         });
     return false;
+});
+$(document).ready(function() {
+    /**
+     * 提示系统节点名
+     * @author 钟朝辉 <zzhhuii@qq.com>
+     * @date   2017-11-09T09:55:20+0800 
+     */
+    $("#type").on("change", function() {
+        var v = $(this).val();
+        $("#othername").hide();
+        if (v == "请选择" || v == undefined) {
+            $("#sysname").html('<option>请选择系统</option>');
+            return false;
+        }
+        var get_nodes = '{:url("tool/getSmsNode")}'; 
+        $.ajax({
+                url: get_nodes + "?type=" + v,
+                type: 'post',
+            })
+            .done(function(json) { 
+                if (json.code == 1) {
+                    if (json.data) {
+                        var def = '';
+                        if (v == 'TE') {
+                            def = 'sys_name';
+                        } else {
+                            def = 'sysname';
+                        }
+                        options(json.data, 'sysname', def, '请选择系统');
+                    } else {
+                        $("#othername").html('<option>------</option>');
+                    }
+                } else {
+                    layer.msg(json.msg);
+                }
+            })
+            .fail(function(json) { 
+                layer.open({
+                    title: '系统错误',
+                    area: ['50%', '80%'],
+                    content: json.responseText
+                });
+            });
+    });
+    /**
+     * 根据系统名查找节点名
+     * @author 钟朝辉 <zzhhuii@qq.com>
+     * @date   2017-11-09T11:32:38+0800 
+     */
+    $("#sysname").on("change", function() {
+        var v = $(this).val();
+        var t = $("#type").val();
+        if (v == "请选择系统" || v == undefined) {
+            $("#sysname").html('<option>请选择系统</option>');
+            $("#othername").hide();
+            return false;
+        }
+        var def = sel = '';
+        if (t == 'MQ') {
+            def = '队列管理器名';
+            sel = 'qmname';
+        } else if (t == 'GTP') {
+            def = '节点名称';
+            sel = 'nodename';
+        } else if (t == 'TE') {
+            def = '节点名称';
+            sel = 'node_name';
+        } else {
+            def = '------';
+        }
+        var tag = $(this).parent().siblings(".help-block");
+        var text = tag.html(); 
+        if (text&&text!=' ') {
+            text = text + '#';
+        }
+        console.log(text);
+        var url = '{:url("tool/getSmsNodeName")}';
+        tag.html(text + v); 
+        $.ajax({
+                url: url + '?sysname=' + v + '&type=' + t,
+            })
+            .done(function(json) { 
+                if (json.code == 1) {
+                    if (json.data) {
+                        options(json.data, "othername", sel, def);
+                    } else {
+                        $("#othername").html('<option>------</option>');
+                    } 
+                } else {
+                    layer.msg(json.msg);
+                }
+            })
+            .fail(function(json) { 
+                layer.open({
+                    title: '系统错误',
+                    area: ['50%', '80%'],
+                    content: json.responseText
+                });
+            });
+    });
+      $("#othername").on("change",function(){
+        var v = $(this).val(); 
+        var tag = $(this).parent().siblings(".help-block");
+        var text = tag.html();
+        tag.html(text+'#'+v);
+    })
+    /**
+     * 生成select选项
+     * @author 钟朝辉 <zzhhuii@qq.com>
+     * @date   2017-11-09T11:32:06+0800 
+     */
+    function options(data, wh, ckey, option) {
+        if (data) {
+            var ops = '<option>' + option + '</option>';
+            for (var i = 0; i < data.length; i++) {
+                ops += "<option>" + data[i][ckey] + "</option>";
+            }
+            $("#" + wh).html(ops);
+            $("#" + wh).show();
+        } else {
+            $("#" + wh).html("<option>" + option + "</option>");
+            $("#othername").hide();
+        }
+        return false;
+    }
 });
 </script>
 {/block} {block name="script"}

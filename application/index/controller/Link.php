@@ -49,4 +49,7 @@ class Link extends Baseinit {
 	public function edit($id = 0) {
 
 	}
+	public function del() {
+
+	}
 }

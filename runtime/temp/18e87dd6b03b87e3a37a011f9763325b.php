@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:60:"E:\webproject\mycms/application/index\view\tool\smslist.html";i:1510114608;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:60:"E:\webproject\mycms/application/index\view\tool\smslist.html";i:1510119184;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -107,7 +107,7 @@ td {
     <div class="row">
         <div class="col-xs-12 action-header">
             <div class="pull-left">
-                <button class="btn  btn-default"><i class="fa fa-square-o"></i> 全 选</button>
+                <!-- <button class="btn  btn-default"><i class="fa fa-square-o"></i> 全 选</button> -->
                 <!-- <button class="btn  btn-default"><i class="fa fa-trash-o"></i> 删 除</button> -->
             </div>
         </div>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\user\auth.html";i:1509954317;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1509931430;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\user\auth.html";i:1509954317;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -73,7 +73,7 @@
     <section class="sidebar"> 
      <div class="user-panel" style="height:35px;"> 
       <div class="pull-left  info"> 
-       <p style="margin: 0;"><a href="<?php echo url('publics/login'); ?>" target="_seft">查看登陆页</a> </p> 
+       <p style="margin: 0;"><a href="<?php echo url('/'); ?>" target="_seft">返回首页</a> </p> 
       </div> 
      </div> 
      <div id="left_menu_list">

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\webproject\mycms/application/index\view\user\login_index.html";i:1509940024;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:64:"E:\webproject\mycms/application/index\view\user\login_index.html";i:1510203989;}*/ ?>
 <!DOCTYPE html>
 <html>
 
@@ -50,47 +50,54 @@
         </div>
     </div>
     <div class="container">
-        <h2 class="tab-h2"><a href="../report/">「系统巡检报告查询」</a></h2>
+        <h1 class="tab-h2"><a href="http://102.200.2.224/report/" style="font-size:24px;">「系统巡检报告查询」</a></h1>
         <p class="tab-p">简单的内容管理系统，让巡检更方便，更快捷</p>
         <div style="clear:both;"></div>
         <div class="row">
             <div class="col-md-4 col">
                 <div class="media-left">
+                    <a href="http://102.200.2.224/report/linuxreport" target="_blank">
                     <img src="__ROOT__/public/static/images/login/linux.png" class="media-object" width="100px" alt="Linux系统" />
-                    <!-- <i class="fa fa-linux" style="font-size:6em;"></i> -->
+                    </a>
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading">Linux巡检</h4>
+                    <h4 class="media-heading"><a href="http://102.200.2.224/report/linuxreport" target="_blank">Linux巡检</a></h4>
                     <p>可查看Linux主机的硬盘使用率、文件系统、系统和应用报错等信息。</p>
                 </div>
-            </div>
+            </div> 
             <div class="col-md-4 col">
                 <div class="media-left">
-                    <img src="__ROOT__/public/static/images/login/windows_xp.png" class="media-object" width="100px" alt="Linux系统" />
-                    <!-- <i class="fa fa-linux" style="font-size:6em;"></i> -->
-                </div>
-                <div class="media-body">
-                    <h4 class="media-heading">Windows巡检</h4>
-                    <p>简介。</p>
-                </div>
-            </div>
-            <div class="col-md-4 col">
-                <div class="media-left">
+                    <a href="http://102.200.2.224/report/?search=oracle&id=7" target="_blank">
                     <img src="__ROOT__/public/static/images/login/tab1-3.png" class="media-object" onerror="this.src='__ROOT__/public/static/images/login/default.png'" width="100px" alt="Oracle巡检" />
+                    </a>
                     <!-- <i class="fa fa-database" style="font-size:6em;width: 100px;"></i> -->
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading">Oracle巡检</h4>
+                    <h4 class="media-heading"><a href="http://102.200.2.224/report/?search=oracle&id=7" target="_blank">Oracle巡检</a></h4>
                     <p> </p>
                 </div>
             </div>
             <div class="col-md-4 col">
                 <div class="media-left">
-                    <img src="__ROOT__/public/static/images/login/tab1-2.png" class="media-object" width="100px" alt="Linux系统" />
-                    <!-- <i class="fa fa-road" style="font-size:6em;width: 100px;"></i> -->
+                    <a href="http://102.200.2.224/report/?search=was&id=5" target="_blank">
+                    <img src="__ROOT__/public/static/images/login/tab1-1.png" class="media-object" onerror="this.src='__ROOT__/public/static/images/login/default.png'" width="100px" alt="Was巡检" />
+                    </a>
+                    <!-- <i class="fa fa-database" style="font-size:6em;width: 100px;"></i> -->
                 </div>
                 <div class="media-body">
-                    <h4 class="media-heading">MQ巡检</h4>
+                    
+                    <h4 class="media-heading"><a href="http://102.200.2.224/report/?search=was&id=5" target="_blank">Was巡检</a></h4>
+                    <p> </p> 
+                </div>
+            </div>
+            <div class="col-md-4 col">
+                <div class="media-left">
+                    <a href="http://102.200.2.224/report/?search=mq&id=5" target="_blank">
+                    <img src="__ROOT__/public/static/images/login/tab1-2.png" class="media-object" width="100px" alt="MQ巡检" />
+                    </a>
+                </div>
+                <div class="media-body">
+                    <h4 class="media-heading"><a href="http://102.200.2.224/report/?search=mq&id=5" target="_blank">MQ巡检</a></h4>
                     <p> </p>
                 </div>
             </div>

@@ -106,7 +106,7 @@ class User extends Baseinit {
 	public function del($id = 0) {
 		//获取用户信息
 		$find = $this->getUserinfo($id);
-		if ($userinfo['user_name'] === 'admin') {
+		if ($find['user_name'] === 'admin') {
 			return $this->error($errormsg ? $errormsg : '超级用户不能删除！');
 		} else if ($find["user_name"] === session("username")) {
 			return $this->error($errormsg ? $errormsg : '不能删除自己！');
