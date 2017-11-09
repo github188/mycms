@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2017-11-08 17:17:36
+Date: 2017-11-09 17:16:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2829,7 +2829,7 @@ CREATE TABLE `mc_auth_access` (
   PRIMARY KEY (`id`),
   KEY `role_id` (`role_id`),
   KEY `rule_name` (`rule_name`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8 COMMENT='权限授权表';
+) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8 COMMENT='权限授权表';
 
 -- ----------------------------
 -- Records of mc_auth_access
@@ -2848,6 +2848,13 @@ INSERT INTO `mc_auth_access` VALUES ('47', '2', 'index/role/index', 'admin_url')
 INSERT INTO `mc_auth_access` VALUES ('48', '2', 'index/auth/index', 'admin_url');
 INSERT INTO `mc_auth_access` VALUES ('49', '3', 'index/tool/index', 'admin_url');
 INSERT INTO `mc_auth_access` VALUES ('50', '3', 'index/tool/sms', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('51', '4', 'index/tool/index', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('52', '4', 'index/host/index', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('53', '4', 'index/tool/sms', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('54', '4', 'index/tool/gtp', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('55', '4', 'index/tool/file', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('56', '4', 'index/tool/chart', 'admin_url');
+INSERT INTO `mc_auth_access` VALUES ('57', '4', 'index//', 'admin_url');
 
 -- ----------------------------
 -- Table structure for mc_auth_rule
@@ -2865,7 +2872,7 @@ CREATE TABLE `mc_auth_rule` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`) USING BTREE,
   KEY `module` (`app`,`status`,`type`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COMMENT='权限规则表';
 
 -- ----------------------------
 -- Records of mc_auth_rule
@@ -2889,6 +2896,7 @@ INSERT INTO `mc_auth_rule` VALUES ('17', '1', 'index', 'admin_url', 'index/Tool/
 INSERT INTO `mc_auth_rule` VALUES ('18', '1', 'index', 'admin_url', 'index/Tool/chart', '', '设备故障信息统计', '');
 INSERT INTO `mc_auth_rule` VALUES ('19', '1', 'index', 'admin_url', 'index/Tool/index', '', '系统工具', '');
 INSERT INTO `mc_auth_rule` VALUES ('20', '1', 'index', 'admin_url', 'index/Link/index', '', '首页导航管理', '');
+INSERT INTO `mc_auth_rule` VALUES ('21', '1', 'index', 'admin_url', 'index//', '', '首页导航', '');
 
 -- ----------------------------
 -- Table structure for mc_intelligent_alarm_log
@@ -2906,12 +2914,14 @@ CREATE TABLE `mc_intelligent_alarm_log` (
   `alarm_id` int(11) DEFAULT NULL,
   `operate_ip` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=312 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=314 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mc_intelligent_alarm_log
 -- ----------------------------
 INSERT INTO `mc_intelligent_alarm_log` VALUES ('311', 'TE', '2017-11-06 09:34:25', '2017-11-06 09:34:25', '666', 'admin', 'add', '2017-11-06 09:34:34', '229', '::1');
+INSERT INTO `mc_intelligent_alarm_log` VALUES ('312', 'TE', '2017-11-09 09:38:37', '2017-11-09 09:38:37', 'eeee', 'admin', 'add', '2017-11-09 09:45:21', '230', '::1');
+INSERT INTO `mc_intelligent_alarm_log` VALUES ('313', 'GTP', '2017-11-09 12:06:59', '2017-11-09 12:06:59', 'MPP系统1机#ZH_MPP_01', 'admin', 'add', '2017-11-09 12:07:24', '231', '::1');
 
 -- ----------------------------
 -- Table structure for mc_link
@@ -2928,13 +2938,14 @@ CREATE TABLE `mc_link` (
   `icon` varchar(20) DEFAULT '' COMMENT '菜单图标',
   `remark` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '' COMMENT '备注',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COMMENT='超级链接表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COMMENT='超级链接表';
 
 -- ----------------------------
 -- Records of mc_link
 -- ----------------------------
 INSERT INTO `mc_link` VALUES ('1', '0', '333', '1', '0', '', '33', '', '');
 INSERT INTO `mc_link` VALUES ('2', '0', '1122', '1', '0', '', '1122', '', '');
+INSERT INTO `mc_link` VALUES ('3', '0', '恶趣味请问', '1', '0', 'asda', '微软微软', '啊打算', '啊大苏打');
 
 -- ----------------------------
 -- Table structure for mc_menu
@@ -2957,7 +2968,7 @@ CREATE TABLE `mc_menu` (
   KEY `status` (`status`),
   KEY `parentid` (`pid`),
   KEY `model` (`controller`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 COMMENT='后台菜单表';
 
 -- ----------------------------
 -- Records of mc_menu
@@ -2981,6 +2992,7 @@ INSERT INTO `mc_menu` VALUES ('19', '21', '1', '1', '0', 'index', 'Tool', 'file'
 INSERT INTO `mc_menu` VALUES ('20', '21', '1', '1', '0', 'index', 'Tool', 'chart', '', '设备故障信息统计', 'pie-chart', '');
 INSERT INTO `mc_menu` VALUES ('21', '0', '1', '1', '0', 'index', 'Tool', 'index', '', '系统工具', '', '');
 INSERT INTO `mc_menu` VALUES ('22', '4', '1', '1', '0', 'index', 'Link', 'index', '', '首页导航管理', '', '');
+INSERT INTO `mc_menu` VALUES ('23', '0', '0', '1', '0', 'index', '', '', '', '首页导航', '', '');
 
 -- ----------------------------
 -- Table structure for mc_report_index_log
@@ -3031,7 +3043,7 @@ CREATE TABLE `mc_role` (
   UNIQUE KEY `role_name_2` (`role_name`),
   KEY `parentId` (`pid`),
   KEY `status` (`status`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='角色表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COMMENT='角色表';
 
 -- ----------------------------
 -- Records of mc_role
@@ -3039,6 +3051,7 @@ CREATE TABLE `mc_role` (
 INSERT INTO `mc_role` VALUES ('1', '0', '1', '1509174069', '0', '0', '超级管理员', '拥有网站最高管理员权限！');
 INSERT INTO `mc_role` VALUES ('2', '0', '1', '1509174108', '0', '0', '普通管理员', '');
 INSERT INTO `mc_role` VALUES ('3', '0', '1', '1509952678', '0', '0', '短信黑名单', '短信黑名单');
+INSERT INTO `mc_role` VALUES ('4', '0', '1', '1510211293', '0', '0', 'ee', '');
 
 -- ----------------------------
 -- Table structure for mc_role_user
@@ -3051,13 +3064,13 @@ CREATE TABLE `mc_role_user` (
   PRIMARY KEY (`id`),
   KEY `group_id` (`role_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='用户角色对应表';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='用户角色对应表';
 
 -- ----------------------------
 -- Records of mc_role_user
 -- ----------------------------
 INSERT INTO `mc_role_user` VALUES ('1', '1', '1');
-INSERT INTO `mc_role_user` VALUES ('6', '3', '6');
+INSERT INTO `mc_role_user` VALUES ('6', '4', '6');
 INSERT INTO `mc_role_user` VALUES ('7', '3', '7');
 
 -- ----------------------------
@@ -3090,12 +3103,12 @@ CREATE TABLE `mc_user` (
   UNIQUE KEY `id` (`id`),
   KEY `user_login` (`user_name`),
   KEY `user_nickname` (`user_nickname`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of mc_user
 -- ----------------------------
-INSERT INTO `mc_user` VALUES ('1', '1', '0', '0', '1510120030', '34', '0', '1508811133', '1', 'admin', '99c348ce96784563b08f4e36c11ec5ab', '超级管理员', '11@qq.com', '', '', '', '0.0.0.0', '', '15736744455', null);
+INSERT INTO `mc_user` VALUES ('1', '1', '0', '0', '1510204075', '36', '0', '1508811133', '1', 'admin', '99c348ce96784563b08f4e36c11ec5ab', '超级管理员', '11@qq.com', '', '', '', '0.0.0.0', '', '15736744455', null);
 INSERT INTO `mc_user` VALUES ('6', '1', '0', '0', '1510111026', '2', '0', '1510107246', '1', 'zz', 'ef6633c274bdbab575dd00e1ed6b483b', 'zz', '', '', '', '', '0.0.0.0', '', '', null);
 INSERT INTO `mc_user` VALUES ('7', '1', '0', '0', '1510114509', '2', '0', '1510111095', '1', 'zzh', 'aa64395bec97fc114b420dd4e11f4f64', 'zzh', '', '', '', '', '0.0.0.0', '', '', null);
 
@@ -3116,7 +3129,7 @@ CREATE TABLE `mc_user_token` (
 -- ----------------------------
 -- Records of mc_user_token
 -- ----------------------------
-INSERT INTO `mc_user_token` VALUES ('1', '1', '1525672030', '1510120030', 'c70f2b04e2ff9649f8d22ef9865507d605ac804354bfc9b5602f6b9a8fd7f950', 'web');
+INSERT INTO `mc_user_token` VALUES ('1', '1', '1525756075', '1510204075', '6a3d11545a6fd0db024ffd425e86f7ab56d8117a545a0cfe71c3d3e563fef4ea', 'web');
 INSERT INTO `mc_user_token` VALUES ('4', '2', '1525659563', '1510107563', 'bb806ab21a248ee02db9084d6b60dc928d73b695349493eaca37b3e6caa7ca48', 'web');
 INSERT INTO `mc_user_token` VALUES ('5', '6', '1525663026', '1510111026', 'a0ae862895752267b4953ed80c5811633e79d20e3328ab6349d2b0675df70f37', 'web');
 INSERT INTO `mc_user_token` VALUES ('6', '7', '1525666509', '1510114509', '86bb4678d1093e855ed0a0743f7863f1949903674ed1a6c5fb9fcbc298a061ca', 'web');
