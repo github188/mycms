@@ -15,8 +15,10 @@ textarea::-moz-placeholder:after{
 };
 </style>
 {/block} {block name="body"}
-<section class="content-header">
-    <h1>批量添加巡检主机信息</h1>
+<section class="content-header"> 
+    <h1>批量添加巡检主机信息
+    <small><a href="{:url('host/index')}"><返回</a></small>
+    </h1>
 </section>
 <div class="main-box clearfix ">
     <form method="post" id="host_add_form" action="{:isset($info.id)?url('Host/editPost'):url('Host/batchPost')}" class="form form-horizontal">
@@ -34,9 +36,9 @@ textarea::-moz-placeholder:after{
                                     <td>应用类型编号对应</td>
                                 </tr>
                                 <tr>
-                                    <td>西三旗=>2，
-                                    亦庄中金=>3，
-                                    东单=>7，
+                                    <td>西三旗=>02，
+                                    亦庄中金=>03，
+                                    东单=>07，
                                     所有地方=>99，</td>
                                     <td>AIX=>1，
                                     Solaris=>2，
@@ -51,7 +53,7 @@ textarea::-moz-placeholder:after{
                                     GTP=>64，</td>
                                 </tr>
                             </table> 
-                            <p class="text-red">数据结尾和多条数据之间用“;”分割。如下：<br>中金CV服务器1,3,0017,hxbackup1,4,[2|32];<br>中金CV服务器2,3,0018,hxbackup2,4,[2|32];</p>
+                            <p class="text-red">数据结尾和多条数据之间用“;”分割。如下：<br>中金CV服务器1,03,0017,hxbackup1,4,[2|32];<br>中金CV服务器2,03,0018,hxbackup2,4,[2|32];</p>
                         </div>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\tool\host.html";i:1509941122;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\tool\host.html";i:1510301200;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -78,7 +78,7 @@
    	<div class="content-body">
      
 <section class="content-header">
-    <h1>添加巡检主机信息</h1>
+    <h1><a href="<?php echo url('host/index'); ?>"><添加巡检主机信息</a> </h1>
     <div class="pull-right  action-btn clearfix">
         <a class="btn btn-primary" href="<?php echo url('Host/Batch'); ?>">批量处理</a>
     </div>

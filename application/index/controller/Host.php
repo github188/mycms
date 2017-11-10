@@ -47,7 +47,6 @@ class Host extends Baseinit {
 			if (empty($server_id)) {
 				return $this->error("服务ID不能为空！");
 			}
-			session("hostdata", input("post."));
 			$this->singleData(input("post."));
 			return $this->success('ok', '', input('post.'));
 		} else {
@@ -58,8 +57,7 @@ class Host extends Baseinit {
 	 * 处理单个数据
 	 * @param  string $data post提交的数据
 	 */
-	public function singleData($data = '') {
-		//$data = session("hostdata");
+	public function singleData($data = '', $index_content = '') {
 		$index = REPORT_PATH . "index.html";
 		$index_handle = fopen($index, "r") or die("index文件不存在");
 		$old_index_content = fread($index_handle, filesize($index));
@@ -75,11 +73,14 @@ class Host extends Baseinit {
 		$txtcont = "";
 		$new_into_data = "";
 		$appid = '';
-		foreach ($data['applist'] as $value) {
-			$appid = (int) $appid + $value;
+		if (!empty($data['applist'])) {
+			foreach ($data['applist'] as $value) {
+				$appid = (int) $appid + $value;
+			}
+		} else {
+			$appid = '';
 		}
 		$old_nums = count($old_index_datalists[1]);
-		$arrayid = $old_nums;
 		$new_add_list .= 'subcat[' . $arrayid . ']= new Array("' . $data['nodename'] . '","' . $data['location_id'] . '","' . $data['server_id'] . '","' . trim($data['hostname']) . '","' . $data['os_type'] . '","' . $appid . '");' . "\r\n";
 
 		$new_into_data = $data['nodename'] . "," . $data['location_id'] . "," . $data['server_id'] . "," . $data['hostname'] . "," . $data['os_type'] . "," . $appid . "\r\n";
@@ -99,6 +100,8 @@ class Host extends Baseinit {
 			mkdir(ROOT_PATH . "backups/index/" . date('Ym') . "/", 777, true);
 		}
 		copy($index, ROOT_PATH . "/backups/index/" . date('Ym') . "/" . date('YmdHis') . "-index.html");
+		session("last_index", ROOT_PATH . "/backups/index/" . date('Ym') . "/" . date('YmdHis') . "-index.html");
+		unlink($index);
 		$indexh = fopen($index, "w+") or die("10001");
 		$newcont = preg_replace("/subcat = new Array().+\/\/end/is", $all_new_index_data, $old_index_content);
 		$update_index = fwrite($indexh, $newcont);
@@ -135,6 +138,9 @@ class Host extends Baseinit {
 				$applist = trim(trim($applist, "【"), "】");
 				$insert['applist'] = explode("|", $applist);
 				$this->singleData($insert);
+			}
+			if (!is_file(REPORT_PATH . "index.html")) {
+				copy(session("last_index"), REPORT_PATH . "index.html");
 			}
 			return $this->success('ok');
 		} else {

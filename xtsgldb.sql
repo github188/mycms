@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50714
 File Encoding         : 65001
 
-Date: 2017-11-09 17:16:31
+Date: 2017-11-10 17:17:36
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -2899,6 +2899,32 @@ INSERT INTO `mc_auth_rule` VALUES ('20', '1', 'index', 'admin_url', 'index/Link/
 INSERT INTO `mc_auth_rule` VALUES ('21', '1', 'index', 'admin_url', 'index//', '', '首页导航', '');
 
 -- ----------------------------
+-- Table structure for mc_gtp_failfile
+-- ----------------------------
+DROP TABLE IF EXISTS `mc_gtp_failfile`;
+CREATE TABLE `mc_gtp_failfile` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `filename` varchar(255) DEFAULT NULL,
+  `strtime` datetime DEFAULT NULL,
+  `endtime` datetime DEFAULT NULL,
+  `result` text,
+  `indate` datetime DEFAULT NULL,
+  `status` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of mc_gtp_failfile
+-- ----------------------------
+INSERT INTO `mc_gtp_failfile` VALUES ('1', '20171110122401', '2017-11-10 12:23:59', '2017-11-10 12:23:59', null, '2017-11-10 12:24:01', 'N');
+INSERT INTO `mc_gtp_failfile` VALUES ('2', '20171110122426', '2017-11-10 12:24:25', '2017-11-10 12:24:25', null, '2017-11-10 12:24:26', 'N');
+INSERT INTO `mc_gtp_failfile` VALUES ('3', '20171110122626', '2017-11-10 12:26:24', '2017-11-10 12:26:24', null, '2017-11-10 12:26:26', 'N');
+INSERT INTO `mc_gtp_failfile` VALUES ('4', '20171110122628', '2017-11-10 12:26:27', '2017-11-10 12:26:27', null, '2017-11-10 12:26:28', 'N');
+INSERT INTO `mc_gtp_failfile` VALUES ('5', '20171110122635', '2017-11-10 12:26:33', '2017-11-10 12:26:33', null, '2017-11-10 12:26:35', 'N');
+INSERT INTO `mc_gtp_failfile` VALUES ('6', '20171110163236', '2017-11-10 16:32:32', '2017-11-10 16:32:31', null, '2017-11-10 16:32:36', 'N');
+INSERT INTO `mc_gtp_failfile` VALUES ('8', '20171110170621', '2017-11-10 17:06:17', '2017-11-10 17:06:17', null, '2017-11-10 17:06:21', 'N');
+
+-- ----------------------------
 -- Table structure for mc_intelligent_alarm_log
 -- ----------------------------
 DROP TABLE IF EXISTS `mc_intelligent_alarm_log`;
@@ -2914,7 +2940,7 @@ CREATE TABLE `mc_intelligent_alarm_log` (
   `alarm_id` int(11) DEFAULT NULL,
   `operate_ip` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=314 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=317 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mc_intelligent_alarm_log
@@ -2922,6 +2948,9 @@ CREATE TABLE `mc_intelligent_alarm_log` (
 INSERT INTO `mc_intelligent_alarm_log` VALUES ('311', 'TE', '2017-11-06 09:34:25', '2017-11-06 09:34:25', '666', 'admin', 'add', '2017-11-06 09:34:34', '229', '::1');
 INSERT INTO `mc_intelligent_alarm_log` VALUES ('312', 'TE', '2017-11-09 09:38:37', '2017-11-09 09:38:37', 'eeee', 'admin', 'add', '2017-11-09 09:45:21', '230', '::1');
 INSERT INTO `mc_intelligent_alarm_log` VALUES ('313', 'GTP', '2017-11-09 12:06:59', '2017-11-09 12:06:59', 'MPP系统1机#ZH_MPP_01', 'admin', 'add', '2017-11-09 12:07:24', '231', '::1');
+INSERT INTO `mc_intelligent_alarm_log` VALUES ('314', 'TE', '2017-11-10 15:33:05', '2017-11-10 15:33:05', 'fdsfdfd', 'admin', 'add', '2017-11-10 15:33:11', '232', '::1');
+INSERT INTO `mc_intelligent_alarm_log` VALUES ('315', 'TE', '2017-11-10 15:33:12', '2017-11-10 15:33:12', '44', 'admin', 'add', '2017-11-10 15:36:13', '233', '::1');
+INSERT INTO `mc_intelligent_alarm_log` VALUES ('316', 'MQ', '2017-11-10 15:36:14', '2017-11-10 15:36:14', 'werwer', 'admin', 'add', '2017-11-10 15:37:04', '234', '::1');
 
 -- ----------------------------
 -- Table structure for mc_link
@@ -3002,14 +3031,14 @@ CREATE TABLE `mc_report_index_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nodename` varchar(255) DEFAULT NULL,
   `hostname` varchar(255) DEFAULT NULL,
-  `location_id` int(11) DEFAULT NULL COMMENT '"02"=> 西三旗，\r\n"03"=>亦庄中金，\r\n"07" =>东单，\r\n"99"=>所有地方',
-  `os_type` int(11) DEFAULT NULL COMMENT 'AIX  1，\r\nSolaris  2，\r\nWindows  4，\r\nLinux	8',
-  `apps` int(11) DEFAULT NULL COMMENT 'MQ=>1，\r\nWAS=>2，\r\nOracle=>4，\r\nTong=>8，\r\nInformix=>16，\r\nCV=>32，\r\nGTP=>64',
-  `server_id` int(11) DEFAULT NULL,
+  `location_id` varchar(11) DEFAULT NULL COMMENT '"02"=> 西三旗，\r\n"03"=>亦庄中金，\r\n"07" =>东单，\r\n"99"=>所有地方',
+  `os_type` varchar(11) DEFAULT NULL COMMENT 'AIX  1，\r\nSolaris  2，\r\nWindows  4，\r\nLinux	8',
+  `apps` varchar(11) DEFAULT NULL COMMENT 'MQ=>1，\r\nWAS=>2，\r\nOracle=>4，\r\nTong=>8，\r\nInformix=>16，\r\nCV=>32，\r\nGTP=>64',
+  `server_id` varchar(11) DEFAULT NULL,
   `userid` int(11) DEFAULT NULL,
   `date` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of mc_report_index_log
@@ -3024,6 +3053,10 @@ INSERT INTO `mc_report_index_log` VALUES ('7', '系统名', 'aaaa', '3', null, '
 INSERT INTO `mc_report_index_log` VALUES ('8', '系统名', 'aeeeaaa', '3', '1', '7', '444', '1', '2017-11-05 14:42:17');
 INSERT INTO `mc_report_index_log` VALUES ('9', '中金CV服务器1', 'hxbackup1', '3', '4', '34', '17', '1', '2017-11-05 14:50:42');
 INSERT INTO `mc_report_index_log` VALUES ('10', '中金CV服务器2', 'hxbackup2', '3', '4', '34', '18', '1', '2017-11-05 14:50:42');
+INSERT INTO `mc_report_index_log` VALUES ('11', '4343', '34343', '3', '1', '0', '34343', '1', '2017-11-10 15:39:40');
+INSERT INTO `mc_report_index_log` VALUES ('12', '3242342', '34234234234', '3', '1', '0', '34234324', '1', '2017-11-10 15:40:55');
+INSERT INTO `mc_report_index_log` VALUES ('13', '555', '555', '3', '1', '', 'tttt', '1', '2017-11-10 16:10:24');
+INSERT INTO `mc_report_index_log` VALUES ('14', '444', 'ttttt', '3', '1', '', 'ttttttt', '1', '2017-11-10 16:11:19');
 
 -- ----------------------------
 -- Table structure for mc_role
@@ -3064,7 +3097,7 @@ CREATE TABLE `mc_role_user` (
   PRIMARY KEY (`id`),
   KEY `group_id` (`role_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COMMENT='用户角色对应表';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COMMENT='用户角色对应表';
 
 -- ----------------------------
 -- Records of mc_role_user
@@ -3103,12 +3136,12 @@ CREATE TABLE `mc_user` (
   UNIQUE KEY `id` (`id`),
   KEY `user_login` (`user_name`),
   KEY `user_nickname` (`user_nickname`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COMMENT='用户表';
 
 -- ----------------------------
 -- Records of mc_user
 -- ----------------------------
-INSERT INTO `mc_user` VALUES ('1', '1', '0', '0', '1510204075', '36', '0', '1508811133', '1', 'admin', '99c348ce96784563b08f4e36c11ec5ab', '超级管理员', '11@qq.com', '', '', '', '0.0.0.0', '', '15736744455', null);
+INSERT INTO `mc_user` VALUES ('1', '1', '0', '0', '1510277710', '37', '0', '1508811133', '1', 'admin', '99c348ce96784563b08f4e36c11ec5ab', '超级管理员', '11@qq.com', '', '', '', '0.0.0.0', '', '15736744455', null);
 INSERT INTO `mc_user` VALUES ('6', '1', '0', '0', '1510111026', '2', '0', '1510107246', '1', 'zz', 'ef6633c274bdbab575dd00e1ed6b483b', 'zz', '', '', '', '', '0.0.0.0', '', '', null);
 INSERT INTO `mc_user` VALUES ('7', '1', '0', '0', '1510114509', '2', '0', '1510111095', '1', 'zzh', 'aa64395bec97fc114b420dd4e11f4f64', 'zzh', '', '', '', '', '0.0.0.0', '', '', null);
 
@@ -3129,7 +3162,7 @@ CREATE TABLE `mc_user_token` (
 -- ----------------------------
 -- Records of mc_user_token
 -- ----------------------------
-INSERT INTO `mc_user_token` VALUES ('1', '1', '1525756075', '1510204075', '6a3d11545a6fd0db024ffd425e86f7ab56d8117a545a0cfe71c3d3e563fef4ea', 'web');
+INSERT INTO `mc_user_token` VALUES ('1', '1', '1525829710', '1510277710', 'e0fc1ee64342d73ae0e202a6fe954c84d8e5a82e847534114f1fda405ce1d0ce', 'web');
 INSERT INTO `mc_user_token` VALUES ('4', '2', '1525659563', '1510107563', 'bb806ab21a248ee02db9084d6b60dc928d73b695349493eaca37b3e6caa7ca48', 'web');
 INSERT INTO `mc_user_token` VALUES ('5', '6', '1525663026', '1510111026', 'a0ae862895752267b4953ed80c5811633e79d20e3328ab6349d2b0675df70f37', 'web');
 INSERT INTO `mc_user_token` VALUES ('6', '7', '1525666509', '1510114509', '86bb4678d1093e855ed0a0743f7863f1949903674ed1a6c5fb9fcbc298a061ca', 'web');
