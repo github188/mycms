@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\tool\file.html";i:1510544641;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\tool\file.html";i:1510553396;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -214,7 +214,7 @@ $(".box-body").on('click', '#show', function() {
     var status = $(this).attr("data-status");
     var file = $(this).attr("data-file");
     if (status == '0') {
-        layer.msg("正在等待返回结果，请稍后再查看...",{time:1000},function(){
+        layer.msg("正在等待返回结果，请稍后再查看...", { time: 1500 }, function() {
             location.reload();
         });
         return false;
@@ -238,6 +238,30 @@ $(".box-body").on('click', '#show', function() {
             layer.msg(json.msg);
         }
     })
+});
+$(".box-body").on('click', '#delete', function() {
+    var id = $(this).attr("data-cloudid");
+    var tr = $(".table tbody").find("input[value=" + id + "]").parent().parent().parent();
+    var deok = layer.confirm('您确定要删除本条记录吗？', {
+        btn: ['删除', '取消'] //按钮
+    }, function() {
+        layer.close(deok);
+        var loaddel = layer.load(0, { shade: [0.7, '#eee'] });
+        $.ajax({
+            url: '<?php echo url("tool/delGTPCheck"); ?>'+'?id=' + id,
+            success: function(json) { 
+                layer.close(loaddel);
+                if (json.code == '1') {
+                    layer.msg("删除成功！",{time:500}, function() {
+                        location.reload();
+                    });
+                    return false;
+                }
+                layer.msg(json.msg);
+            }
+        })
+
+    });
 });
 </script>
   

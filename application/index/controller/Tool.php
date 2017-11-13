@@ -118,7 +118,7 @@ class Tool extends Baseinit {
 				$data['status'] = 'Y';
 				$data['result'] = $show;
 				$up = $db->where("filename='$filename'")->update($data);
-				return $this->success('ok', '', array('file' => $file, 'a' => $allf, 'msg' => $show));
+				return $this->success($show, '', array('file' => $file, 'a' => $allf));
 			} else {
 				$is_ok = $db->where("filename='$filename'")->find();
 				if ($is_ok['status'] == 'Y') {
@@ -130,6 +130,15 @@ class Tool extends Baseinit {
 		} else {
 			return $this->error("参数错误！");
 		}
+	}
+	/**
+	 * 删除GTP失败文件查询记录
+	 * @author 钟朝辉 <zzhhuii@qq.com>
+	 * @date   2017-11-13T17:08:43+0800
+	 * @return [type]                   [description]
+	 */
+	public function delResult() {
+		return $this->error("正在开发操作权限功能");
 	}
 	public function delGtpErrHistory() {
 		if (trim(input('get.filename'))) {
@@ -179,7 +188,7 @@ class Tool extends Baseinit {
 				return $this->error('文件名不能为空');
 			}
 			$cont = $nodename . "#" . $sendfile . "#" . $filename;
-			$url = "./Public/gtpCheck/$nodename/send";
+			$url = ROOT_PATH . "../report/public/gtpCheck/$nodename/send";
 			if (!is_dir($url)) {
 				mkdir($url, 0777, true);
 			}
@@ -196,7 +205,7 @@ class Tool extends Baseinit {
 			$data['check_time'] = date("Y-m-d H:i:s");
 			$data['check_status'] = 0;
 			$data['save_filename'] = $filepath;
-			$data['recv_filename'] = $url = "./Public/gtpCheck/$nodename/recv/" . $recv_filename;
+			$data['recv_filename'] = $url = ROOT_PATH . "../report/public/gtpCheck/$nodename/recv/" . $recv_filename;
 			$addres = $db->insert($data);
 			$userid = session("ADMIN_ID");
 			$allinfo = $db->order("check_time desc")->select();
@@ -233,6 +242,26 @@ class Tool extends Baseinit {
 				return $this->error("返回文件不存在！");
 			}
 
+		} else {
+			return $this->error('参数错误');
+		}
+	}
+	/**
+	 * 删除GTP失败文件的查询记录
+	 * @author 钟朝辉 <zzhhuii@qq.com>
+	 * @date   2017-11-13T13:59:07+0800
+	 */
+	public function delGTPCheck() {
+		if (input('get.id')) {
+			$id = trim(input("get.id"));
+			$info = DB::name("cloud_check")->where(" cloudid='$id'")->find();
+			if ($info) {
+				if (DB::name("cloud_check")->where(" cloudid='$id'")->delete()) {
+					@unlink(realpath(trim($data['save_filename'])));
+					@unlink(realpath(trim($data['recv_filename'])));
+				}
+			}
+			return $this->success('已删除');
 		} else {
 			return $this->error('参数错误');
 		}

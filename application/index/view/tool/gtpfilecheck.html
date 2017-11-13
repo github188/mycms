@@ -41,7 +41,7 @@ table {
                 </div>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-success" id="gtp_fail_file">查 看</button>
+                <button class="btn btn-success" id="gtp_fail_file">查 询</button>
             </div>
         </div>
     </form>
@@ -67,13 +67,13 @@ table {
                             </div>
                         </th>
                         <th>
+                            <div align="center">查询时间 </div>
+                        </th>
+                        <th>
                             <div align="center">查询状态 </div>
                         </th>
                         <th>
                             <div align="center">操作 </div>
-                        </th>
-                        <th>
-                            <div align="center">查询时间 </div>
                         </th>
                     </tr>
                 </thead>
@@ -91,15 +91,18 @@ table {
                             </div>
                         </td>
                         <td>
+                            <div align="center">{$list.indate}</div>
+                        </td>
+                        <td>
                             <div align="center">{:$list.status=='N'?'正在查询':'已完成'}</div>
                         </td>
                         <td>
                             <div align="center">
-                                <button filename="{$list.filename}" id="scan_results" scan-url="{:url('tool/scanResult')}" class="btn btn-success" type="button">查看</button>
+                                <div class="btn-group">
+                                    <button filename="{$list.filename}" id="scan_results" scan-url="{:url('tool/scanResult')}" class="btn btn-primary btn-sm" type="button" title="查看">查看</button>
+                                    <button filename="{$list.filename}" id="del_results" scan-url="{:url('tool/delResult')}" class="btn btn-primary btn-sm" type="button" title="删除">删除</button>
+                                </div>
                             </div>
-                        </td>
-                        <td>
-                            <div align="center">{$list.indate}</div>
                         </td>
                     </tr>
                     {/volist}
@@ -179,59 +182,77 @@ $(document).ready(function() {
 
         return false;
     });
-    function deleteHistoryLog(filename){
-    layer.confirm('结果文件已被清理，是否删除本条记录？',
-       {'title':'提示信息',
-       'btn':['删除','取消']},
-       function (){
-           $.ajax({
-            url: '{:url("tool/delGtpErrHistory")}?filename='+filename,
-            success: function (json) { 
-                layer.closeAll();
-                if (json.code == 1) { 
-                    layer.msg(json.msg,{time:500},function(){
-                        location.reload();
-                    }); 
-                } else {
-                    layer.msg(json.msg); 
-                }
+
+    function deleteHistoryLog(filename) {
+        layer.confirm('结果文件已被清理，是否删除本条记录？', {
+                'title': '提示信息',
+                'btn': ['删除', '取消']
+            },
+            function() {
+                $.ajax({
+                    url: '{:url("tool/delGtpErrHistory")}?filename=' + filename,
+                    success: function(json) {
+                        layer.closeAll();
+                        if (json.code == 1) {
+                            layer.msg(json.msg, { time: 500 }, function() {
+                                location.reload();
+                            });
+                        } else {
+                            layer.msg(json.msg);
+                        }
+                    }
+                })
             }
-        })
-       }
-    );
-}
+        );
+    }
     $(".gtp_list").on('click', '#scan_results', function() {
         var filename = $(this).attr("filename");
-        console.log(filename); 
         $.ajax({
             url: $(this).attr("scan-url") + "?filename=" + filename,
             type: "post",
-            success: function(json) { 
+            success: function(json) {
                 if (json.code == 1) {
-                    $show = layer.open({
-                        'title': '查询结果-' + filename,
-                        'area': ['700px', '90%'],
-                        'content': json.msg
-                    });
+                    $show = layer.open({ 'title': '查询结果-' + filename, 'area': ['700px', '90%'], 'content': json.msg });
                 } else {
                     if (json.msg == 'del') {
-                    deleteHistoryLog(filename);
-                    }else{
+                        deleteHistoryLog(filename);
+                    } else {
                         layer.msg(json.msg);
-                    } 
+                    }
                 }
             }
         });
         return false;
     });
-    setInterval(function(){
+    /**
+     * 删除GTP传输失败文件查询记录
+     * @author 钟朝辉 <zzhhuii@qq.com>
+     * @date   2017-11-13T17:04:02+0800 
+     */
+    $(".gtp_list").on('click', '#del_results', function() {
+        var filename = $(this).attr("filename");
         $.ajax({
-        url: '{:url("tool/checkingToTemp")}',
+            url: $(this).attr("scan-url") + "?filename=" + filename,
+            type: "post",
+            success: function(json) {
+                if (json.code == 1) {
+                     layer.msg("删除成功",{time:500},function(){
+                        location.reload();
+                     });
+                } 
+                 layer.msg(json.msg);
+            }
+        });
+        return false;
+    });
+    setInterval(function() {
+        $.ajax({
+            url: '{:url("tool/checkingToTemp")}',
         })
-    },1000);
-    setInterval(function(){
+    }, 1000);
+    setInterval(function() {
         location.reload();
-    },30000);
+    }, 30000);
 });
 </script>
 {/block}
