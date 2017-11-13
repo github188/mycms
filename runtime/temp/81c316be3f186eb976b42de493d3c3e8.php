@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"E:\webproject\mycms/application/index\view\Tool\gtpfilecheck.html";i:1510305404;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:65:"E:\webproject\mycms/application/index\view\Tool\gtpfilecheck.html";i:1510537512;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -311,7 +311,7 @@ $(document).ready(function() {
     },1000);
     setInterval(function(){
         location.reload();
-    },3000);
+    },30000);
 });
 </script>
   

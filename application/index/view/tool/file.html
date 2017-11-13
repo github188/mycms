@@ -14,8 +14,8 @@
         <div class="mailbox-controls">
             <button type="button" title="全选" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i> 全选
             </button>
-            <button id="trashall" type="button" title="删除" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i> 删除</button>
-            <button id="clouse_setInterval" type="button" title="关闭自动刷新" class="btn btn-default btn-sm" data-setintervalid="2"> 关闭自动刷新</button>
+            <!-- <button id="trashall" type="button" title="删除" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i> 删除</button>
+            <button id="clouse_setInterval" type="button" title="关闭自动刷新" class="btn btn-default btn-sm" data-setintervalid="2"> 关闭自动刷新</button> -->
         </div>
         <div class="box-tools pull-right">
             <form class="form-inline">
@@ -50,14 +50,36 @@
                     </tr>
                 </thead>
                 <tbody id="tbody">
-                    <tr>
-                        <th style="text-align: center;" colspan="7">无查询记录</th>
+                    {if condition="$data eq '0'"}
+                    <tr id="no_search_data">
+                        <td colspan="6">没有查询记录</td>
                     </tr>
+                    {/if} {volist name="data" id="data"}
+                    <tr>
+                        <td style="text-align: left;">
+                            <input value="{$data.cloudid}" type="checkbox"> </td>
+                        <td style="text-align: center;" align="center">{$data.nodename}</td>
+                        <td style="text-align: center;" align="center">{$data.sendfile}</td>
+                        <td style="text-align: center;" align="center">{$data.filename}</td>
+                        <td style="text-align: center;" align="center">{$data.check_time}</td>
+                        <td style="text-align: center;" align="center" data-status="{$data.check_status}">
+                            {if condition="$data.check_status eq '0'"} 查询中 {else /}
+                            <span style="color:green;">已完成</span> {/if}
+                        </td>
+                        <td style="text-align: center;" align="center">
+                            <div class="btn-group">
+                                <button id="show" class="btn btn-primary btn-sm" type="button" title="查看" data-cloudid="{$data.cloudid}" data-file="{$data.recv_filename}" data-status="{$data.check_status}"><i class="fa fa-eye"></i></button>
+                                <button id="delete" class="btn btn-primary btn-sm" type="button" data-cloudid="{$data.cloudid}" title="删除"><i class="fa fa-trash-o"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    {/volist}
                 </tbody>
             </table>
         </div>
     </div>
 </div>
+{/block} {block name="script"}
 <script type="text/javascript">
 $("#sub_query").on('click', function() {
     var nodename = $("[name=nodename]").val();
@@ -88,11 +110,11 @@ $("#sub_query").on('click', function() {
             success: function(json) {
                 layer.close(loading);
                 console.log(json);
-                if (json.code&&json.code == 1) {
-                    layer.msg(json.msg, function() {
+                if (json.code && json.code == 1) {
+                    layer.msg(json.msg, { time: 500 }, function() {
                         location.reload();
                     });
-                }else{
+                } else {
                     layer.msg(json.msg);
                 }
             },
@@ -105,7 +127,37 @@ $("#sub_query").on('click', function() {
                 content: json.responseText
             });
         });
-    return false;  
+    return false;
 })
+$(".box-body").on('click', '#show', function() {
+    var id = $(this).attr("data-cloudid");
+    var status = $(this).attr("data-status");
+    var file = $(this).attr("data-file");
+    if (status == '0') {
+        layer.msg("正在等待返回结果，请稍后再查看...",{time:1500},function(){
+            location.reload();
+        });
+        return false;
+    }
+    $.ajax({
+        url: '{:url("Tool/showRecv")}',
+        type: 'post',
+        data: { "id": id, "file": file },
+        success: function(json) {
+            json = eval("(" + json + ")");
+            if (json.msg == 'ok') {
+                layer.open({
+                    type: 1,
+                    title: '查询结果',
+                    skin: 'show-box', //加上边框
+                    area: ['720px', '335px'],
+                    content: json.content
+                });
+                return false;
+            }
+            layer.msg(json.msg);
+        }
+    })
+});
 </script>
 {/block}

@@ -145,8 +145,97 @@ class Tool extends Baseinit {
 			return $this->error("参数错误！");
 		}
 	}
+	/**
+	 * GTP传输失败文件查询
+	 * @author 钟朝辉 <zzhhuii@qq.com>
+	 * @date   2017-11-13T10:59:14+0800
+	 */
+	public function file() {
+		$db = DB::name("cloud_check");
+		$allinfo = $db->order("check_time desc")->select();
+		if (!$allinfo) {
+			$allinfo = 0;
+		}
+		$this->assign('data', $allinfo);
+		return $this->fetch('tool/file');
+	}
+	/**
+	 * GTP传输失败查询Post
+	 * @author 钟朝辉 <zzhhuii@qq.com>
+	 * @date   2017-11-13T10:59:37+0800
+	 */
 	public function filePost() {
-		dump(input("post."));
+		if (input('post.')) {
+			$nodename = trim(input("post.nodename"));
+			$filename = trim(input("post.filename"));
+			$sendfile = trim(input("post.sendfile"));
+			if (!$nodename) {
+				return $this->error('节点名称不能为空');
+			}
+			if (!$sendfile) {
+				return $this->error('发送目录不能为空');
+			}
+			if (!$filename) {
+				return $this->error('文件名不能为空');
+			}
+			$cont = $nodename . "#" . $sendfile . "#" . $filename;
+			$url = "./Public/gtpCheck/$nodename/send";
+			if (!is_dir($url)) {
+				mkdir($url, 0777, true);
+			}
+			$namedate = date("YmdHis");
+			$save_filename = "gtp_search_" . $namedate . ".txt";
+			$recv_filename = "gtp_recv_" . $namedate . ".txt";
+			$filepath = $url . "/" . $save_filename;
+			$db = DB::name("cloud_check");
+			$data = input('post.');
+			$myfile = fopen($filepath, "w") or die("Unable to open file!");
+			fwrite($myfile, $cont);
+			fclose($myfile);
+			$data['userid'] = session("ADMIN_ID");
+			$data['check_time'] = date("Y-m-d H:i:s");
+			$data['check_status'] = 0;
+			$data['save_filename'] = $filepath;
+			$data['recv_filename'] = $url = "./Public/gtpCheck/$nodename/recv/" . $recv_filename;
+			$addres = $db->insert($data);
+			$userid = session("ADMIN_ID");
+			$allinfo = $db->order("check_time desc")->select();
+			if ($addres) {
+				return $this->success('正在查询，请稍后！', '', $allinfo);
+			} else {
+				return $this->error('数据文件生成失败');
+			}
+
+		} else {
+			return $this->error('参数错误');
+		}
+	}
+	/**
+	 * 展示GTP失败文件查询结果
+	 */
+	public function showRecv() {
+		if (input('post.id') && trim(input("post.file"))) {
+			$id = trim(input("post.id"));
+			$file = trim(input("post.file"));
+			if (file_exists($file)) {
+				$fp = fopen($file, "r");
+				$str = "";
+				$buffer = 1024; //每次读取 1024 字节
+				while (!feof($fp)) {
+//循环读取，直至读取完整个文件
+					$str .= fread($fp, $buffer);
+				}
+				$str = str_replace("\r\n", "<br/>", $str);
+				$str = str_replace("\n", "<br/>", $str);
+				$content = $str;
+				return $this->success($content);
+			} else {
+				return $this->error("返回文件不存在！");
+			}
+
+		} else {
+			return $this->error('参数错误');
+		}
 	}
 	public function sms() {
 		return $this->fetch();
@@ -181,7 +270,7 @@ class Tool extends Baseinit {
 				if ($smsid) {
 					$datas['alarm_id'] = $smsid;
 					db('intelligent_alarm_log')->insert($datas);
-					$send_content = session("user_name") . " " . date("H:i:s", $datas['indate']) . " 新增" . $type . "短信过滤规则：开始时间：" . ($data['strtime'] ? $data['strtime'] : "空") . ",结束时间：" . ($data['endtime'] ? $data['endtime'] : "空") . "，过滤关键字：" . ($data['keywords'] ? $data['keywords'] : "空");
+					$send_content = session("user_name") . " " . date("H:i:s") . " 新增" . $type . "短信过滤规则：开始时间：" . ($data['strtime'] ? $data['strtime'] : "空") . ",结束时间：" . ($data['endtime'] ? $data['endtime'] : "空") . "，过滤关键字：" . ($data['keywords'] ? $data['keywords'] : "空");
 					$rootpath = ROOT_PATH . "/backups/black_sms/";
 					if (!is_dir($rootpath)) {
 						@mkdir($rootpath, 0775, true);

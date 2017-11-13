@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\role\edit.html";i:1510213298;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:2:{s:57:"E:\webproject\mycms/application/index\view\role\edit.html";i:1510213317;s:59:"E:\webproject\mycms/application/index\view\public\base.html";i:1510114736;}*/ ?>
 <!DOCTYPE html>
 <html>
  <head> 
@@ -86,7 +86,7 @@
      <div class="col-lg-12"> 
       <form method="post" id="role_add_form" check-name="<?php echo url('role/checkName'); ?>" class="form form-horizontal"> 
        <div class="row from-box"> 
-        <div class="form-group error"> 
+        <div class="form-group"> 
          <label class="col-lg-2 control-label">角色名</label> 
          <div class="col-lg-10 col-sm-10"> 
           <input type="text"  class="form-control" name="role_name" id="role_name" placeholder="角色名" value="<?php echo $info['role_name']; ?>" /> 
