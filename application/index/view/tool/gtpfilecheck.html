@@ -100,7 +100,7 @@ table {
                             <div align="center">
                                 <div class="btn-group">
                                     <button filename="{$list.filename}" id="scan_results" scan-url="{:url('tool/scanResult')}" class="btn btn-primary btn-sm" type="button" title="查看">查看</button>
-                                    <button filename="{$list.filename}" id="del_results" scan-url="{:url('tool/delResult')}" class="btn btn-primary btn-sm" type="button" title="删除">删除</button>
+                                    <button data-id="{$list.id}" id="del_results" del-url="{:url('tool/delResult')}" class="btn btn-primary btn-sm" type="button" title="删除">删除</button>
                                 </div>
                             </div>
                         </td>
@@ -230,19 +230,23 @@ $(document).ready(function() {
      * @date   2017-11-13T17:04:02+0800 
      */
     $(".gtp_list").on('click', '#del_results', function() {
-        var filename = $(this).attr("filename");
-        $.ajax({
-            url: $(this).attr("scan-url") + "?filename=" + filename,
-            type: "post",
-            success: function(json) {
-                if (json.code == 1) {
-                     layer.msg("删除成功",{time:500},function(){
-                        location.reload();
-                     });
-                } 
-                 layer.msg(json.msg);
-            }
+        var id = $(this).attr("data-id");
+        var del_url = $(this).attr("del-url");
+        layer.confirm("您确定要删除吗？", { btn: ['确定', '取消'] }, function() {
+            $.ajax({
+                url:  del_url+ "?id=" + id,
+                type: "post",
+                success: function(json) {
+                    if (json.code == 1) {
+                        layer.msg("删除成功", { time: 500 }, function() {
+                            location.reload();
+                        });
+                    }
+                    layer.msg(json.msg);
+                }
+            });
         });
+
         return false;
     });
     setInterval(function() {

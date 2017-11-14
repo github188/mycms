@@ -15,19 +15,7 @@ div.dataTables_paginate {
 div.dataTables_paginate ul.pagination {
     margin: 2px 0;
     white-space: nowrap;
-}
-
-tr:hover,
-td:hover {
-    background-color: #dad6d6;
-}
-
-.table-bordered,
-th,
-tr,
-td {
-    border: 1px solid #dad6d6 !important;
-}
+} 
 </style>
 {/block} {block name="body"}
 <section class="content-header">
@@ -78,8 +66,8 @@ td {
                         <td><a href="#" class="editable editable-click" data-id="{$item['id']}" data-name="role_name" data-pk="{$item['id']}" data-url="{:url('edit')}">{$item['title']}</a></td>
                         <td align="center">{$item['link']}</td>
                         <td align="center"> {if condition="$item['status'] eq '0'"} <span class="label label-danger">隐藏</span> {elseif condition="$item['status'] eq '1'"/} <span class="label label-primary">显示</span> {/if} </td>
-                        <td align="center"> {if condition="$item.id neq 1"}
-                            <a href="{:url('Link/edit',array('id'=>$item['id']))}">编辑</a>    <a href="{:url('Link/del',array('id'=>$item['id']))}" class="confirm ajax-get">删除</a> {/if}
+                        <td align="center">  
+                            <a href="{:url('Link/edit',array('id'=>$item['id']))}">编辑</a>    <a href="{:url('Link/del',array('id'=>$item['id']))}" class="confirm ajax-get">删除</a>  
                         </td>
                     </tr>
                     {/volist}
